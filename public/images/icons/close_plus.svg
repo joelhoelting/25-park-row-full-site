@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/close_white_15px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="MainDesktop_8.27.18" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Team" transform="translate(-400.000000, -325.000000)" stroke="#000000">
+            <g id="icon/close_black_35px" transform="translate(423.500000, 348.500000) rotate(-45.000000) translate(-423.500000, -348.500000) translate(406.000000, 331.000000)">
+                <g id="Group">
+                    <path d="M0.5,0.5 L34,34" id="Stroke-3" stroke-width="1.5" transform="translate(17.500000, 17.500000) rotate(-180.000000) translate(-17.500000, -17.500000) "></path>
+                    <path d="M0.5,34.5 L34,1" id="Stroke-3" stroke-width="1.5"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

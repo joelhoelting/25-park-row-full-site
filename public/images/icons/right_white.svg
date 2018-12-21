@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/webpage_nav</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.0001 0 25 0 25 24.9996 0.0001 24.9996"></polygon>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Top-Navigation-Knockout" transform="translate(-1628.000000, -38.000000)">
+            <g id="icon/webpage_knockout" transform="translate(1628.000000, 38.000000)">
+                <g id="Group-3">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M10.5781,20.1836 L9.5171,19.1226 L15.5931,13.0476 L9.2381,6.6926 L10.2991,5.6326 L17.7141,13.0476 L10.5781,20.1836 Z M12.5001,-0.0004 C5.5971,-0.0004 0.0001,5.5966 0.0001,12.4996 C0.0001,19.4036 5.5971,24.9996 12.5001,24.9996 C19.4031,24.9996 25.0001,19.4036 25.0001,12.4996 C25.0001,5.5966 19.4031,-0.0004 12.5001,-0.0004 Z" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
