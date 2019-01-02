@@ -20,7 +20,10 @@ const PressPanel = (props) => {
       cursor: 'pointer',
       height: 'auto',
       [mediaQueries.desktopSmall]: {
-        height: '250px'
+        height: '200px',
+      },
+      [mediaQueries.desktop]: {
+        height: '250px',
       },
       arrow: {
         position: 'absolute',
