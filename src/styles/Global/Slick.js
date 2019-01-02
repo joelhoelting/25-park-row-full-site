@@ -59,8 +59,8 @@ const slick = {
   },
   '.slider-dots li button': {
     fontSize: 0,
-    background: 'transparent',
-    border: '1px solid #666666',
+    background: 'rgba(0,0,0,.1)',
+    border: '2px solid #000',
     borderRadius: '50%',
     padding: rem(5),
     margin: `0 ${rem(10)}`,
@@ -100,11 +100,11 @@ const slick = {
       },
       '.slider-dots li button': {
         fontSize: 0,
-        background: 'transparent',
-        border: '1px solid #666666',
+        background: 'rgba(0,0,0,.2)',        
+        border: '2px solid #000',
         borderRadius: '50%',
-        height: rem(10),
-        width: rem(10),
+        height: rem(16),
+        width: rem(16),
         margin: `0 ${rem(20)}`,
         outline: 'none',
         transition: 'background 800ms ease'
