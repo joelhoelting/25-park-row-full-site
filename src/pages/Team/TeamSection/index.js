@@ -3,6 +3,7 @@ import Radium from 'radium';
 
 import { mediaQueries } from 'styles/Global/MediaQueries';
 
+
 const TeamSection = (props) => {
   const { company, role, blurb } = props.teamDetails;
   
@@ -18,6 +19,10 @@ const TeamSection = (props) => {
         alignItems: 'center',
         justifyContent: 'center',
         height: '400px',
+        role: {
+          textTransform: 'uppercase',
+          fontSize: '90%',
+        },
         plus: {
           transition: 'transform 200ms ease',
           transform: props.categoryActive ? 'rotate(45deg)' : 'rotate(0)'
@@ -47,7 +52,7 @@ const TeamSection = (props) => {
     <div style={main} onClick={() => props.activateCategory(props.category)}>
       <div style={main.primary}>
         <h3 className='text-center no-margin'>{company}</h3>
-        <h4>{role}</h4>
+        <p style={main.primary.role}>{role}</p>
         <img src='/images/icons/close_plus.svg' style={main.primary.plus}/>
       </div>
       <div style={main.secondary}>

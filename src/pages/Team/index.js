@@ -107,6 +107,9 @@ class Team extends Component {
         borderRight: 'none',
         borderBottom: '2px solid black'
       },
+      '.team-column': {
+        padding: 0
+      },
       mediaQueries: {
         [globalMediaQueries.tabletLandscape]: {
           '.team-row': {
@@ -121,6 +124,9 @@ class Team extends Component {
           },
           '.team-single-column-left': {
             borderRight: '2px solid black'
+          },
+          '.team-column:hover': {
+            background: '#cecece'
           }
         }
       }
