@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import { mediaQueries } from 'styles/Global/MediaQueries';
 import { rem } from 'helpers/Math';
 
-import MainLogo from './MainLogo';
-
 const RadiumLink = Radium(Link);
 
 class Header extends Component {
@@ -199,25 +197,19 @@ class Header extends Component {
             },
           },
           logoDiv: {
+            width: '60%',
             fontSize: '16px',
             [mediaQueries.phone]: {
               fontSize: '18px'
             },
-            logo: {
-              width: '200px',
-              [mediaQueries.tablet]: {
-                width: '250px'
-              },
-              [mediaQueries.desktopSmall]: {
-                width: '300px'
-              },
-              [mediaQueries.desktopLarge]: {
-                width: '350px'
-              },
-              margin: `${rem(3)} 0`,
-              [mediaQueries.desktopSmall]: {
-                margin: 0
-              }
+            [mediaQueries.desktopSmall]: {
+              fontSize: '14px'
+            },
+            [mediaQueries.desktopLarge]: {
+              fontSize: '18px'
+            },
+            desktopLogo: {
+              color
             },
             mobileLogo: {
               color,
@@ -448,9 +440,7 @@ class Header extends Component {
       if (this.props.width > 1200) {
         return (
           <RadiumLink key="-1" to="/" onClick={() => this.closeMobileMenu()}>
-            <div style={logoDiv.logo}>
-              <MainLogo fill={color} />
-            </div>
+            <h1 className='no-margin' style={logoDiv.desktopLogo}>25 Park Row</h1>
           </RadiumLink>
         );
       } else {
