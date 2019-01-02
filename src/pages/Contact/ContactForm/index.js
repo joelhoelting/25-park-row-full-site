@@ -296,7 +296,7 @@ class ContactForm extends Component {
     const ContactFormInline = {
       main: {
         fontFamily: 'Maison Neue Extended, sans-serif',
-        fontWeight: 300,
+        fontWeight: 700,
         textTransform: 'uppercase',
         color: '#fff',
         fontSize: rem(16),
@@ -324,6 +324,7 @@ class ContactForm extends Component {
             color: '#fff',
             fontFamily: 'Maison Neue Extended, sans-serif',
             fontWeight: 300,
+            fontSize: rem(16),
             textTransform: 'uppercase',
             width: '90%',
             border: 0,
@@ -349,6 +350,7 @@ class ContactForm extends Component {
           margin: `${rem(40)} auto`,
           padding: 0,
           cursor: 'pointer',
+          fontSize: rem(16),
           [mediaQueries.tabletLandscape]: {
             margin: `${rem(50)} auto 0`,
             ':hover': {
