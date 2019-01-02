@@ -32,7 +32,7 @@ class Floorplan extends Component {
 
   render() {
     
-    const { tabletLandscape, desktopSmall, desktopLarge } = mediaQueries;
+    const { phone, tablet, tabletLandscape, desktop, desktopSmall, desktopLarge } = mediaQueries;
     const styles = {
       main: {
         padding: `${rem(10)} ${rem(20)}`,
@@ -53,6 +53,26 @@ class Floorplan extends Component {
           [desktopSmall]: {
             margin: 0,
             padding: `0 ${rem(20)}`,
+          },
+          view: {
+            fontFamily: 'Maison Neue Extended Book, sans-serif',
+            fontSize: rem(12),
+            letterSpacing: rem(1),
+            [phone]: {
+              fontSize: rem(16)
+            },
+            [tablet]: {
+              fontSize: rem(22)
+            },
+            [desktopSmall]: {
+              fontSize: rem(12)
+            },
+            [desktop]: {
+              fontSize: rem(14)
+            },
+            [desktopLarge]: {
+              fontSize: rem(14.5)
+            }
           }
         },
         floorplanSection: {
@@ -112,7 +132,7 @@ class Floorplan extends Component {
       >
         <div style={main.titleSection}>
           <p className='no-margin'>{`Residence ${residence}`}</p>
-          <h6 className='no-margin'>View</h6>
+          <h4 className='no-margin' style={main.titleSection.view}>View</h4>
         </div>
         <div style={main.floorplanSection}>
           <img 
