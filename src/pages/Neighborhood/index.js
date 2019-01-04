@@ -22,7 +22,7 @@ const NeighborhoodCSS = {
     [globalMediaQueries.desktopSmall]: {
       '.neighborhood-map-wrapper': {
         height: '70vh'
-      },
+      }
     }
   }
 };
@@ -45,10 +45,11 @@ class Neighborhood extends Component {
     super(props);
 
     this.state = {
-      sections: {}
+      sections: {},
+      mapState: 'one'
     };
   }
-  
+
   initialImageLoad() {
     setTimeout(() => {
       this.setState({ mounted: true });
@@ -64,165 +65,284 @@ class Neighborhood extends Component {
     });
   }
 
+  setMapState = filterString => {
+    this.setState({
+      mapState: filterString
+    });
+  };
+
   render() {
     const { main } = NeighborhoodInline;
 
     return (
       <React.Fragment>
-        <div className={`main-container ${!this.state.mounted ? 'hidden' : ''}`}>
-          <Style rules={{'body': {backgroundColor: this.props.color}}}/>
-          <Style rules={NeighborhoodCSS}/>
+        <div
+          className={`main-container ${!this.state.mounted ? 'hidden' : ''}`}
+        >
+          <Style rules={{ body: { backgroundColor: this.props.color } }} />
+          <Style rules={NeighborhoodCSS} />
           <Grid fluid>
-            <Row
-              style={{ minHeight: !this.state.mounted ? '100vh' : '20vh'}}
-            >
-              <Col 
+            <Row style={{ minHeight: !this.state.mounted ? '100vh' : '20vh' }}>
+              <Col
                 lg={12}
-                className={!this.state.sections[0] ? 'hidden' : 'animate-reveal-delay-1'}
+                className={
+                  !this.state.sections[0] ? 'hidden' : 'animate-reveal-delay-1'
+                }
               >
-                <Waypoint 
-                  onEnter={() => this.triggerAnimation(0, true)} 
-                  onLeave={() => this.triggerAnimation(0, false)} 
+                <Waypoint
+                  onEnter={() => this.triggerAnimation(0, true)}
+                  onLeave={() => this.triggerAnimation(0, false)}
                 >
-                  <LargeImage 
-                    caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
-                    src='/images/pages/neighborhood/neighborhood_hero_south'
-                    width='100%'
+                  <LargeImage
+                    caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur."
+                    src="/images/pages/neighborhood/neighborhood_hero_south"
+                    width="100%"
                     onLoad={() => this.initialImageLoad()}
                   />
                 </Waypoint>
               </Col>
             </Row>
             <Row>
-              <Col 
+              <Col
                 lg={12}
-                className={!this.state.sections[1] ? 'hidden' : 'animate-reveal-delay-1'}
+                className={
+                  !this.state.sections[1] ? 'hidden' : 'animate-reveal-delay-1'
+                }
               >
                 <SubTitle
                   desktop={<span>New York at Your Fingertips</span>}
-                  mobile={<span>New York<br/> at Your Fingertips</span>}
+                  mobile={
+                    <span>
+                      New York
+                      <br /> at Your Fingertips
+                    </span>
+                  }
                 />
-                <Waypoint 
-                  onEnter={() => this.triggerAnimation(1, true)} 
-                  onLeave={() => this.triggerAnimation(1, false)} 
+                <Waypoint
+                  onEnter={() => this.triggerAnimation(1, true)}
+                  onLeave={() => this.triggerAnimation(1, false)}
                 />
-                <Panel 
+                <Panel
                   background={colorVars.darkOlive}
-                  textAlign='center'
-                  text='Downtown is more than a mark on a map. It’s the incubator of one of the world’s greatest cities. Find culinary innovation at the Seaport, innovative educational institutions, half a million square feet of global retail within the Oculus, coastal parks, and more. '
+                  textAlign="center"
+                  text="Downtown is more than a mark on a map. It’s the incubator of one of the world’s greatest cities. Find culinary innovation at the Seaport, innovative educational institutions, half a million square feet of global retail within the Oculus, coastal parks, and more. "
                 />
               </Col>
             </Row>
-            <Waypoint 
-              onEnter={() => this.triggerAnimation(2, true)} 
+            <Waypoint
+              onEnter={() => this.triggerAnimation(2, true)}
               onLeave={() => this.triggerAnimation(2, false)}
             >
               <SlickSlider
                 lazyLoad
-                className={!this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-1'}
+                className={
+                  !this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-1'
+                }
                 paths={[
-                  { src: '/images/pages/neighborhood/neighborhood_park_1', caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }, 
-                  { src: '/images/pages/neighborhood/neighborhood_park_2', caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }, 
-                  { src: '/images/pages/neighborhood/neighborhood_park_3', caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }, 
-                  { src: '/images/pages/neighborhood/neighborhood_park_4', caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }, 
-                  { src: '/images/pages/neighborhood/neighborhood_park_5', caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }
-                ]} 
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_park_1',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_park_2',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_park_3',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_park_4',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_park_5',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  }
+                ]}
               />
             </Waypoint>
-            <Waypoint 
-              onEnter={() => this.triggerAnimation(3, true)} 
+            <Waypoint
+              onEnter={() => this.triggerAnimation(3, true)}
               onLeave={() => this.triggerAnimation(3, false)}
             >
               <SlickSlider
                 lazyLoad
-                className={!this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-1'}
+                className={
+                  !this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-1'
+                }
                 paths={[
-                  { src: '/images/pages/neighborhood/neighborhood_dining_1', caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }, 
-                  { src: '/images/pages/neighborhood/neighborhood_dining_2', caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }, 
-                  { src: '/images/pages/neighborhood/neighborhood_dining_3', caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }, 
-                  { src: '/images/pages/neighborhood/neighborhood_dining_4', caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }, 
-                  { src: '/images/pages/neighborhood/neighborhood_dining_5', caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }, 
-                  { src: '/images/pages/neighborhood/neighborhood_dining_6', caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_dining_1',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_dining_2',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_dining_3',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_dining_4',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_dining_5',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_dining_6',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  }
                 ]}
               />
             </Waypoint>
-            <Waypoint 
-              onEnter={() => this.triggerAnimation(4, true)} 
-              onLeave={() => this.triggerAnimation(4, false)} 
+            <Waypoint
+              onEnter={() => this.triggerAnimation(4, true)}
+              onLeave={() => this.triggerAnimation(4, false)}
             >
               <SlickSlider
                 lazyLoad
-                className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-1'}
+                className={
+                  !this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-1'
+                }
                 paths={[
-                  { src: '/images/pages/neighborhood/neighborhood_leisure_1', caption:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }, 
-                  { src: '/images/pages/neighborhood/neighborhood_leisure_2', caption:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' },
-                  { src: '/images/pages/neighborhood/neighborhood_leisure_3', caption:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' },
-                  { src: '/images/pages/neighborhood/neighborhood_leisure_4', caption:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' },
-                  { src: '/images/pages/neighborhood/neighborhood_leisure_5', caption:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }, 
-                  { src: '/images/pages/neighborhood/neighborhood_leisure_6', caption:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }
-                ]} 
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_leisure_1',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_leisure_2',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_leisure_3',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_leisure_4',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_leisure_5',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_leisure_6',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  }
+                ]}
               />
             </Waypoint>
-            <Waypoint 
-              onEnter={() => this.triggerAnimation(5, true)} 
-              onLeave={() => this.triggerAnimation(5, false)} 
+            <Waypoint
+              onEnter={() => this.triggerAnimation(5, true)}
+              onLeave={() => this.triggerAnimation(5, false)}
             >
               <SlickSlider
                 lazyLoad
-                className={!this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-1'}
+                className={
+                  !this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-1'
+                }
                 paths={[
-                  { src: '/images/pages/neighborhood/neighborhood_shopping_1', caption:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }, 
-                  { src: '/images/pages/neighborhood/neighborhood_shopping_2', caption:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' },
-                  { src: '/images/pages/neighborhood/neighborhood_shopping_3', caption:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }, 
-                  { src: '/images/pages/neighborhood/neighborhood_shopping_4', caption:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' },
-                  { src: '/images/pages/neighborhood/neighborhood_shopping_5', caption:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' },
-                  { src: '/images/pages/neighborhood/neighborhood_shopping_6', caption:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' },
-                  { src: '/images/pages/neighborhood/neighborhood_shopping_7', caption:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' }
-                ]} 
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_shopping_1',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_shopping_2',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_shopping_3',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_shopping_4',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_shopping_5',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_shopping_6',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  },
+                  {
+                    src: '/images/pages/neighborhood/neighborhood_shopping_7',
+                    caption:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  }
+                ]}
               />
             </Waypoint>
           </Grid>
         </div>
-        <div style={{ background: 'white'}}>
-          <div className='neighborhood-map-container'>
+        <div style={{ background: 'white' }}>
+          <div className="neighborhood-map-container">
             <Grid fluid>
-              <Row className='row-extra-margin'>
+              <Row className="row-extra-margin">
                 <Col sm={12}>
-                  <h2 className='text-center'>The Neighborhood Map</h2> 
+                  <h2 className="text-center">The Neighborhood Map</h2>
                 </Col>
               </Row>
-              <Row className='row-extra-margin-1'>
+              <Row className="row-extra-margin-1">
                 <Col xs={3}>
                   <img
-                    alt='Neighborhood map, dining locations'
                     style={main.neighborhoodMap.image}
-                    src='/images/icons/illustration/wine_drinker.svg'
-                  />
-                </Col>
-                <Col xs={3}>
-                  <img 
-                    alt='Neighborhood map, shopping locations'
-                    style={main.neighborhoodMap.image} 
-                    src='/images/icons/illustration/mom_daughter.svg'
+                    src="/images/icons/illustration/wine_drinker.svg"
+                    onClick={() => this.setMapState('one')}
                   />
                 </Col>
                 <Col xs={3}>
                   <img
-                    alt='Neighborhood map, leisure locations'
-                    style={main.neighborhoodMap.image} 
-                    src='/images/icons/illustration/dog_walker.svg'
+                    style={main.neighborhoodMap.image}
+                    src="/images/icons/illustration/mom_daughter.svg"
+                    onClick={() => this.setMapState('two')}
                   />
                 </Col>
                 <Col xs={3}>
                   <img
-                    alt='Neighborhood map, watching locations'
-                    style={main.neighborhoodMap.image} 
-                    src='/images/icons/illustration/wobbly_legs.svg'
+                    style={main.neighborhoodMap.image}
+                    src="/images/icons/illustration/dog_walker.svg"
+                    onClick={() => this.setMapState('three')}
+                  />
+                </Col>
+                <Col xs={3}>
+                  <img
+                    style={main.neighborhoodMap.image}
+                    src="/images/icons/illustration/wobbly_legs.svg"
+                    onClick={() => this.setMapState('four')}
                   />
                 </Col>
               </Row>
-              <Row className='neighborhood-map-wrapper'>
-                <MapBox />
+              <Row className="neighborhood-map-wrapper">
+                <MapBox mapState={this.state.mapState} />
               </Row>
             </Grid>
           </div>
