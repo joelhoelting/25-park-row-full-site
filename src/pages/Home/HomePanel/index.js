@@ -54,6 +54,7 @@ const Panel = (props) => {
         title: {
           fontSize: rem(12),
           margin: `${rem(4)} 0`,
+          letterSpacing: rem(4),
           [phoneLarge]: {
             fontSize: rem(14)
           },
@@ -64,7 +65,7 @@ const Panel = (props) => {
             fontSize: rem(18)
           },
           [desktopSmall]: {
-            fontSize: rem(20)
+            fontSize: rem(20),
           }
         }
       }

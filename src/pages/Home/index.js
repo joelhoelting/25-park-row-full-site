@@ -4,14 +4,11 @@ import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Waypoint from 'react-waypoint';
 
-// Project Styles
 import { colorVars } from 'styles/Global/Colors';
 
-// Responsive Images
 import { LargeImage } from 'helpers/Image/ResponsiveImage/_module';
-
-// HomePanel Helper
 import HomePanel from './HomePanel';
+import SalesAddress from './SalesAddress';
 
 class Home extends Component {
   constructor(props) {
@@ -155,10 +152,7 @@ class Home extends Component {
         </div>
         <hr style={{ height: '2px', background: '#000', border: 'none'}} />
         <div className="container">
-          <div className='text-center' style={{ padding: '1em 0'}}>
-            <h3>25 Park Row Sales Gallery</h3>
-            <h3>217 Broadway, Suite 600, New York, NY 10007</h3>
-          </div>
+          <SalesAddress />
         </div>
       </div>
     );

@@ -33,8 +33,8 @@ const captions = {
     visibility: 'hidden',
     textAlign: 'left',
     fontSize: rem(10),
-    paddingRight: '10%',
-    textTransform: 'none'
+    textTransform: 'uppercase',
+    paddingRight: '10%'
   },
   '.caption-main-small.active .caption, .caption-main-large.active .caption': {
     transition: 'all 100ms ease 100ms',
@@ -89,9 +89,6 @@ const captions = {
       },
       '.caption-main-large.active': {
         maxHeight: '10%',
-      },
-      '.caption': {
-        fontSize: rem(16),
       },
       '.caption-plus': {
         width: rem(30),
