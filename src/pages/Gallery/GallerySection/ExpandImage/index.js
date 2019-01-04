@@ -39,7 +39,7 @@ const ExpandImage = (props) => {
     }
     return srcSet;
   };
-
+  
   return (
     <div className='gallery-image' style={styles.main} onClick={() => props.toggleCarousel(props.carouselIndex)}>
       <picture>
@@ -51,7 +51,10 @@ const ExpandImage = (props) => {
           media='(min-width: 992px)'
           srcSet={src + '_' + desktop[1200] + '.jpg 1200w, ' + src + '_' + desktop[1600] + '.jpg 1600w, ' + src + '_' + desktop[2000] + '.jpg 2000w, ' + src + '_' + desktop[2400] + '.jpg 2400w, ' + src + '_' + desktop[2800] + '.jpg 2800w, ' + src + '_' + desktop[3200] + '.jpg 3200w'}
         />
-        <img style={styles.main.image} />
+        <img 
+          alt={props.caption}
+          style={styles.main.image}
+        />
       </picture>
       <ExpandIcon />
     </div>

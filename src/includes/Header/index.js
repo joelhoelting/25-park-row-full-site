@@ -463,17 +463,15 @@ class Header extends Component {
             <div style={bottomNavWrapper}>
               <div style={bottomNavWrapper.bottomNav} ref={this.bottomNav}>
                 {Object.keys(this.props.pages).map((page, key) => {
-                  if ((page !== 'information') && (page !== 'press') && (page !== 'legal')) {
-                    return (
-                      <RadiumLink id={`link-${page}`} key={key} data-page={page} to={`/${page}`}>
-                        <div 
-                          style={page === route ? [{ color: sliderActiveColor}, item] : [{color}, item] }
-                        >
-                          {this.props.pages[page]}
-                        </div>
-                      </RadiumLink>
-                    );
-                  }
+                  return (
+                    <RadiumLink id={`link-${page}`} key={key} data-page={page} to={`/${page}`}>
+                      <div 
+                        style={page === route ? [{ color: sliderActiveColor}, item] : [{color}, item] }
+                      >
+                        {this.props.pages[page]}
+                      </div>
+                    </RadiumLink>
+                  );
                 })}
                 {animateRectangle()}
               </div>
@@ -496,19 +494,17 @@ class Header extends Component {
               style={bottomNavWrapper.bottomNav}
             >
               {Object.keys(this.props.pages).map((page, key) => {
-                if ((page !== 'information') && (page !== 'press') && (page !== 'legal')) {
-                  return (
-                    <RadiumLink className='mobile-nav-link' 
-                      key={key}  
-                      to={`/${page}`} 
-                      onClick={() => this.closeMobileMenu()}
-                    >
-                      <div style={[{ textDecoration: route === page ? 'underline' : 'none', color: '#000' }, item]}>
-                        {this.props.pages[page]}
-                      </div>
-                    </RadiumLink>
-                  );
-                }
+                return (
+                  <RadiumLink className='mobile-nav-link' 
+                    key={key}  
+                    to={`/${page}`} 
+                    onClick={() => this.closeMobileMenu()}
+                  >
+                    <div style={[{ textDecoration: route === page ? 'underline' : 'none', color: '#000' }, item]}>
+                      {this.props.pages[page]}
+                    </div>
+                  </RadiumLink>
+                );
               })}
               <ul style={bottomNavWrapper.bottomNav.subNav}>
                 {Object.keys(this.props.subPages).map((subPage, key) => {

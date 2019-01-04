@@ -53,7 +53,11 @@ const TeamSection = (props) => {
       <div style={main.primary}>
         <h3 className='text-center no-margin'>{company}</h3>
         <p style={main.primary.role}>{role}</p>
-        <img src='/images/icons/close_plus.svg' style={main.primary.plus}/>
+        <img 
+          alt={`Expand section for ${company}`}
+          src='/images/icons/close_plus.svg' 
+          style={main.primary.plus}        
+        />
       </div>
       <div style={main.secondary}>
         <p>{blurb}</p>

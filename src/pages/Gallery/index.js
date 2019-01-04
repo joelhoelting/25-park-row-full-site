@@ -85,6 +85,7 @@ class Gallery extends Component {
 
     const mapGallery = galleryArray.map((section, index) => {
       const { title, imgAry } = section;
+      
       return (
         <GallerySection
           key={index}

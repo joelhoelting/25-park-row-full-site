@@ -79,7 +79,10 @@ const SmallImage = (props) => {
           media='(min-width: 992px)'
           srcSet={`${props.src}_600.jpg 1200w, ${props.src}_800.jpg 1600w, ${props.src}_1000.jpg 2000w, ${props.src}_1200.jpg 2400w`} 
         />
-        <img style={styles.img} />
+        <img 
+          alt={props.caption} 
+          style={styles.img}
+        />
       </picture>
       {renderCaption()}
     </div>
