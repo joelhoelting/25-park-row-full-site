@@ -12,13 +12,11 @@ const features = [
   {
     title: 'The Woolworth Building',
     coordinates: [-74.009103, 40.712638],
-    description: "1913 neo-Gothic skyscraper, once the world's tallest building & still an architectural landmark.",
     thumbnailSrc: '/images/map/thumbnails/woolworth_building.jpg'
   },
   {
     title: 'New York City Hall',
     coordinates: [-74.006021, 40.712822],
-    description: "Palatial, circa-1812 government complex housing the mayor's office, the City Council & more.",
     thumbnailSrc: '/images/map/thumbnails/city_hall.jpg'
   },
 ];
