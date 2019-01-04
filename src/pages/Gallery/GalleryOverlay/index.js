@@ -8,24 +8,6 @@ import { rem } from 'helpers/Math';
 // Responsive Images
 import { LargeImage } from 'helpers/Image/ResponsiveImage/_module';
 
-const NextArrow = props => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: 'block',
-        height: 'auto',
-        width: 'auto'
-      }}
-      onClick={onClick}
-    >
-      <img src="/images/icons/gallery-right.svg" />
-    </div>
-  );
-};
-
 const PrevArrow = props => {
   const { className, style, onClick } = props;
   return (
@@ -39,7 +21,29 @@ const PrevArrow = props => {
       }}
       onClick={onClick}
     >
-      <img src="/images/icons/gallery-left.svg" />
+      <img 
+        alt='Gallery previous arrow'
+        src="/images/icons/gallery-left.svg" />
+    </div>
+  );
+};
+
+const NextArrow = props => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: 'block',
+        height: 'auto',
+        width: 'auto'
+      }}
+      onClick={onClick}
+    >
+      <img 
+        alt='Gallery next arrow'
+        src="/images/icons/gallery-right.svg" />
     </div>
   );
 };
@@ -170,6 +174,7 @@ class GalleryOverlay extends React.Component {
           })}
         </Slider>
         <img
+          alt='Gallery close button'
           style={styles.main.close}
           src="/images/icons/close_white.svg"
           onClick={() => this.props.toggleCarousel()}

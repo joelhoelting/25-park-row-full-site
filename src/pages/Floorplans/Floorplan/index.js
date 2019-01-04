@@ -137,7 +137,8 @@ class Floorplan extends Component {
         <div style={main.floorplanSection}>
           <img 
             src={this.state.hover ? `/images/floorplans/25PR_${residence}_hover.svg` : `/images/floorplans/25PR_${residence}_rest.svg`} 
-            style={main.floorplanSection.img} 
+            style={main.floorplanSection.img}
+            alt={`Floorplan ${residence}`}
           />
         </div>
         <div style={ main.detailSection }>

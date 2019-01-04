@@ -68,11 +68,11 @@ const slick = {
     transition: 'background 800ms ease'
   },
   '.slider-dots li button:hover': {
-    background: '#666',
+    background: 'rgba(0,0,0,.8)',
     cursor: 'pointer'
   },
   '.slider-dots li.slick-active button ': {
-    background: '#666'
+    background: 'rgba(0,0,0,.8)'
   },
   mediaQueries: {
     [globalMediaQueries.tabletLandscape]: {

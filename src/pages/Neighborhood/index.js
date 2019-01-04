@@ -193,16 +193,32 @@ class Neighborhood extends Component {
               </Row>
               <Row className='row-extra-margin-1'>
                 <Col xs={3}>
-                  <img style={main.neighborhoodMap.image} src='/images/icons/illustration/wine_drinker.svg'/>
+                  <img
+                    alt='Neighborhood map, dining locations'
+                    style={main.neighborhoodMap.image}
+                    src='/images/icons/illustration/wine_drinker.svg'
+                  />
                 </Col>
                 <Col xs={3}>
-                  <img style={main.neighborhoodMap.image} src='/images/icons/illustration/mom_daughter.svg'/>
+                  <img 
+                    alt='Neighborhood map, shopping locations'
+                    style={main.neighborhoodMap.image} 
+                    src='/images/icons/illustration/mom_daughter.svg'
+                  />
                 </Col>
                 <Col xs={3}>
-                  <img style={main.neighborhoodMap.image} src='/images/icons/illustration/dog_walker.svg'/>
+                  <img
+                    alt='Neighborhood map, leisure locations'
+                    style={main.neighborhoodMap.image} 
+                    src='/images/icons/illustration/dog_walker.svg'
+                  />
                 </Col>
                 <Col xs={3}>
-                  <img style={main.neighborhoodMap.image} src='/images/icons/illustration/wobbly_legs.svg'/>
+                  <img
+                    alt='Neighborhood map, watching locations'
+                    style={main.neighborhoodMap.image} 
+                    src='/images/icons/illustration/wobbly_legs.svg'
+                  />
                 </Col>
               </Row>
               <Row className='neighborhood-map-wrapper'>

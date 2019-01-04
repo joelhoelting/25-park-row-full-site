@@ -138,11 +138,13 @@ const FloorplanOverlay = (props) => {
                 className='no-margin' 
                 style={styles.main.inner.detail.buttons.download} 
                 src='/images/icons/download_button.png'
+                alt={`Download PDF of floorplan ${residence}`}
               />
               <img 
                 onClick={() => toggleOverlay()}
                 style={ styles.main.inner.detail.buttons.closeBtn} 
-                src={'/images/icons/close_black.svg'} 
+                src={'/images/icons/close_black.svg'}
+                alt='Close floorplan overlay'
               />
             </div>
           </div>
@@ -153,7 +155,11 @@ const FloorplanOverlay = (props) => {
           </div>
         </MediaQuery>
         <div style={styles.main.inner.floorplan}>
-          <img style={styles.main.inner.floorplan.img} src={`/images/floorplans/25PR_${residence}_rest.svg`} />
+          <img 
+            style={styles.main.inner.floorplan.img} 
+            src={`/images/floorplans/25PR_${residence}_rest.svg`} 
+            alt={`Floorplan overlay of residence ${residence}`}
+          />
         </div>
         <MediaQuery minDeviceWidth={1200}>
           <div style={styles.main.inner.legal}>
@@ -166,11 +172,13 @@ const FloorplanOverlay = (props) => {
             <img 
               onClick={() => toggleOverlay()}
               style={ styles.main.inner.detail.buttons.closeBtn} 
-              src={'/images/icons/close_black.svg'} 
+              src={'/images/icons/close_black.svg'}
+              alt='Close floorplan overlay'
             />
             <img 
               style={ styles.main.inner.detail.buttons.download} 
-              src={'/images/icons/download_button.png'} 
+              src={'/images/icons/download_button.png'}
+              alt={`Download PDF of floorplan ${residence}`}
             />
             <div style={styles.main.inner.detail.subDetail}>
               <p className='no-margin'>{`${bedrooms} Bedrooms`}</p>
