@@ -9,7 +9,6 @@ import MapBox from './MapBox';
 // Component Styling
 import { colorVars } from 'styles/Global/Colors';
 import { globalMediaQueries } from 'styles/Global/MediaQueries';
-import { rem } from 'helpers/Math';
 import { LargeImage } from 'helpers/Image/ResponsiveImage/_module';
 import SlickSlider from 'helpers/Image/SlickSlider';
 import { Panel, SubTitle } from 'helpers/Layout/_module';
@@ -27,26 +26,12 @@ const NeighborhoodCSS = {
   }
 };
 
-const NeighborhoodInline = {
-  main: {
-    neighborhoodMap: {
-      image: {
-        maxHeight: rem(150),
-        display: 'block',
-        margin: '0 auto',
-        cursor: 'pointer'
-      }
-    }
-  }
-};
-
 class Neighborhood extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      sections: {},
-      mapState: 'one'
+      sections: {}
     };
   }
 
@@ -72,7 +57,6 @@ class Neighborhood extends Component {
   };
 
   render() {
-    const { main } = NeighborhoodInline;
 
     return (
       <React.Fragment>
@@ -306,44 +290,7 @@ class Neighborhood extends Component {
         <div style={{ background: 'white' }}>
           <div className="neighborhood-map-container">
             <Grid fluid>
-              <Row className="row-extra-margin">
-                <Col sm={12}>
-                  <h2 className="text-center">The Neighborhood Map</h2>
-                </Col>
-              </Row>
-              <Row className="row-extra-margin-1">
-                <Col xs={3}>
-                  <img
-                    style={main.neighborhoodMap.image}
-                    src="/images/icons/illustration/wine_drinker.svg"
-                    onClick={() => this.setMapState('one')}
-                  />
-                </Col>
-                <Col xs={3}>
-                  <img
-                    style={main.neighborhoodMap.image}
-                    src="/images/icons/illustration/mom_daughter.svg"
-                    onClick={() => this.setMapState('two')}
-                  />
-                </Col>
-                <Col xs={3}>
-                  <img
-                    style={main.neighborhoodMap.image}
-                    src="/images/icons/illustration/dog_walker.svg"
-                    onClick={() => this.setMapState('three')}
-                  />
-                </Col>
-                <Col xs={3}>
-                  <img
-                    style={main.neighborhoodMap.image}
-                    src="/images/icons/illustration/wobbly_legs.svg"
-                    onClick={() => this.setMapState('four')}
-                  />
-                </Col>
-              </Row>
-              <Row className="neighborhood-map-wrapper">
-                <MapBox mapState={this.state.mapState} />
-              </Row>
+              <MapBox />
             </Grid>
           </div>
         </div>
