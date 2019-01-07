@@ -3,7 +3,7 @@ import Radium from 'radium';
 import { Link } from 'react-router-dom';
 
 import { mediaQueries } from '../../styles/Global/MediaQueries';
-import { rem } from '../../helpers/Math';
+import { pxToRem } from '../../helpers/Math';
 
 const RadiumLink = Radium(Link);
 
@@ -25,20 +25,20 @@ const Footer = (props) => {
       textAlign: 'center',
       width: '100%',
       height: 'auto',
-      padding: route !== 'home' ? `${rem(100)} ${rem(15)} 0` : `0 ${rem(15)}`,
+      padding: route !== 'home' ? `${pxToRem(100)} ${pxToRem(15)} 0` : `0 ${pxToRem(15)}`,
       background: footerBackground ? footerBackground : 'none',
       [tabletLandscape]: {
-        padding: `0 ${rem(30)}`,
+        padding: `0 ${pxToRem(30)}`,
       }
     },
     topNav: {
       display: 'flex',
       flexFlow: 'row nowrap',
       width: '100%',
-      height: rem(30),
+      height: pxToRem(30),
       [tabletLandscape]: {
-        height: rem(50),
-        margin: `${rem(40)} 0`
+        height: pxToRem(50),
+        margin: `${pxToRem(40)} 0`
       },
       left: {
         display: 'flex',
@@ -62,13 +62,13 @@ const Footer = (props) => {
       }
     },
     arrow: {
-      width: rem(26),
-      height: rem(26),
+      width: pxToRem(26),
+      height: pxToRem(26),
       display: 'block',
       [desktopSmall]: {
         display: 'inline',
-        width: rem(30),
-        height: rem(30),
+        width: pxToRem(30),
+        height: pxToRem(30),
         ':hover': {
           // Use a placeholder animation name in `animation`
           animation: 'x 300ms ease 0s forwards',
@@ -80,29 +80,29 @@ const Footer = (props) => {
     btnText: {
       fontFamily: 'Maison Neue Extended Book, sans-serif',
       fontWeight: 300,
-      fontSize: rem(12),
+      fontSize: pxToRem(12),
       color: `${color}`,
       textTransform: 'uppercase',
-      letterSpacing: rem(1.5), 
-      lineHeight: rem(20),
+      letterSpacing: pxToRem(1.5), 
+      lineHeight: pxToRem(20),
       display: 'block',
       width: '100%',
       prev: {
-        margin: `${rem(10)} 0`,
+        margin: `${pxToRem(10)} 0`,
         [tabletLandscape]: {
-          margin: `0 0 0 ${rem(30)}`
+          margin: `0 0 0 ${pxToRem(30)}`
         }
       },
       next: {
-        margin: `${rem(10)} 0`,
+        margin: `${pxToRem(10)} 0`,
         [tabletLandscape]: {
-          margin: `0 ${rem(30)} 0 0`
+          margin: `0 ${pxToRem(30)} 0 0`
         }
       },
       [tablet]: {
         display: 'inline',
-        fontSize: rem(12.5),
-        lineHeight: rem(16)
+        fontSize: pxToRem(12.5),
+        lineHeight: pxToRem(16)
       }
     },
     nav: {
@@ -113,18 +113,18 @@ const Footer = (props) => {
       width: '100%',
       borderTop: `2px solid ${color}`,
       padding: 0,
-      marginTop: rem(15),
+      marginTop: pxToRem(15),
       link: {
         fontFamily: 'Maison Neue Extended Book, sans-serif',
-        fontSize: rem(12),
+        fontSize: pxToRem(12),
         textTransform: 'uppercase',
-        letterSpacing: rem(1),
-        padding: `${rem(20)} 0`,
+        letterSpacing: pxToRem(1),
+        padding: `${pxToRem(20)} 0`,
         color: color,
         height: '100%',
         [tablet]: {
-          fontSize: rem(16),
-          padding: `${rem(20)} 0`,
+          fontSize: pxToRem(16),
+          padding: `${pxToRem(20)} 0`,
         },
         [tabletLandscape]: {
           width: '25%',
@@ -133,11 +133,11 @@ const Footer = (props) => {
           }
         },
         [desktopSmall]: {
-          padding: `${rem(40)} ${rem(30)}`,
-          fontSize: rem(12)
+          padding: `${pxToRem(40)} ${pxToRem(30)}`,
+          fontSize: pxToRem(12)
         },
         [desktopLarge]: {
-          fontSize: rem(14)
+          fontSize: pxToRem(14)
         }
       }
     }

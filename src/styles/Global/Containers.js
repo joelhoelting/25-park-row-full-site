@@ -1,4 +1,4 @@
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 import { globalMediaQueries } from './MediaQueries';
 
 const { tablet, desktopSmall } = globalMediaQueries;
@@ -102,8 +102,8 @@ const containers = {
       /* Container Styles */
       // Main Container (w/ top margin)
       '.main-container': {
-        marginTop: rem(110),
-        paddingBottom: rem(50),
+        marginTop: pxToRem(110),
+        paddingBottom: pxToRem(50),
         width: '80%',
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -112,28 +112,28 @@ const containers = {
       '.home-container': {
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: rem(110),
+        marginTop: pxToRem(110),
         width: '98%'
       },
       // Gallery Container
       '.gallery-container': {
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: rem(105),
+        marginTop: pxToRem(105),
         width: '98%'
       },
       // Floorplan Container
       '.floorplan-container': {
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: rem(105),
+        marginTop: pxToRem(105),
         width: '100%'
       },
       // Team Container
       '.full-width-container': {
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: rem(105),
+        marginTop: pxToRem(105),
         width: '100%'
       },
       // Contact Container
@@ -146,7 +146,7 @@ const containers = {
       },
       // Brochure Container
       '.brochure-container': {
-        marginTop: rem(110),
+        marginTop: pxToRem(110),
         width: '100%',
         position: 'fixed',
         top: 0,
@@ -154,7 +154,7 @@ const containers = {
       },
       // Neighborhood Map Container
       '.neighborhood-map-container': {
-        padding: `${rem(50)} 0`,
+        padding: `${pxToRem(50)} 0`,
         width: '80%',
         marginLeft: 'auto',
         marginRight: 'auto'

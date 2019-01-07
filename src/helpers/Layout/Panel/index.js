@@ -2,7 +2,7 @@ import React from 'react';
 import Radium from 'radium';
 
 import { mediaQueries } from 'styles/Global/MediaQueries';
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 
 const Panel = (props) => {
   const { tabletLandscape } = mediaQueries;
@@ -12,10 +12,10 @@ const Panel = (props) => {
       width: '100%',
       textAlign: props.textAlign ? props.textAlign : 'left',
       background: props.mobileBackground ? props.background : null,
-      padding: props.mobileBackground ? `${rem(10)} 0` : 0,
+      padding: props.mobileBackground ? `${pxToRem(10)} 0` : 0,
       [tabletLandscape]: {
         background: props.background ? props.background : null,
-        padding: `${rem(60)} 0`
+        padding: `${pxToRem(60)} 0`
       },
       p: {
         width: '100%',

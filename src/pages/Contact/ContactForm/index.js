@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Radium, { Style } from 'radium';
 
 import { mediaQueries, globalMediaQueries } from 'styles/Global/MediaQueries';
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 import { validateEmail } from 'helpers/Validations';
 
 class ContactForm extends Component {
@@ -189,7 +189,7 @@ class ContactForm extends Component {
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-        padding: `${rem(10)} 0`
+        padding: `${pxToRem(10)} 0`
       },
       '.Dropdown-menu': {
         position: 'absolute',
@@ -211,21 +211,21 @@ class ContactForm extends Component {
       },
       '.Dropdown-arrow': {
         position: 'absolute',
-        right: rem(10),
+        right: pxToRem(10),
         top: '54%',
         zIndex: -1,
-        height: rem(15),
-        width: rem(15),
+        height: pxToRem(15),
+        width: pxToRem(15),
       },
       // Radios
       '.radio-item': {
         display: 'inline-block',
         position: 'relative',
-        paddingLeft: rem(35),
-        marginBottom: rem(12),
-        marginRight: rem(40),
+        paddingLeft: pxToRem(35),
+        marginBottom: pxToRem(12),
+        marginRight: pxToRem(40),
         cursor: 'pointer',
-        fontSize: rem(16),
+        fontSize: pxToRem(16),
         userSelect: 'none'
       },
       '.radio-item input': {
@@ -237,8 +237,8 @@ class ContactForm extends Component {
         position: 'absolute',
         top: 0,
         left: 0,
-        height: rem(16),
-        width: rem(16),
+        height: pxToRem(16),
+        width: pxToRem(16),
         background: 'transparent',
         border: '1px solid #fff',
         borderRadius: '50%',
@@ -263,9 +263,9 @@ class ContactForm extends Component {
         fontFamily: 'Maison Neue Extended, sans-serif',
         fontWeight: 300,
         textTransform: 'uppercase',
-        fontSize: rem(16),
-        marginLeft: rem(-4),
-        minHeight: rem(40)
+        fontSize: pxToRem(16),
+        marginLeft: pxToRem(-4),
+        minHeight: pxToRem(40)
       },
       'select:-moz-focusring': {
         color: 'transparent',
@@ -283,11 +283,11 @@ class ContactForm extends Component {
       mediaQueries: {
         [globalMediaQueries.tabletLandscape]: {
           '.radio-item': {
-            fontSize: rem(20),
+            fontSize: pxToRem(20),
           },
           '.checkmark': {
-            height: rem(20),
-            width: rem(20),
+            height: pxToRem(20),
+            width: pxToRem(20),
           }
         }
       }
@@ -299,18 +299,18 @@ class ContactForm extends Component {
         fontWeight: 700,
         textTransform: 'uppercase',
         color: '#fff',
-        fontSize: rem(16),
-        letterSpacing: rem(1),
+        fontSize: pxToRem(16),
+        letterSpacing: pxToRem(1),
         [mediaQueries.tabletLandscape]: {
-          fontSize: rem(20)
+          fontSize: pxToRem(20)
         },
         formItem: {
-          margin: `${rem(25)} ${rem(10)}`,
+          margin: `${pxToRem(25)} ${pxToRem(10)}`,
           borderBottom: '1px solid #fff',
           position: 'relative',
           display: 'flex',
           flexDirection: 'column-reverse',
-          height: rem(70),
+          height: pxToRem(70),
           noBorder: {
             borderBottom: 0,
           },
@@ -324,11 +324,11 @@ class ContactForm extends Component {
             color: '#fff',
             fontFamily: 'Maison Neue Extended, sans-serif',
             fontWeight: 300,
-            fontSize: rem(16),
+            fontSize: pxToRem(16),
             textTransform: 'uppercase',
             width: '90%',
             border: 0,
-            padding: `${rem(10)} 0`
+            padding: `${pxToRem(10)} 0`
           },
           label: {
             width: '100%',
@@ -336,7 +336,7 @@ class ContactForm extends Component {
             top: 0
           },
           radioContainer: {
-            marginTop: rem(15)
+            marginTop: pxToRem(15)
           }
         },
         submit: {
@@ -345,14 +345,14 @@ class ContactForm extends Component {
           border: '1px solid white',
           background: 'transparent',
           display: 'block',
-          height: rem(120),
-          width: rem(120),
-          margin: `${rem(40)} auto`,
+          height: pxToRem(120),
+          width: pxToRem(120),
+          margin: `${pxToRem(40)} auto`,
           padding: 0,
           cursor: 'pointer',
-          fontSize: rem(16),
+          fontSize: pxToRem(16),
           [mediaQueries.tabletLandscape]: {
-            margin: `${rem(50)} auto 0`,
+            margin: `${pxToRem(50)} auto 0`,
             ':hover': {
               background: '#6f715b' 
             }

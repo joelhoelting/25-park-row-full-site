@@ -2,7 +2,7 @@ import React from 'react';
 import Radium from 'radium';
 
 import { mediaQueries } from 'styles/Global/MediaQueries';
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 
 const PressPanel = (props) => {
   let { publication, title, date, filename, panelNumber, mounted } = props;
@@ -14,8 +14,8 @@ const PressPanel = (props) => {
   const PressPanelInline = {
     main: {
       border: '2px solid #000',
-      padding: `${rem(8)} ${rem(30)}`,
-      margin: `${rem(8)} 0`,
+      padding: `${pxToRem(8)} ${pxToRem(30)}`,
+      margin: `${pxToRem(8)} 0`,
       position: 'relative',
       cursor: 'pointer',
       height: 'auto',

@@ -16,8 +16,8 @@ import SlickSlider from 'helpers/Image/SlickSlider';
 // Layout Helpers
 import { Panel, TwoColumnText, SubTitle } from 'helpers/Layout/_module';
 
-// Px to Rem
-import { rem } from 'helpers/Math';
+// Px to pxToRem
+import { pxToRem } from 'helpers/Math';
 
 class Interiors extends Component {
   constructor(props) {
@@ -330,7 +330,7 @@ class Interiors extends Component {
           <MediaQuery minDeviceWidth={992}>
             <Row className='row-extra-margin row-extra-margin-desktop-3'>
               <Col 
-                style={{ margin: `0 ${rem(8)}`, flex: '.783' }}
+                style={{ margin: `0 ${pxToRem(8)}`, flex: '.783' }}
                 className={!this.state.sections[18] ? 'hidden' : 'animate-reveal-delay-1'}
               >
                 <Waypoint 
@@ -345,7 +345,7 @@ class Interiors extends Component {
                 <h5 className='text-center'>Powder Room</h5>
               </Col>
               <Col 
-                style={{ margin: `0 ${rem(8)}`, flex: '1' }}
+                style={{ margin: `0 ${pxToRem(8)}`, flex: '1' }}
                 className={!this.state.sections[19] ? 'hidden' : 'animate-reveal-delay-1'}
               >
                 <Waypoint 

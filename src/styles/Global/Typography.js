@@ -1,4 +1,4 @@
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 import { globalMediaQueries } from './MediaQueries';
 
 const { tabletLandscape, desktop, desktopSmall, desktopLarge, desktopXLarge} = globalMediaQueries;
@@ -17,29 +17,29 @@ const typography = {
     textTransform: 'uppercase'
   },
   h1: {
-    letterSpacing: rem(6)
+    letterSpacing: pxToRem(6)
   },
   h2: {
-    letterSpacing: rem(5)
+    letterSpacing: pxToRem(5)
   },
   h3: {
-    letterSpacing: rem(4)
+    letterSpacing: pxToRem(4)
   },
   h4: {
-    letterSpacing: rem(3)
+    letterSpacing: pxToRem(3)
   },
   h5: {
-    letterSpacing: rem(2)
+    letterSpacing: pxToRem(2)
   },
   h6: {
-    letterSpacing: rem(1)
+    letterSpacing: pxToRem(1)
   },
   // Paragraph Text
   p: {
     fontFamily: '"Antwerp", serif',
     fontWeight: 300,
-    fontSize: rem(14),
-    letterSpacing: rem(1),
+    fontSize: pxToRem(14),
+    letterSpacing: pxToRem(1),
   },
   'p.quote': {
     fontWeight: 'bolder',
@@ -86,10 +86,10 @@ const typography = {
       },
       // Paragraph
       p: {
-        fontSize: rem(18)
+        fontSize: pxToRem(18)
       },
       'p.quote': {
-        fontSize: rem(16)
+        fontSize: pxToRem(16)
       },
       // Text Center
       '.text-center-desktop': {
@@ -101,10 +101,10 @@ const typography = {
         fontSize: '90%'
       },
       p: {
-        fontSize: rem(20)
+        fontSize: pxToRem(20)
       },
       'p.quote': {
-        fontSize: rem(18)
+        fontSize: pxToRem(18)
       }
     },
     [desktop]: {

@@ -1,5 +1,5 @@
 import { globalMediaQueries } from './MediaQueries';
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 
 const captions = {
   // Image Captions
@@ -32,7 +32,7 @@ const captions = {
     opacity: 0,
     visibility: 'hidden',
     textAlign: 'left',
-    fontSize: rem(10),
+    fontSize: pxToRem(10),
     textTransform: 'uppercase',
     paddingRight: '10%'
   },
@@ -48,8 +48,8 @@ const captions = {
     cursor: 'pointer',
     bottom: 10,
     right: 10,
-    width: rem(26),
-    height: rem(26),
+    width: pxToRem(26),
+    height: pxToRem(26),
     transform: 'rotate(0) scale(1)',
     zIndex: 1,
     transition: 'transform 100ms ease-in-out',
@@ -73,8 +73,8 @@ const captions = {
         maxHeight: '10%',
       },
       '.caption': {
-        fontSize: rem(14),
-        paddingRight: rem(20),
+        fontSize: pxToRem(14),
+        paddingRight: pxToRem(20),
       }
     },
     [globalMediaQueries.tabletLandscape]: {
@@ -91,8 +91,8 @@ const captions = {
         maxHeight: '10%',
       },
       '.caption-plus': {
-        width: rem(30),
-        height: rem(30),
+        width: pxToRem(30),
+        height: pxToRem(30),
       }
     },
     [globalMediaQueries.desktop]: {

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Radium, {Style} from 'radium';
 
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 import ContactForm from './ContactForm';
 import ThankYou from './ThankYou';
 
@@ -37,9 +37,9 @@ class Contact extends Component {
       address: {
         color: '#fff',
         textAlign: 'center',
-        padding: `${rem(50)} 0`,
+        padding: `${pxToRem(50)} 0`,
         p: {
-          fontSize: rem(20)
+          fontSize: pxToRem(20)
         }
       }
     };

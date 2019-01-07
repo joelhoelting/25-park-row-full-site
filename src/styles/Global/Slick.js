@@ -1,11 +1,11 @@
 import { globalMediaQueries } from './MediaQueries';
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 
 const slick = {
   '.slider-dots': {
     padding: 0,
     textAlign: 'center',
-    margin: `${rem(5)} 0`
+    margin: `${pxToRem(5)} 0`
   },
   '.gallery-slider': {
     width: '80%',
@@ -62,8 +62,8 @@ const slick = {
     background: 'rgba(0,0,0,.1)',
     border: '2px solid #000',
     borderRadius: '50%',
-    padding: rem(5),
-    margin: `0 ${rem(10)}`,
+    padding: pxToRem(5),
+    margin: `0 ${pxToRem(10)}`,
     outline: 'none',
     transition: 'background 800ms ease'
   },
@@ -96,16 +96,16 @@ const slick = {
         height: '100%'
       },
       '.slider-dots': {
-        margin: `${rem(5)} 0`
+        margin: `${pxToRem(5)} 0`
       },
       '.slider-dots li button': {
         fontSize: 0,
         background: 'rgba(0,0,0,.2)',        
         border: '2px solid #000',
         borderRadius: '50%',
-        height: rem(16),
-        width: rem(16),
-        margin: `0 ${rem(20)}`,
+        height: pxToRem(16),
+        width: pxToRem(16),
+        margin: `0 ${pxToRem(20)}`,
         outline: 'none',
         transition: 'background 800ms ease'
       }

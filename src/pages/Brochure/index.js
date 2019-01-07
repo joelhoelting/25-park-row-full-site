@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Radium, {Style} from 'radium';
 
 import { mediaQueries, globalMediaQueries } from 'styles/Global/MediaQueries';
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 import { colorVars } from '../../styles/Global/Colors';
 
 class Brochure extends Component {
@@ -30,7 +30,7 @@ class Brochure extends Component {
           paddingBottom: '100%',
           cursor: 'pointer',
           position: 'relative',
-          margin: `0 auto ${rem(20)}`,
+          margin: `0 auto ${pxToRem(20)}`,
           [mediaQueries.tablet]: {
             display: 'inline-block',
             width: '48%',

@@ -8,7 +8,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { LargeImage } from 'helpers/Image/ResponsiveImage/_module';
 
 import { mediaQueries } from 'styles/Global/MediaQueries';
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 
 const SlickSlider = (props) => {
   const settings = {
@@ -23,9 +23,9 @@ const SlickSlider = (props) => {
   // Inline styles
   const styles = {
     main: {
-      margin: `${rem(16)} 0`,
+      margin: `${pxToRem(16)} 0`,
       [mediaQueries.tabletLandscape]: {
-        margin: `${rem(64)} 0`
+        margin: `${pxToRem(64)} 0`
       },
       img: {
         width: '100%',

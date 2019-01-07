@@ -2,13 +2,13 @@ import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 
 import ExpandImage from './ExpandImage';
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 
 const GallerySection = (props) => {
   const styles = {
     main: {
       header: {
-        margin: `${rem(28)} 0`
+        margin: `${pxToRem(28)} 0`
       }
     }
   };

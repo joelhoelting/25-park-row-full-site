@@ -2,7 +2,7 @@ import React from 'react';
 import Radium from 'radium';
 
 import { mediaQueries } from 'styles/Global/MediaQueries';
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 
 const Panel = (props) => {
   const { phoneLarge, tablet, tabletLandscape, desktopSmall } = mediaQueries;
@@ -28,23 +28,23 @@ const Panel = (props) => {
         justifyContent: 'space-around',
         flexDirection: 'column',
         description: {
-          fontSize: rem(16),
+          fontSize: pxToRem(16),
           [phoneLarge]: {
-            fontSize: rem(20)
+            fontSize: pxToRem(20)
           },
           [tablet]: {
-            fontSize: rem(24)
+            fontSize: pxToRem(24)
           },
           [tabletLandscape]: {
-            fontSize: rem(28)
+            fontSize: pxToRem(28)
           },
           [desktopSmall]: {
-            fontSize: rem(32)
+            fontSize: pxToRem(32)
           }
         },
         icon: {
           display: 'block',
-          margin: `${rem(10)} auto`,
+          margin: `${pxToRem(10)} auto`,
           maxHeight: '30%',
           maxWidth: '20%',
           [tabletLandscape]: {
@@ -52,20 +52,20 @@ const Panel = (props) => {
           }
         },
         title: {
-          fontSize: rem(12),
-          margin: `${rem(4)} 0`,
-          letterSpacing: rem(4),
+          fontSize: pxToRem(12),
+          margin: `${pxToRem(4)} 0`,
+          letterSpacing: pxToRem(4),
           [phoneLarge]: {
-            fontSize: rem(14)
+            fontSize: pxToRem(14)
           },
           [tablet]: {
-            fontSize: rem(16)
+            fontSize: pxToRem(16)
           },
           [tabletLandscape]: {
-            fontSize: rem(18)
+            fontSize: pxToRem(18)
           },
           [desktopSmall]: {
-            fontSize: rem(20),
+            fontSize: pxToRem(20),
           }
         }
       }
@@ -80,7 +80,7 @@ const Panel = (props) => {
         <div>
           <h2 style={main.sub.description} className='text-center'>{props.description}</h2>
         </div>
-        <img style={main.sub.icon} src={`/images/icons/${props.iconSrc}.svg`} alt={props.iconAlt} />
+        <img style={main.sub.icon} src={`/images/icons/illustration/${props.iconSrc}.svg`} alt={props.iconAlt} />
         <h6 style={main.sub.title} className='text-center'>{props.title}</h6>
       </div>
     </div>

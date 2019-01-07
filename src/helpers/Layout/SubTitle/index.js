@@ -3,7 +3,7 @@ import Radium from 'radium';
 import MediaQuery from 'react-responsive';
 
 import { mediaQueries } from 'styles/Global/MediaQueries';
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 
 const SubTitle = (props) => {
   const { tabletLandscape } = mediaQueries;
@@ -11,7 +11,7 @@ const SubTitle = (props) => {
   const SubTitleInline = {
     main: {
       [tabletLandscape]: {
-        margin: `${rem(50)} 0`
+        margin: `${pxToRem(50)} 0`
       }
     }
   };

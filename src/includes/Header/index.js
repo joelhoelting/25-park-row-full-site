@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Radium, {Style} from 'radium';
 import { Link } from 'react-router-dom';
 import { mediaQueries } from 'styles/Global/MediaQueries';
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 
 const RadiumLink = Radium(Link);
 
@@ -148,7 +148,7 @@ class Header extends Component {
           backgroundColor: backgroundColor,
           transition: 'background-color 500ms ease-in-out, max-height 100ms linear',
           [mediaQueries.desktopSmall]: {
-            height: rem(60),
+            height: pxToRem(60),
             maxHeight: 'none',
             alignItems: 'center',
           },
@@ -159,16 +159,16 @@ class Header extends Component {
             alignItems: 'center',
             left: {
               justifyContent: 'flex-start',
-              paddingLeft: rem(15),
+              paddingLeft: pxToRem(15),
               [mediaQueries.desktopSmall]: {
-                paddingLeft: rem(30),
+                paddingLeft: pxToRem(30),
               }
             },
             right: {
               justifyContent: 'flex-end',
-              paddingRight: rem(15),
+              paddingRight: pxToRem(15),
               [mediaQueries.desktopSmall]: {
-                paddingRight: rem(30),
+                paddingRight: pxToRem(30),
               }
             },
             arrow: {
@@ -176,12 +176,12 @@ class Header extends Component {
               border: 0,
               boxShadow: 'none',
               padding: 0,
-              width: rem(26),
-              height: rem(26),
+              width: pxToRem(26),
+              height: pxToRem(26),
               outline: 'none',
               [mediaQueries.desktopSmall]: {
-                width: rem(30),
-                height: rem(30),
+                width: pxToRem(30),
+                height: pxToRem(30),
                 ':hover': { 
                   cursor: 'pointer',
                   // Use a placeholder animation name in `animation`
@@ -234,13 +234,13 @@ class Header extends Component {
           position: 'fixed',
           top: !this.state.scrollDown ? '60px' : '40px',
           transform: 'translateX(-50%)',
-          padding: `${rem(2)} 0`,
+          padding: `${pxToRem(2)} 0`,
           zIndex: 100,
           transition: 'top 100ms linear',
           lines: {
             background: this.state.mobileMenuActive ? '#000' : color, 
             position: 'absolute',
-            height: rem(2), 
+            height: pxToRem(2), 
             left: 0, 
             display: 'block',
             width: '100%',
@@ -272,8 +272,8 @@ class Header extends Component {
           width: '100%',
           backgroundColor: backgroundColor,
           transition: 'background-color 500ms ease-in-out, max-height 300ms ease',
-          height: rem(30),
-          maxHeight: this.state.scrollDown ? '0' : rem(30),
+          height: pxToRem(30),
+          maxHeight: this.state.scrollDown ? '0' : pxToRem(30),
           bottomNav: {
             width: 'calc(79.5% - 16px)',
             display: 'inline-flex',
@@ -281,8 +281,8 @@ class Header extends Component {
             justifyContent: 'space-between',
             alignItems: 'center',
             position: 'relative',
-            height: rem(30),
-            maxHeight: this.state.scrollDown ? '0' : rem(30),
+            height: pxToRem(30),
+            maxHeight: this.state.scrollDown ? '0' : pxToRem(30),
             opacity: this.state.scrollDown ? 0 : 1,
             margin: 'none',
             zIndex: 10,
@@ -297,14 +297,14 @@ class Header extends Component {
               maxHeight: this.state.mobileMenuActive ? '100%' : '0%',
               justifyContent: 'center',
               backgroundColor: '#787A62',
-              padding: `${rem(5)} ${rem(15)}`,
+              padding: `${pxToRem(5)} ${pxToRem(15)}`,
               top: 0,
               transition: this.state.mobileMenuActive ? 'max-height 300ms ease 100ms' : 'max-height 300ms ease 200ms',
               zIndex: -1
             },
             subNav: {
               position: 'absolute',
-              bottom: rem(10),
+              bottom: pxToRem(10),
               display: 'flex',
               width: '100%',
               justifyContent: 'space-around',
@@ -314,12 +314,12 @@ class Header extends Component {
               transition: this.state.mobileMenuActive ? 'opacity 800ms ease 600ms' : 'opacity 200ms ease',
               subNavItem: {
                 fontFamily: 'Maison Neue Extended Book, sans-serif',
-                fontSize: rem(10),
-                letterSpacing: rem(1),
+                fontSize: pxToRem(10),
+                letterSpacing: pxToRem(1),
                 textTransform: 'uppercase',
                 color: '#000',
                 [mediaQueries.phone]: {
-                  fontSize: rem(12)
+                  fontSize: pxToRem(12)
                 }
               }
             }
@@ -327,30 +327,30 @@ class Header extends Component {
         },
         item: {
           fontFamily: 'Maison Neue Extended Book, sans-serif',
-          fontSize: rem(12),
-          letterSpacing: rem(1),
+          fontSize: pxToRem(12),
+          letterSpacing: pxToRem(1),
           textTransform: 'uppercase',
-          margin: `${rem(10)} 0`,
+          margin: `${pxToRem(10)} 0`,
           transition: 'color 500ms ease',
           [mediaQueries.phone]: {
-            fontSize: rem(16),
+            fontSize: pxToRem(16),
           },
           [mediaQueries.tablet]: {
-            fontSize: rem(22),
-            margin: `${rem(15)} 0`,
+            fontSize: pxToRem(22),
+            margin: `${pxToRem(15)} 0`,
           },
           [mediaQueries.desktopSmall]: {
-            fontSize: rem(12),
-            margin: `0 ${rem(15)}`
+            fontSize: pxToRem(12),
+            margin: `0 ${pxToRem(15)}`
           },
           [mediaQueries.desktop]: {
-            fontSize: rem(12),
-            paddingTop: rem(2),
-            margin: `0 ${rem(15)}`,
+            fontSize: pxToRem(12),
+            paddingTop: pxToRem(2),
+            margin: `0 ${pxToRem(15)}`,
           },
           [mediaQueries.desktopLarge]: {
-            fontSize: rem(14),
-            margin: `0 ${rem(20)}`
+            fontSize: pxToRem(14),
+            margin: `0 ${pxToRem(20)}`
           }
         }
       },

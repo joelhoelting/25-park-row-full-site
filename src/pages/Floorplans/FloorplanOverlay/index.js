@@ -3,7 +3,7 @@ import Radium from 'radium';
 import MediaQuery from 'react-responsive';
 
 import { mediaQueries } from 'styles/Global/MediaQueries';
-import { rem, mtr } from 'helpers/Math';
+import { pxToRem, feetToMeters } from 'helpers/Math';
 
 
 const FloorplanOverlay = (props) => {
@@ -29,19 +29,19 @@ const FloorplanOverlay = (props) => {
       inner: {
         height: '100%',
         width: '100%',
-        padding: rem(30),
+        padding: pxToRem(30),
         detail: {
           display: 'flex',
           flexDirection: 'row',
           flexWrap: 'wrap',
           [desktopSmall]: {
             height: '10%',
-            padding: `0 ${rem(50)}`,
+            padding: `0 ${pxToRem(50)}`,
             flexDirection: 'row',
             justifyContent: 'space-between',
           },
           subDetail: {
-            margin: `${rem(5)} 0`,
+            margin: `${pxToRem(5)} 0`,
             width: '50%',
             [desktopSmall]: {
               width: 'auto',
@@ -82,7 +82,7 @@ const FloorplanOverlay = (props) => {
           }
         },
         floorplan: {
-          padding: `${rem(10)} 0`,
+          padding: `${pxToRem(10)} 0`,
           height: '50%',
           [desktopSmall]: {
             height: '80%'
@@ -123,7 +123,7 @@ const FloorplanOverlay = (props) => {
             </div>
             <div style={styles.main.inner.detail.subDetail}>
               <p className='no-margin'>Interior</p>
-              <p className='no-margin'>{`${interior} SF/${mtr(interior)} SM`}</p>
+              <p className='no-margin'>{`${interior} SF/${feetToMeters(interior)} SM`}</p>
             </div>
             <div style={styles.main.inner.detail.subDetail}>
               <p className='no-margin'>Exterior</p>
@@ -186,7 +186,7 @@ const FloorplanOverlay = (props) => {
             </div>
             <div style={styles.main.inner.detail.subDetail}>
               <p className='no-margin'>Interior</p>
-              <p className='no-margin'>{`${interior} SF/${mtr(interior)} SM`}</p>
+              <p className='no-margin'>{`${interior} SF/${feetToMeters(interior)} SM`}</p>
             </div>
             <div style={styles.main.inner.detail.subDetail}>
               <p className='no-margin'>Exterior</p>

@@ -11,7 +11,7 @@ import ReactMapboxGl, {
 } from 'react-mapbox-gl';
 import { Row, Col } from 'react-flexbox-grid';
 
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 import { dining, schools, fitness, shopping } from 'data/mapLocations';
 
 const Map = ReactMapboxGl({
@@ -24,7 +24,7 @@ const Map = ReactMapboxGl({
 const MapInline = {
   main: {
     image: {
-      maxHeight: rem(150),
+      maxHeight: pxToRem(150),
       display: 'block',
       margin: '0 auto',
       cursor: 'pointer'
@@ -36,13 +36,25 @@ const { main } = MapInline;
 
 const MapCSS = {
   '.mapboxgl-map': {
-    border: '2px solid #000'
+    border: '1px solid #000'
   },
   '.mapboxgl-popup': {
     width: '250px'
   },
-  '.mapbox-gl-popup-content': {
-    border: '2px solid #000'
+  '.mapboxgl-popup-content': {
+    border: '1px solid #000'
+  },
+  '.mapboxgl-popup-anchor-top .mapboxgl-popup-tip': {
+    borderBottomColor: '#000'
+  },
+  '.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip': {
+    borderTopColor: '#000'
+  },
+  '.mapboxgl-popup-anchor-left .mapboxgl-popup-tip': {
+    borderRightColor: '#000'
+  },
+  '.mapboxgl-popup-anchor-right .mapboxgl-popup-tip': {
+    borderLeftColor: '#000'
   }
 };
 
@@ -62,6 +74,8 @@ class MapBox extends Component {
         key={index}
         coordinates={feature.coordinates}
         onClick={() => this.setState({ activeLocation: feature })}
+        // onMouseEnter={() => this.setState({ activeLocation: feature })}
+        // onMouseLeave={() => this.setState({ activeLocation: undefined })}
       />
     ));
   }
@@ -71,28 +85,28 @@ class MapBox extends Component {
 
     let currentFeatures;
     let circleIcon = {
-      'circle-stroke-width': 4,
-      'circle-radius': 15,
+      'circle-stroke-width': 1,
+      'circle-radius': 10,
       'circle-blur': 0.15,
-      'circle-stroke-color': 'white'
+      'circle-stroke-color': 'black'
     };
 
     switch (this.state.activeCategory) {
     case 'dining':
       currentFeatures = dining;
-      circleIcon['circle-color'] =  '#ffc100';
+      circleIcon['circle-color'] =  '#787a62';
       break;
     case 'schools':
       currentFeatures = schools;
-      circleIcon['circle-color'] =  '#0d165c';
+      circleIcon['circle-color'] =  '#b6c1c1';
       break;
     case 'fitness':
       currentFeatures = fitness;
-      circleIcon['circle-color'] =  '#f96161';
+      circleIcon['circle-color'] =  '#585955';
       break;
     case 'shopping':
       currentFeatures = shopping;
-      circleIcon['circle-color'] = '#555555';
+      circleIcon['circle-color'] = '#ffd949';
       break;
     default:
       break;
@@ -143,12 +157,13 @@ class MapBox extends Component {
           <Map
             style='mapbox://styles/dboxstudio/cjlpcgr5l0umi2sqo6h7q5k5k'
             containerStyle={{ height: '100%', width: '100%' }}
-            zoom={[16]}
-            center={[-74.005894, 40.712472]}
+            
+            center={[-74.007377, 40.711464]}
+            onClick={() => this.setState({ activeLocation: undefined})}
           >
             <Style rules={MapCSS} />
             <ZoomControl position={'top-right'} />
-            <Marker coordinates={[-74.007377, 40.711464]} anchor="top-left">
+            <Marker coordinates={[-74.007377, 40.711464]} anchor="center">
               <img
                 alt='Primary marker for 25 Park Row building'
                 style={{ boxShadow: '2px 2px 3px rgba(0,0,0,.2)' }}

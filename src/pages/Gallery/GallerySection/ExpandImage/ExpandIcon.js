@@ -1,7 +1,7 @@
 import React from 'react';
 import Radium from 'radium';
 
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 
 const ExpandIcon = () => {
   const styles = {
@@ -10,7 +10,7 @@ const ExpandIcon = () => {
       position: 'absolute',
       right: 10,
       bottom: 10,
-      padding: rem(5),
+      padding: pxToRem(5),
       cursor: 'pointer',
       fill: '#fff'
     }

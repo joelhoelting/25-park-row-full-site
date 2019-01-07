@@ -2,13 +2,13 @@ import React from 'react';
 import Radium from 'radium';
 import MediaQuery from 'react-responsive';
 
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 
 const SalesAddress = () => {
   const SalesAddressInline = {
     main: {
       h3: {
-        margin: `${rem(10)} 0`
+        margin: `${pxToRem(10)} 0`
       }
     }
   };

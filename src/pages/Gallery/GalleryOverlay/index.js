@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 
 import { mediaQueries } from 'styles/Global/MediaQueries';
 // Math
-import { rem } from 'helpers/Math';
+import { pxToRem } from 'helpers/Math';
 // Responsive Images
 import { LargeImage } from 'helpers/Image/ResponsiveImage/_module';
 
@@ -95,8 +95,8 @@ class GalleryOverlay extends React.Component {
           width: '30px',
           cursor: 'pointer',
           position: 'absolute',
-          top: rem(20),
-          right: rem(20)
+          top: pxToRem(20),
+          right: pxToRem(20)
         }
       },
       carouselImg: {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Radium from 'radium';
 
 import { mediaQueries } from 'styles/Global/MediaQueries';
-import { rem, mtr } from 'helpers/Math';
+import { pxToRem, feetToMeters } from 'helpers/Math';
 import { colorVars } from 'styles/Global/Colors';
 
 class Floorplan extends Component {
@@ -35,10 +35,10 @@ class Floorplan extends Component {
     const { phone, tablet, tabletLandscape, desktop, desktopSmall, desktopLarge } = mediaQueries;
     const styles = {
       main: {
-        padding: `${rem(10)} ${rem(20)}`,
+        padding: `${pxToRem(10)} ${pxToRem(20)}`,
         [desktopSmall]: {
           margin: 0,
-          padding: `${rem(20)} ${rem(30)}`,
+          padding: `${pxToRem(20)} ${pxToRem(30)}`,
           ':hover': {
             cursor: 'pointer',
             background: colorVars.floorplanBlue,
@@ -49,35 +49,35 @@ class Floorplan extends Component {
           display: 'flex', 
           flexDirection: 'row', 
           justifyContent: 'space-between',
-          margin: `${rem(20)} 0`,
+          margin: `${pxToRem(20)} 0`,
           [desktopSmall]: {
             margin: 0,
-            padding: `0 ${rem(20)}`,
+            padding: `0 ${pxToRem(20)}`,
           },
           view: {
             fontFamily: 'Maison Neue Extended Book, sans-serif',
-            fontSize: rem(12),
-            letterSpacing: rem(1),
+            fontSize: pxToRem(12),
+            letterSpacing: pxToRem(1),
             [phone]: {
-              fontSize: rem(16)
+              fontSize: pxToRem(16)
             },
             [tablet]: {
-              fontSize: rem(22)
+              fontSize: pxToRem(22)
             },
             [desktopSmall]: {
-              fontSize: rem(12)
+              fontSize: pxToRem(12)
             },
             [desktop]: {
-              fontSize: rem(14)
+              fontSize: pxToRem(14)
             },
             [desktopLarge]: {
-              fontSize: rem(14.5)
+              fontSize: pxToRem(14.5)
             }
           }
         },
         floorplanSection: {
           height: '300px',
-          padding: `${rem(10)} 0`,
+          padding: `${pxToRem(10)} 0`,
           [desktopSmall]: {
             height: '400px',
           },
@@ -101,19 +101,19 @@ class Floorplan extends Component {
           width: '100%', 
           flexWrap: 'wrap',
           [desktopSmall]: {
-            padding: `0 ${rem(5)}`
+            padding: `0 ${pxToRem(5)}`
           },
           subSection: {
             width: '50%',
-            margin: `${rem(10)} 0`,
+            margin: `${pxToRem(10)} 0`,
             [desktopSmall]: {
-              margin: `${rem(20)} 0`,
+              margin: `${pxToRem(20)} 0`,
               width: 'auto'
             },
             p: {
-              fontSize: rem(12),
+              fontSize: pxToRem(12),
               [tabletLandscape]: {
-                fontSize: rem(14)
+                fontSize: pxToRem(14)
               }
             }
           }
@@ -148,7 +148,7 @@ class Floorplan extends Component {
           </div>
           <div className="interior_sf" style={main.detailSection.subSection}>
             <p className='no-margin' style={main.detailSection.subSection.p}>Interior</p>
-            <p className='no-margin' style={main.detailSection.subSection.p}>{`${interior} SF/${mtr(interior)} SM`}</p>
+            <p className='no-margin' style={main.detailSection.subSection.p}>{`${interior} SF/${feetToMeters(interior)} SM`}</p>
           </div>
           <div className="exterior_sf" style={main.detailSection.subSection}>
             <p className='no-margin' style={main.detailSection.subSection.p}>Exterior</p>
