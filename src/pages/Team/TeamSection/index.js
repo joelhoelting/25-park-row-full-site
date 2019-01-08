@@ -2,7 +2,7 @@ import React from 'react';
 import Radium from 'radium';
 
 import { mediaQueries } from 'styles/Global/MediaQueries';
-
+import { pxToRem } from 'helpers/Math';
 
 const TeamSection = (props) => {
   const { company, role, blurb } = props.teamDetails;
@@ -41,6 +41,9 @@ const TeamSection = (props) => {
         margin: '0 auto',
         [mediaQueries.phoneLarge]: {
           width: '70%'
+        },
+        blurb: {
+          fontSize: pxToRem(14)
         }
       }
     }
@@ -60,7 +63,7 @@ const TeamSection = (props) => {
         />
       </div>
       <div style={main.secondary}>
-        <p>{blurb}</p>
+        <p style={main.secondary.blurb}>{blurb}</p>
       </div>
     </div>
   );

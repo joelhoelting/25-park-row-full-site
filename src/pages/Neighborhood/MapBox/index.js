@@ -13,6 +13,7 @@ import { Row, Col } from 'react-flexbox-grid';
 import MediaQuery from 'react-responsive';
 
 import { pxToRem } from 'helpers/Math';
+import { mediaQueries } from 'styles/Global/MediaQueries';
 import { dining, schools, fitness, shopping } from 'data/mapLocations';
 
 const Map = ReactMapboxGl({
@@ -31,7 +32,11 @@ const MapInline = {
       cursor: 'pointer'
     },
     mobileParagraph: {
-      fontSize: pxToRem(20)
+      fontSize: pxToRem(16),
+      textTransform: 'uppercase',
+      [mediaQueries.tablet]: {
+        fontSize: pxToRem(20)
+      }
     }
   }
 };
@@ -133,7 +138,7 @@ class MapBox extends Component {
         <MediaQuery maxDeviceWidth={991}>
           <Row>
             <Col sm={12}>
-              <p 
+              <p
                 style={main.mobileParagraph} 
                 className="text-center no-margin"
               >
@@ -142,26 +147,35 @@ class MapBox extends Component {
             </Col>
           </Row>
         </MediaQuery>
-        <Row className="row-extra-margin-1" bottom='xs'>
-          <Col xs={3}>
+        <Row className="row-extra-margin-1" top='sm' bottom='xs'>
+          <Col 
+            xs={3}
+            onClick={() => this.setState({ 
+              activeCategory: 'dining', 
+              activeLocation: false
+            })}
+          >
             <img
               alt='Link to active dining markers'
               style={main.image}
               src={`/images/icons/illustration/wine_drinker${this.state.activeCategory === 'dining' ? '' : '_bw'}.svg`}
-              onClick={() => this.setState({ 
-                activeCategory: 'dining', 
-                activeLocation: false
-              })}
             />
             <MediaQuery minDeviceWidth={992}>
-              <p 
-                style={{ opacity: this.state.activeCategory === 'dining' ? 1 : .4 }} className='text-center'
+              <p
+                style={{ cursor: 'pointer', opacity: this.state.activeCategory === 'dining' ? 1 : .4 }} 
+                className='text-center uppercase'
               >
                 Dining
               </p>
             </MediaQuery>
           </Col>
-          <Col xs={3}>
+          <Col 
+            xs={3}
+            onClick={() => this.setState({ 
+              activeCategory: 'schools', 
+              activeLocation: false
+            })}
+          >
             <img
               alt='Link to active schools, parks and culture markers'
               style={main.image}
@@ -172,41 +186,52 @@ class MapBox extends Component {
               })}
             />
             <MediaQuery minDeviceWidth={992}>
-              <p 
-                style={{ opacity: this.state.activeCategory === 'schools' ? 1 : .4 }} 
-                className='text-center'
+              <p
+
+                style={{ cursor: 'pointer', opacity: this.state.activeCategory === 'schools' ? 1 : .4 }} 
+                className='text-center uppercase'
               >
                 Schools, Parks, and Culture
               </p>
             </MediaQuery>
           </Col>
-          <Col xs={3}>
+          <Col 
+            xs={3}
+            onClick={() => this.setState({ 
+              activeCategory: 'fitness', 
+              activeLocation: false
+            })}
+          >
             <img
               alt='Link to active fitness and hospitality markers'
               style={main.image}
               src={`/images/icons/illustration/dog_walker${this.state.activeCategory === 'fitness' ? '' : '_bw'}.svg`}
-              onClick={() => this.setState({ activeCategory: 'fitness', activeLocation: false})}
             />
             <MediaQuery minDeviceWidth={992}>
-              <p 
-                style={{ opacity: this.state.activeCategory === 'fitness' ? 1 : .4 }} 
-                className='text-center'
+              <p
+                style={{ cursor: 'pointer', opacity: this.state.activeCategory === 'fitness' ? 1 : .4 }} 
+                className='text-center uppercase'
               >
                 Fitness and Hospitality
               </p>
             </MediaQuery>
           </Col>
-          <Col xs={3}>
+          <Col 
+            xs={3}
+            onClick={() => this.setState({ 
+              activeCategory: 'shopping', 
+              activeLocation: false
+            })}
+          >
             <img
               alt='Link to active shopping markers'
               style={main.image}
               src={`/images/icons/illustration/wobbly_legs${this.state.activeCategory === 'shopping' ? '' : '_bw'}.svg`}
-              onClick={() => this.setState({ activeCategory: 'shopping', activeLocation: false})}
             />
             <MediaQuery minDeviceWidth={992}>
               <p 
-                style={{ opacity: this.state.activeCategory === 'shopping' ? 1 : .4 }} 
-                className='text-center'
+                style={{ cursor: 'pointer', opacity: this.state.activeCategory === 'shopping' ? 1 : .4 }} 
+                className='text-center uppercase'
               >
                 Shopping
               </p>

@@ -96,7 +96,7 @@ class Floorplans extends Component {
           let unitCategory = (
             <Row className={`floorplan-row-${c}`} key={`floorplan_row_${rowCounter}`}>
               <Col xl={12}>
-                <h2 className='text-center'>{`${c === 5 ? 'Penthouse/' + c : c} Bedrooms`}</h2>
+                <h2 className='text-center'>{`${c} Bedrooms`}</h2>
               </Col>
             </Row>
           ); 

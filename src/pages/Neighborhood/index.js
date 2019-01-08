@@ -57,7 +57,6 @@ class Neighborhood extends Component {
   };
 
   render() {
-
     return (
       <React.Fragment>
         <div
@@ -290,7 +289,7 @@ class Neighborhood extends Component {
         <div style={{ background: 'white' }}>
           <div className="neighborhood-map-container">
             <Grid fluid>
-              <MapBox />
+              <MapBox width={this.props.width} />
             </Grid>
           </div>
         </div>

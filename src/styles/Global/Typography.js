@@ -69,6 +69,10 @@ const typography = {
   '.text-center': {
     textAlign: 'center'
   },
+  // Uppercase
+  '.uppercase': {
+    textTransform: 'uppercase'
+  },
   // No Margin global style
   '.no-margin': {
     margin: 0
