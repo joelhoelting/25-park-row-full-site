@@ -53,6 +53,9 @@ class Floorplan extends Component {
             margin: 0,
             padding: `0 ${pxToRem(20)}`
           },
+          hasTwoLevels: {
+            fontSize: pxToRem(12)
+          },
           view: {
             fontFamily: 'Maison Neue Extended Book, sans-serif',
             fontSize: pxToRem(12),
@@ -121,8 +124,8 @@ class Floorplan extends Component {
     };
 
     const { main } = styles;
-    const { bathrooms, bedrooms, interior, imgSrc, price, residence } = this.props.unit;
-
+    const { bathrooms, bedrooms, hasTwoLevels, interior, imgSrc, price, residence } = this.props.unit;
+    
     return (
       <div style={main} 
         onClick={() => this.handleClick()}
@@ -130,7 +133,10 @@ class Floorplan extends Component {
         onMouseLeave={() => this.floorplanHoverOff()}
       >
         <div style={main.titleSection}>
-          <p className='no-margin'>{`Residence ${residence}`}</p>
+          <div>
+            <p className='no-margin'>{`Residence ${residence}`}</p>
+            { hasTwoLevels ? <p style={main.titleSection.hasTwoLevels} className='no-margin'>Main Level & Upper Level</p> : null }
+          </div>
           <h4 className='no-margin' style={main.titleSection.view}>View</h4>
         </div>
         <div style={main.floorplanSection}>
