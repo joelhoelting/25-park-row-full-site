@@ -107,8 +107,8 @@ const FloorplanOverlay = (props) => {
     props.toggleOverlay();
   };
 
-  const { bathrooms, bedrooms, interior, price, residence } = props.unit;
-
+  const { bathrooms, bedrooms, interior, imgSrc, price, residence } = props.unit;
+  
   return (
     <div style={[styles.main, props.active ? styles.main.active : null]}>
       <div style={styles.main.inner}>
@@ -157,7 +157,7 @@ const FloorplanOverlay = (props) => {
         <div style={styles.main.inner.floorplan}>
           <img 
             style={styles.main.inner.floorplan.img} 
-            src={`/images/floorplans/25PR_${residence}_rest.svg`} 
+            src={`/images/floorplans/rest/${imgSrc}_Rest.svg`} 
             alt={`Floorplan overlay of residence ${residence}`}
           />
         </div>
