@@ -109,7 +109,7 @@ const availabilityData = `
 	<Listing>
 		<Location>
 			<StreetAddress>20 East End Avenue - Apt: 5B</StreetAddress>
-			<UnitNumber>5A</UnitNumber>
+			<UnitNumber>6B</UnitNumber>
 			<City>Manhattan</City>
 			<State>NY</State>
 			<Zip>10028</Zip>
@@ -215,7 +215,7 @@ const availabilityData = `
 	<Listing>
 		<Location>
 			<StreetAddress>20 East End Avenue - Apt: 7C</StreetAddress>
-			<UnitNumber>5D</UnitNumber>
+			<UnitNumber>11C</UnitNumber>
 			<City>Manhattan</City>
 			<State>NY</State>
 			<Zip>10028</Zip>
@@ -539,7 +539,7 @@ const availabilityData = `
 	<Listing>
 		<Location>
 			<StreetAddress>20 East End Avenue - Apt: M</StreetAddress>
-			<UnitNumber>40A</UnitNumber>
+			<UnitNumber>45PH</UnitNumber>
 			<City>Manhattan</City>
 			<State>NY</State>
 			<Zip>10028</Zip>

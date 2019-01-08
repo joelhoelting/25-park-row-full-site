@@ -23,7 +23,7 @@ const Map = ReactMapboxGl({
   scrollZoom: false
 });
 
-const MapInline = {
+const MapBoxInline = {
   main: {
     image: {
       maxHeight: pxToRem(150),
@@ -41,9 +41,9 @@ const MapInline = {
   }
 };
 
-const { main } = MapInline;
+const { main } = MapBoxInline;
 
-const MapCSS = {
+const MapBoxCSS = {
   '.mapboxgl-map': {
     border: '1px solid #000'
   },
@@ -90,8 +90,6 @@ class MapBox extends Component {
         key={index}
         coordinates={feature.coordinates}
         onClick={() => this.setState({ activeLocation: feature })}
-        // onMouseEnter={() => this.setState({ activeLocation: feature })}
-        // onMouseLeave={() => this.setState({ activeLocation: undefined })}
       />
     ));
   }
@@ -246,7 +244,7 @@ class MapBox extends Component {
             center={[-74.007377, 40.711464]}
             onClick={() => this.setState({ activeLocation: undefined})}
           >
-            <Style rules={MapCSS} />
+            <Style rules={MapBoxCSS} />
             <ZoomControl position={'top-right'} />
             <Marker coordinates={[-74.007377, 40.711464]} anchor="center">
               <img

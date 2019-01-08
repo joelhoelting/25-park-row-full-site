@@ -31,7 +31,6 @@ class Floorplan extends Component {
   }
 
   render() {
-    
     const { phone, tablet, tabletLandscape, desktop, desktopSmall, desktopLarge } = mediaQueries;
     const styles = {
       main: {
@@ -43,7 +42,7 @@ class Floorplan extends Component {
             cursor: 'pointer',
             background: colorVars.floorplanBlue,
             boxShadow: '2px 2px 3px rgba(0,0,0,.2)',
-          },
+          }
         },
         titleSection: {
           display: 'flex', 
@@ -52,7 +51,7 @@ class Floorplan extends Component {
           margin: `${pxToRem(20)} 0`,
           [desktopSmall]: {
             margin: 0,
-            padding: `0 ${pxToRem(20)}`,
+            padding: `0 ${pxToRem(20)}`
           },
           view: {
             fontFamily: 'Maison Neue Extended Book, sans-serif',
@@ -122,8 +121,8 @@ class Floorplan extends Component {
     };
 
     const { main } = styles;
-    const { bathrooms, bedrooms, interior, price, residence } = this.props.unit;
-    
+    const { bathrooms, bedrooms, interior, imgSrc, price, residence } = this.props.unit;
+
     return (
       <div style={main} 
         onClick={() => this.handleClick()}
@@ -135,8 +134,8 @@ class Floorplan extends Component {
           <h4 className='no-margin' style={main.titleSection.view}>View</h4>
         </div>
         <div style={main.floorplanSection}>
-          <img 
-            src={this.state.hover ? `/images/floorplans/25PR_${residence}_hover.svg` : `/images/floorplans/25PR_${residence}_rest.svg`} 
+          <img
+            src={this.state.hover ? `/images/floorplans/hover/${imgSrc}_Hover.svg` : `/images/floorplans/rest/${imgSrc}_Rest.svg`} 
             style={main.floorplanSection.img}
             alt={`Floorplan ${residence}`}
           />

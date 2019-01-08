@@ -5,14 +5,11 @@ import { parseString } from 'xml2js';
 
 import localAvailabilityData from 'data/localAvailabilityData';
 import Floorplan from './Floorplan';
-
-// Media Queries
-import { globalMediaQueries } from 'styles/Global/MediaQueries';
-// Math
-import { insertCommas } from 'helpers/Math';
-
-// Overlay
 import FloorplanOverlay from './FloorplanOverlay';
+
+import { globalMediaQueries } from 'styles/Global/MediaQueries';
+import { insertCommas } from 'helpers/Math';
+import { generateFloorplanSrc } from 'helpers/Floorplans';
 
 // Data for Floorplans
 // https://www.corcoran.com/newdevxml/606NewDevs.xml
@@ -38,6 +35,8 @@ class Floorplans extends Component {
       }
     };
 
+    // Two floor units
+    this.twoLevelUnits = ['5A', '15B', '45PH'];
     // Parse initial data
     this.parseData();
   }
@@ -76,7 +75,18 @@ class Floorplans extends Component {
         exterior: '',
         price: insertCommas(listing.ListingDetails[0].Price[0])
       };
+      
+      let { residence } = listingObj;
+      // Determine if unit has two levels
+      if (this.twoLevelUnits.includes(residence)) {
+        listingObj.hasTwoLevels = true;
+      } else {
+        listingObj.hasTwoLevels = false;
+      }
 
+      let imgFilename = generateFloorplanSrc(residence);
+      listingObj.imgSrc = imgFilename;
+      
       this.parsedUnits[bedrooms].push(listingObj);
     });
   }
@@ -96,13 +106,12 @@ class Floorplans extends Component {
           let unitCategory = (
             <Row className={`floorplan-row-${c}`} key={`floorplan_row_${rowCounter}`}>
               <Col xl={12}>
-                <h2 className='text-center'>{`${c} Bedrooms`}</h2>
+                <h3 className='text-center'>{`${c} Bedrooms`}</h3>
               </Col>
             </Row>
           ); 
           rows.push(unitCategory);
           rowCounter++;
-          
 
           for (let u = 0; u < categoryLength; u++) {
             let colClass = () => {
