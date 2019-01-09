@@ -55,7 +55,7 @@ const SmallImage = (props) => {
                 </g>
               </svg>
               <div className={context.state.captionActive ? 'caption-main-small active' : 'caption-main-small'}>
-                <h5 className={context.state.captionActive ? 'caption active' : 'caption'}>
+                <h5 className='caption'>
                   {props.caption}
                 </h5>
               </div>

@@ -20,10 +20,10 @@ const slick = {
     content: 'none'
   },
   '.slick-next': {
-    right: '-60px'
+    right: '-12%'
   },
   '.slick-prev': {
-    left: '-60px'
+    left: '-12%'
   },
   '.slick-arrow': {
     display: 'none !important'
@@ -68,7 +68,20 @@ const slick = {
     },
     [globalMediaQueries.desktopSmall]: {
       '.slick-arrow': {
-        display: 'block !important'
+        display: 'block !important',
+        borderRadius: '50%',
+        padding: '20px',
+      },
+      '.gallery-prev-arrow': {
+        position: 'relative',
+        right: '4px'
+      },
+      '.gallery-next-arrow': {
+        position: 'relative',
+        left: '4px'
+      },
+      '.slick-arrow:hover': {
+        background: 'rgba(56, 56, 56, .6)'
       }
     }
   }

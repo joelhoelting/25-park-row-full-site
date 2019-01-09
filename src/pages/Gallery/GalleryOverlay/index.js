@@ -3,11 +3,9 @@ import Radium from 'radium';
 import Slider from 'react-slick';
 import Context from 'config/Context';
 
-import { mediaQueries } from 'styles/Global/MediaQueries';
-// Math
-import { pxToRem } from 'helpers/Math';
-// Responsive Images
 import { LargeImage } from 'helpers/Image/ResponsiveImage/_module';
+import { mediaQueries } from 'styles/Global/MediaQueries';
+import { pxToRem } from 'helpers/Math';
 
 const PrevArrow = props => {
   const { className, style, onClick } = props;
@@ -22,7 +20,8 @@ const PrevArrow = props => {
       }}
       onClick={onClick}
     >
-      <img 
+      <img
+        className='gallery-prev-arrow' 
         alt='Gallery previous arrow'
         src="/images/icons/gallery_left.svg" />
     </div>
@@ -42,7 +41,8 @@ const NextArrow = props => {
       }}
       onClick={onClick}
     >
-      <img 
+      <img
+        className='gallery-next-arrow' 
         alt='Gallery next arrow'
         src="/images/icons/gallery_right.svg" />
     </div>
@@ -60,9 +60,16 @@ class GalleryOverlay extends React.Component {
     this.overlayRef = React.createRef();
   }
 
-  handleClose(context) {
-    this.props.toggleCarousel();
-    context.toggleVerticalScroll();
+  handleClose(event, context) {
+    let divClicked = event.target.classList.contains('gallery-overlay');
+    let closeBtnClicked = event.target.classList.contains('gallery-close-button');
+
+    if (divClicked || closeBtnClicked ) {
+      this.props.toggleCarousel();
+      context.toggleVerticalScroll();
+    } else {
+      return;
+    }
   }
 
   render() {
@@ -116,6 +123,7 @@ class GalleryOverlay extends React.Component {
         padding: '1%'
       }
     };
+
     let carouselSettings = {
       dots: false,
       easing: 'ease-in-out',
@@ -144,6 +152,7 @@ class GalleryOverlay extends React.Component {
         });
       }
     };
+
     // Scroll to clicked slide
     if (this.props.currentIndex !== this.state.currentSlide) {
       this.slider.slickGoTo(this.props.currentIndex, true);
@@ -152,7 +161,11 @@ class GalleryOverlay extends React.Component {
     return (
       <Context.Consumer>
         {context => (
-          <div style={[styles.main, this.props.active ? styles.main.active : null]}>
+          <div
+            className='gallery-overlay'
+            onClick={(event) => this.handleClose(event, context)}
+            style={[styles.main, this.props.active ? styles.main.active : null]}
+          >
             <Slider
               style={{ height: '100%' }}
               ref={slider => (this.slider = slider)}
@@ -173,9 +186,10 @@ class GalleryOverlay extends React.Component {
             </Slider>
             <img
               alt='Gallery close button'
+              className='gallery-close-button'
               style={styles.main.close}
               src="/images/icons/close_white.svg"
-              onClick={() => this.handleClose(context)}
+              onClick={(event) => this.handleClose(event, context)}
             />
           </div>
         )}

@@ -21,7 +21,8 @@ class Gallery extends Component {
         currentSlide: 0,
         imageCaption: '',
         imageTitle: ''
-      }
+      },
+      mounted: false
     };
 
     this.hidden = React.createRef();
@@ -135,7 +136,10 @@ class Gallery extends Component {
         <Style rules={{ body: { backgroundColor: this.props.color } }} />
         <Style rules={stylesCSS} />
         <Grid fluid>
-          <div className={`gallery-container ${!this.state.mounted ? 'hidden' : ''}`}>
+          <div 
+            className={`gallery-container ${!this.state.mounted ? 'hidden' : ''}`}
+            style={{ minHeight: !this.state.mounted ? '100vh' : '20vh'}}
+          >
             {mapGallery}
           </div>
         </Grid>

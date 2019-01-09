@@ -14,7 +14,7 @@ const captions = {
     transition: 'max-height 200ms ease-in-out',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   '.caption-main-small': {
     height: '25%'
@@ -32,7 +32,7 @@ const captions = {
     opacity: 0,
     visibility: 'hidden',
     textAlign: 'left',
-    fontSize: pxToRem(10),
+    fontSize: '10px',
     textTransform: 'uppercase',
     paddingRight: '10%'
   },
@@ -73,7 +73,7 @@ const captions = {
         maxHeight: '10%',
       },
       '.caption': {
-        fontSize: pxToRem(14),
+        fontSize: '14px',
         paddingRight: pxToRem(20),
       }
     },
