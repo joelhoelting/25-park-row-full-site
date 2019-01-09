@@ -6,7 +6,7 @@ class ContextProvider extends Component {
     super(props);
     
     this.state = {
-      captionActive: false
+      captionActive: true
     };
 
     this.body = document.querySelector('body');
