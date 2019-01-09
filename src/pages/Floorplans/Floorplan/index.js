@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
+import Context from 'config/Context';
 
 import { mediaQueries } from 'styles/Global/MediaQueries';
 import { pxToRem, feetToMeters } from 'helpers/Math';
@@ -14,8 +15,9 @@ class Floorplan extends Component {
     };
   }
   
-  handleClick() {
+  handleOpenOverlay(context) {
     this.props.toggleOverlay(this.props.unit);
+    context.toggleVerticalScroll();
   }
 
   floorplanHoverOn() {
@@ -127,44 +129,49 @@ class Floorplan extends Component {
     const { bathrooms, bedrooms, hasTwoLevels, interior, imgSrc, price, residence } = this.props.unit;
     
     return (
-      <div style={main} 
-        onClick={() => this.handleClick()}
-        onMouseOver={() => this.floorplanHoverOn()}
-        onMouseLeave={() => this.floorplanHoverOff()}
-      >
-        <div style={main.titleSection}>
-          <div>
-            <p className='no-margin'>{`Residence ${residence}`}</p>
-            { hasTwoLevels ? <p style={main.titleSection.hasTwoLevels} className='no-margin'>Main Level & Upper Level</p> : <p style={[main.titleSection.hasTwoLevels, {opacity: 0}]} className='no-margin'>Single Level</p> }
+      <Context.Consumer>
+        {context => (
+          <div style={main} 
+            onClick={() => this.handleOpenOverlay(context)}
+            onMouseOver={() => this.floorplanHoverOn()}
+            onMouseLeave={() => this.floorplanHoverOff()}
+          >
+            <div style={main.titleSection}>
+              <div>
+                <p className='no-margin'>{`Residence ${residence}`}</p>
+                { hasTwoLevels ? <p style={main.titleSection.hasTwoLevels} className='no-margin'>Main Level & Upper Level</p> : <p style={[main.titleSection.hasTwoLevels, {opacity: 0}]} className='no-margin'>Single Level</p> }
+              </div>
+              <h4 className='no-margin' style={main.titleSection.view}>View</h4>
+            </div>
+            <div style={main.floorplanSection}>
+              <img
+                src={this.state.hover ? `/images/floorplans/hover/${imgSrc}_Hover.svg` : `/images/floorplans/rest/${imgSrc}_Rest.svg`} 
+                style={main.floorplanSection.img}
+                alt={`Floorplan ${residence}`}
+              />
+            </div>
+            <div style={ main.detailSection }>
+              <div className="bedrooms" style={main.detailSection.subSection}>
+                <p className='no-margin' style={main.detailSection.subSection.p}>{`${bedrooms} Bedrooms`}</p>
+                <p className='no-margin' style={main.detailSection.subSection.p}>{`${bathrooms} Bathrooms`}</p>
+              </div>
+              <div className="interior_sf" style={main.detailSection.subSection}>
+                <p className='no-margin' style={main.detailSection.subSection.p}>Interior</p>
+                <p className='no-margin' style={main.detailSection.subSection.p}>{`${interior} SF/${feetToMeters(interior)} SM`}</p>
+              </div>
+              <div className="exterior_sf" style={main.detailSection.subSection}>
+                <p className='no-margin' style={main.detailSection.subSection.p}>Exterior</p>
+                <p className='no-margin' style={main.detailSection.subSection.p}>2,276 SF/348 SM</p>
+              </div>
+              <div className="price" style={main.detailSection.subSection}>
+                <p className='no-margin' style={main.detailSection.subSection.p}>Price</p>
+                <p className='no-margin' style={main.detailSection.subSection.p}>{`$${price}`}</p>
+              </div>
+            </div>
           </div>
-          <h4 className='no-margin' style={main.titleSection.view}>View</h4>
-        </div>
-        <div style={main.floorplanSection}>
-          <img
-            src={this.state.hover ? `/images/floorplans/hover/${imgSrc}_Hover.svg` : `/images/floorplans/rest/${imgSrc}_Rest.svg`} 
-            style={main.floorplanSection.img}
-            alt={`Floorplan ${residence}`}
-          />
-        </div>
-        <div style={ main.detailSection }>
-          <div className="bedrooms" style={main.detailSection.subSection}>
-            <p className='no-margin' style={main.detailSection.subSection.p}>{`${bedrooms} Bedrooms`}</p>
-            <p className='no-margin' style={main.detailSection.subSection.p}>{`${bathrooms} Bathrooms`}</p>
-          </div>
-          <div className="interior_sf" style={main.detailSection.subSection}>
-            <p className='no-margin' style={main.detailSection.subSection.p}>Interior</p>
-            <p className='no-margin' style={main.detailSection.subSection.p}>{`${interior} SF/${feetToMeters(interior)} SM`}</p>
-          </div>
-          <div className="exterior_sf" style={main.detailSection.subSection}>
-            <p className='no-margin' style={main.detailSection.subSection.p}>Exterior</p>
-            <p className='no-margin' style={main.detailSection.subSection.p}>2,276 SF/348 SM</p>
-          </div>
-          <div className="price" style={main.detailSection.subSection}>
-            <p className='no-margin' style={main.detailSection.subSection.p}>Price</p>
-            <p className='no-margin' style={main.detailSection.subSection.p}>{`$${price}`}</p>
-          </div>
-        </div>
-      </div>
+        )}
+      </Context.Consumer>
+      
     );
   }
 }

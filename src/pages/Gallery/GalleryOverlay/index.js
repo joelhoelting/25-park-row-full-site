@@ -1,6 +1,7 @@
 import React from 'react';
 import Radium from 'radium';
 import Slider from 'react-slick';
+import Context from 'config/Context';
 
 import { mediaQueries } from 'styles/Global/MediaQueries';
 // Math
@@ -57,6 +58,11 @@ class GalleryOverlay extends React.Component {
       scrolled: false
     };
     this.overlayRef = React.createRef();
+  }
+
+  handleClose(context) {
+    this.props.toggleCarousel();
+    context.toggleVerticalScroll();
   }
 
   render() {
@@ -149,37 +155,41 @@ class GalleryOverlay extends React.Component {
     }
     // Reset state after overlay is closed
     return (
-      <div style={[styles.main, this.props.active ? styles.main.active : null]}>
-        <Slider
-          style={{ height: '100%' }}
-          ref={slider => (this.slider = slider)}
-          {...carouselSettings}
-        >
-          {this.props.carouselArray.map(slide => {
-            return (
-              <div style={{ height: '100%' }} key={slide.key}>
-                <div className="gallery-img-col" style={styles.imgContainer}>
-                  <div style={{ maxHeight: '100%' }} />
-                  <LargeImage
-                    noMobile
-                    style={styles.carouselImg}
-                    src={slide.src}
-                    key={slide.key}
-                    width="100%"
-                  />
-                  <div style={{ maxHeight: '100%' }} />
-                </div>
-              </div>
-            );
-          })}
-        </Slider>
-        <img
-          alt='Gallery close button'
-          style={styles.main.close}
-          src="/images/icons/close_white.svg"
-          onClick={() => this.props.toggleCarousel()}
-        />
-      </div>
+      <Context.Consumer>
+        {context => (
+          <div style={[styles.main, this.props.active ? styles.main.active : null]}>
+            <Slider
+              style={{ height: '100%' }}
+              ref={slider => (this.slider = slider)}
+              {...carouselSettings}
+            >
+              {this.props.carouselArray.map(slide => {
+                return (
+                  <div style={{ height: '100%' }} key={slide.key}>
+                    <div className="gallery-img-col" style={styles.imgContainer}>
+                      <div style={{ maxHeight: '100%' }} />
+                      <LargeImage
+                        noMobile
+                        style={styles.carouselImg}
+                        src={slide.src}
+                        key={slide.key}
+                        width="100%"
+                      />
+                      <div style={{ maxHeight: '100%' }} />
+                    </div>
+                  </div>
+                );
+              })}
+            </Slider>
+            <img
+              alt='Gallery close button'
+              style={styles.main.close}
+              src="/images/icons/close_white.svg"
+              onClick={() => this.handleClose(context)}
+            />
+          </div>
+        )}
+      </Context.Consumer>
     );
   }
 }

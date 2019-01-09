@@ -1,4 +1,5 @@
 import React from 'react';
+import Context from 'config/Context';
 
 import ExpandIcon from './ExpandIcon';
 
@@ -39,25 +40,38 @@ const ExpandImage = (props) => {
     }
     return srcSet;
   };
+
+  const handleToggleCarousel = (index, context) => {
+    props.toggleCarousel(index);
+    context.toggleVerticalScroll();
+  };
   
   return (
-    <div className='gallery-image' style={styles.main} onClick={() => props.toggleCarousel(props.carouselIndex)}>
-      <picture>
-        <source 
-          media='(max-width: 992px)' 
-          srcSet={mobileSrcSet()}
-        />
-        <source 
-          media='(min-width: 992px)'
-          srcSet={src + '_' + desktop[1200] + '.jpg 1200w, ' + src + '_' + desktop[1600] + '.jpg 1600w, ' + src + '_' + desktop[2000] + '.jpg 2000w, ' + src + '_' + desktop[2400] + '.jpg 2400w, ' + src + '_' + desktop[2800] + '.jpg 2800w, ' + src + '_' + desktop[3200] + '.jpg 3200w'}
-        />
-        <img 
-          alt={props.caption}
-          style={styles.main.image}
-        />
-      </picture>
-      <ExpandIcon />
-    </div>
+    <Context.Consumer>
+      {context => (
+        <div 
+          className='gallery-image' 
+          style={styles.main} 
+          onClick={() => handleToggleCarousel(props.carouselIndex, context)}
+        >
+          <picture>
+            <source 
+              media='(max-width: 992px)' 
+              srcSet={mobileSrcSet()}
+            />
+            <source 
+              media='(min-width: 992px)'
+              srcSet={src + '_' + desktop[1200] + '.jpg 1200w, ' + src + '_' + desktop[1600] + '.jpg 1600w, ' + src + '_' + desktop[2000] + '.jpg 2000w, ' + src + '_' + desktop[2400] + '.jpg 2400w, ' + src + '_' + desktop[2800] + '.jpg 2800w, ' + src + '_' + desktop[3200] + '.jpg 3200w'}
+            />
+            <img 
+              alt={props.caption}
+              style={styles.main.image}
+            />
+          </picture>
+          <ExpandIcon />
+        </div>
+      )}
+    </Context.Consumer>
   );
 };
 
