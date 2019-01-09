@@ -8,35 +8,10 @@ const slick = {
     margin: `${pxToRem(5)} 0`
   },
   '.gallery-slider': {
-    width: '80%',
-    height: '80%',
+    width: '75%',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)'
-  },
-  '.slick-list': {
-    height: '100%',
-    width: '100%'
-  },
-  '.slick-track': {
-    height: '100%',
-    width: '100%'
-  },
-  '.slick-slide div': {
-    height: '100%',
-    width: '100%'
-  },
-  '.gallery-img-col': {
-    width: '100%',
-    height: '100%'
-  },
-  '.gallery-img-col .large-image': {
-    width: '100%',
-    height: '100%'
-  },
-  '.gallery-img-col .large-image img': {
-    maxHeight: '100%',
-    maxWidth: '100%',
   },
   '.slick-next::before': {
     content: 'none'
@@ -76,25 +51,6 @@ const slick = {
   },
   mediaQueries: {
     [globalMediaQueries.tabletLandscape]: {
-      '.slick-list': {
-        // height: 'auto'
-      },
-      '.gallery-slider': {
-        width: '90%',
-        height: '90%',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)'
-      },
-      '.slick-track': {
-        height: '100%'
-      },
-      '.slick-slide': {
-        height: '100%'
-      },
-      '.slick-slide div': {
-        height: '100%'
-      },
       '.slider-dots': {
         margin: `${pxToRem(5)} 0`
       },

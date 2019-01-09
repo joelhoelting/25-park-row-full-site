@@ -24,7 +24,7 @@ const PrevArrow = props => {
     >
       <img 
         alt='Gallery previous arrow'
-        src="/images/icons/gallery-left.svg" />
+        src="/images/icons/gallery_left.svg" />
     </div>
   );
 };
@@ -44,7 +44,7 @@ const NextArrow = props => {
     >
       <img 
         alt='Gallery next arrow'
-        src="/images/icons/gallery-right.svg" />
+        src="/images/icons/gallery_right.svg" />
     </div>
   );
 };
@@ -111,17 +111,12 @@ class GalleryOverlay extends React.Component {
         height: 'auto',
         width: 'auto'
       },
-      imgContainer: {
-        display: 'flex',
-        flexDirection: 'column'
-      },
       navArrows: {
         height: '5%',
         padding: '1%'
       }
     };
     let carouselSettings = {
-      accessibility: true,
       dots: false,
       easing: 'ease-in-out',
       lazyLoad: true,
@@ -153,7 +148,7 @@ class GalleryOverlay extends React.Component {
     if (this.props.currentIndex !== this.state.currentSlide) {
       this.slider.slickGoTo(this.props.currentIndex, true);
     }
-    // Reset state after overlay is closed
+    
     return (
       <Context.Consumer>
         {context => (
@@ -165,19 +160,14 @@ class GalleryOverlay extends React.Component {
             >
               {this.props.carouselArray.map(slide => {
                 return (
-                  <div style={{ height: '100%' }} key={slide.key}>
-                    <div className="gallery-img-col" style={styles.imgContainer}>
-                      <div style={{ maxHeight: '100%' }} />
-                      <LargeImage
-                        noMobile
-                        style={styles.carouselImg}
-                        src={slide.src}
-                        key={slide.key}
-                        width="100%"
-                      />
-                      <div style={{ maxHeight: '100%' }} />
-                    </div>
-                  </div>
+                  <LargeImage
+                    noMobile
+                    caption={slide.caption}
+                    style={styles.carouselImg}
+                    src={slide.src}
+                    key={slide.key}
+                    width="100%"
+                  />
                 );
               })}
             </Slider>
