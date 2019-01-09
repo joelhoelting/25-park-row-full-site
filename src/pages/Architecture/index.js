@@ -51,7 +51,7 @@ class Architecture extends Component {
                 onLeave={() => this.triggerAnimation(0, false)} 
               >
                 <LargeImage 
-                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  caption='At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   src='/images/pages/architecture/building_exterior_lantern_terrace'
                   width='100%'
                   onLoad={() => this.initialImageLoad()} 
@@ -92,7 +92,7 @@ class Architecture extends Component {
                 onLeave={() => this.triggerAnimation(2, false)}
               >
                 <SmallImage 
-                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' 
+                  caption='At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.' 
                   src='/images/pages/architecture/building_across_the_park'
                 />
               </Waypoint>
@@ -108,7 +108,7 @@ class Architecture extends Component {
                 onLeave={() => this.triggerAnimation(3, false)}
               >
                 <LargeImage 
-                  caption='25 Park Row is a 21st century architectural icon providing unmatched views from every residence over historic City Hall Park. This stunner on the Manhattan skyline offers a transcendent living experience in the new Downtown.'
+                  caption='At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   src='/images/pages/architecture/exterior_lobby_entry' 
                   width='100%' 
                 />
@@ -144,7 +144,7 @@ class Architecture extends Component {
                 onLeave={() => this.triggerAnimation(5, false)}
               >
                 <LargeImage 
-                  caption='25 Park Row is a 21st century architectural icon providing unmatched views from every residence over historic City Hall Park. This stunner on the Manhattan skyline offers a transcendent living experience in the new Downtown.'
+                  caption='At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   src='/images/pages/architecture/interior_lobby' 
                   width='100%' 
                 />
@@ -192,7 +192,7 @@ class Architecture extends Component {
                 onLeave={() => this.triggerAnimation(9, false)}
               >
                 <LargeImage 
-                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  caption='At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   src='/images/pages/architecture/building_exterior_loggias' 
                   width='100%'    
                 />
@@ -209,7 +209,7 @@ class Architecture extends Component {
                 onLeave={() => this.triggerAnimation(10, false)}
               >
                 <LargeImage
-                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  caption='At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   src='/images/pages/architecture/building_exterior_facade' width='100%' />
               </Waypoint>
             </Col>

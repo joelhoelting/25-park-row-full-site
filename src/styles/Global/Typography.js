@@ -45,12 +45,6 @@ const typography = {
     fontWeight: 'bolder',
     textTransform: 'uppercase'
   },
-  'p.italic': {
-    fontStyle: 'italic',
-  },
-  'p.justify': {
-    textAlign: 'justify',
-  },
   // Link Styles
   a: {
     textDecoration: 'none',
@@ -76,6 +70,14 @@ const typography = {
   // Opaque
   '.lighten': {
     opacity: '.4'
+  },
+  // Italic
+  '.italic': {
+    fontStyle: 'italic',
+  },
+  // Justify
+  '.justify': {
+    textAlign: 'justify',
   },
   // No Margin global style
   '.no-margin': {

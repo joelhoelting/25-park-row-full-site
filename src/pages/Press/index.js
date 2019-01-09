@@ -81,7 +81,6 @@ class Press extends Component {
           </Row>
           {this.renderPressArticles()}
         </Grid>
-      
       </div>
     );
   }
