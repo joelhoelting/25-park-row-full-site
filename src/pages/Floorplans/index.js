@@ -84,8 +84,10 @@ class Floorplans extends Component {
         listingObj.hasTwoLevels = false;
       }
 
-      let imgFilename = generateFloorplanSrc(residence);
-      listingObj.imgSrc = imgFilename;
+      let srcObj = generateFloorplanSrc(residence);
+      
+      listingObj.imgSrc = srcObj.imgFilename;
+      listingObj.pdfSrc = srcObj.pdfFilename;
       
       this.parsedUnits[bedrooms].push(listingObj);
     });

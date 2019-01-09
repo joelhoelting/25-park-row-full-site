@@ -73,6 +73,10 @@ const typography = {
   '.uppercase': {
     textTransform: 'uppercase'
   },
+  // Opaque
+  '.lighten': {
+    opacity: '.4'
+  },
   // No Margin global style
   '.no-margin': {
     margin: 0

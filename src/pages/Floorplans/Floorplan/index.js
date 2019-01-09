@@ -135,7 +135,7 @@ class Floorplan extends Component {
         <div style={main.titleSection}>
           <div>
             <p className='no-margin'>{`Residence ${residence}`}</p>
-            { hasTwoLevels ? <p style={main.titleSection.hasTwoLevels} className='no-margin'>Main Level & Upper Level</p> : null }
+            { hasTwoLevels ? <p style={main.titleSection.hasTwoLevels} className='no-margin'>Main Level & Upper Level</p> : <p style={[main.titleSection.hasTwoLevels, {opacity: 0}]} className='no-margin'>Single Level</p> }
           </div>
           <h4 className='no-margin' style={main.titleSection.view}>View</h4>
         </div>
