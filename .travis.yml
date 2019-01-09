@@ -27,4 +27,3 @@ cache:
 dist: trusty
 install: npm install
 script: npm run build
-before_deploy: npm test
