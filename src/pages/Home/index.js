@@ -56,7 +56,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div className={'home-container'}>
+        <div className={'large-container'}>
           <Grid fluid>
             <Row style={{ minHeight: '20vh'}}>
               <Col className={this.animationString('architectureImg', 0, 0, 'home-column-img')} lg={6}>

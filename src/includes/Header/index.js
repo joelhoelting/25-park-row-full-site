@@ -136,9 +136,12 @@ class Header extends Component {
           backgroundColor: backgroundColor,
           transition: 'background-color 500ms ease-in-out, max-height 100ms linear',
           [mediaQueries.desktopSmall]: {
-            height: pxToRem(60),
+            height: '50px',
             maxHeight: 'none',
             alignItems: 'center',
+          },
+          [mediaQueries.desktopLarge]: {
+            height: '60px'
           },
           arrowBox: {
             height: '100%',
@@ -202,12 +205,6 @@ class Header extends Component {
             [mediaQueries.tablet]: {
               width: '80%',
             },
-            [mediaQueries.desktopSmall]: {
-              fontSize: pxToRem(14)
-            },
-            [mediaQueries.desktopLarge]: {
-              fontSize: pxToRem(18)
-            },
             mainLogo: {
               color
             }
@@ -228,7 +225,7 @@ class Header extends Component {
           lines: {
             background: color, 
             position: 'absolute',
-            height: pxToRem(2), 
+            height: '2px', 
             left: 0, 
             display: 'block',
             width: '100%',
@@ -260,17 +257,23 @@ class Header extends Component {
           width: '100%',
           backgroundColor: backgroundColor,
           transition: 'background-color 500ms ease-in-out',
-          height: pxToRem(30),
+          height: '30px',
+          [mediaQueries.desktopLarge]: {
+            height: '35px'
+          },
           bottomNav: {
-            width: 'calc(79.5% - 16px)',
+            width: '80%',
             display: 'inline-flex',
             flexFlow: 'row nowrap',
             justifyContent: 'space-between',
             alignItems: 'center',
             position: 'relative',
-            height: pxToRem(30),
+            height: '30px',
             margin: 'none',
             zIndex: 10,
+            [mediaQueries.desktopLarge]: {
+              height: '35px'
+            },
             '@media (max-width: 1199px)': {
               width: '100%',
               position: 'fixed',

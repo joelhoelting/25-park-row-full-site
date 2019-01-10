@@ -137,7 +137,7 @@ class Gallery extends Component {
         <Style rules={stylesCSS} />
         <Grid fluid>
           <div 
-            className={`gallery-container ${!this.state.mounted ? 'hidden' : ''}`}
+            className={`large-container ${!this.state.mounted ? 'hidden' : ''}`}
             style={{ minHeight: !this.state.mounted ? '100vh' : '20vh'}}
           >
             {mapGallery}

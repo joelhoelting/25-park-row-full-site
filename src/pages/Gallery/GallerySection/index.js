@@ -54,7 +54,7 @@ const GallerySection = (props) => {
     <div>
       <Row>
         <Col sm={12}>
-          <h2 className='text-center' style={styles.main.header}>{props.title}</h2>
+          <h3 className='text-center' style={styles.main.header}>{props.title}</h3>
         </Col>
       </Row>
       {buildRows()}

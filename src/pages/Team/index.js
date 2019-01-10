@@ -43,7 +43,7 @@ class Team extends Component {
         let categoryTitle = (
           <Row key={`team_row_${rowCounter}`} className={`team-row ${c === 0 ? 'team-row-first' : ''}`}>
             <Col lg={12}>
-              <h2 className='text-center'>{teamCategory}</h2>
+              <h3 className='text-center'>{teamCategory}</h3>
             </Col>
           </Row>
         ); 
@@ -136,9 +136,7 @@ class Team extends Component {
       <div className={`full-width-container ${!this.state.mounted ? 'hidden' : ''}`}>
         <Style rules={{'body': { backgroundColor: this.props.color }}}/>
         <Style rules={TeamCSS} />
-        <div className='team-container'>
-          {this.renderTeams()}
-        </div>
+        {this.renderTeams()}
       </div>
     );
   }

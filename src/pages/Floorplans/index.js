@@ -206,7 +206,7 @@ class Floorplans extends Component {
       <div>
         <Style rules={{'body': { backgroundColor: this.props.color }}}/>
         <Style rules={FloorplanCSS} />
-        <div className={`floorplan-container ${!this.state.mounted ? 'hidden' : ''}`}>
+        <div className={`full-width-container ${!this.state.mounted ? 'hidden' : ''}`}>
           {this.renderUnits()}
           <FloorplanOverlay 
             active={this.state.floorplanOverlay.active}

@@ -1,7 +1,9 @@
-import { pxToRem } from 'helpers/Math';
 import { globalMediaQueries } from './MediaQueries';
 
-const { tablet, desktopSmall } = globalMediaQueries;
+const { tablet, desktopSmall, desktopLarge } = globalMediaQueries;
+
+// TopNav - 50px (60px Large Screen)
+// LowerNav - 30px (35px Large Screen)
 
 const containers = {
   // Sticky Footer
@@ -13,64 +15,37 @@ const containers = {
   '.main-content': {
     flex: '1 0 auto'
   },
-  // Desktop Height
-  // Upper Nav: 60rem, Lower Nav: 30rem
-  // Mobile Height
-  // Upper Nav: 60(active)/40rem(inactive), Lower Nav: 100%
-
-  // Main Container (w/ top margin)
+  // Main Container
   '.main-container': {
-    marginTop: `120px`,
-    width: '100%',
     height: 'auto',
-    transition: 'opacity 400ms ease-in-out'
+    marginTop: `68px`,
+    transition: 'opacity 400ms ease-in-out',
+    width: '100%',
   },
-  // Home Container
-  '.home-container': {
-    marginTop: 'calc(120px - 8px)',
-    width: '100%',
+  // Large Container
+  '.large-container': {
     height: 'auto',
-    transition: 'opacity 400ms ease-in-out'
-  },
-  // Gallery Container
-  '.gallery-container': {
-    marginTop: `120px`,
+    marginTop: '60px',
+    transition: 'opacity 400ms ease-in-out',
     width: '100%',
-    height: 'auto',
-    transition: 'opacity 400ms ease-in-out'
-  },
-  // Floorplan Container
-  '.floorplan-container': {
-    marginTop: `120px`,
-    width: '100%',
-    height: 'auto',
-    paddingLeft: '8px',
-    paddingRight: '8px',
-    transition: 'opacity 400ms ease-in-out'
-  },
-  '.team-container': {
-    marginTop: `120px`,
-    width: '100%',
-    height: 'auto',
-    paddingLeft: '8px',
-    paddingRight: '8px',
-    transition: 'opacity 400ms ease-in-out'
   },
   // Full Width Container
   '.full-width-container': {
-    marginTop: `120px`,
-    width: '100%',
     height: 'auto',
-    transition: 'opacity 400ms ease-in-out'
+    marginTop: '50px',
+    paddingLeft: '8px',
+    paddingRight: '8px',
+    transition: 'opacity 400ms ease-in-out',
+    width: '100%',
   },
   // Contact Container
   '.contact-container': {
-    marginTop: 'calc(120px - 8px)',
+    height: 'auto',
     marginLeft: 'auto',
     marginRight: 'auto',
-    width: '90%',
-    height: 'auto',
-    transition: 'opacity 400ms ease-in-out'
+    marginTop: '50px',
+    transition: 'opacity 400ms ease-in-out',
+    width: '90%'
   },
   // Brochure Container
   '.brochure-container': {
@@ -99,65 +74,58 @@ const containers = {
       }
     },
     [desktopSmall]: {
-      /* Container Styles */
-      // Main Container (w/ top margin)
       '.main-container': {
-        marginTop: pxToRem(110),
-        paddingBottom: pxToRem(50),
-        width: '80%',
         marginLeft: 'auto',
         marginRight: 'auto',
+        marginTop: '100px',
+        maxWidth: '2000px',
+        paddingBottom: '50px',
+        width: '75%',
       },
-      // Home Container
-      '.home-container': {
+      '.large-container': {
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: pxToRem(110),
-        width: '98%'
+        marginTop: '90px',
+        width: '90%',
+        maxWidth: '2000px'
       },
-      // Gallery Container
-      '.gallery-container': {
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        marginTop: pxToRem(105),
-        width: '98%'
-      },
-      // Floorplan Container
-      '.floorplan-container': {
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        marginTop: pxToRem(105),
-        width: '100%'
-      },
-      // Team Container
       '.full-width-container': {
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        marginTop: pxToRem(105),
+        marginTop: '90px',
         width: '100%'
       },
-      // Contact Container
       '.contact-container': {
-        marginTop: 'calc(120px - 8px)',
-        width: '60%',
-        maxWidth: '1000px',
         height: 'auto',
-        transition: 'opacity 400ms ease-in-out'
+        marginTop: '90px',
+        maxWidth: '1000px',
+        transition: 'opacity 400ms ease-in-out',
+        width: '60%',
       },
-      // Brochure Container
       '.brochure-container': {
-        marginTop: pxToRem(110),
-        width: '100%',
+        left: 0,
+        marginTop: '110px',
         position: 'fixed',
         top: 0,
-        left: 0
+        width: '100%'
       },
-      // Neighborhood Map Container
       '.neighborhood-map-container': {
-        padding: `${pxToRem(50)} 0`,
+        padding: '50px 0',
         width: '80%',
         marginLeft: 'auto',
         marginRight: 'auto'
+      },
+    },
+    [desktopLarge]: {
+      '.large-container': {
+        marginTop: '105px',
+        width: '80%'
+      },
+      '.main-container': {
+        marginTop: '120px',
+        width: '65%',
+      },
+      '.full-width-container': {
+        marginTop: '105px',
+        width: '100%'
       },
     }
   }
