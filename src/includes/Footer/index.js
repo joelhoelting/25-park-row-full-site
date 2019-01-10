@@ -144,6 +144,9 @@ class Footer extends Component {
           padding: `${pxToRem(20)} 0`,
           color: color,
           height: '100%',
+          width: '25%',
+          background: 'red',
+          lineHeight: pxToRem(30),
           [tablet]: {
             fontSize: pxToRem(16),
             padding: `${pxToRem(20)} 0`,
