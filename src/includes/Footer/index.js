@@ -92,9 +92,7 @@ class Footer extends Component {
           width: pxToRem(30),
           height: pxToRem(30),
           ':hover': {
-            // Use a placeholder animation name in `animation`
             animation: 'x 300ms ease 0s forwards',
-            // Assign the result of `keyframes` to `animationName`
             animationName: arrowAnimation,
           }
         }
@@ -145,14 +143,12 @@ class Footer extends Component {
           color: color,
           height: '100%',
           width: '25%',
-          background: 'red',
           lineHeight: pxToRem(30),
           [tablet]: {
             fontSize: pxToRem(16),
             padding: `${pxToRem(20)} 0`,
           },
           [tabletLandscape]: {
-            width: '25%',
             ':hover': {
               textDecoration: 'underline',
             }
