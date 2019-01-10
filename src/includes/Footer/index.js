@@ -164,7 +164,8 @@ class Footer extends Component {
         },
         brochureWord: {
           animation: 'x 500ms ease',
-          animationName: wordAnimation
+          animationName: wordAnimation,
+          lineHeight: pxToRem(30)
         }
       }
     };
@@ -215,9 +216,9 @@ class Footer extends Component {
 
     const renderBrochureWord = () => {
       if (this.state.interval) {
-        return <span className='english' key='english' style={FooterInline.nav.brochureWord}>Brochure</span>;
+        return <span key='english' style={FooterInline.nav.brochureWord}>Brochure</span>;
       } else {
-        return <span className='chinese' key='chinese' style={FooterInline.nav.brochureWord}>宣传册</span>;
+        return <span key='chinese' style={FooterInline.nav.brochureWord}>宣传册</span>;
       }
     };
 
