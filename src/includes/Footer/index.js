@@ -15,7 +15,7 @@ class Footer extends Component {
   }
 
   componentDidMount() {
-    setInterval(() => this.changeBrochureWord(), 5000);
+    setInterval(() => this.changeBrochureWord(), 2500);
   }
 
   changeBrochureWord() {
