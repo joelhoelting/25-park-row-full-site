@@ -25,6 +25,7 @@ class Home extends Component {
     setTimeout(() => {
       this.setState({
         animate: {
+          ...this.state.animate,
           architectureImg: true,
           architecturePanel: true,
           interiorPanel: true,

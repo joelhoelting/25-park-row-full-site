@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Radium, {Style} from 'radium';
 import { Link } from 'react-router-dom';
+
 import { mediaQueries } from 'styles/Global/MediaQueries';
 import { pxToRem } from 'helpers/Math';
 
@@ -13,8 +14,6 @@ class Header extends Component {
     
     this.state = {
       mobileMenuActive: false,
-      lastScrollPosition: 0,
-      scrollDown: false,
       desktopNavPositions: {
         architecture: { position: '', width: '' },
         interiors: { position: '', width: '' },
@@ -49,13 +48,14 @@ class Header extends Component {
         this.mapNavSliderPositions();
       }, 100);
     });
-    // Listen for scroll and determine whether user scrolls up or down
-    window.addEventListener('scroll', () => this.scrollDirection());
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize');
-    window.removeEventListener('scroll');
+    window.removeEventListener('resize', () => {
+      setTimeout(() => {
+        this.mapNavSliderPositions();
+      }, 100);
+    });
   }
 
   closeMobileMenu() {
@@ -70,10 +70,8 @@ class Header extends Component {
   toggleMobileMenu() {
     if (!this.state.mobileMenuActive) {
       this.setState({ mobileMenuActive: true});
-      document.body.style.overflow = 'hidden';
     } else {
       this.setState({ mobileMenuActive: false});
-      document.body.style.overflow = 'initial';
     }
   }
 
@@ -96,15 +94,6 @@ class Header extends Component {
       });
       // Update state
       this.setState({ desktopNavPositions });
-    }
-  }
-
-  scrollDirection() {
-    let currentScrollPosition = window.scrollY || window.scrollTop || 0;
-    if (this.state.lastScrollPosition < currentScrollPosition && currentScrollPosition > 50) {
-      this.setState({ lastScrollPosition: currentScrollPosition, scrollDown: true });
-    } else {
-      this.setState({ lastScrollPosition: currentScrollPosition, scrollDown: false });
     }
   }
 
@@ -142,8 +131,7 @@ class Header extends Component {
           display: 'flex',
           flexFlow: 'row nowrap',
           justifyContent: 'space-between',
-          height: '60px',
-          maxHeight: !this.state.scrollDown ? '60px' : '40px',
+          height: '50px',
           position: 'relative',
           backgroundColor: backgroundColor,
           transition: 'background-color 500ms ease-in-out, max-height 100ms linear',
@@ -155,8 +143,11 @@ class Header extends Component {
           arrowBox: {
             height: '100%',
             width: '20%',
-            display: 'flex',
+            display: 'none',
             alignItems: 'center',
+            [mediaQueries.desktopSmall]: {
+              display: 'flex'
+            },
             left: {
               justifyContent: 'flex-start',
               paddingLeft: pxToRem(15),
@@ -197,30 +188,28 @@ class Header extends Component {
             },
           },
           logoDiv: {
-            width: '60%',
-            fontSize: '16px',
+            width: '65%',
+            margin: '0 auto',
+            fontSize: pxToRem(10),
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transform: 'translateY(2px)',
             [mediaQueries.phone]: {
-              fontSize: '18px'
+              width: '70%',
+              fontSize: pxToRem(12),
+            },
+            [mediaQueries.tablet]: {
+              width: '80%',
             },
             [mediaQueries.desktopSmall]: {
-              fontSize: '14px'
+              fontSize: pxToRem(14)
             },
             [mediaQueries.desktopLarge]: {
-              fontSize: '18px'
+              fontSize: pxToRem(18)
             },
-            desktopLogo: {
+            mainLogo: {
               color
-            },
-            mobileLogo: {
-              color,
-              position: 'relative',
-              transform: 'translateY(6px)',
-            },
-            currentPage: {
-              color,
-              position: 'relative',
-              transform: !this.state.scrollDown ? 'translateY(2px)' : 'translateY(0)',
-              opacity: !this.state.scrollDown ? 1 : 0
             }
           }
         },
@@ -228,17 +217,16 @@ class Header extends Component {
           border: 'none',
           borderRadius: 0,
           background: 'transparent',
-          left: '50%',
-          width: '35px',
-          height: '60px',
+          width: '30px',
+          height: '50px',
           position: 'fixed',
-          top: !this.state.scrollDown ? '60px' : '40px',
-          transform: 'translateX(-50%)',
+          top: 0,
+          right: '20px',
           padding: `${pxToRem(2)} 0`,
           zIndex: 100,
           transition: 'top 100ms linear',
           lines: {
-            background: this.state.mobileMenuActive ? '#000' : color, 
+            background: color, 
             position: 'absolute',
             height: pxToRem(2), 
             left: 0, 
@@ -265,15 +253,14 @@ class Header extends Component {
           border: 0,
           transition: 'opacity 500ms ease',
           hrDesktop: {
-            opacity: this.state.scrollDown ? 0 : 1,
+            opacity: 1,
           }
         },
         bottomNavWrapper: {
           width: '100%',
           backgroundColor: backgroundColor,
-          transition: 'background-color 500ms ease-in-out, max-height 300ms ease',
+          transition: 'background-color 500ms ease-in-out',
           height: pxToRem(30),
-          maxHeight: this.state.scrollDown ? '0' : pxToRem(30),
           bottomNav: {
             width: 'calc(79.5% - 16px)',
             display: 'inline-flex',
@@ -282,11 +269,8 @@ class Header extends Component {
             alignItems: 'center',
             position: 'relative',
             height: pxToRem(30),
-            maxHeight: this.state.scrollDown ? '0' : pxToRem(30),
-            opacity: this.state.scrollDown ? 0 : 1,
             margin: 'none',
             zIndex: 10,
-            transition: this.state.scrollDown ? 'max-height 300ms ease, opacity 200ms ease' : 'max-height 300ms ease, opacity 300ms ease 200ms',
             '@media (max-width: 1199px)': {
               width: '100%',
               position: 'fixed',
@@ -296,7 +280,8 @@ class Header extends Component {
               height: '100%',
               maxHeight: this.state.mobileMenuActive ? '100%' : '0%',
               justifyContent: 'center',
-              backgroundColor: '#787A62',
+              backgroundColor: '#000',
+              color: '#fff',
               padding: `${pxToRem(5)} ${pxToRem(15)}`,
               top: 0,
               transition: this.state.mobileMenuActive ? 'max-height 300ms ease 100ms' : 'max-height 300ms ease 200ms',
@@ -317,7 +302,7 @@ class Header extends Component {
                 fontSize: pxToRem(10),
                 letterSpacing: pxToRem(1),
                 textTransform: 'uppercase',
-                color: '#000',
+                color: '#fff',
                 [mediaQueries.phone]: {
                   fontSize: pxToRem(12)
                 }
@@ -435,26 +420,6 @@ class Header extends Component {
       }
     };
 
-    // Function to render header logo
-    const renderLogo = () => {
-      if (this.props.width > 1200) {
-        return (
-          <RadiumLink key="-1" to="/" onClick={() => this.closeMobileMenu()}>
-            <h1 className='no-margin' style={logoDiv.desktopLogo}>25 Park Row</h1>
-          </RadiumLink>
-        );
-      } else {
-        return (
-          <React.Fragment>
-            <RadiumLink key="-1" to="/" onClick={() => this.closeMobileMenu()}>
-              <h3 className='no-margin' style={logoDiv.mobileLogo}>25 Park Row</h3>
-            </RadiumLink>
-            <h3 className='no-margin' style={logoDiv.currentPage} >{route}</h3>
-          </React.Fragment>
-        );
-      }
-    };
-
     // Function to render nav based on screen width
     const renderNavigation = () => {
       if (this.props.width > 1200) {
@@ -500,7 +465,7 @@ class Header extends Component {
                     to={`/${page}`} 
                     onClick={() => this.closeMobileMenu()}
                   >
-                    <div style={[{ textDecoration: route === page ? 'underline' : 'none', color: '#000' }, item]}>
+                    <div style={[{ textDecoration: route === page ? 'underline' : 'none', color: '#fff' }, item]}>
                       {this.props.pages[page]}
                     </div>
                   </RadiumLink>
@@ -559,7 +524,9 @@ class Header extends Component {
           </RadiumLink>
             
           <div style={logoDiv}>
-            {renderLogo()}
+            <RadiumLink style={{ width: '100%' }} key="-1" to="/" onClick={() => this.closeMobileMenu()}>
+              <h1 className='no-margin' style={logoDiv.mainLogo}>25 Park Row</h1>
+            </RadiumLink>
           </div>
           
           <RadiumLink 
