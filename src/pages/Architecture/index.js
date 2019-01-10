@@ -22,7 +22,9 @@ class Architecture extends Component {
   }
 
   initialImageLoad() {
-    this.setState({ mounted: true });
+    setTimeout(() => {
+      this.setState({ mounted: true });
+    }, 500);
   }
 
   triggerAnimation(section, boolean) {

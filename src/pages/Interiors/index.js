@@ -24,16 +24,14 @@ class Interiors extends Component {
     super(props);
 
     this.state = {
-      mounted: false,
       sections: {}
     };
-
-    this.hidden = React.createRef();
   }
 
   initialImageLoad() {
-    this.hidden.current.classList.remove('hidden');
-    this.setState({ mounted: true });
+    setTimeout(() => {
+      this.setState({ mounted: true });
+    }, 500);
   }
 
   triggerAnimation(section, boolean) {
@@ -47,7 +45,7 @@ class Interiors extends Component {
 
   render() {
     return (
-      <div className={'main-container hidden'} ref={this.hidden}>
+      <div className={`main-container ${!this.state.mounted ? 'hidden' : ''}`}>
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
         <Grid fluid>
           <Row
