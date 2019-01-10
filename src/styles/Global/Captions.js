@@ -1,5 +1,4 @@
 import { globalMediaQueries } from './MediaQueries';
-import { pxToRem } from 'helpers/Math';
 
 const captions = {
   // Image Captions
@@ -17,24 +16,24 @@ const captions = {
     justifyContent: 'center'
   },
   '.caption-main-small': {
-    height: '25%'
+    height: '20%'
   },
   '.caption-main-large': {
-    height: '25%'
+    height: '20%'
   },
   '.caption-main-small.active': {
-    maxHeight: '25%',
+    maxHeight: '20%',
   },
   '.caption-main-large.active': {
-    maxHeight: '25%',
+    maxHeight: '20%',
   },
   '.caption': {
     opacity: 0,
     visibility: 'hidden',
     textAlign: 'left',
-    fontSize: '10px',
+    fontSize: '8px',
     textTransform: 'uppercase',
-    paddingRight: '10%'
+    paddingRight: '30px'
   },
   '.caption-main-small.active .caption, .caption-main-large.active .caption': {
     transition: 'all 100ms ease 100ms',
@@ -48,8 +47,8 @@ const captions = {
     cursor: 'pointer',
     bottom: 10,
     right: 10,
-    width: pxToRem(26),
-    height: pxToRem(26),
+    width: '26px',
+    height: '26px',
     transform: 'rotate(0) scale(1)',
     zIndex: 1,
     transition: 'transform 100ms ease-in-out',
@@ -59,6 +58,25 @@ const captions = {
     transform: 'rotate(45deg) scale(1)',
   },
   mediaQueries: {
+    [globalMediaQueries.phone]: {
+      '.caption': {
+        fontSize: '10px',
+      }
+    },
+    [globalMediaQueries.phoneLarge]: {
+      '.caption-main-small': {
+        height: '15%'
+      },
+      '.caption-main-large': {
+        height: '15%'
+      },
+      '.caption-main-small.active': {
+        maxHeight: '15%',
+      },
+      '.caption-main-large.active': {
+        maxHeight: '15%',
+      },
+    },
     [globalMediaQueries.tablet]: {
       '.caption-main-small': {
         height: '10%'
@@ -73,29 +91,32 @@ const captions = {
         maxHeight: '10%',
       },
       '.caption': {
-        fontSize: '14px',
-        paddingRight: pxToRem(20),
+        fontSize: '12px',
+        paddingRight: '20px',
       }
     },
     [globalMediaQueries.tabletLandscape]: {
       '.caption-main-small': {
-        height: '25%'
+        height: '15%'
       },
       '.caption-main-large': {
         height: '10%'
       },
       '.caption-main-small.active': {
-        maxHeight: '25%',
+        maxHeight: '15%',
       },
       '.caption-main-large.active': {
         maxHeight: '10%',
       },
+      '.caption': {
+        fontSize: '12px'
+      },
       '.caption-plus': {
-        width: pxToRem(30),
-        height: pxToRem(30),
+        width: '30px',
+        height: '30px',
       }
     },
-    [globalMediaQueries.desktop]: {
+    [globalMediaQueries.desktopSmall]: {
       '.caption-main-small': {
         height: '20%'
       },
@@ -107,7 +128,38 @@ const captions = {
       },
       '.caption-main-large.active': {
         maxHeight: '10%',
+      }
+    },
+    [globalMediaQueries.desktop]: {
+      '.caption-main-small': {
+        height: '18%'
       },
+      '.caption-main-large': {
+        height: '10%'
+      },
+      '.caption-main-small.active': {
+        maxHeight: '18%',
+      },
+      '.caption-main-large.active': {
+        maxHeight: '10%',
+      },
+      '.caption': {
+        fontSize: '14px'
+      }
+    },
+    [globalMediaQueries.desktopLarge]: {
+      '.caption-main-small': {
+        height: '12%'
+      },
+      '.caption-main-large': {
+        height: '6%'
+      },
+      '.caption-main-small.active': {
+        maxHeight: '12%',
+      },
+      '.caption-main-large.active': {
+        maxHeight: '6%',
+      }
     }
   }
 };
