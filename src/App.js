@@ -195,7 +195,7 @@ class App extends Component {
                     />
                   </Switch>
                 </div>
-                <Footer 
+                <Footer
                   colors={Colors} 
                   pages={pages}
                 /> 
