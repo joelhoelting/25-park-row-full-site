@@ -46,7 +46,7 @@ class Views extends Component {
           >
             <Col 
               lg={12}
-              className={!this.state.sections[0] ? 'hidden' : 'animate-reveal-delay-1'}
+              className={!this.state.sections[0] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
                 onEnter={() => this.triggerAnimation(0, true)} 
@@ -64,7 +64,7 @@ class Views extends Component {
           <Row>
             <Col 
               lg={12}
-              className={!this.state.sections[1] ? 'hidden' : 'animate-reveal-delay-1'}
+              className={!this.state.sections[1] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <SubTitle
                 desktop={<span>Nullam finibus auctor nibh gravida </span>}
@@ -84,7 +84,7 @@ class Views extends Component {
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}
-              className={!this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-1'}
+              className={!this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
                 onEnter={() => this.triggerAnimation(2, true)} 
@@ -101,7 +101,7 @@ class Views extends Component {
           <Row className='row-extra-margin row-extra-margin-desktop-3' center='lg'>
             <Col 
               lg={5}
-              className={!this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-1'}
+              className={!this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
                 onEnter={() => this.triggerAnimation(3, true)} 
@@ -117,7 +117,7 @@ class Views extends Component {
           <Row className='row-extra-margin row-extra-margin-desktop-3' center='lg'>
             <Col 
               lg={5}
-              className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-1'}
+              className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
                 onEnter={() => this.triggerAnimation(4, true)} 
@@ -133,7 +133,7 @@ class Views extends Component {
           <Row className='row-extra-margin row-extra-margin-desktop-3' center='lg'>
             <Col 
               lg={5}
-              className={!this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-1'}
+              className={!this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
                 onEnter={() => this.triggerAnimation(5, true)} 

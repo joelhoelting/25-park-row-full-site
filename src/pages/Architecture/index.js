@@ -46,7 +46,7 @@ class Architecture extends Component {
           >
             <Col 
               lg={12}
-              className={!this.state.sections[0] ? 'hidden' : 'animate-reveal-delay-1'}
+              className={!this.state.sections[0] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
                 onEnter={() => this.triggerAnimation(0, true)} 
@@ -64,7 +64,7 @@ class Architecture extends Component {
           <Row>
             <Col 
               lg={12}
-              className={!this.state.sections[1] ? 'hidden' : 'animate-reveal-delay-1'}
+              className={!this.state.sections[1] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <SubTitle
                 desktop={<span>Introducing a New York City Icon</span>}
@@ -87,7 +87,7 @@ class Architecture extends Component {
           > 
             <Col 
               lg={5} 
-              className={!this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-1'}
+              className={!this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-0'}
             >  
               <Waypoint 
                 onEnter={() => this.triggerAnimation(2, true)} 
@@ -103,7 +103,7 @@ class Architecture extends Component {
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12} 
-              className={!this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-1'}
+              className={!this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
                 onEnter={() => this.triggerAnimation(3, true)} 
@@ -120,7 +120,7 @@ class Architecture extends Component {
           <Row>
             <Col 
               lg={12} 
-              className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-1'}
+              className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
                 onEnter={() => this.triggerAnimation(4, true)} 
@@ -139,7 +139,7 @@ class Architecture extends Component {
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}
-              className={!this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-1'}
+              className={!this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
                 onEnter={() => this.triggerAnimation(5, true)} 
@@ -154,7 +154,7 @@ class Architecture extends Component {
             </Col>
           </Row>
           <Row className={'row-extra-margin row-extra-margin-desktop-3'}>
-            <Col lg={4} className={!this.state.sections[6] ? 'hidden' : 'animate-reveal-delay-1'}>
+            <Col lg={4} className={!this.state.sections[6] ? 'hidden' : 'animate-reveal-delay-0'}>
               <Waypoint 
                 onEnter={() => this.triggerAnimation(6, true)} 
                 onLeave={() => this.triggerAnimation(6, false)}
@@ -162,7 +162,7 @@ class Architecture extends Component {
                 <SmallImage width='100%' src='/images/pages/architecture/rick_cook' />
               </Waypoint>
             </Col>
-            <Col lgOffset={2} lg={6} className={!this.state.sections[7] ? 'hidden' : 'animate-reveal-delay-1'}>
+            <Col lgOffset={2} lg={6} className={!this.state.sections[7] ? 'hidden' : 'animate-reveal-delay-0'}>
               <Waypoint 
                 onEnter={() => this.triggerAnimation(7, true)} 
                 onLeave={() => this.triggerAnimation(7, false)}
@@ -175,7 +175,7 @@ class Architecture extends Component {
             </Col>
           </Row>
           <TwoColumnText 
-            className={!this.state.sections[8] ? 'hidden' : 'animate-reveal-delay-1'}
+            className={!this.state.sections[8] ? 'hidden' : 'animate-reveal-delay-0'}
             header='Building Context'
             paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
             hideParagraphMobile
@@ -187,7 +187,7 @@ class Architecture extends Component {
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}
-              className={!this.state.sections[9] ? 'hidden' : 'animate-reveal-delay-1'}
+              className={!this.state.sections[9] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
                 onEnter={() => this.triggerAnimation(9, true)} 
@@ -204,7 +204,7 @@ class Architecture extends Component {
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}
-              className={!this.state.sections[10] ? 'hidden' : 'animate-reveal-delay-1'}
+              className={!this.state.sections[10] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
                 onEnter={() => this.triggerAnimation(10, true)} 

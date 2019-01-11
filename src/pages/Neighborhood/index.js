@@ -69,7 +69,7 @@ class Neighborhood extends Component {
               <Col
                 lg={12}
                 className={
-                  !this.state.sections[0] ? 'hidden' : 'animate-reveal-delay-1'
+                  !this.state.sections[0] ? 'hidden' : 'animate-reveal-delay-0'
                 }
               >
                 <Waypoint
@@ -89,7 +89,7 @@ class Neighborhood extends Component {
               <Col
                 lg={12}
                 className={
-                  !this.state.sections[1] ? 'hidden' : 'animate-reveal-delay-1'
+                  !this.state.sections[1] ? 'hidden' : 'animate-reveal-delay-0'
                 }
               >
                 <SubTitle
@@ -119,7 +119,7 @@ class Neighborhood extends Component {
               <SlickSlider
                 lazyLoad
                 className={
-                  !this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-1'
+                  !this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-0'
                 }
                 paths={[
                   {
@@ -157,7 +157,7 @@ class Neighborhood extends Component {
               <SlickSlider
                 lazyLoad
                 className={
-                  !this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-1'
+                  !this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-0'
                 }
                 paths={[
                   {
@@ -200,7 +200,7 @@ class Neighborhood extends Component {
               <SlickSlider
                 lazyLoad
                 className={
-                  !this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-1'
+                  !this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'
                 }
                 paths={[
                   {
@@ -243,7 +243,7 @@ class Neighborhood extends Component {
               <SlickSlider
                 lazyLoad
                 className={
-                  !this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-1'
+                  !this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-0'
                 }
                 paths={[
                   {
