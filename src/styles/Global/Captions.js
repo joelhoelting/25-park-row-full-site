@@ -33,7 +33,8 @@ const captions = {
     textAlign: 'left',
     fontSize: '8px',
     textTransform: 'uppercase',
-    paddingRight: '30px'
+    paddingRight: '30px',
+    zIndex: '1'
   },
   '.caption-main-small.active .caption, .caption-main-large.active .caption': {
     transition: 'all 100ms ease 100ms',

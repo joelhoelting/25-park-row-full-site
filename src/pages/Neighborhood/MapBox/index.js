@@ -14,7 +14,7 @@ import MediaQuery from 'react-responsive';
 
 import { pxToRem } from 'helpers/Math';
 import { mediaQueries } from 'styles/Global/MediaQueries';
-import { dining, schools, fitness, shopping } from 'data/mapLocations';
+import locations from 'data/mapLocations';
 
 const Map = ReactMapboxGl({
   accessToken:
@@ -95,36 +95,15 @@ class MapBox extends Component {
   }
 
   render() {
-    const { activeLocation } = this.state;
-
-    let currentFeatures;
+    const { activeCategory, activeLocation } = this.state;
+    let currentFeatures = locations[activeCategory];
     let circleIcon = {
       'circle-stroke-width': 1,
       'circle-radius': 10,
       'circle-blur': 0.15,
-      'circle-stroke-color': 'black'
+      'circle-stroke-color': 'black',
+      'circle-color': '#ffd949'
     };
-
-    switch (this.state.activeCategory) {
-    case 'dining':
-      currentFeatures = dining;
-      circleIcon['circle-color'] =  '#787a62';
-      break;
-    case 'schools':
-      currentFeatures = schools;
-      circleIcon['circle-color'] =  '#b6c1c1';
-      break;
-    case 'fitness':
-      currentFeatures = fitness;
-      circleIcon['circle-color'] =  '#585955';
-      break;
-    case 'shopping':
-      currentFeatures = shopping;
-      circleIcon['circle-color'] = '#ffd949';
-      break;
-    default:
-      break;
-    }
     
     return (
       <Fragment>

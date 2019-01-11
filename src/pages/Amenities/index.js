@@ -54,7 +54,7 @@ class Amenities extends Component {
                 onLeave={() => this.triggerAnimation(0, false)} 
               >
                 <LargeImage
-                  caption='A gracious reading room welcomes residents to The Park Row Club. A curated selection of original mid-century and custom pieces echoes the sleek elegance of Art Deco with a fresh, modern touch.' 
+                  caption='A gracious reading room welcomes residents to The Park Row Club.' 
                   src='/images/pages/amenities/reading_room_lounge' 
                   width='100%'
                   onLoad={() => this.initialImageLoad()}  

@@ -77,7 +77,7 @@ class Neighborhood extends Component {
                   onLeave={() => this.triggerAnimation(0, false)}
                 >
                   <LargeImage
-                    caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur."
+                    caption='At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                     src="/images/pages/neighborhood/neighborhood_hero_south"
                     width="100%"
                     onLoad={() => this.initialImageLoad()}
@@ -125,27 +125,27 @@ class Neighborhood extends Component {
                   {
                     src: '/images/pages/neighborhood/neighborhood_park_1',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_park_2',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_park_3',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_park_4',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_park_5',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   }
                 ]}
               />
@@ -163,32 +163,32 @@ class Neighborhood extends Component {
                   {
                     src: '/images/pages/neighborhood/neighborhood_dining_1',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_dining_2',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_dining_3',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_dining_4',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_dining_5',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_dining_6',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   }
                 ]}
               />
@@ -206,32 +206,32 @@ class Neighborhood extends Component {
                   {
                     src: '/images/pages/neighborhood/neighborhood_leisure_1',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_leisure_2',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_leisure_3',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_leisure_4',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_leisure_5',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_leisure_6',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   }
                 ]}
               />
@@ -249,37 +249,37 @@ class Neighborhood extends Component {
                   {
                     src: '/images/pages/neighborhood/neighborhood_shopping_1',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_shopping_2',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_shopping_3',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_shopping_4',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_shopping_5',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_shopping_6',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_shopping_7',
                     caption:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
                   }
                 ]}
               />
