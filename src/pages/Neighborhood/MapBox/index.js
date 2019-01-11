@@ -25,11 +25,16 @@ const Map = ReactMapboxGl({
 
 const MapBoxInline = {
   main: {
-    image: {
+    categoryImg: {
       maxHeight: pxToRem(150),
       display: 'block',
       margin: '0 auto',
       cursor: 'pointer'
+    },
+    mapPrimaryLogo: {
+      boxShadow: '2px 2px 3px rgba(0,0,0,.2)', 
+      height: '75px', 
+      width: '75px'
     },
     mobileParagraph: {
       fontSize: pxToRem(16),
@@ -134,7 +139,7 @@ class MapBox extends Component {
           >
             <img
               alt='Link to active dining markers'
-              style={main.image}
+              style={main.categoryImg}
               src={`/images/icons/illustration/wine_drinker${this.state.activeCategory === 'dining' ? '' : '_bw'}.svg`}
             />
             <MediaQuery minDeviceWidth={992}>
@@ -155,7 +160,7 @@ class MapBox extends Component {
           >
             <img
               alt='Link to active schools, parks and culture markers'
-              style={main.image}
+              style={main.categoryImg}
               src={`/images/icons/illustration/mom_daughter${this.state.activeCategory === 'schools' ? '' : '_bw'}.svg`}
               onClick={() => this.setState({ 
                 activeCategory: 'schools', 
@@ -181,7 +186,7 @@ class MapBox extends Component {
           >
             <img
               alt='Link to active fitness and hospitality markers'
-              style={main.image}
+              style={main.categoryImg}
               src={`/images/icons/illustration/dog_walker${this.state.activeCategory === 'fitness' ? '' : '_bw'}.svg`}
             />
             <MediaQuery minDeviceWidth={992}>
@@ -202,7 +207,7 @@ class MapBox extends Component {
           >
             <img
               alt='Link to active shopping markers'
-              style={main.image}
+              style={main.categoryImg}
               src={`/images/icons/illustration/wobbly_legs${this.state.activeCategory === 'shopping' ? '' : '_bw'}.svg`}
             />
             <MediaQuery minDeviceWidth={992}>
@@ -228,7 +233,7 @@ class MapBox extends Component {
             <Marker coordinates={[-74.007377, 40.711464]} anchor="center">
               <img
                 alt='Primary marker for 25 Park Row building'
-                style={{ boxShadow: '2px 2px 3px rgba(0,0,0,.2)' }}
+                style={main.mapPrimaryLogo}
                 src="/images/map/25parkrow_primary.png"
               />
             </Marker>
