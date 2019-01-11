@@ -44,12 +44,12 @@ class SlickSlider extends Component {
           left: {
             top: 0,
             left: 0,
-            cursor: "url('/images/icons/left_arrow_slider.svg'), auto",
+            cursor: "url('/images/icons/left_arrow_slider.svg') 25 50, auto",
           },
           right: {
             top: 0,
             right: 0,
-            cursor: "url('/images/icons/right_arrow_slider.svg'), auto",
+            cursor: "url('/images/icons/right_arrow_slider.svg') 75 50, auto",
           }
         }
       }
@@ -68,7 +68,7 @@ class SlickSlider extends Component {
         }
       });
     };
-    console.log(this)
+    
     return (
       <div 
         style={styles.main} 
