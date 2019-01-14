@@ -55,6 +55,7 @@ const Panel = (props) => {
           fontSize: pxToRem(12),
           margin: `${pxToRem(4)} 0`,
           letterSpacing: pxToRem(4),
+          textTransform: 'uppercase',
           [phoneLarge]: {
             fontSize: pxToRem(14)
           },
@@ -81,7 +82,7 @@ const Panel = (props) => {
           <h2 style={main.sub.description} className='text-center'>{props.description}</h2>
         </div>
         <img style={main.sub.icon} src={`/images/icons/illustration/${props.iconSrc}.svg`} alt={props.iconAlt} />
-        <h6 style={main.sub.title} className='text-center'>{props.title}</h6>
+        <p style={main.sub.title} className='text-center'>{props.title}</p>
       </div>
     </div>
   );

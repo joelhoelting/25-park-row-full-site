@@ -19,6 +19,7 @@ const TeamSection = (props) => {
         justifyContent: 'center',
         height: '300px',
         role: {
+          marginTop: '5px',
           textTransform: 'uppercase',
           fontSize: '90%',
         },
