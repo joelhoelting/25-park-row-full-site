@@ -23,7 +23,7 @@ const containers = {
     width: '100%',
   },
   // Large Container
-  '.home-container': {
+  '.large-container': {
     height: 'auto',
     marginTop: '60px',
     transition: 'opacity 400ms ease-in-out',
@@ -82,7 +82,7 @@ const containers = {
         paddingBottom: '50px',
         width: '75%',
       },
-      '.home-container': {
+      '.large-container': {
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: '92px',
@@ -115,7 +115,7 @@ const containers = {
       },
     },
     [desktopLarge]: {
-      '.home-container': {
+      '.large-container': {
         marginTop: '112px',
         width: '80%'
       },

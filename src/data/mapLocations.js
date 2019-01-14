@@ -751,6 +751,243 @@ const locations = {
       coordinates: [-74.007582, 40.708705],
       thumbnailSrc: '/images/map/thumbnails/woolworth_building.jpg'
     }
+  ],
+  transit: [
+    {
+      title: 'Aroma Espresso Bar',
+      coordinates: [-74.009765, 40.713020],
+      thumbnailSrc: '/images/map/thumbnails/dining/woolworth_building.jpg'
+    },
+    {
+      title: 'Birch Coffee',
+      coordinates: [-74.005945, 40.711071],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: 'Bluestone Coffee',
+      coordinates: [-74.011540, 40.706132],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: 'Irving Farm Coffee Roasters',
+      coordinates: [-74.009010, 40.710851],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: 'Joe Coffee',
+      coordinates: [-74.012863, 40.712931],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: 'Juice Press',
+      coordinates: [-74.015230, 40.712056],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: 'Kaffe 1668 South',
+      coordinates: [-74.011099, 40.715316],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: 'Lady M Cake Boutique',
+      coordinates: [-74.011851, 40.710284],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: 'Milk Bar',
+      coordinates: [-74.006529, 40.705760],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: 'Takahachi Bakery',
+      coordinates: [-74.008505, 40.713941],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: 'The Wooly Daily',
+      coordinates: [-74.008281, 40.712599],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '12 Apothèke',
+      coordinates: [-73.998217, 40.714383],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '13 Barleycorn',
+      coordinates: [-74.008857, 40.713194],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '14 Dead Rabbit',
+      coordinates: [-74.011030, 40.703312],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '15 Evening Bar',
+      coordinates: [-74.009130, 40.715235],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '16 Five and Dime',
+      coordinates: [ -74.008208, 40.712634],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: 'Stone Street Tavern',
+      coordinates: [-74.010196, 40.704232],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '18 Temple Court',
+      coordinates: [-74.006844, 40.711291],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '18 Temple Court',
+      coordinates: [-74.006844, 40.711291],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '19 The Malt House',
+      coordinates: [-74.009343, 40.709680],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '20 The Wooly Public',
+      coordinates: [-74.006844, 40.711291],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '21 Tiny’s & The Bar Upstairs',
+      coordinates: [-74.008058, 40.716757],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '22 Vin Sur Vingt',
+      coordinates: [-74.010110, 40.714808],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '23 Ward III',
+      coordinates: [-74.008678, 40.715894],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '24 Weather Up',
+      coordinates: [-74.008750, 40.716970],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '25 American Cut Tribeca',
+      coordinates: [-74.010022, 40.719111],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '26 Augustine',
+      coordinates: [-74.006814, 40.711419],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '27 Blue Smoke',
+      coordinates: [-74.015359, 40.714871],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '28 CUT by Wolfgang Puck',
+      coordinates: [-74.009406, 40.713078],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '29 Eataly Downtown',
+      coordinates: [-74.012269, 40.710443],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '30 Fraunces Tavern',
+      coordinates: [-74.011354, 40.703597],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '31 Frenchette',
+      coordinates: [-74.005612, 40.719843],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '32 Fuku',
+      coordinates: [-74.015172, 40.712166],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '33 Hudson Eats',
+      coordinates: [-74.015680, 40.713026],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '34 Le Coucou',
+      coordinates: [-74.000247, 40.719167],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '35 Le District',
+      coordinates: [-74.015720, 40.712655],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '36 Little Park',
+      coordinates: [-74.009123, 40.715415],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '37 Locanda Verde',
+      coordinates: [-74.010025, 40.719949],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '38 Mr Chow',
+      coordinates: [-74.008733, 40.720206],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '39 Nobu Downtown',
+      coordinates: [-74.009848, 40.710927],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '40 Parm',
+      coordinates: [-74.016006, 40.714581],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '41 Racines NY',
+      coordinates: [-74.007556, 40.714638],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '42 Reserve Cut',
+      coordinates: [-74.011776, 40.706051],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '43 Rosa Mexicano',
+      coordinates: [-74.009036, 40.714124],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '44 Shake Shack',
+      coordinates: [-74.014799, 40.715502],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '45 Sushi of Gari',
+      coordinates: [-74.008467, 40.716786],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    },
+    {
+      title: '46 The Palm Tribeca',
+      coordinates: [-74.012698, 40.716594],
+      thumbnailSrc: '/images/map/thumbnails/dining/city_hall.jpg'
+    }
   ]
 };
 

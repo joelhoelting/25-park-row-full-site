@@ -1,4 +1,5 @@
 import { globalMediaQueries } from './MediaQueries';
+import { pxToRem } from 'helpers/Math';
 
 const captions = {
   // Image Captions
@@ -31,7 +32,7 @@ const captions = {
     opacity: 0,
     visibility: 'hidden',
     textAlign: 'left',
-    fontSize: '8px',
+    fontSize: pxToRem(8),
     textTransform: 'uppercase',
     paddingRight: '30px',
     zIndex: '1'
@@ -61,7 +62,7 @@ const captions = {
   mediaQueries: {
     [globalMediaQueries.phone]: {
       '.caption': {
-        fontSize: '10px',
+        fontSize: pxToRem(10),
       }
     },
     [globalMediaQueries.phoneLarge]: {
@@ -92,7 +93,7 @@ const captions = {
         maxHeight: '10%',
       },
       '.caption': {
-        fontSize: '12px',
+        fontSize: pxToRem(12),
         paddingRight: '20px',
       }
     },
@@ -108,9 +109,6 @@ const captions = {
       },
       '.caption-main-large.active': {
         maxHeight: '10%',
-      },
-      '.caption': {
-        fontSize: '12px'
       },
       '.caption-plus': {
         width: '30px',
@@ -144,9 +142,6 @@ const captions = {
       '.caption-main-large.active': {
         maxHeight: '10%',
       },
-      '.caption': {
-        fontSize: '14px'
-      }
     },
     [globalMediaQueries.desktopLarge]: {
       '.caption-main-small': {

@@ -74,6 +74,11 @@ const grid = {
     margin: '32px -8px 16px'
   },
   mediaQueries: {
+    [globalMediaQueries.tablet]: {
+      '.row-extra-padding-desktop-3': {
+        padding: '64px 0'
+      }
+    },
     [globalMediaQueries.tabletLandscape]: {
       // Home Page Columns
       '.home-column-text': {
@@ -109,6 +114,9 @@ const grid = {
       '.two-column-text': {
         margin: '80px -8px 50px'
       },
+      '.row-extra-padding-desktop-3': {
+        padding: '96px 0'
+      }
     }
   }
 };

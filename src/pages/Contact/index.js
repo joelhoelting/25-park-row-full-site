@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Radium, {Style} from 'radium';
+import { Row, Col } from 'react-flexbox-grid';
 
+import { mediaQueries } from 'styles/Global/MediaQueries';
 import { pxToRem } from 'helpers/Math';
 import ContactForm from './ContactForm';
 import ThankYou from './ThankYou';
@@ -36,33 +38,65 @@ class Contact extends Component {
     const ContactInline = {
       address: {
         color: '#fff',
-        textAlign: 'center',
         padding: `${pxToRem(50)} 0`,
+        textAlign: 'center',
+        [mediaQueries.tablet]: {
+          padding: 0,
+          textAlign: 'initial'
+        },
         p: {
           fontSize: pxToRem(20)
         }
+      },
+      img: {
+        margin: `${pxToRem(40)} auto`,
+        [mediaQueries.tablet]: {
+          margin: '0 0 0 auto',
+        },
+        display: 'block',
       }
     };
 
-    const { address } = ContactInline;
+    const { address, img } = ContactInline;
     return (
       <div className={`contact-container ${!this.state.mounted ? 'hidden' : ''}`}>
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
         {this.state.submitted ? <ThankYou onBack={() => {this.onBack();} }/> : null}
+        <Row 
+          start='lg' 
+          className='row-extra-padding-desktop-3'
+        >
+          <Col md={6}>
+            <div style={address}>
+              <a href="https://goo.gl/maps/ZUHHi7AP83x" rel='noopener noreferrer' target="_blank">
+                <p style={[{margin: 0}, address.p]}>
+                  25 Park Row <br/>Sales Gallery
+                </p>
+                <p style={[{marginTop: 0}, address.p]}>217 Broadway, Suite 600 <br/>
+                  New York, NY 10007
+                </p>
+              </a>
+              <a href="mailto:press@25parkrow.com">
+                <p style={address.p}>info@25parkrow.com</p>
+              </a>
+            </div>
+          </Col>
+          <Col md={6}>
+            <a 
+              href='https://goo.gl/maps/kFdFjqxmGV52' 
+              target='_blank' 
+              rel='noopener noreferrer'
+            >
+              <img 
+                alt='click to view 25 park row in google maps'
+                style={img} 
+                src='/images/map/25parkrow_contact_map.png'   
+              />
+            </a>
+          </Col>
+        </Row>
         <div>
-          <div style={address}>
-            <p style={[{marginBottom: 0}, address.p]}>
-              25 Park Row Sales Gallery
-            </p>
-            <a href="https://goo.gl/maps/ZUHHi7AP83x" rel='noopener noreferrer' target="_blank">
-              <p style={[{marginTop: 0}, address.p]}>217 Broadway, Suite 600, <br style={{'@media (min-width: 768px)': {display: 'none'}}}/>
-                New York, NY 10007
-              </p>
-            </a>
-            <a href="mailto:press@25parkrow.com">
-              <p style={address.p}>info@25parkrow.com</p>
-            </a>
-          </div>
+          
           <ContactForm 
             onSubmitForm={() => { this.onSubmitForm(); }} 
           />

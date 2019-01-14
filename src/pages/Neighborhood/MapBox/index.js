@@ -85,7 +85,8 @@ class MapBox extends Component {
       'dining': 'Dining',
       'schools': 'Schools, Parks, and Culture',
       'fitness': 'Fitness and Hospitality',
-      'shopping': 'Shopping'
+      'shopping': 'Shopping',
+      'transit': 'Transit'
     };
   }
 
@@ -109,6 +110,32 @@ class MapBox extends Component {
       'circle-stroke-color': 'black',
       'circle-color': '#ffd949'
     };
+
+    const categoryButton = (category) => {
+      return (
+        <Col 
+          xs={2}
+          onClick={() => this.setState({ 
+            activeCategory: category, 
+            activeLocation: false
+          })}
+        >
+          <img
+            alt={`Link to activate ${category} markers`}
+            style={main.categoryImg}
+            src={`/images/icons/illustration/${category}${this.state.activeCategory === category ? '' : '_bw'}.svg`}
+          />
+          <MediaQuery minDeviceWidth={992}>
+            <p
+              style={{ cursor: 'pointer', fontSize: pxToRem(14), opacity: this.state.activeCategory === category ? 1 : .4 }} 
+              className='text-center uppercase'
+            >
+              {this.mapCategories[category]}
+            </p>
+          </MediaQuery>
+        </Col>
+      );
+    };
     
     return (
       <Fragment>
@@ -129,96 +156,8 @@ class MapBox extends Component {
             </Col>
           </Row>
         </MediaQuery>
-        <Row className="row-extra-margin-1" top='sm' bottom='xs'>
-          <Col 
-            xs={3}
-            onClick={() => this.setState({ 
-              activeCategory: 'dining', 
-              activeLocation: false
-            })}
-          >
-            <img
-              alt='Link to active dining markers'
-              style={main.categoryImg}
-              src={`/images/icons/illustration/wine_drinker${this.state.activeCategory === 'dining' ? '' : '_bw'}.svg`}
-            />
-            <MediaQuery minDeviceWidth={992}>
-              <p
-                style={{ cursor: 'pointer', opacity: this.state.activeCategory === 'dining' ? 1 : .4 }} 
-                className='text-center uppercase'
-              >
-                Dining
-              </p>
-            </MediaQuery>
-          </Col>
-          <Col 
-            xs={3}
-            onClick={() => this.setState({ 
-              activeCategory: 'schools', 
-              activeLocation: false
-            })}
-          >
-            <img
-              alt='Link to active schools, parks and culture markers'
-              style={main.categoryImg}
-              src={`/images/icons/illustration/mom_daughter${this.state.activeCategory === 'schools' ? '' : '_bw'}.svg`}
-              onClick={() => this.setState({ 
-                activeCategory: 'schools', 
-                activeLocation: false
-              })}
-            />
-            <MediaQuery minDeviceWidth={992}>
-              <p
-
-                style={{ cursor: 'pointer', opacity: this.state.activeCategory === 'schools' ? 1 : .4 }} 
-                className='text-center uppercase'
-              >
-                Schools, Parks, and Culture
-              </p>
-            </MediaQuery>
-          </Col>
-          <Col 
-            xs={3}
-            onClick={() => this.setState({ 
-              activeCategory: 'fitness', 
-              activeLocation: false
-            })}
-          >
-            <img
-              alt='Link to active fitness and hospitality markers'
-              style={main.categoryImg}
-              src={`/images/icons/illustration/dog_walker${this.state.activeCategory === 'fitness' ? '' : '_bw'}.svg`}
-            />
-            <MediaQuery minDeviceWidth={992}>
-              <p
-                style={{ cursor: 'pointer', opacity: this.state.activeCategory === 'fitness' ? 1 : .4 }} 
-                className='text-center uppercase'
-              >
-                Fitness and Hospitality
-              </p>
-            </MediaQuery>
-          </Col>
-          <Col 
-            xs={3}
-            onClick={() => this.setState({ 
-              activeCategory: 'shopping', 
-              activeLocation: false
-            })}
-          >
-            <img
-              alt='Link to active shopping markers'
-              style={main.categoryImg}
-              src={`/images/icons/illustration/wobbly_legs${this.state.activeCategory === 'shopping' ? '' : '_bw'}.svg`}
-            />
-            <MediaQuery minDeviceWidth={992}>
-              <p 
-                style={{ cursor: 'pointer', opacity: this.state.activeCategory === 'shopping' ? 1 : .4 }} 
-                className='text-center uppercase'
-              >
-                Shopping
-              </p>
-            </MediaQuery>
-          </Col>
+        <Row className="row-extra-margin-1" top='sm' bottom='xs' between='xs'>
+          {Object.keys(this.mapCategories).map(category => categoryButton(category))}
         </Row>
         <Row className="neighborhood-map-wrapper">
           <Map
