@@ -119,6 +119,7 @@ class MapBox extends Component {
             activeCategory: category, 
             activeLocation: false
           })}
+          key={category}
         >
           <img
             alt={`Link to activate ${category} markers`}
