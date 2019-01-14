@@ -205,7 +205,7 @@ class FloorplanOverlay extends Component {
                   </div>
                   <div style={styles.main.inner.detail.buttons}>
                     <a 
-                      href={`/downloads/floorplans/25ParkRow_8.5x11_Unit${pdfSrc}.pdf`} 
+                      href={`/downloads/floorplans/25ParkRow_Floorplan_Unit${pdfSrc}.pdf`} 
                       target='_blank'
                       rel='noopener noreferrer'
                     >
