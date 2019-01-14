@@ -18,7 +18,7 @@ const containers = {
   // Main Container
   '.main-container': {
     height: 'auto',
-    marginTop: `68px`,
+    marginTop: `50px`,
     transition: 'opacity 400ms ease-in-out',
     width: '100%',
   },

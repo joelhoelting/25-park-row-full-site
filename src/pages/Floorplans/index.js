@@ -85,7 +85,6 @@ class Floorplans extends Component {
       }
 
       let srcObj = generateFloorplanSrc(residence);
-      
       listingObj.imgSrc = srcObj.imgFilename;
       listingObj.pdfSrc = srcObj.pdfFilename;
       
@@ -207,6 +206,11 @@ class Floorplans extends Component {
         <Style rules={{'body': { backgroundColor: this.props.color }}}/>
         <Style rules={FloorplanCSS} />
         <div className={`full-width-container ${!this.state.mounted ? 'hidden' : ''}`}>
+          <Row className='mobile-header'>
+            <Col lg={12}>
+              <h2 className='text-center'>Floorplans</h2>
+            </Col>
+          </Row>
           {this.renderUnits()}
           <FloorplanOverlay 
             active={this.state.floorplanOverlay.active}

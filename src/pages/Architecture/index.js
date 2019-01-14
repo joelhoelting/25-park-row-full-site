@@ -47,7 +47,8 @@ class Architecture extends Component {
             <Col 
               lg={12}
               className={!this.state.sections[0] ? 'hidden' : 'animate-reveal-delay-0'}
-            >
+            > 
+              <h2 className='text-center mobile-header'>Architecture</h2>
               <Waypoint 
                 onEnter={() => this.triggerAnimation(0, true)} 
                 onLeave={() => this.triggerAnimation(0, false)} 

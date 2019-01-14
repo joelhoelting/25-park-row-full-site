@@ -48,6 +48,7 @@ class Views extends Component {
               lg={12}
               className={!this.state.sections[0] ? 'hidden' : 'animate-reveal-delay-0'}
             >
+              <h2 className='text-center mobile-header'>Views</h2>
               <Waypoint 
                 onEnter={() => this.triggerAnimation(0, true)} 
                 onLeave={() => this.triggerAnimation(0, false)} 

@@ -189,7 +189,6 @@ class GalleryOverlay extends React.Component {
               className='gallery-close-button'
               style={styles.main.close}
               src="/images/icons/close_white.svg"
-              onClick={(event) => this.handleClose(event, context)}
             />
           </div>
         )}

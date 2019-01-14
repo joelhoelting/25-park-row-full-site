@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Radium, { Style } from 'radium';
-import { Grid } from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import GallerySection from './GallerySection';
 import GalleryOverlay from './GalleryOverlay';
@@ -135,14 +135,19 @@ class Gallery extends Component {
       <div>
         <Style rules={{ body: { backgroundColor: this.props.color } }} />
         <Style rules={stylesCSS} />
-        <Grid fluid>
-          <div 
-            className={`large-container ${!this.state.mounted ? 'hidden' : ''}`}
-            style={{ minHeight: !this.state.mounted ? '100vh' : '20vh'}}
-          >
+        <div 
+          className={`large-container ${!this.state.mounted ? 'hidden' : ''}`}
+          style={{ minHeight: !this.state.mounted ? '100vh' : '20vh'}}
+        >
+          <Row className='mobile-header' style={{ borderBottom: '2px solid black'}}>
+            <Col lg={12}>
+              <h2 className='text-center'>Gallery</h2>
+            </Col>
+          </Row>
+          <Grid fluid>
             {mapGallery}
-          </div>
-        </Grid>
+          </Grid>
+        </div>
         <GalleryOverlay
           active={this.state.carousel.active}
           toggleCarousel={() => this.toggleCarousel()}

@@ -38,7 +38,7 @@ class Contact extends Component {
     const ContactInline = {
       address: {
         color: '#fff',
-        padding: `${pxToRem(50)} 0`,
+        padding: `${pxToRem(30)} 0`,
         textAlign: 'center',
         [mediaQueries.tablet]: {
           padding: 0,
@@ -62,6 +62,11 @@ class Contact extends Component {
       <div className={`contact-container ${!this.state.mounted ? 'hidden' : ''}`}>
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
         {this.state.submitted ? <ThankYou onBack={() => {this.onBack();} }/> : null}
+        <Row className='mobile-header'>
+          <Col lg={12}>
+            <h2 className='text-center' style={{ color: '#fff'}}>Contact Us</h2>
+          </Col>
+        </Row>
         <Row 
           start='lg' 
           className='row-extra-padding-desktop-3'

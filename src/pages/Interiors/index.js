@@ -55,6 +55,7 @@ class Interiors extends Component {
               lg={12}
               className={!this.state.sections[0] ? 'hidden' : 'animate-reveal-delay-0'}
             >
+              <h2 className='text-center mobile-header'>Interiors</h2>
               <Waypoint 
                 onEnter={() => this.triggerAnimation(0, true)} 
                 onLeave={() => this.triggerAnimation(0, false)} 

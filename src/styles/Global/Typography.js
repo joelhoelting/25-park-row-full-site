@@ -115,7 +115,10 @@ const typography = {
       },
       'p.quote': {
         fontSize: pxToRem(18)
-      }
+      },
+      '.mobile-header': {
+        display: 'none'
+      },
     },
     [desktop]: {
       'html, body': {

@@ -4,9 +4,9 @@ export const generateFloorplanSrc = (residence) => {
   let imgFilename;
   let pdfFilename;
 
-  let twoLevelUnits = ['5A', '15B', '45PH'];
+  let twoLevelUnits = ['5A', '15B', '45PHA'];
 
-  let singleUnits = ['5B', '5E', '11C', '11D', '15A', '16A', '17A', '34A', '34B', '41PH', '45PH'];
+  let singleUnits = ['5B', '5E', '11C', '11D', '15A', '16A', '17A', '34A', '34B', '41PHA'];
 
   if (twoLevelUnits.includes(residence)) {
     imgFilename = `${residence}_Lower`;
@@ -44,7 +44,8 @@ export const generateFloorplanSrc = (residence) => {
   } else if (unitNumber >= 35 && unitNumber <= 40 && unitLetter === 'B') {
     imgFilename = pdfFilename = `35-40B`;
   } else if (unitNumber >= 42 && unitNumber <= 44 && unitLetter === 'PH') {
-    imgFilename = pdfFilename = `42-44PH`;
+    imgFilename = pdfFilename = `42-44PHA`;
   }
+  console.log(imgFilename, pdfFilename)
   return {imgFilename, pdfFilename};
 };

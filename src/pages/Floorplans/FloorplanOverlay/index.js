@@ -176,7 +176,6 @@ class FloorplanOverlay extends Component {
     };
 
     const { bathrooms, bedrooms, hasTwoLevels, interior, imgSrc, pdfSrc, price, residence } = this.props.unit;
-    
     return (
       <Context.Consumer>
         {context => (
@@ -205,7 +204,7 @@ class FloorplanOverlay extends Component {
                   </div>
                   <div style={styles.main.inner.detail.buttons}>
                     <a 
-                      href={`https://s3.amazonaws.com/25parkrow.full.dbox.com/downloads/floorplans/25ParkRow_Floorplan_Unit${pdfSrc}.pdf`} 
+                      href={`/downloads/floorplans/25ParkRow_Floorplan_Unit${pdfSrc}.pdf`} 
                       target='_blank'
                       rel='noopener noreferrer'
                     >

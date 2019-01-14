@@ -140,6 +140,11 @@ class Team extends Component {
       <div className={`full-width-container ${!this.state.mounted ? 'hidden' : ''}`}>
         <Style rules={{'body': { backgroundColor: this.props.color }}}/>
         <Style rules={TeamCSS} />
+        <Row className='mobile-header'>
+          <Col lg={12}>
+            <h2 className='text-center'>Team</h2>
+          </Col>
+        </Row>
         {this.renderTeams()}
       </div>
     );

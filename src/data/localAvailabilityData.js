@@ -539,7 +539,7 @@ const availabilityData = `
 	<Listing>
 		<Location>
 			<StreetAddress>20 East End Avenue - Apt: M</StreetAddress>
-			<UnitNumber>45PH</UnitNumber>
+			<UnitNumber>45PHA</UnitNumber>
 			<City>Manhattan</City>
 			<State>NY</State>
 			<Zip>10028</Zip>
