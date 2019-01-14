@@ -20,7 +20,9 @@ class Team extends Component {
     }, 500);
   }
 
-  activateCategory(category) {
+  activateCategory(event) {
+    let category = event.currentTarget.getAttribute('data-category');
+    
     this.setState({
       [category]: !this.state[category]
     });
@@ -67,12 +69,14 @@ class Team extends Component {
               className={colClass()}
               key={`team_${c}_column_${i}`} 
               lg={6}
+              data-category={categoryCounter}
+              onClick={(event) => this.activateCategory(event)}
+              style={{ cursor: 'pointer' }}
             >
               <TeamSection 
                 teamDetails={teamObject} 
                 category={categoryCounter}
                 categoryActive={this.state[categoryCounter]}
-                activateCategory={(category) => this.activateCategory(category)}
               />
             </Col>
           );

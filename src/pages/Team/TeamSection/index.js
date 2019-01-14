@@ -9,16 +9,15 @@ const TeamSection = (props) => {
   
   const TeamSectionInline = {
     main: {
-      cursor: 'pointer',
-      height: '700px',
-      maxHeight: props.categoryActive ? '700px' : '400px',
+      height: '600px',
+      maxHeight: props.categoryActive ? '600px' : '300px',
       transition: 'max-height 400ms ease',
       primary: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '400px',
+        height: '300px',
         role: {
           textTransform: 'uppercase',
           fontSize: '90%',
@@ -30,7 +29,7 @@ const TeamSection = (props) => {
       },
       secondary: {
         position: 'relative',
-        bottom: '100px',
+        bottom: '50px',
         height: '300px',
         display: 'flex',
         alignItems: 'center',
@@ -40,7 +39,7 @@ const TeamSection = (props) => {
         width: '80%',
         margin: '0 auto',
         [mediaQueries.phoneLarge]: {
-          width: '70%'
+          width: '90%'
         },
         blurb: {
           fontSize: pxToRem(14)
@@ -52,7 +51,7 @@ const TeamSection = (props) => {
   const { main } = TeamSectionInline;
   
   return (
-    <div style={main} onClick={() => props.activateCategory(props.category)}>
+    <div style={main}>
       <div style={main.primary}>
         <h3 className='text-center no-margin'>{company}</h3>
         <p style={main.primary.role}>{role}</p>
