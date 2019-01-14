@@ -51,7 +51,7 @@ class Contact extends Component {
       img: {
         margin: `${pxToRem(40)} auto`,
         [mediaQueries.tablet]: {
-          margin: '0 0 0 auto',
+          margin: '0 auto 0 0',
         },
         display: 'block',
       }
