@@ -35,7 +35,6 @@ const captions = {
     fontSize: pxToRem(8),
     textTransform: 'uppercase',
     paddingRight: '30px',
-    zIndex: '1'
   },
   '.caption-main-small.active .caption, .caption-main-large.active .caption': {
     transition: 'all 100ms ease 100ms',
