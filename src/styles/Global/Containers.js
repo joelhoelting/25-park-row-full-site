@@ -101,7 +101,7 @@ const containers = {
         marginRight: 'auto',
         marginTop: '120px',
         maxWidth: '2000px',
-        paddingBottom: '50px',
+        paddingBottom: '20px',
         width: '75%',
       },
       '.full-width-container': {
