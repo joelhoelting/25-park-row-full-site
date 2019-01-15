@@ -15,7 +15,7 @@ import { Panel, SubTitle } from 'helpers/Layout/_module';
 
 const NeighborhoodCSS = {
   '.neighborhood-map-wrapper': {
-    height: '50vh'
+    height: '60vh'
   },
   mediaQueries: {
     [globalMediaQueries.desktopSmall]: {

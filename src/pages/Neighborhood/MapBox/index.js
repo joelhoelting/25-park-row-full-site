@@ -13,13 +13,12 @@ import { Row, Col } from 'react-flexbox-grid';
 import MediaQuery from 'react-responsive';
 
 import { pxToRem } from 'helpers/Math';
-import { mediaQueries } from 'styles/Global/MediaQueries';
+import { globalMediaQueries, mediaQueries } from 'styles/Global/MediaQueries';
 import locations from 'data/mapLocations';
 
 const Map = ReactMapboxGl({
   accessToken:
     'pk.eyJ1IjoiZGJveHN0dWRpbyIsImEiOiJjamhheDI4NWIwanA4MzhzMDgwY3VqZGF0In0.l0vqWjSKsR-CtSR_FJcFjA',
-  minZoom: 15,
   scrollZoom: false
 });
 
@@ -29,7 +28,11 @@ const MapBoxInline = {
       maxHeight: pxToRem(150),
       display: 'block',
       margin: '0 auto',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      height: '100px',
+      [mediaQueries.tablet]: {
+        height: 'auto'
+      }
     },
     mapPrimaryLogo: {
       boxShadow: '2px 2px 3px rgba(0,0,0,.2)', 
@@ -42,6 +45,24 @@ const MapBoxInline = {
       [mediaQueries.tablet]: {
         fontSize: pxToRem(20)
       }
+    },
+    popup: {
+      img: { 
+        margin: '0 auto', 
+        display: 'block', 
+        maxWidth: '100%' 
+      },
+      title: { 
+        fontSize: pxToRem(10),
+        lineHeight: pxToRem(10),
+        marginBottom: 0,
+        [mediaQueries.tabletLandscape]: {
+          width: '200px', 
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          marginBottom: 'auto'
+        }
+      }
     }
   }
 };
@@ -53,7 +74,7 @@ const MapBoxCSS = {
     border: '1px solid #000'
   },
   '.mapboxgl-popup': {
-    width: '250px'
+    width: '40%'
   },
   '.mapboxgl-popup-content': {
     border: '1px solid #000'
@@ -69,6 +90,13 @@ const MapBoxCSS = {
   },
   '.mapboxgl-popup-anchor-right .mapboxgl-popup-tip': {
     borderLeftColor: '#000'
+  },
+  mediaQueries: {
+    [globalMediaQueries.tablet]: {
+      '.mapboxgl-popup': {
+        width: '250px'
+      },
+    }
   }
 };
 
@@ -114,7 +142,7 @@ class MapBox extends Component {
     const categoryButton = (category) => {
       return (
         <Col 
-          xs={2}
+          xs={4} md={2}
           onClick={() => this.setState({ 
             activeCategory: category, 
             activeLocation: false
@@ -145,26 +173,26 @@ class MapBox extends Component {
             <h2 className="text-center">The Neighborhood Map</h2>
           </Col>
         </Row>
+        <Row className="row-extra-margin" top='md' between='md' center='xs'>
+          {Object.keys(this.mapCategories).map(category => categoryButton(category))}
+        </Row>
         <MediaQuery maxWidth={991}>
           <Row>
             <Col sm={12}>
               <p
                 style={main.mobileParagraph} 
-                className="text-center no-margin"
+                className="text-center"
               >
                 {this.mapCategories[this.state.activeCategory]}
               </p>
             </Col>
           </Row>
         </MediaQuery>
-        <Row className="row-extra-margin-1" top='sm' bottom='xs' between='xs'>
-          {Object.keys(this.mapCategories).map(category => categoryButton(category))}
-        </Row>
         <Row className="neighborhood-map-wrapper">
           <Map
             style='mapbox://styles/dboxstudio/cjlpcgr5l0umi2sqo6h7q5k5k'
             containerStyle={{ height: '100%', width: '100%' }}
-            
+            zoom={this.props.width < 500 ? [14] : [15]}
             center={[-74.007377, 40.711464]}
             onClick={() => this.setState({ activeLocation: undefined})}
           >
@@ -186,13 +214,10 @@ class MapBox extends Component {
               <Popup coordinates={activeLocation.coordinates}>
                 <img
                   alt={activeLocation.title}
-                  style={{ margin: '0 auto', display: 'block' }}
+                  style={main.popup.img}
                   src={activeLocation.thumbnailSrc}
                 />
-                <div style={{ width: '200px', margin: '0 auto' }}>
-                  <h4>{activeLocation.title}</h4>
-                  <p style={{ fontSize: '.8rem' }}>{activeLocation.description}</p>
-                </div>
+                <h4 style={main.popup.title}>{activeLocation.title}</h4>
               </Popup>
             )}
           </Map>
