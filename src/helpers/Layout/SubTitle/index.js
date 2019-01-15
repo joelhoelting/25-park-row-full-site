@@ -18,10 +18,10 @@ const SubTitle = (props) => {
 
   return (
     <h3 style={SubTitleInline.main} className='text-center'>
-      <MediaQuery maxDeviceWidth={991}>
+      <MediaQuery maxWidth={991}>
         {props.mobile}
       </MediaQuery>
-      <MediaQuery minDeviceWidth={992}>
+      <MediaQuery minWidth={992}>
         {props.desktop}
       </MediaQuery>
     </h3>

@@ -35,7 +35,7 @@ class FloorplanOverlay extends Component {
   }
 
   render() {
-    const { phoneLarge, desktopSmall } = mediaQueries;
+    const { tablet, desktopSmall } = mediaQueries;
 
     const styles = {
       main: {
@@ -68,6 +68,9 @@ class FloorplanOverlay extends Component {
               flexDirection: 'row',
               justifyContent: 'space-between',
             },
+            residence: {
+              fontSize: pxToRem(30)
+            },
             subDetail: {
               margin: `${pxToRem(5)} 0`,
               width: '50%',
@@ -91,7 +94,7 @@ class FloorplanOverlay extends Component {
                 bottom: '50px',
                 left: '50%',
                 transform: 'translateX(-50%)',
-                [phoneLarge]: {
+                [tablet]: {
                   transform: 'none',
                   left: 'initial',
                   right: '100px', 
@@ -176,15 +179,20 @@ class FloorplanOverlay extends Component {
     };
 
     const { bathrooms, bedrooms, hasTwoLevels, interior, imgSrc, pdfSrc, price, residence } = this.props.unit;
+    
     return (
       <Context.Consumer>
         {context => (
           <div style={[styles.main, this.props.active ? styles.main.active : null]}>
             <div style={styles.main.inner}>
-              <MediaQuery minDeviceWidth={1200}>
+              <MediaQuery minWidth={1200}>
                 <div style={styles.main.inner.detail}>
-                  <div style={styles.main.inner.detail.subDetail}>
-                    <h2 className='no-margin'>{`Residence ${residence}`}</h2>
+                  <div>
+                    <p 
+                      style={styles.main.inner.detail.residence}
+                      className='no-margin'>
+                      {`Residence ${residence}`}
+                    </p>
                   </div>
                   <div style={styles.main.inner.detail.subDetail}>
                     <p className='no-margin'>{`${bedrooms} Bedrooms`}</p>
@@ -196,7 +204,7 @@ class FloorplanOverlay extends Component {
                   </div>
                   <div style={styles.main.inner.detail.subDetail}>
                     <p className='no-margin'>Exterior</p>
-                    <p className='no-margin'>1,022 SF / 94 SM</p>
+                    <p className='no-margin'>1,022 SF/94 SM</p>
                   </div>
                   <div style={styles.main.inner.detail.subDetail}>
                     <p className='no-margin'>Price</p>
@@ -225,7 +233,7 @@ class FloorplanOverlay extends Component {
                 </div>
                 {generateTwoLevelButtons(hasTwoLevels)}
               </MediaQuery>
-              <MediaQuery maxDeviceWidth={1200}>
+              <MediaQuery maxWidth={1200}>
                 <div>
                   <h2 className='no-margin'>{`Residence ${residence}`}</h2>
                   {generateTwoLevelButtons(hasTwoLevels)}
@@ -239,13 +247,13 @@ class FloorplanOverlay extends Component {
                   ref={this.overlayFloorplanImg}
                 />
               </div>
-              <MediaQuery minDeviceWidth={1200}>
+              <MediaQuery minWidth={1200}>
                 <div style={styles.main.inner.legal}>
                   <p style={{ fontSize: '10px'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis tristique mi. Donec blandit lobortis urna, et molestie quam rhoncus eget. Suspendisse at enim quam. Etiam a orci ipsum. Duis sit amet aliquam arcu. Sed ut lectus sapien. Praesent nec convallis orci. Cras sollicitudin luctus lorem, ut ultricies nisl mattis nec. Quisque vitae blandit nisi. Praesent luctus ex ex, id bibendum ex cursus eu. In vestibulum ex eu nibh posuere pharetra sit amet eu eros. Nunc finibus viverra mauris eget luctus. Maecenas in mauris eu quam vestibulum egestas. Nunc volutpat auctor tempus. In vitae nisl vestibulum augue faucibus eleifend. Sed in augue facilisis, bibendum urna posuere, mollis metus. Praesent nibh massa, auctor dapibus euismod eu, sollicitudin sed est. Mauris ut lobortis mi. Ut malesuada pharetra posuere. Proin at elementum urna. Aliquam finibus commodo ornare. Nunc placerat, diam eget finibus efficitur, nibh felis scelerisque metus, nec efficitur sem erat quis purus. Etiam a quam quis ex maximus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis tristique mi. Donec blandit lobortis urna, et molestie quam rhoncus eget. Suspendisse at enim quam. Etiam a orci ipsum. Duis sit amet aliquam arcu.</p>
                 </div>
               </MediaQuery>
               
-              <MediaQuery maxDeviceWidth={1200}>
+              <MediaQuery maxWidth={1200}>
                 <div style={styles.main.inner.detail}>
                   <img 
                     onClick={() => this.toggleOverlay()}
@@ -268,7 +276,7 @@ class FloorplanOverlay extends Component {
                   </div>
                   <div style={styles.main.inner.detail.subDetail}>
                     <p className='no-margin'>Exterior</p>
-                    <p className='no-margin'>1,022 SF / 94 SM</p>
+                    <p className='no-margin'>1,022 SF/94 SM</p>
                   </div>
                   <div style={styles.main.inner.detail.subDetail}>
                     <p className='no-margin'>Price</p>

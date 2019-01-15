@@ -169,7 +169,7 @@ class Amenities extends Component {
                   width='100%' 
                 />
               </Waypoint>
-              <MediaQuery maxDeviceWidth={992}>
+              <MediaQuery maxWidth={992}>
                 <h4>Dining Room</h4>
               </MediaQuery>
             </Col>

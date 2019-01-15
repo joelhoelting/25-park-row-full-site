@@ -126,7 +126,7 @@ class MapBox extends Component {
             style={main.categoryImg}
             src={`/images/icons/illustration/${category}${this.state.activeCategory === category ? '' : '_bw'}.svg`}
           />
-          <MediaQuery minDeviceWidth={992}>
+          <MediaQuery minWidth={992}>
             <p
               style={{ cursor: 'pointer', fontSize: pxToRem(14), opacity: this.state.activeCategory === category ? 1 : .4 }} 
               className='text-center uppercase'
@@ -145,7 +145,7 @@ class MapBox extends Component {
             <h2 className="text-center">The Neighborhood Map</h2>
           </Col>
         </Row>
-        <MediaQuery maxDeviceWidth={991}>
+        <MediaQuery maxWidth={991}>
           <Row>
             <Col sm={12}>
               <p

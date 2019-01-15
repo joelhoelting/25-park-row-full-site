@@ -292,7 +292,7 @@ class Interiors extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <MediaQuery maxDeviceWidth={992}>
+          <MediaQuery maxWidth={992}>
             <Row className='row-extra-margin row-extra-margin-desktop-3'>
               <Col 
                 md={12}
@@ -326,7 +326,7 @@ class Interiors extends Component {
               </Col>
             </Row>
           </MediaQuery>
-          <MediaQuery minDeviceWidth={992}>
+          <MediaQuery minWidth={992}>
             <Row className='row-extra-margin row-extra-margin-desktop-3'>
               <Col 
                 style={{ margin: `0 ${pxToRem(8)}`, flex: '.783' }}

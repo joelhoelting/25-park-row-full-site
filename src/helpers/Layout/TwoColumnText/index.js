@@ -6,7 +6,7 @@ const TwoColumnText = (props) => {
   const renderParagraph = () => {
     if (props.hideParagraphMobile) {
       return (
-        <MediaQuery minDeviceWidth={992}>
+        <MediaQuery minWidth={992}>
           <Col lg={6}>
             <p>{props.paragraph}</p>
           </Col>
@@ -26,10 +26,10 @@ const TwoColumnText = (props) => {
       className={`two-column-text ${props.className ? props.className : null}`} 
     >
       <Col lg={6}>
-        <MediaQuery maxDeviceWidth={992}>
+        <MediaQuery maxWidth={992}>
           <h3 className='text-center no-margin-bottom'>{props.header}</h3>
         </MediaQuery>
-        <MediaQuery minDeviceWidth={992}>
+        <MediaQuery minWidth={992}>
           <h3>{props.header}</h3>
         </MediaQuery>
       </Col>
