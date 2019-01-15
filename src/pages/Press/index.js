@@ -70,15 +70,10 @@ class Press extends Component {
     };
 
     return (
-      <div className={`main-container ${!this.state.mounted ? 'hidden' : ''}`}>
+      <div className={`press-container ${!this.state.mounted ? 'hidden' : ''}`}>
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
         <Style rules={PressCSS}/>
         <Grid fluid>
-          <Row>
-            <Col lg={12}>
-              <h2 className='text-center'>Press</h2>
-            </Col>
-          </Row>
           {this.renderPressArticles()}
         </Grid>
       </div>

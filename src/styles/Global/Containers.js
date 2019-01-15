@@ -38,6 +38,13 @@ const containers = {
     transition: 'opacity 400ms ease-in-out',
     width: '100%',
   },
+  // Main Container
+  '.press-container': {
+    height: 'auto',
+    marginTop: `70px`,
+    transition: 'opacity 400ms ease-in-out',
+    width: '100%',
+  },
   // Contact Container
   '.contact-container': {
     height: 'auto',
@@ -88,6 +95,14 @@ const containers = {
         marginTop: '92px',
         width: '90%',
         maxWidth: '2000px'
+      },
+      '.press-container': {
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        marginTop: '120px',
+        maxWidth: '2000px',
+        paddingBottom: '50px',
+        width: '75%',
       },
       '.full-width-container': {
         marginTop: '92px',
