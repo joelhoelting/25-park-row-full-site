@@ -38,7 +38,7 @@ const TeamSection = (props) => {
       secondary: {
         position: 'relative',
         bottom: '50px',
-        height: '350px',
+        height: props.categoryActive ? '350px' : 0,
         display: 'flex',
         alignItems: 'center',
         transition: props.categoryActive ? 'all 400ms ease 200ms' : 'all 75ms ease',
@@ -48,7 +48,6 @@ const TeamSection = (props) => {
         margin: '0 auto',
         [mediaQueries.tablet]: {
           alignItems: 'flex-start',
-          height: '350px',
           width: '65%'
         },
         blurb: {
