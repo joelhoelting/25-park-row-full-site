@@ -74,6 +74,11 @@ class Press extends Component {
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
         <Style rules={PressCSS}/>
         <Grid fluid>
+          <Row>
+            <Col lg={12}>
+              <h2 className='text-center'>Press</h2>
+            </Col>
+          </Row>
           {this.renderPressArticles()}
         </Grid>
       </div>

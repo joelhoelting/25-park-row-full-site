@@ -417,7 +417,7 @@ class Header extends Component {
 
     // Function to hide arrows on peripheral pages
     const hideArrows = () => {
-      if (route === 'brochure' || route === 'press' || route === 'legal') {
+      if (route === 'brochure' || route === 'press' || route === 'legal' || route === 'team') {
         return true;
       } else {
         return false;

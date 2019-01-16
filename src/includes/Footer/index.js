@@ -142,7 +142,7 @@ class Footer extends Component {
           padding: `${pxToRem(20)} 0`,
           color: color,
           height: '100%',
-          width: '25%',
+          width: '20%',
           lineHeight: pxToRem(30),
           [tablet]: {
             fontSize: pxToRem(16),
@@ -179,7 +179,7 @@ class Footer extends Component {
 
     // add classes to animate arro
     const hideArrows = () => {
-      if (route === 'brochure' || route === 'press' || route === 'legal') {
+      if (route === 'brochure' || route === 'press' || route === 'legal' || route === 'team') {
         return true;
       } else {
         return false;
@@ -230,6 +230,9 @@ class Footer extends Component {
           </RadiumLink>
           <RadiumLink style={FooterInline.nav.link} to={`/press`}>
             Press
+          </RadiumLink>
+          <RadiumLink style={FooterInline.nav.link} to={`/team`}>
+            Team
           </RadiumLink>
           <RadiumLink style={FooterInline.nav.link} to={`/legal`}>
             Legal

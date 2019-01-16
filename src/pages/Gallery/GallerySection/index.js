@@ -2,16 +2,8 @@ import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 
 import ExpandImage from './ExpandImage';
-import { pxToRem } from 'helpers/Math';
 
 const GallerySection = (props) => {
-  const styles = {
-    main: {
-      header: {
-        margin: `${pxToRem(28)} 0`
-      }
-    }
-  };
 
   const buildRows = () => {
     let rows = [];
@@ -54,7 +46,7 @@ const GallerySection = (props) => {
     <div>
       <Row>
         <Col sm={12}>
-          <h3 className='text-center' style={styles.main.header}>{props.title}</h3>
+          <h3 className='text-center'>{props.title}</h3>
         </Col>
       </Row>
       {buildRows()}

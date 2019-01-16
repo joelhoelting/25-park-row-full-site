@@ -5,13 +5,13 @@ const pages = {
   views: 'Views',
   floorplans: 'Floor Plans',
   neighborhood: 'Neighborhood',
-  team: 'Team',
   gallery: 'Gallery',
   contact: 'Contact Us'
 };
 export const subPages = {
   brochure: 'Brochure',
   press: 'Press',
+  team: 'Team',
   legal: 'Legal',
   instagram: 'Instagram'
 };
