@@ -11,12 +11,12 @@ const Legal = (props) => {
   };
 
   return (
-    <div className='main-container'>
+    <div className='large-container'>
       <Style rules={{'body': {backgroundColor: props.color}}}/>
       <Grid fluid>
         <Row>
           <Col lg={12}>
-            <h2 className='text-center'>Legal</h2>
+            <h3 className='text-center'>Legal</h3>
           </Col>
         </Row>
         <Row center='xs'>

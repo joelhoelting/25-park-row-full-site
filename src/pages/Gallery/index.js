@@ -141,7 +141,7 @@ class Gallery extends Component {
         >
           <Row className='mobile-header' style={{ borderBottom: '2px solid black'}}>
             <Col lg={12}>
-              <h2 className='text-center'>Gallery</h2>
+              <h3 className='text-center'>Gallery</h3>
             </Col>
           </Row>
           <Grid fluid>

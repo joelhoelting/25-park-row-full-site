@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Radium, {Style} from 'radium';
+import { Row, Col } from 'react-flexbox-grid';
 
 import { mediaQueries, globalMediaQueries } from 'styles/Global/MediaQueries';
 import { pxToRem } from 'helpers/Math';
@@ -20,10 +21,14 @@ class Brochure extends Component {
     const BrochureInline = {
       main: {
         [mediaQueries.tablet]: {
-          width: '55%',
+          width: '80%',
           margin: '0 auto',
           display: 'flex',
           justifyContent: 'space-between',
+        },
+        [mediaQueries.desktop]: {
+          width: '65%',
+          maxWidth: '1600px'
         },
         box: {
           width: '100%',
@@ -90,24 +95,30 @@ class Brochure extends Component {
     const { main } = BrochureInline;
     
     return (
-      <div className={'brochure-container hidden'} ref={this.hidden}>
+      <div className={'large-container hidden'} ref={this.hidden}>
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
         <Style rules={BrochureCSS} />
-        <h2 className='text-center' style={{color: 'white'}}>Download Brochure</h2>
-        <div style={main}>
-          <div key={'lang_english'} className='box box-english' style={main.box}>
-            <a href='/downloads/brochure/25parkrow_rack_brochure_en.pdf' target='_blank'>
-              <div style={main.box.inner}>
-                <h3>English</h3>
-              </div>
-            </a>
-          </div>
-          <div key={'lang_mandarin'} className='box box-mandarin' style={main.box}>
-            <a href='/downloads/brochure/25parkrow_rack_brochure_cn.pdf' target='_blank'>
-              <div style={main.box.inner}>
-                <h3>Mandarin</h3>
-              </div>
-            </a>
+        <Row>
+          <Col lg={12}>
+            <h3 className='text-center' style={{color: 'white'}}>Download Brochure</h3>
+          </Col>
+        </Row>
+        <div className='brochure-container'>
+          <div style={main}>
+            <div key={'lang_english'} className='box box-english' style={main.box}>
+              <a href='/downloads/brochure/25parkrow_rack_brochure_en.pdf' target='_blank'>
+                <div style={main.box.inner}>
+                  <h3>English</h3>
+                </div>
+              </a>
+            </div>
+            <div key={'lang_mandarin'} className='box box-mandarin' style={main.box}>
+              <a href='/downloads/brochure/25parkrow_rack_brochure_cn.pdf' target='_blank'>
+                <div style={main.box.inner}>
+                  <h3>Mandarin</h3>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>

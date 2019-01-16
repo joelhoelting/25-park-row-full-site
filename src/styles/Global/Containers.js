@@ -38,13 +38,6 @@ const containers = {
     transition: 'opacity 400ms ease-in-out',
     width: '100%',
   },
-  // Main Container
-  '.press-container': {
-    height: 'auto',
-    marginTop: `70px`,
-    transition: 'opacity 400ms ease-in-out',
-    width: '100%',
-  },
   // Contact Container
   '.contact-container': {
     height: 'auto',
@@ -74,7 +67,7 @@ const containers = {
         position: 'fixed',
         top: 0,
         left: 0,
-        height: '70vh',
+        height: '80vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -95,14 +88,6 @@ const containers = {
         marginTop: '92px',
         width: '80%',
         maxWidth: '2000px'
-      },
-      '.press-container': {
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        marginTop: '120px',
-        maxWidth: '2000px',
-        paddingBottom: '20px',
-        width: '75%',
       },
       '.full-width-container': {
         marginTop: '92px',
@@ -131,7 +116,7 @@ const containers = {
     },
     [desktopLarge]: {
       '.large-container': {
-        marginTop: '112px',
+        marginTop: '105px',
         width: '79.5%'
       },
       '.main-container': {
