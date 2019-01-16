@@ -263,6 +263,7 @@ class Header extends Component {
           },
           bottomNav: {
             width: '80%',
+            maxWidth: '2000px',
             display: 'inline-flex',
             flexFlow: 'row nowrap',
             justifyContent: 'space-between',
