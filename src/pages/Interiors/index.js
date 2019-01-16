@@ -74,13 +74,13 @@ class Interiors extends Component {
               lg={12}
               className={!this.state.sections[1] ? 'hidden' : 'animate-reveal-delay-0'}
             >
-              <SubTitle
-                desktop={<span>Highly-Crafted Residences and Timeless Interiors</span>}
-                mobile={<span>Highly-Crafted<br/> Residences and Timeless<br/> Interiors</span>}
-              />
               <Waypoint 
                 onEnter={() => this.triggerAnimation(1, true)} 
                 onLeave={() => this.triggerAnimation(1, false)} 
+              />
+              <SubTitle
+                desktop={<span>Highly-Crafted<br/> Residences and Timeless Interiors</span>}
+                mobile={<span>Highly-Crafted<br/> Residences and Timeless<br/> Interiors</span>}
               />
               <Panel 
                 background={colorVars.floorplanBlue}

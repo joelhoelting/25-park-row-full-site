@@ -10,14 +10,21 @@ const TeamSection = (props) => {
   const TeamSectionInline = {
     main: {
       height: '600px',
-      maxHeight: props.categoryActive ? '600px' : '300px',
+      maxHeight: props.categoryActive ? '600px' : '250px',
       transition: 'max-height 400ms ease',
+      [mediaQueries.tablet]: {
+        height: '600px',
+        maxHeight: props.categoryActive ? '600px' : '300px'
+      },
       primary: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '300px',
+        height: '250px',
+        [mediaQueries.tablet]: {
+          height: '300px',
+        },
         role: {
           marginTop: '5px',
           textTransform: 'uppercase',
@@ -31,19 +38,24 @@ const TeamSection = (props) => {
       secondary: {
         position: 'relative',
         bottom: '50px',
-        height: '300px',
+        height: '350px',
         display: 'flex',
         alignItems: 'center',
         transition: props.categoryActive ? 'all 400ms ease 200ms' : 'all 75ms ease',
         visibility: props.categoryActive ? 'visible' : 'hidden',
         opacity: props.categoryActive ? 1 : 0,
-        width: '80%',
+        width: '85%',
         margin: '0 auto',
-        [mediaQueries.phoneLarge]: {
-          width: '90%'
+        [mediaQueries.tablet]: {
+          alignItems: 'flex-start',
+          height: '350px',
+          width: '65%'
         },
         blurb: {
-          fontSize: pxToRem(14)
+          fontSize: pxToRem(12),
+          [mediaQueries.tablet]: {
+            fontSize: pxToRem(14)
+          },
         }
       }
     }

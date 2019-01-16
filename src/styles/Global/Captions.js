@@ -141,6 +141,9 @@ const captions = {
       '.caption-main-large.active': {
         maxHeight: '10%',
       },
+      '.caption': {
+        fontSize: pxToRem(10)
+      }
     },
     [globalMediaQueries.desktopLarge]: {
       '.caption-main-small': {

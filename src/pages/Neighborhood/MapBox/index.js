@@ -156,7 +156,7 @@ class MapBox extends Component {
           />
           <MediaQuery minWidth={992}>
             <p
-              style={{ cursor: 'pointer', fontSize: pxToRem(14), opacity: this.state.activeCategory === category ? 1 : .4 }} 
+              style={{ cursor: 'pointer', fontSize: pxToRem(12), letterSpacing: pxToRem(3), opacity: this.state.activeCategory === category ? 1 : .4 }} 
               className='text-center uppercase'
             >
               {this.mapCategories[category]}

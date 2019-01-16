@@ -256,7 +256,7 @@ class FloorplanOverlay extends Component {
               <MediaQuery maxWidth={1200}>
                 <div style={styles.main.inner.detail}>
                   <img 
-                    onClick={() => this.toggleOverlay()}
+                    onClick={() => this.props.toggleOverlay()}
                     style={ styles.main.inner.detail.buttons.closeBtn} 
                     src={'/images/icons/close_black.svg'}
                     alt='Close floorplan overlay'

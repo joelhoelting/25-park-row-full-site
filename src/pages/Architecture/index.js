@@ -67,13 +67,13 @@ class Architecture extends Component {
               lg={12}
               className={!this.state.sections[1] ? 'hidden' : 'animate-reveal-delay-0'}
             >
-              <SubTitle
-                desktop={<span>Introducing a New York City Icon</span>}
-                mobile={<span>Introducing<br/>A New York City Icon</span>}
-              />
               <Waypoint 
                 onEnter={() => this.triggerAnimation(1, true)} 
                 onLeave={() => this.triggerAnimation(1, false)} 
+              />
+              <SubTitle
+                desktop={<span>Introducing<br/> a New York City Icon</span>}
+                mobile={<span>Introducing<br/>A New York City Icon</span>}
               />
               <Panel 
                 background={colorVars.olive}

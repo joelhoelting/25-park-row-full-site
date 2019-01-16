@@ -67,13 +67,13 @@ class Views extends Component {
               lg={12}
               className={!this.state.sections[1] ? 'hidden' : 'animate-reveal-delay-0'}
             >
-              <SubTitle
-                desktop={<span>Nullam finibus auctor nibh gravida </span>}
-                mobile={<span>Nullam finibus auctor nibh gravida</span>}
-              />
               <Waypoint 
                 onEnter={() => this.triggerAnimation(1, true)} 
                 onLeave={() => this.triggerAnimation(1, false)} 
+              />
+              <SubTitle
+                desktop={<span>Nullam finibus<br/> auctor nibh gravida </span>}
+                mobile={<span>Nullam finibus<br/> auctor nibh gravida</span>}
               />
               <Panel 
                 background={colorVars.charcoal}

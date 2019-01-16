@@ -68,13 +68,13 @@ class Amenities extends Component {
               lg={12}
               className={!this.state.sections[1] ? 'hidden' : 'animate-reveal-delay-0'}
             >
-              <SubTitle
-                desktop={<span>The Park Row Club Garden and Dining Terrace</span>}
-                mobile={<span>The Park Row Club<br/> Garden and Dining Terrace</span>}
-              />
               <Waypoint 
                 onEnter={() => this.triggerAnimation(1, true)} 
                 onLeave={() => this.triggerAnimation(1, false)} 
+              />
+              <SubTitle
+                desktop={<span>The Park Row Club<br/> Garden and Dining Terrace</span>}
+                mobile={<span>The Park Row Club<br/> Garden and Dining Terrace</span>}
               />
               <Panel 
                 background={colorVars.olive}

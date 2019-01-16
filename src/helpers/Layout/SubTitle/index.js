@@ -10,7 +10,9 @@ const SubTitle = (props) => {
 
   const SubTitleInline = {
     main: {
+      fontSize: pxToRem(22),
       [tabletLandscape]: {
+        fontSize: pxToRem(32),
         margin: `${pxToRem(50)} 0`
       }
     }

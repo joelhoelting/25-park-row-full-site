@@ -87,7 +87,7 @@ const containers = {
         marginTop: '100px',
         maxWidth: '2000px',
         paddingBottom: '50px',
-        width: '75%',
+        width: '65%',
       },
       '.large-container': {
         marginLeft: 'auto',
@@ -132,7 +132,7 @@ const containers = {
     [desktopLarge]: {
       '.large-container': {
         marginTop: '112px',
-        width: '80%'
+        width: '78%'
       },
       '.main-container': {
         marginTop: '120px',

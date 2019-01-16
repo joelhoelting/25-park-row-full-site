@@ -93,18 +93,13 @@ class Neighborhood extends Component {
                   !this.state.sections[1] ? 'hidden' : 'animate-reveal-delay-0'
                 }
               >
-                <SubTitle
-                  desktop={<span>New York at Your Fingertips</span>}
-                  mobile={
-                    <span>
-                      New York
-                      <br /> at Your Fingertips
-                    </span>
-                  }
-                />
                 <Waypoint
                   onEnter={() => this.triggerAnimation(1, true)}
                   onLeave={() => this.triggerAnimation(1, false)}
+                />
+                <SubTitle
+                  desktop={<span>New York<br/> at Your Fingertips</span>}
+                  mobile={<span> New York<br /> at Your Fingertips</span>}
                 />
                 <Panel
                   background={colorVars.darkOlive}
