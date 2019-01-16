@@ -69,10 +69,6 @@ const grid = {
   '.row-extra-margin-5': {
     margin: '96px -8px'
   },
-  // Two Column Text Component
-  '.two-column-text': {
-    margin: '32px -8px 16px'
-  },
   mediaQueries: {
     [globalMediaQueries.tablet]: {
       '.row-extra-padding-desktop-3': {
@@ -109,10 +105,6 @@ const grid = {
       },
       '.row-extra-margin-desktop-5': {
         margin: '96px -8px'
-      },
-      // Two Column Text Component
-      '.two-column-text': {
-        margin: '80px -8px 50px'
       },
       '.row-extra-padding-desktop-3': {
         padding: '96px 0'
