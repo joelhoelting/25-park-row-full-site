@@ -10,7 +10,7 @@ import { colorVars } from 'styles/Global/Colors';
 import { SmallImage, LargeImage } from 'helpers/Image/ResponsiveImage/_module';
 
 // Layout Helpers
-import { Panel, TwoColumnText, VerticalSpacedText, SubTitle } from 'helpers/Layout/_module';
+import { Panel, TwoColumnText, SubTitle } from 'helpers/Layout/_module';
 
 class Architecture extends Component {
   constructor(props) {
@@ -42,22 +42,21 @@ class Architecture extends Component {
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
         <Grid fluid>
           <Row 
+            center='lg'
             style={{ minHeight: !this.state.mounted ? '100vh' : '20vh'}}
-          >
+          > 
             <Col 
-              lg={12}
+              lg={5}
               className={!this.state.sections[0] ? 'hidden' : 'animate-reveal-delay-0'}
-            > 
-              <h2 className='text-center mobile-header'>Architecture</h2>
+            >  
               <Waypoint 
                 onEnter={() => this.triggerAnimation(0, true)} 
-                onLeave={() => this.triggerAnimation(0, false)} 
+                onLeave={() => this.triggerAnimation(0, false)}
               >
-                <LargeImage 
-                  caption='At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
-                  src='/images/pages/architecture/building_exterior_lantern_terrace'
-                  width='100%'
-                  onLoad={() => this.initialImageLoad()} 
+                <SmallImage 
+                  caption='At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.' 
+                  src='/images/pages/architecture/building_across_the_park'
+                  onLoad={() => this.initialImageLoad()}
                 />
               </Waypoint>
             </Col>
@@ -70,33 +69,27 @@ class Architecture extends Component {
               <Waypoint 
                 onEnter={() => this.triggerAnimation(1, true)} 
                 onLeave={() => this.triggerAnimation(1, false)} 
-              />
-              <SubTitle
-                desktop={<span>Introducing<br/> a New York City Icon</span>}
-                mobile={<span>Introducing<br/>A New York City Icon</span>}
-              />
-              <Panel 
-                background={colorVars.olive}
-                textAlign='center'
-                text='25 Park Row is a 21st century architectural icon providing unmatched views from every residence over historic City Hall Park. This stunner on the Manhattan skyline offers a transcendent living experience in the new Downtown.'
-              />
+              >
+                <SubTitle
+                  desktop={<span>Introducing<br/> a New York City Icon</span>}
+                  mobile={<span>Introducing<br/>A New York City Icon</span>}
+                />
+              </Waypoint>
             </Col>
           </Row>
-          <Row 
-            className='row-extra-margin row-extra-margin-desktop-3' 
-            center='lg'
-          > 
+          <Row>
             <Col 
-              lg={5} 
+              lg={12}
               className={!this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-0'}
-            >  
+            >
               <Waypoint 
                 onEnter={() => this.triggerAnimation(2, true)} 
-                onLeave={() => this.triggerAnimation(2, false)}
+                onLeave={() => this.triggerAnimation(2, false)} 
               >
-                <SmallImage 
-                  caption='At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.' 
-                  src='/images/pages/architecture/building_across_the_park'
+                <Panel 
+                  background={colorVars.olive}
+                  textAlign='center'
+                  text='25 Park Row is a 21st century architectural icon providing unmatched views from every residence over historic City Hall Park. This stunner on the Manhattan skyline offers a transcendent living experience in the new Downtown.'
                 />
               </Waypoint>
             </Col>
@@ -118,14 +111,31 @@ class Architecture extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row>
+          <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
-              lg={12} 
+              lg={12}
               className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
                 onEnter={() => this.triggerAnimation(4, true)} 
                 onLeave={() => this.triggerAnimation(4, false)}
+              >
+                <LargeImage 
+                  caption='At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                  src='/images/pages/architecture/interior_lobby' 
+                  width='100%' 
+                />
+              </Waypoint>
+            </Col>
+          </Row>
+          <Row>
+            <Col 
+              lg={12} 
+              className={!this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-0'}
+            >
+              <Waypoint 
+                onEnter={() => this.triggerAnimation(5, true)} 
+                onLeave={() => this.triggerAnimation(5, false)}
               >
                 <Panel 
                   background={colorVars.olive} 
@@ -137,62 +147,42 @@ class Architecture extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
-            <Col 
-              lg={12}
-              className={!this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-0'}
-            >
-              <Waypoint 
-                onEnter={() => this.triggerAnimation(5, true)} 
-                onLeave={() => this.triggerAnimation(5, false)}
-              >
-                <LargeImage 
-                  caption='At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
-                  src='/images/pages/architecture/interior_lobby' 
-                  width='100%' 
-                />
-              </Waypoint>
-            </Col>
-          </Row>
-          <Row className={'row-extra-margin row-extra-margin-desktop-3'}>
-            <Col lg={4} className={!this.state.sections[6] ? 'hidden' : 'animate-reveal-delay-0'}>
-              <Waypoint 
-                onEnter={() => this.triggerAnimation(6, true)} 
-                onLeave={() => this.triggerAnimation(6, false)}
-              >
-                <SmallImage width='100%' src='/images/pages/architecture/rick_cook' />
-              </Waypoint>
-            </Col>
-            <Col lgOffset={2} lg={6} className={!this.state.sections[7] ? 'hidden' : 'animate-reveal-delay-0'}>
-              <Waypoint 
-                onEnter={() => this.triggerAnimation(7, true)} 
-                onLeave={() => this.triggerAnimation(7, false)}
-              >
-                <VerticalSpacedText 
-                  header='Cookfox Architect'
-                  text="Founded in 2003 by Rick Cook and Bob Fox, COOKFOX designs beautiful, environmentally responsible, high-performance buildings, with a special expertise in landmark historical areas. COOKFOX is the first architectural firm to have designed three LEED Platinum projects in New York City, including One Bryant Park, the world's first LEED Platinum commercial skyscraper. Their award-winning talents delivered the design of the Chelsea Grande and the Caroline."
-                />
-              </Waypoint>
-            </Col>
-          </Row>
           <TwoColumnText 
-            className={!this.state.sections[8] ? 'hidden' : 'animate-reveal-delay-0'}
+            className={!this.state.sections[6] ? 'hidden' : 'animate-reveal-delay-0'}
             header='Building Context'
             paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
             hideParagraphMobile
           />
           <Waypoint 
-            onEnter={() => this.triggerAnimation(8, true)} 
-            onLeave={() => this.triggerAnimation(8, false)}
+            onEnter={() => this.triggerAnimation(6, true)} 
+            onLeave={() => this.triggerAnimation(6, false)}
           />
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}
-              className={!this.state.sections[9] ? 'hidden' : 'animate-reveal-delay-0'}
+              className={!this.state.sections[7] ? 'hidden' : 'animate-reveal-delay-0'}
+            > 
+              <h2 className='text-center mobile-header'>Architecture</h2>
+              <Waypoint 
+                onEnter={() => this.triggerAnimation(7, true)} 
+                onLeave={() => this.triggerAnimation(7, false)} 
+              >
+                <LargeImage 
+                  caption='At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                  src='/images/pages/architecture/building_exterior_lantern_terrace'
+                  width='100%' 
+                />
+              </Waypoint>
+            </Col>
+          </Row>
+          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+            <Col 
+              lg={12}
+              className={!this.state.sections[8] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
-                onEnter={() => this.triggerAnimation(9, true)} 
-                onLeave={() => this.triggerAnimation(9, false)}
+                onEnter={() => this.triggerAnimation(8, true)} 
+                onLeave={() => this.triggerAnimation(8, false)}
               >
                 <LargeImage 
                   caption='At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
@@ -205,11 +195,11 @@ class Architecture extends Component {
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}
-              className={!this.state.sections[10] ? 'hidden' : 'animate-reveal-delay-0'}
+              className={!this.state.sections[9] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
-                onEnter={() => this.triggerAnimation(10, true)} 
-                onLeave={() => this.triggerAnimation(10, false)}
+                onEnter={() => this.triggerAnimation(9, true)} 
+                onLeave={() => this.triggerAnimation(9, false)}
               >
                 <LargeImage
                   caption='At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'

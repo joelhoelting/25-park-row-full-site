@@ -30,7 +30,10 @@ const Panel = (props) => {
   const { main } = PanelInline;
 
   return (
-    <div style={main} ref={props.innerRef ? props.innerRef : null}>
+    <div 
+      style={main} 
+      ref={props.innerRef ? props.innerRef : null}
+    >
       <p style={main.p}>{props.text} </p>
       {props.quote ? <p className='italic'>{props.quote}</p> : null}
     </div>

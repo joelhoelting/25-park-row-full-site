@@ -19,7 +19,11 @@ const SubTitle = (props) => {
   };
 
   return (
-    <h3 style={SubTitleInline.main} className='text-center'>
+    <h3 
+      style={SubTitleInline.main} 
+      className='text-center' 
+      ref={props.innerRef ? props.innerRef : null}
+    >
       <MediaQuery maxWidth={991}>
         {props.mobile}
       </MediaQuery>

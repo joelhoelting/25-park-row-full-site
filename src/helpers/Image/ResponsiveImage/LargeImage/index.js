@@ -86,7 +86,11 @@ const LargeImage = (props) => {
   };
 
   return (
-    <div style={styles.main} className='large-image' ref={props.innerRef ? props.innerRef : null}>
+    <div 
+      style={styles.main} 
+      className='large-image' 
+      ref={props.innerRef ? props.innerRef : null}
+    >
       <picture>
         <source 
           media='(max-width: 992px)' 

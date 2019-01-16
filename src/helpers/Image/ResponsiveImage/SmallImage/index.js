@@ -8,6 +8,10 @@ const SmallImage = (props) => {
   let route = window.location.pathname.replace('/', '') || 'home';
   let plusBackground = colors[route].backgroundColor;
 
+  const handleLoad = () => {
+    props.onLoad();
+  };
+
   const styles = {
     main: {
       position: 'relative'
@@ -19,6 +23,7 @@ const SmallImage = (props) => {
     }
   };
 
+  
 
   const mobileSrcSet = () => {
     let srcSet;
@@ -82,6 +87,7 @@ const SmallImage = (props) => {
         <img 
           alt={props.caption} 
           style={styles.img}
+          onLoad={props.onLoad ? () => handleLoad() : null}
         />
       </picture>
       {renderCaption()}
