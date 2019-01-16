@@ -23,7 +23,7 @@ const teamData = {
       blurb: 'Andre Mellone founded Studio Mellone in 2012 to expand his unique vision which was cultivated during a 20-year career in New York City’s design community, working with Robert A. M. Stern, Mark Hampton, Greg Jordan, Ferguson&Shamamian and Sawyer/Berson. Mellone primarily focuses on private homes and residences, along with boutique retail. He combines the finest architectural interior work with an expertise in crafting custom furniture and textiles to create dramatic visual cues within an elegant framework. Architectural Digest has called him a “world famous designer with a trademark eye” who creates “midcentury, masculine decors for the likes of [fashion designers] Thom Browne and Jason Wu.”'
     },
     {
-      company: 'Starr Whitehouse Landscape Architects and Planners',
+      company: `Starr Whitehouse \n Landscape Architects and Planners`,
       role: 'Landscape Design',
       blurb: 'Starr Whitehouse has been re-imagining New York’s most iconic landscapes for over three decades. As Chief of Design for the Central Park Conservancy, Principal and Co-founder Laura Starr oversaw the renovation of Central Park in the ’80s and ’90s, teaming with Studio Director Jeffrey Poor to reconstruct major destinations such as the Harlem Meer and Great Lawn and cultivated a national rediscovery of the world’s most famous park. On the southern tip of Manhattan, Starr and Poor have been collaborating with the Battery Conservancy since its founding, transforming the lot at the foot of Manhattan into a world class urban park that welcomes millions every year. They have won awards from New York City government and the national design communities, including for their boutique residential projects.'
     }

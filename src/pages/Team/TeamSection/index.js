@@ -61,11 +61,10 @@ const TeamSection = (props) => {
   };
 
   const { main } = TeamSectionInline;
-  
   return (
     <div style={main}>
       <div style={main.primary}>
-        <h3 className='text-center no-margin'>{company}</h3>
+        <h3 className='text-center no-margin display-linebreak'>{company}</h3>
         <p style={main.primary.role}>{role}</p>
         <img 
           alt={`Expand section for ${company}`}

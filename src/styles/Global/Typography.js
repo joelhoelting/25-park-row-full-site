@@ -79,6 +79,9 @@ const typography = {
   '.justify': {
     textAlign: 'justify',
   },
+  '.display-linebreak': {
+    whiteSpace: 'pre-line'
+  },
   // No Margin global style
   '.no-margin': {
     margin: 0
