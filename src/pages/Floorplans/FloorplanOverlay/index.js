@@ -35,10 +35,11 @@ class FloorplanOverlay extends Component {
   }
 
   render() {
-    const { tablet, desktopSmall } = mediaQueries;
+    const { phoneLarge, tablet, tabletLandscape, desktopSmall } = mediaQueries;
 
     const styles = {
       main: {
+        overflowY: this.props.active ? 'auto' : 'inherit',
         position: 'fixed',
         background: '#fff',
         top: 0,
@@ -63,13 +64,16 @@ class FloorplanOverlay extends Component {
             flexDirection: 'row',
             flexWrap: 'wrap',
             [desktopSmall]: {
-              height: '10%',
-              padding: `0 ${pxToRem(50)}`,
+              height: '5%',
+              padding: 0,
               flexDirection: 'row',
               justifyContent: 'space-between',
             },
             residence: {
-              fontSize: pxToRem(30)
+              fontSize: pxToRem(24),
+              [tablet]: {
+                fontSize: pxToRem(30)
+              }
             },
             subDetail: {
               margin: `${pxToRem(5)} 0`,
@@ -88,27 +92,33 @@ class FloorplanOverlay extends Component {
                 width: 'auto'
               },
               download: {
-                position: 'absolute', 
-                height: '40px', 
-                width: '40px', 
-                bottom: '50px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                [tablet]: {
+                height: '30px', 
+                width: '30px',
+                margin: '0 auto',
+                [phoneLarge]: {
+                  position: 'absolute', 
                   transform: 'none',
                   left: 'initial',
-                  right: '100px', 
+                  right: '80px', 
                   top: '30px', 
                   cursor: 'pointer',
+                },
+                [tablet]: {
+                  height: '40px', 
+                  width: '40px',
                 }
               },
               closeBtn: {
-                height: '40px', 
-                width: '40px', 
+                height: '30px', 
+                width: '30px', 
                 position: 'absolute', 
                 right: '20px', 
                 top: '30px', 
                 cursor: 'pointer',
+                [tablet]: {
+                  height: '40px', 
+                  width: '40px'
+                }
               }
             },
             twoLevelButtons: {
@@ -122,17 +132,14 @@ class FloorplanOverlay extends Component {
                   marginRight: 'none',     
                 }
               },
-              [mediaQueries.tablet]: {
-                position: 'absolute'
-              }
             }
           },
           floorplan: {
             padding: `${pxToRem(10)} 0`,
             height: '50%',
             [desktopSmall]: {
-              height: '80%',
-              maxWidth: '80%',
+              height: '85%',
+              maxWidth: '85%',
               margin: '0 auto'
             },
             img: {
@@ -143,9 +150,23 @@ class FloorplanOverlay extends Component {
             }
           },
           legal: {
-            height: '10%',
-            display: 'flex',
-            alignItems: 'flex-end'
+            [tabletLandscape]: {
+              height: '10%',
+              display: 'flex',
+              alignItems: 'flex-end',
+            },
+            fontStyle: {
+              textTransform: 'none',
+              fontFamily: 'Maison Neue Book',
+              fontSize: pxToRem(10)
+            }
+          },
+          mobileLegal: {
+            fontStyle: {
+              textTransform: 'none',
+              fontFamily: 'Maison Neue Book',
+              fontSize: pxToRem(10)
+            }
           }
         }
       }
@@ -235,7 +256,12 @@ class FloorplanOverlay extends Component {
               </MediaQuery>
               <MediaQuery maxWidth={1200}>
                 <div>
-                  <h2 className='no-margin'>{`Residence ${residence}`}</h2>
+                  <p 
+                    className='no-margin' 
+                    style={styles.main.inner.detail.residence}
+                  >
+                    {`Residence ${residence}`}
+                  </p>
                   {generateTwoLevelButtons(hasTwoLevels)}
                 </div>
               </MediaQuery>
@@ -249,7 +275,7 @@ class FloorplanOverlay extends Component {
               </div>
               <MediaQuery minWidth={1200}>
                 <div style={styles.main.inner.legal}>
-                  <p style={{ fontSize: '10px'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis tristique mi. Donec blandit lobortis urna, et molestie quam rhoncus eget. Suspendisse at enim quam. Etiam a orci ipsum. Duis sit amet aliquam arcu. Sed ut lectus sapien. Praesent nec convallis orci. Cras sollicitudin luctus lorem, ut ultricies nisl mattis nec. Quisque vitae blandit nisi. Praesent luctus ex ex, id bibendum ex cursus eu. In vestibulum ex eu nibh posuere pharetra sit amet eu eros. Nunc finibus viverra mauris eget luctus. Maecenas in mauris eu quam vestibulum egestas. Nunc volutpat auctor tempus. In vitae nisl vestibulum augue faucibus eleifend. Sed in augue facilisis, bibendum urna posuere, mollis metus. Praesent nibh massa, auctor dapibus euismod eu, sollicitudin sed est. Mauris ut lobortis mi. Ut malesuada pharetra posuere. Proin at elementum urna. Aliquam finibus commodo ornare. Nunc placerat, diam eget finibus efficitur, nibh felis scelerisque metus, nec efficitur sem erat quis purus. Etiam a quam quis ex maximus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis tristique mi. Donec blandit lobortis urna, et molestie quam rhoncus eget. Suspendisse at enim quam. Etiam a orci ipsum. Duis sit amet aliquam arcu.</p>
+                  <h6 style={styles.main.inner.legal.fontStyle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis tristique mi. Donec blandit lobortis urna, et molestie quam rhoncus eget. Suspendisse at enim quam. Etiam a orci ipsum. Duis sit amet aliquam arcu. Sed ut lectus sapien. Praesent nec convallis orci. Cras sollicitudin luctus lorem, ut ultricies nisl mattis nec. Quisque vitae blandit nisi. Praesent luctus ex ex, id bibendum ex cursus eu. In vestibulum ex eu nibh posuere pharetra sit amet eu eros. Nunc finibus viverra mauris eget luctus. Maecenas in mauris eu quam vestibulum egestas. Nunc volutpat auctor tempus. In vitae nisl vestibulum augue faucibus eleifend. Sed in augue facilisis, bibendum urna posuere, mollis metus. Praesent nibh massa, auctor dapibus euismod eu, sollicitudin sed est. Mauris ut lobortis mi. Ut malesuada pharetra posuere. Proin at elementum urna. Aliquam finibus commodo ornare. Nunc placerat, diam eget finibus efficitur, nibh felis scelerisque metus, nec efficitur sem erat quis purus. Etiam a quam quis ex maximus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis tristique mi. Donec blandit lobortis urna, et molestie quam rhoncus eget. Suspendisse at enim quam. Etiam a orci ipsum. Duis sit amet aliquam arcu.</h6>
                 </div>
               </MediaQuery>
               
@@ -260,11 +286,6 @@ class FloorplanOverlay extends Component {
                     style={ styles.main.inner.detail.buttons.closeBtn} 
                     src={'/images/icons/close_black.svg'}
                     alt='Close floorplan overlay'
-                  />
-                  <img 
-                    style={ styles.main.inner.detail.buttons.download} 
-                    src={'/images/icons/download_button.png'}
-                    alt={`Download PDF of floorplan ${residence}`}
                   />
                   <div style={styles.main.inner.detail.subDetail}>
                     <p className='no-margin'>{`${bedrooms} Bedrooms`}</p>
@@ -282,6 +303,21 @@ class FloorplanOverlay extends Component {
                     <p className='no-margin'>Price</p>
                     <p className='no-margin'>{`$${price}`}</p>
                   </div>
+                  <a 
+                    href={`/downloads/floorplans/25ParkRow_Floorplan_Unit${pdfSrc}.pdf`} 
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    style={{ margin: '0 auto', padding: `${pxToRem(20)} 0`}}
+                  >
+                    <img 
+                      style={ styles.main.inner.detail.buttons.download} 
+                      src={'/images/icons/download_button.png'}
+                      alt={`Download PDF of floorplan ${residence}`}
+                    />
+                  </a>
+                </div>
+                <div>
+                  <h6 style={styles.main.inner.legal.fontStyle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis tristique mi. Donec blandit lobortis urna, et molestie quam rhoncus eget. Suspendisse at enim quam. Etiam a orci ipsum. Duis sit amet aliquam arcu. Sed ut lectus sapien. Praesent nec convallis orci. Cras sollicitudin luctus lorem, ut ultricies nisl mattis nec. Quisque vitae blandit nisi. Praesent luctus ex ex, id bibendum ex cursus eu. In vestibulum ex eu nibh posuere pharetra sit amet eu eros. Nunc finibus viverra mauris eget luctus. Maecenas in mauris eu quam vestibulum egestas. Nunc volutpat auctor tempus. In vitae nisl vestibulum augue faucibus eleifend. Sed in augue facilisis, bibendum urna posuere, mollis metus. Praesent nibh massa, auctor dapibus euismod eu, sollicitudin sed est. Mauris ut lobortis mi. Ut malesuada pharetra posuere. Proin at elementum urna. Aliquam finibus commodo ornare. Nunc placerat, diam eget finibus efficitur, nibh felis scelerisque metus, nec efficitur sem erat quis purus. Etiam a quam quis ex maximus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis tristique mi. Donec blandit lobortis urna, et molestie quam rhoncus eget. Suspendisse at enim quam. Etiam a orci ipsum. Duis sit amet aliquam arcu.</h6>
                 </div>
               </MediaQuery>
             </div>
