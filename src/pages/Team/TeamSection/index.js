@@ -41,7 +41,7 @@ const TeamSection = (props) => {
         height: props.categoryActive ? '350px' : 0,
         display: 'flex',
         alignItems: 'center',
-        transition: props.categoryActive ? 'all 400ms ease 200ms' : 'all 75ms ease',
+        transition: props.categoryActive ? 'opacity 400ms ease 200ms' : 'opacity 75ms ease',
         visibility: props.categoryActive ? 'visible' : 'hidden',
         opacity: props.categoryActive ? 1 : 0,
         width: '85%',
