@@ -7,7 +7,8 @@ export const colorVars = {
   darkOlive: '#91937E',
   lightGrey: '#E1E5E5',
   charcoal: '#989898',
-  floorplanBlue: '#B4C0BE'
+  floorplanBlue: '#B4C0BE',
+  floorPlanBlueTransparent: 'rgba(180, 192, 190, .2)'
 };
 
 const colors = {

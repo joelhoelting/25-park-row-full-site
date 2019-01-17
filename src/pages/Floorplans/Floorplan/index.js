@@ -4,7 +4,6 @@ import Context from 'config/Context';
 
 import { mediaQueries } from 'styles/Global/MediaQueries';
 import { pxToRem, feetToMeters } from 'helpers/Math';
-import { colorVars } from 'styles/Global/Colors';
 
 class Floorplan extends Component {
   constructor(props) {
@@ -20,18 +19,6 @@ class Floorplan extends Component {
     context.toggleVerticalScroll();
   }
 
-  floorplanHoverOn() {
-    if (this.props.width >= 1200) {
-      this.setState({ hover: true });
-    }
-  }
-
-  floorplanHoverOff() {
-    if (this.props.width >= 1200) {
-      this.setState({ hover: false });
-    }
-  }
-
   render() {
     const { phone, tablet, tabletLandscape, desktop, desktopSmall, desktopLarge } = mediaQueries;
     const styles = {
@@ -40,10 +27,18 @@ class Floorplan extends Component {
         [desktopSmall]: {
           margin: 0,
           padding: `${pxToRem(20)} ${pxToRem(30)}`,
-          ':hover': {
+          position: 'relative',
+        },
+        overlay: {
+          display: 'none',
+          [desktopSmall]: {
+            display: 'block',
+            height: '100%',
+            width: '100%',
+            position: 'absolute',
+            top: 0,
+            left: 0,
             cursor: 'pointer',
-            background: colorVars.floorplanBlue,
-            boxShadow: '2px 2px 3px rgba(0,0,0,.2)',
           }
         },
         titleSection: {
@@ -132,25 +127,29 @@ class Floorplan extends Component {
       <Context.Consumer>
         {context => (
           <div style={main} 
+            className='floorplan-section'
             onClick={() => this.handleOpenOverlay(context)}
-            onMouseOver={() => this.floorplanHoverOn()}
-            onMouseLeave={() => this.floorplanHoverOff()}
-          >
-            <div style={main.titleSection}>
+          > 
+            <div 
+              className='floorplan-section-overlay' 
+              key='floorplan_section_overlay' 
+              style={main.overlay}>
+            </div>
+            <div key='floorplan_section_title_section' style={main.titleSection}>
               <div>
                 <p className='no-margin'>{`Residence ${residence}`}</p>
                 { hasTwoLevels ? <p style={main.titleSection.hasTwoLevels} className='no-margin'>Main Level & Upper Level</p> : <p style={[main.titleSection.hasTwoLevels, {opacity: 0}]} className='no-margin'>Single Level</p> }
               </div>
               <h4 className='no-margin' style={main.titleSection.view}>View</h4>
             </div>
-            <div style={main.floorplanSection}>
+            <div key='floorplan_section_floorplan_image' style={main.floorplanSection}>
               <img
-                src={this.state.hover ? `/images/floorplans/hover/${imgSrc}_Hover.svg` : `/images/floorplans/rest/${imgSrc}_Rest.svg`} 
+                src={`/images/floorplans/thumbnail/${imgSrc}.svg`} 
                 style={main.floorplanSection.img}
                 alt={`Floorplan ${residence}`}
               />
             </div>
-            <div style={ main.detailSection }>
+            <div key='floorplan_section_detail_section' style={ main.detailSection }>
               <div className="bedrooms" style={main.detailSection.subSection}>
                 <p className='no-margin' style={main.detailSection.subSection.p}>{`${bedrooms} Bedrooms`}</p>
                 <p className='no-margin' style={main.detailSection.subSection.p}>{`${bathrooms} Bathrooms`}</p>

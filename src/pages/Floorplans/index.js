@@ -7,6 +7,7 @@ import localAvailabilityData from 'data/localAvailabilityData';
 import Floorplan from './Floorplan';
 import FloorplanOverlay from './FloorplanOverlay';
 
+import { colorVars } from 'styles/Global/Colors';
 import { globalMediaQueries } from 'styles/Global/MediaQueries';
 import { insertCommas } from 'helpers/Math';
 import { generateFloorplanSrc } from 'helpers/Floorplans';
@@ -184,6 +185,9 @@ class Floorplans extends Component {
       },
       mediaQueries: {
         [globalMediaQueries.desktopSmall]: {
+          '.floorplan-section:hover .floorplan-section-overlay': {
+            background: colorVars.floorPlanBlueTransparent
+          },
           '.floorplan-row-5': {
             borderTop: 'none'
           },
