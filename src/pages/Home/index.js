@@ -69,7 +69,7 @@ class Home extends Component {
                   <HomePanel 
                     background={colorVars.olive} 
                     description={<span>Introducing<br/>a New York City Icon</span>}
-                    iconSrc='flower1'
+                    iconSrc='flower1_bw'
                     title='Architecture'
                   />
                 </Link>
@@ -81,7 +81,7 @@ class Home extends Component {
                   <HomePanel 
                     background={colorVars.paleBlue} 
                     description={<span>Highly-crafted <br/>Residence and Timeless<br/>Interiors</span>}
-                    iconSrc='butterfly'
+                    iconSrc='butterfly_bw'
                     title='Interiors'
                   />
                 </Link>
@@ -105,7 +105,7 @@ class Home extends Component {
                   <HomePanel 
                     background={colorVars.grey} 
                     description={<span>Nullam finibus<br/> auctor nibh gravida</span>}
-                    iconSrc='flower2'
+                    iconSrc='flower2_bw'
                     title='Views'
                   />
                 </Link>
@@ -118,7 +118,7 @@ class Home extends Component {
                   <HomePanel 
                     background={colorVars.forestGreen} 
                     description={<span>The Park Row Club<br/>Garden and Dining Terrace</span>}
-                    iconSrc='bee'
+                    iconSrc='bee_bw'
                     title='Amenities'
                   />
                 </Link>
@@ -143,7 +143,7 @@ class Home extends Component {
                   <HomePanel 
                     background={colorVars.olive} 
                     description={<span>DOWNTOWN<br/>PRESENT AND FUTURE</span>}
-                    iconSrc='flower3'
+                    iconSrc='flower3_bw'
                     title='Neighborhood'
                   />
                 </Link>
