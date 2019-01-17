@@ -79,6 +79,7 @@ const typography = {
   '.justify': {
     textAlign: 'justify',
   },
+  // Display Linebreak
   '.display-linebreak': {
     whiteSpace: 'pre-line'
   },

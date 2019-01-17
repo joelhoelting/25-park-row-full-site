@@ -136,12 +136,12 @@ class Gallery extends Component {
         <Style rules={{ body: { backgroundColor: this.props.color } }} />
         <Style rules={stylesCSS} />
         <div 
-          className={`large-container ${!this.state.mounted ? 'hidden' : ''}`}
+          className={`gallery-container ${!this.state.mounted ? 'hidden' : ''}`}
           style={{ minHeight: !this.state.mounted ? '100vh' : '20vh'}}
         >
           <Row className='mobile-header' style={{ borderBottom: '2px solid black'}}>
             <Col lg={12}>
-              <h3 className='text-center'>Gallery</h3>
+              <h2 className='text-center'>Gallery</h2>
             </Col>
           </Row>
           <Grid fluid>

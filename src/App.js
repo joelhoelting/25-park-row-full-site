@@ -19,19 +19,28 @@ class App extends Component {
     // Assign viewport width on initialization
     let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     this.state = {
-      width
+      width,
+      interval: 0
     };
   }
 
   componentDidMount() {
     // Update global width on resize of screen
     window.addEventListener('resize', () => this.updateWidth());
+    // Create interval for rotating words
+    setInterval(() => this.changeBrochureWord(), 2500);
   }
 
   // Update width and set state to pass down as props
   updateWidth() {
     let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     this.setState({ width });
+  }
+
+  changeBrochureWord() {
+    let interval;
+    this.state.interval === 0 ? interval = 1 : interval = 0;
+    this.setState({ interval });
   }
   
   render() {
@@ -52,6 +61,7 @@ class App extends Component {
                   colors={Colors} 
                   pages={pages} 
                   subPages={subPages}
+                  interval={this.state.interval}
                   width={this.state.width} 
                 />
                 <div className='main-content'>
@@ -163,6 +173,7 @@ class App extends Component {
                         <Brochure 
                           width={this.state.width} 
                           color={Colors.brochure.backgroundColor}
+                          interval={this.state.interval}
                         />
                       }
                     />
@@ -198,6 +209,7 @@ class App extends Component {
                 <Footer
                   colors={Colors} 
                   pages={pages}
+                  interval={this.state.interval}
                 /> 
               </div>
             </ScrollToTop>

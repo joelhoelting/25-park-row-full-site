@@ -7,17 +7,18 @@ import { pxToRem } from 'helpers/Math';
 import { colorVars } from '../../styles/Global/Colors';
 
 class Brochure extends Component {
-  constructor(props) {
-    super(props);
-    
-    this.hidden = React.createRef();
-  }
-
   componentDidMount() {
-    this.hidden.current.classList.remove('hidden');
+    setTimeout(() => {
+      this.setState({ mounted: true });
+    }, 500);
   }
 
   render() {
+    let wordAnimation = Radium.keyframes({
+      '0%': { opacity: 0 },
+      '100%': { opacity: 1 },
+    });
+
     const BrochureInline = {
       main: {
         [mediaQueries.tablet]: {
@@ -50,6 +51,11 @@ class Brochure extends Component {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            brochureWord: {
+              animation: 'x 500ms ease',
+              animationName: wordAnimation,
+              lineHeight: pxToRem(30)
+            }
           }
         }
       }
@@ -94,8 +100,16 @@ class Brochure extends Component {
 
     const { main } = BrochureInline;
     
+    const animateText = () => {
+      if (this.props.interval) {
+        return <span style={main.box.inner.brochureWord} key='english'>Mandarin</span>;
+      } else {
+        return <span style={main.box.inner.brochureWord} key='chinese'>中文</span>;
+      }
+    };
+    
     return (
-      <div className={'large-container hidden'} ref={this.hidden}>
+      <div className='large-container'>
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
         <Style rules={BrochureCSS} />
         <Row>
@@ -103,7 +117,7 @@ class Brochure extends Component {
             <h3 className='text-center' style={{color: 'white'}}>Download Brochure</h3>
           </Col>
         </Row>
-        <div className='brochure-container'>
+        <div className={`brochure-container ${!this.state.mounted ? 'hidden' : ''}`}>
           <div style={main}>
             <div key={'lang_english'} className='box box-english' style={main.box}>
               <a href='/downloads/brochure/25parkrow_rack_brochure_en.pdf' target='_blank'>
@@ -115,7 +129,7 @@ class Brochure extends Component {
             <div key={'lang_mandarin'} className='box box-mandarin' style={main.box}>
               <a href='/downloads/brochure/25parkrow_rack_brochure_cn.pdf' target='_blank'>
                 <div style={main.box.inner}>
-                  <h3>Mandarin</h3>
+                  <h3>{animateText()}</h3>
                 </div>
               </a>
             </div>

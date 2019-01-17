@@ -114,6 +114,11 @@ class Header extends Component {
       '100%': { transform: 'scale(1.3)' },
     });
 
+    let wordAnimation = Radium.keyframes({
+      '0%': { opacity: 0 },
+      '100%': { opacity: 1 },
+    });
+
     // Desktop Height
     // Upper Nav: 60px, Lower Nav: 30px
     // Mobile Height
@@ -293,22 +298,40 @@ class Header extends Component {
             },
             subNav: {
               position: 'absolute',
-              bottom: pxToRem(10),
+              bottom: 0,
               display: 'flex',
+              flexWrap: 'wrap',
               width: '100%',
-              justifyContent: 'space-around',
+              justifyContent: 'center',
               listStyleType: 'none',
               padding: 0,
               opacity: this.state.mobileMenuActive ? 1 : 0,
               transition: this.state.mobileMenuActive ? 'opacity 800ms ease 600ms' : 'opacity 200ms ease',
-              subNavItem: {
-                fontFamily: 'Maison Neue Extended Book, sans-serif',
-                fontSize: pxToRem(10),
-                letterSpacing: pxToRem(1),
-                textTransform: 'uppercase',
-                color: '#fff',
-                [mediaQueries.phone]: {
-                  fontSize: pxToRem(12)
+              [mediaQueries.tablet]: {
+                justifyContent: 'space-around',
+              },
+              link: {
+                width: '33.3333333%',
+                padding: 0,
+                [mediaQueries.tablet]: {
+                  width: '20%',
+                  fontSize: pxToRem(16),
+                  padding: `${pxToRem(20)} 0`,
+                },
+                subNavItem: {
+                  fontFamily: 'Maison Neue Extended Book, sans-serif',
+                  fontSize: pxToRem(10),
+                  letterSpacing: pxToRem(1),
+                  textTransform: 'uppercase',
+                  color: '#fff',
+                  lineHeight: pxToRem(30),
+                  brochureWord: {
+                    animation: 'x 500ms ease',
+                    animationName: wordAnimation,
+                  },
+                  [mediaQueries.phone]: {
+                    fontSize: pxToRem(12)
+                  }
                 }
               }
             }
@@ -424,6 +447,14 @@ class Header extends Component {
       }
     };
 
+    const renderBrochureWord = () => {
+      if (this.props.interval) {
+        return <span key='english' style={bottomNavWrapper.bottomNav.subNav.link.subNavItem.brochureWord}>Brochure</span>;
+      } else {
+        return <span key='chinese' style={bottomNavWrapper.bottomNav.subNav.link.subNavItem.brochureWord}>宣传册</span>;
+      }
+    };
+
     // Function to render nav based on screen width
     const renderNavigation = () => {
       if (this.props.width > 1200) {
@@ -482,8 +513,12 @@ class Header extends Component {
                       key={key + 8}
                       to={`/${subPage}`}
                       onClick={() => this.closeMobileMenu()}
+                      style={bottomNavWrapper.bottomNav.subNav.link}
                     >
-                      <li style={bottomNavWrapper.bottomNav.subNav.subNavItem}>{this.props.subPages[subPage]}</li>
+                      <li 
+                        style={[bottomNavWrapper.bottomNav.subNav.link.subNavItem, {textDecoration: route === subPage ? 'underline' : null}]}>
+                        {subPage === 'brochure' ? renderBrochureWord() : this.props.subPages[subPage]}
+                      </li>
                     </RadiumLink>
                   );
                 })}

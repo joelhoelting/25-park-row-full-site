@@ -8,22 +8,6 @@ import { pxToRem } from '../../helpers/Math';
 const RadiumLink = Radium(Link);
 
 class Footer extends Component {
-  constructor(props) {
-    super(props);
-    
-    this.state = { interval: 0};
-  }
-
-  componentDidMount() {
-    setInterval(() => this.changeBrochureWord(), 2500);
-  }
-
-  changeBrochureWord() {
-    let interval;
-    this.state.interval === 0 ? interval = 1 : interval = 0;
-    this.setState({ interval });
-  }
-
   render() {
     const { tablet, tabletLandscape, desktopSmall, desktopLarge } = mediaQueries;
 
@@ -128,23 +112,27 @@ class Footer extends Component {
       nav: {
         display: 'flex',
         flexFlow: 'row wrap',
-        justifyContent: 'space-around',
+        justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
         borderTop: `2px solid ${color}`,
         padding: 0,
         marginTop: pxToRem(15),
+        [tablet]: {
+          justifyContent: 'space-around',
+        },
         link: {
           fontFamily: 'Maison Neue Extended Book, sans-serif',
           fontSize: pxToRem(12),
           textTransform: 'uppercase',
           letterSpacing: pxToRem(1),
-          padding: `${pxToRem(20)} 0`,
+          padding: `${pxToRem(10)} 0`,
           color: color,
           height: '100%',
-          width: '20%',
+          width: '33%',
           lineHeight: pxToRem(30),
           [tablet]: {
+            width: '20%',
             fontSize: pxToRem(16),
             padding: `${pxToRem(20)} 0`,
           },
@@ -214,7 +202,7 @@ class Footer extends Component {
     };
 
     const renderBrochureWord = () => {
-      if (this.state.interval) {
+      if (this.props.interval) {
         return <span key='english' style={FooterInline.nav.brochureWord}>Brochure</span>;
       } else {
         return <span key='chinese' style={FooterInline.nav.brochureWord}>宣传册</span>;
@@ -225,19 +213,38 @@ class Footer extends Component {
       <footer style={FooterInline.wrapper}>
         {renderArrows()}
         <div style={FooterInline.nav}>
-          <RadiumLink style={FooterInline.nav.link} to={`/brochure`}>
+          <RadiumLink 
+            style={[FooterInline.nav.link, {textDecoration: route === 'brochure' ? 'underline' : null}]} 
+            to={`/brochure`}
+          >
             {renderBrochureWord()}
           </RadiumLink>
-          <RadiumLink style={FooterInline.nav.link} to={`/press`}>
+          <RadiumLink 
+            style={[FooterInline.nav.link, {textDecoration: route === 'press' ? 'underline' : null}]} 
+            to={`/press`}
+          >
             Press
           </RadiumLink>
-          <RadiumLink style={FooterInline.nav.link} to={`/team`}>
+          <RadiumLink 
+            style={[FooterInline.nav.link, {textDecoration: route === 'team' ? 'underline' : null}]} 
+            to={`/team`}
+          >
             Team
           </RadiumLink>
-          <RadiumLink style={FooterInline.nav.link} to={`/legal`}>
+          <RadiumLink 
+            style={[FooterInline.nav.link, {textDecoration: route === 'legal' ? 'underline' : null}]} 
+            to={`/legal`}
+          >
             Legal
           </RadiumLink>
-          <a style={FooterInline.nav.link} href="https://www.instagram.com/25parkrownyc" rel='noreferrer noopener' target="_blank">Instagram</a>
+          <a 
+            style={[FooterInline.nav.link, ]} 
+            href="https://www.instagram.com/25parkrownyc" 
+            rel='noreferrer noopener' 
+            target="_blank"
+          >
+            Instagram
+          </a>
         </div>
       </footer>
     );

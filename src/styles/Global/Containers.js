@@ -29,6 +29,14 @@ const containers = {
     transition: 'opacity 400ms ease-in-out',
     width: '100%',
   },
+  // Gallery Container
+  '.gallery-container': {
+    height: 'auto',
+    marginTop: `50px`,
+    transition: 'opacity 400ms ease-in-out',
+    width: '100%',
+    overflowX: 'hidden'
+  },
   // Full Width Container
   '.full-width-container': {
     height: 'auto',
@@ -89,6 +97,13 @@ const containers = {
         width: '80%',
         maxWidth: '2000px'
       },
+      '.gallery-container': {
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        marginTop: '100px',
+        width: '80%',
+        maxWidth: '2000px'
+      },
       '.full-width-container': {
         marginTop: '92px',
         width: '100%'
@@ -122,6 +137,10 @@ const containers = {
       '.main-container': {
         marginTop: '120px',
         width: '65%',
+      },
+      '.gallery-container': {
+        marginTop: '120px',
+        width: '79.5%'
       },
       '.full-width-container': {
         marginTop: '105px',
