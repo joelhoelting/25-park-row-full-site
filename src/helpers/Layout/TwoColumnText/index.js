@@ -22,19 +22,21 @@ const TwoColumnText = (props) => {
   };
 
   return (
-    <Row 
-      className={`two-column-text ${props.className ? props.className : null}`} 
-    >
-      <Col lg={6}>
-        <MediaQuery maxWidth={992}>
-          <h3 className='text-center no-margin-bottom'>{props.header}</h3>
-        </MediaQuery>
-        <MediaQuery minWidth={992}>
-          <h3>{props.header}</h3>
-        </MediaQuery>
-      </Col>
-      {renderParagraph()}
-    </Row>
+    <div ref={props.innerRef ? props.innerRef : null}>
+      <Row 
+        className={`two-column-text ${props.className ? props.className : null}`} 
+      >
+        <Col lg={6}>
+          <MediaQuery maxWidth={992}>
+            <h3 className='text-center no-margin-bottom'>{props.header}</h3>
+          </MediaQuery>
+          <MediaQuery minWidth={992}>
+            <h3>{props.header}</h3>
+          </MediaQuery>
+        </Col>
+        {renderParagraph()}
+      </Row>
+    </div>
   );
 };
 

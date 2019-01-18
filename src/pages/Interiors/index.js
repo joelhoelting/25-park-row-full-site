@@ -119,15 +119,22 @@ class Interiors extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Waypoint 
-            onEnter={() => this.triggerAnimation(4, true)} 
-            onLeave={() => this.triggerAnimation(4, false)}
-          />
-          <TwoColumnText 
-            className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'}
-            header='The Living Spaces'
-            paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
-          />
+          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+            <Col 
+              lg={12}
+              className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'}
+            >
+              <Waypoint 
+                onEnter={() => this.triggerAnimation(4, true)} 
+                onLeave={() => this.triggerAnimation(4, false)}
+              >
+                <TwoColumnText
+                  header='The Living Spaces'
+                  paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
+                />
+              </Waypoint>
+            </Col>
+          </Row>
           <Waypoint 
             onEnter={() => this.triggerAnimation(5, true)} 
             onLeave={() => this.triggerAnimation(5, false)}
@@ -193,15 +200,22 @@ class Interiors extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Waypoint 
-            onEnter={() => this.triggerAnimation(9, true)} 
-            onLeave={() => this.triggerAnimation(9, false)}
-          />
-          <TwoColumnText 
-            className={!this.state.sections[9] ? 'hidden' : 'animate-reveal-delay-0'}
-            header='The Kitchen'
-            paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
-          />
+          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+            <Col 
+              lg={12}
+              className={!this.state.sections[9] ? 'hidden' : 'animate-reveal-delay-0'}
+            >
+              <Waypoint 
+                onEnter={() => this.triggerAnimation(9, true)} 
+                onLeave={() => this.triggerAnimation(9, false)}
+              >
+                <TwoColumnText 
+                  header='The Kitchen'
+                  paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
+                />
+              </Waypoint>
+            </Col>
+          </Row>
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}
@@ -237,15 +251,22 @@ class Interiors extends Component {
               ]}   
             />
           </Waypoint>
-          <Waypoint 
-            onEnter={() => this.triggerAnimation(12, true)} 
-            onLeave={() => this.triggerAnimation(12, false)}
-          />
-          <TwoColumnText 
-            className={!this.state.sections[12] ? 'hidden' : 'animate-reveal-delay-0'}
-            header='The Bath'
-            paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
-          />
+          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+            <Col 
+              lg={12}
+              className={!this.state.sections[12] ? 'hidden' : 'animate-reveal-delay-0'}
+            >
+              <Waypoint 
+                onEnter={() => this.triggerAnimation(12, true)} 
+                onLeave={() => this.triggerAnimation(12, false)}
+              >
+                <TwoColumnText 
+                  header='The Bath'
+                  paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
+                />
+              </Waypoint>
+            </Col>
+          </Row>
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}

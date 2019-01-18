@@ -380,6 +380,10 @@ class Header extends Component {
 
     // CSS styles for mobile nav (style tag)
     const HeaderCSS = {
+      // Fix for fixed element 'jumping' on Chrome
+      '.header': {
+        '-webkit-transform': 'translateZ(0)'
+      },
       '.mobile-nav .mobile-nav-link': {
         opacity: 0,
         transition: 'opacity 300ms linear'
@@ -543,7 +547,7 @@ class Header extends Component {
     const { arrowBox, logoDiv } = topNav;
 
     return (
-      <header style={wrapper}>
+      <header style={wrapper} className='header'>
         <Style rules={HeaderCSS}/>
         <div style={topNav}>
           <RadiumLink 

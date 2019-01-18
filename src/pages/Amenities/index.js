@@ -11,7 +11,7 @@ import { colorVars } from 'styles/Global/Colors';
 import { SmallImage, LargeImage } from 'helpers/Image/ResponsiveImage/_module';
 
 // Layout Helpers
-import { Panel, TwoColumnText, VerticalSpacedText, SubTitle } from 'helpers/Layout/_module';
+import { Panel, TwoColumnText, SubTitle } from 'helpers/Layout/_module';
 
 class Amenities extends Component {
   constructor(props) {
@@ -83,16 +83,23 @@ class Amenities extends Component {
               />
             </Col>
           </Row>
-          <Waypoint 
-            onEnter={() => this.triggerAnimation(2, true)} 
-            onLeave={() => this.triggerAnimation(2, false)}
-          />
-          <TwoColumnText 
-            className={!this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-0'}
-            header='Amenities'
-            paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
-            hideParagraphMobile
-          />
+          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+            <Col 
+              lg={12}
+              className={!this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-0'}
+            >
+              <Waypoint 
+                onEnter={() => this.triggerAnimation(2, true)} 
+                onLeave={() => this.triggerAnimation(2, false)}
+              >
+                <TwoColumnText
+                  header='Amenities'
+                  paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
+                  hideParagraphMobile
+                />
+              </Waypoint>
+            </Col>
+          </Row>
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}
@@ -127,41 +134,12 @@ class Amenities extends Component {
           </Row>
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
-              className={!this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-0'} 
-              lg={4}
+              lg={12}
+              className={!this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
                 onEnter={() => this.triggerAnimation(5, true)} 
                 onLeave={() => this.triggerAnimation(5, false)} 
-              >
-                <SmallImage width='100%' mobileWidth='100%' src='/images/pages/amenities/andre_mellone' noMobile />
-              </Waypoint>
-            </Col>
-            <Col 
-              lgOffset={2} 
-              lg={6}
-              className={!this.state.sections[6] ? 'hidden' : 'animate-reveal-delay-0'}
-            >
-              <Waypoint 
-                onEnter={() => this.triggerAnimation(6, true)} 
-                onLeave={() => this.triggerAnimation(6, false)} 
-              >
-                <VerticalSpacedText 
-                  className={!this.state.sections[6] ? 'hidden' : 'animate-reveal-delay-0'}
-                  header='Studio Mellone'
-                  text='Andre Mellone founded Studio Mellone in 2012. A 20-year veteran of New York City’s design community, who worked for Robert A. M. Stern, Mark Hampton, Greg Jordan, Ferguson&Shamamian and Sawyer/Berson, Mellone primarily focuses on private homes and residences, along with boutique retail. Architectural Digest has called him a “world famous designer with a trademark eye” who creates “midcentury, masculine decors for the likes of Thom Browne and Jason Wu.'
-                />
-              </Waypoint>
-            </Col>
-          </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
-            <Col 
-              lg={12}
-              className={!this.state.sections[7] ? 'hidden' : 'animate-reveal-delay-0'}
-            >
-              <Waypoint 
-                onEnter={() => this.triggerAnimation(7, true)} 
-                onLeave={() => this.triggerAnimation(7, false)} 
               >
                 <LargeImage 
                   caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
@@ -177,11 +155,11 @@ class Amenities extends Component {
           <Row className='row-extra-margin row-extra-margin-desktop-3' center='lg'>
             <Col 
               lg={5}
-              className={!this.state.sections[8] ? 'hidden' : 'animate-reveal-delay-0'}
+              className={!this.state.sections[6] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
-                onEnter={() => this.triggerAnimation(8, true)} 
-                onLeave={() => this.triggerAnimation(8, false)} 
+                onEnter={() => this.triggerAnimation(6, true)} 
+                onLeave={() => this.triggerAnimation(6, false)} 
               >
                 <SmallImage 
                   caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
@@ -194,11 +172,11 @@ class Amenities extends Component {
           <Row className='row-extra-margin row-extra-margin-desktop-3' center='lg'>
             <Col 
               lg={5}
-              className={!this.state.sections[9] ? 'hidden' : 'animate-reveal-delay-0'}
+              className={!this.state.sections[7] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
-                onEnter={() => this.triggerAnimation(9, true)} 
-                onLeave={() => this.triggerAnimation(9, false)} 
+                onEnter={() => this.triggerAnimation(7, true)} 
+                onLeave={() => this.triggerAnimation(7, false)} 
               >
                 <SmallImage
                   caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
@@ -211,11 +189,11 @@ class Amenities extends Component {
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}
-              className={!this.state.sections[10] ? 'hidden' : 'animate-reveal-delay-0'}
+              className={!this.state.sections[8] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
-                onEnter={() => this.triggerAnimation(10, true)} 
-                onLeave={() => this.triggerAnimation(10, false)} 
+                onEnter={() => this.triggerAnimation(8, true)} 
+                onLeave={() => this.triggerAnimation(8, false)} 
               >
                 <LargeImage
                   caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
@@ -227,11 +205,11 @@ class Amenities extends Component {
           <Row>
             <Col 
               lg={12}
-              className={!this.state.sections[11] ? 'hidden' : 'animate-reveal-delay-0'}
+              className={!this.state.sections[9] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
-                onEnter={() => this.triggerAnimation(11, true)} 
-                onLeave={() => this.triggerAnimation(11, false)} 
+                onEnter={() => this.triggerAnimation(9, true)} 
+                onLeave={() => this.triggerAnimation(9, false)} 
               >
                 <Panel
                   background={colorVars.olive} 
@@ -243,24 +221,31 @@ class Amenities extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Waypoint 
-            onEnter={() => this.triggerAnimation(12, true)} 
-            onLeave={() => this.triggerAnimation(12, false)}
-          />
-          <TwoColumnText 
-            className={!this.state.sections[12] ? 'hidden' : 'animate-reveal-delay-0'}
-            header={<span>The Garden</span>}
-            paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
-            hideParagraphMobile
-          />
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}
-              className={!this.state.sections[13] ? 'hidden' : 'animate-reveal-delay-0'}
+              className={!this.state.sections[10] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
-                onEnter={() => this.triggerAnimation(13, true)} 
-                onLeave={() => this.triggerAnimation(13, false)} 
+                onEnter={() => this.triggerAnimation(10, true)} 
+                onLeave={() => this.triggerAnimation(10, false)}
+              >
+                <TwoColumnText 
+                  header={<span>The Garden</span>}
+                  paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
+                  hideParagraphMobile
+                />
+              </Waypoint>
+            </Col>
+          </Row>
+          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+            <Col 
+              lg={12}
+              className={!this.state.sections[11] ? 'hidden' : 'animate-reveal-delay-0'}
+            >
+              <Waypoint 
+                onEnter={() => this.triggerAnimation(11, true)} 
+                onLeave={() => this.triggerAnimation(11, false)} 
               >
                 <LargeImage 
                   caption='The Park Row Club’s Garden and Dining Terrace offers a warmly appointed space for outdoor entertaining.'
@@ -272,11 +257,11 @@ class Amenities extends Component {
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}
-              className={!this.state.sections[14] ? 'hidden' : 'animate-reveal-delay-0'}
+              className={!this.state.sections[12] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
-                onEnter={() => this.triggerAnimation(14, true)} 
-                onLeave={() => this.triggerAnimation(14, false)} 
+                onEnter={() => this.triggerAnimation(12, true)} 
+                onLeave={() => this.triggerAnimation(12, false)} 
               >
                 <LargeImage 
                   caption='The Park Row Club’s Garden and Dining Terrace offers a warmly appointed space for outdoor entertaining.'
