@@ -605,93 +605,104 @@ const locations = {
   ],
   transitMTA: [
     {
-      title: 'N/R Subway',
+      title: 'R/W Train \n',
       coordinates: [-74.006699, 40.713561]
     },
     {
-      title: '4/5/6 Subway',
+      title: '4/5/6 Train \n',
       coordinates: [-74.004276, 40.712901]
     },
     {
-      title: 'J/Z Subway',
+      title: 'J/Z Train \n',
       coordinates: [-74.004061, 40.713105]
     },
     {
-      title: '2/3 Subway',
+      title: '2/3 Train \n',
       coordinates: [-74.006402, 40.709568]
     },
     {
-      title: '4/5 Subway',
+      title: '4/5 Train \n',
       coordinates: [-74.009294, 40.710645]
     },
     {
-      title: 'J/Z Subway',
+      title: 'J/Z Train \n',
       coordinates: [-74.008319, 40.709371]
     },
     {
-      title: '1 Subway',
+      title: '1 Train \n',
       coordinates: [40.710964, -74.011671]
     },
     {
-      title: 'R/W Subway',
+      title: 'R/W Train \n',
       coordinates: [-74.010748, 40.711009]
     },
     {
-      title: 'E Subway',
+      title: 'E Train \n',
       coordinates: [-74.009911, 40.712640]
     },
     {
-      title: '2/3 Subway',
+      title: '2/3 Train \n ',
       coordinates: [-74.009251, 40.713242]
     },
     {
-      title: 'A/C/F Subway',
+      title: 'A/C/F Train \n',
       coordinates: [-74.008430, 40.714303]
     },
     {
-      title: '1/2/3 Subway',
+      title: '1/2/3 Train \n',
       coordinates: [-74.009229, 40.715507]
     },
     {
-      title: '1 Subway',
+      title: '1 Train \n',
       coordinates: [-74.006692, 40.718987]
     },
     {
-      title: 'A/C/E/F Subway',
+      title: 'A/C/E/F Train \n',
       coordinates: [-74.004997, 40.720711]
     },
     {
-      title: 'N/Q/R/W Subway',
+      title: 'N/Q/R/W Train \n',
       coordinates: [-74.001789, 40.719520]
     },
     {
-      title: 'N/Q/R/W Subway',
+      title: 'N/Q/R/W Train \n',
       coordinates: [-74.000512, 40.718414]
     },
     {
-      title: 'J/Z Subway',
+      title: 'J/Z Train \n',
       coordinates: [-74.000229, 40.717825]
     },
   ],
   transitPath: [
     {
-      title: 'Word Trade Center Path Train',
+      title: 'Path Train \n World Trade Center Station',
       coordinates: [-74.011451, 40.711628]
     }
   ],
   transitHeliport: [
     {
-      title: 'Downtown Heliport',
+      title: 'Downtown Manhattan Heliport',
       coordinates: [-74.008714, 40.701094]
     },
   ],
   transitFerry: [
     {
-      title: 'Staten Island Ferry',
+      title: "Staten Island Island Ferry",
       coordinates: [-74.013126, 40.700921]
     },
+    {
+      title: "Governer's Island Ferry",
+      coordinates: [-74.011486, 40.700986]
+    },
+    {
+      title: 'East River Ferry',
+      coordinates: [-74.006352, 40.703473]
+    },
+    {
+      title: 'New Jersey Ferries',
+      coordinates: [-74.017663, 40.715060]
+    }
   ]
-  
 };
 
 export default locations;

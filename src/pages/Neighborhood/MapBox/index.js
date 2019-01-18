@@ -244,10 +244,37 @@ class MapBox extends Component {
             </Marker>
             <Marker coordinates={[-74.013126, 40.700921]} anchor="center">
               <img
-                alt='Ferry Marker'
+                alt='Staten Island Ferry Marker'
                 style={main.transitMarkers}
                 src="/images/map/icons/ferry.png"
                 onClick={() => this.setState({ activeLocation: locations.transitFerry[0] })}
+
+              />
+            </Marker>
+            <Marker coordinates={[-74.011486, 40.700986]} anchor="center">
+              <img
+                alt='Governer Island Ferry Marker'
+                style={main.transitMarkers}
+                src="/images/map/icons/ferry.png"
+                onClick={() => this.setState({ activeLocation: locations.transitFerry[1] })}
+
+              />
+            </Marker>
+            <Marker coordinates={[-74.006352, 40.703473]} anchor="center">
+              <img
+                alt='East River Ferry'
+                style={main.transitMarkers}
+                src="/images/map/icons/ferry.png"
+                onClick={() => this.setState({ activeLocation: locations.transitFerry[2] })}
+
+              />
+            </Marker>
+            <Marker coordinates={[-74.017663, 40.715060]} anchor="center">
+              <img
+                alt='New Jersey Ferries'
+                style={main.transitMarkers}
+                src="/images/map/icons/ferry.png"
+                onClick={() => this.setState({ activeLocation: locations.transitFerry[3] })}
 
               />
             </Marker>
@@ -301,7 +328,7 @@ class MapBox extends Component {
                   style={main.popup.img}
                   src={activeLocation.thumbnailSrc}
                 /> */}
-                <h4 style={main.popup.title}>{activeLocation.title}</h4>
+                <h4 className='text-center display-linebreak' style={main.popup.title}>{activeLocation.title}</h4>
               </Popup>
             )}
           </Map>
