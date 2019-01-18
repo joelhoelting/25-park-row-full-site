@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import MediaQuery from 'react-responsive';
 import Dropdown from 'react-dropdown';
 import { Row, Col } from 'react-flexbox-grid';
-import PropTypes from 'prop-types';
 import Radium, { Style } from 'radium';
 
 import { mediaQueries, globalMediaQueries } from 'styles/Global/MediaQueries';
@@ -35,10 +34,10 @@ class ContactForm extends Component {
   validateForm() {
     let invalidFieldsPresent, firstname, lastname, email, howhear;
     
-    this.state.firstname.length > 1 ? firstname = false : firstname = true;
-    this.state.lastname.length > 1 ? lastname = false : lastname = true;
-    validateEmail(this.state.email) ? email = false : email = true;
-    this.state.howhear.length > 1 ? howhear = false : howhear = true;
+    this.state.firstname.length > 1 ? firstname = true : firstname = false;
+    this.state.lastname.length > 1 ? lastname = true : lastname = false;
+    validateEmail(this.state.email) ? email = true : email = false;
+    this.state.howhear.length > 1 ? howhear = true : howhear = false;
     
     if (firstname || lastname || email || howhear) {
       invalidFieldsPresent = true;
@@ -65,64 +64,67 @@ class ContactForm extends Component {
       return;
     } else {
       /* send email with new user info */
-      // let text;
-      // if (this.state.broker === 'yes') {
-      //   text = `Hi,\n\nA new registrant signed up:\n\n
-      //       \n\nName: ${this.state.firstname} ${this.state.lastname}
-      //       \n\nEmail: ${this.state.email}
-      //       \n\nPhone: ${this.state.phonenumber}
-      //       \n\nHow did you hear about us: ${this.state.howhear}
-      //       \n\nIs broker: ${this.state.broker}
-      //       \n\n\n\nBest,\n\n25 Park Row Web Team
-      //     `;
-      // } else {
-      //   text = `Hi,\n\nA new registrant signed up:\n\n
-      //     \n\nName: ${this.state.firstname} ${this.state.lastname}
-      //     \n\nEmail: ${this.state.email}
-      //     \n\nPhone: ${this.state.phonenumber}
-      //     \n\nZip: ${this.state.zipcode}
-      //     \n\nResidence Size: ${this.state.residencesize}
-      //     \n\nHow did you hear about us: ${this.state.howhear}
-      //     \n\nIs broker: ${this.state.broker}
-      //     \n\n\n\nBest,\n\n25 Park Row Web Team
-      //   `;
-      // }
+      let text;
+      if (this.state.broker === 'yes') {
+        text = `Hi,\n\nA new registrant signed up:\n\n
+            \n\nName: ${this.state.firstname} ${this.state.lastname}
+            \n\nEmail: ${this.state.email}
+            \n\nPhone: ${this.state.phone}
+            \n\nHow did you hear about us: ${this.state.howhear}
+            \n\nIs broker: ${this.state.broker}
+            \n\n\n\nBest,\n\n25 Park Row Web Team
+          `;
+      } else {
+        text = `Hi,\n\nA new registrant signed up:\n\n
+          \n\nName: ${this.state.firstname} ${this.state.lastname}
+          \n\nEmail: ${this.state.email}
+          \n\nPhone: ${this.state.phone}
+          \n\nZip: ${this.state.zipcode}
+          \n\nResidence Size: ${this.state.residencesize}
+          \n\nHow did you hear about us: ${this.state.howhear}
+          \n\nIs broker: ${this.state.broker}
+          \n\n\n\nBest,\n\n25 Park Row Web Team`;
+      }
 
-      // var emailData = {
-      //   from: ''25 Park Row Web Team' <no_reply_25parkrow@dbxd.com>',
-      //   to: ''Test Admin' <val+25parkrow-test@dbox.com>',
-      //   subject: 'New Registrant - 25 Park Row - ' + this.state.firstname + ' ' + this.state.lastname,
-      //   text: text
-      // };
+      var emailData = {
+        from: '"25 Park Row Web Team" <no_reply_25parkrow@dbxd.com>',
+        to: '"25PR Admin" <joel.hoelting@dbox.com>',
+        subject: 'New Registrant - 25 Park Row - '+this.state.firstname+' '+this.state.lastname,
+        text: text
+      };
 
-      // fetch('https://form.api.dbxd.com/post-ses-email', {
-      //   method: 'POST',
-      //   mode: 'cors',
-      //   headers: {
-      //     'Accept': 'application/json',
-      //     'Content-Type': 'application/json'
-      //   },
-      //   body: JSON.stringify(emailData),
-      // })
-      //   .then(response => response.json())
-      //   .then((result) => {
-      //     console.log('email sending successful ', result);
+      fetch('https://form.api.dbxd.com/post-ses-email', {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(emailData),
+      })
+        .then(response => response.json())
+        .then((result) => {
+          /* eslint-disable no-console */
+          console.log('email sending successful ', result);
+          /* eslint-enable no-console */
           
-      //     this.props.onSubmitForm();
-      //     this.setState({
-      //       firstname: '',
-      //       lastname: '',
-      //       zipcode: '',
-      //       email: '',
-      //       phonenumber: '',
-      //       residencesize: '',
-      //       howhear: '',
-      //       broker: ''
-      //     });
-      //   })
-      //   .catch((error) => {
-      //     console.log('error sending email ',error);
-      //   });
+          this.props.onSubmitForm();
+          this.setState({
+            firstname: '',
+            lastname: '',
+            zipcode: '',
+            email: '',
+            phonenumber: '',
+            residencesize: '',
+            howhear: '',
+            broker: ''
+          });
+        })
+        .catch((error) => {
+          /* eslint-disable no-console */
+          console.log('error sending email ', error);
+          /* eslint-enable no-console */
+        });
     }
   }
 
@@ -577,9 +579,5 @@ class ContactForm extends Component {
     );
   }
 }
-
-ContactForm.propTypes = {
-  onSubmitForm: PropTypes.func
-};
 
 export default Radium(ContactForm);

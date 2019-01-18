@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Radium, {Style} from 'radium';
 import { Link } from 'react-router-dom';
 
-import { mediaQueries } from 'styles/Global/MediaQueries';
+import { globalMediaQueries, mediaQueries } from 'styles/Global/MediaQueries';
 import { pxToRem } from 'helpers/Math';
 
 const RadiumLink = Radium(Link);
@@ -381,9 +381,6 @@ class Header extends Component {
     // CSS styles for mobile nav (style tag)
     const HeaderCSS = {
       // Fix for fixed element 'jumping' on Chrome
-      '.header': {
-        '-webkit-transform': 'translateZ(0)'
-      },
       '.mobile-nav .mobile-nav-link': {
         opacity: 0,
         transition: 'opacity 300ms linear'
@@ -428,6 +425,13 @@ class Header extends Component {
         opacity: 1,
         transitionDelay: '550ms'
       },
+      mediaQueries: {
+        [globalMediaQueries.desktopSmall]: {
+          'header': {
+            '-webkit-transform': 'translateZ(0)'
+          },
+        }
+      }
     };
 
     // Function for updating the position, width and background color of the desktop sliding nav rectangle
