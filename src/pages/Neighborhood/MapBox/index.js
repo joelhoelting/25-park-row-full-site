@@ -22,53 +22,6 @@ const Map = ReactMapboxGl({
   scrollZoom: false
 });
 
-const MapBoxInline = {
-  main: {
-    categoryImg: {
-      maxHeight: pxToRem(150),
-      display: 'block',
-      margin: '0 auto',
-      cursor: 'pointer',
-      height: '100px',
-      [mediaQueries.tablet]: {
-        height: 'auto'
-      }
-    },
-    mapPrimaryLogo: {
-      boxShadow: '2px 2px 3px rgba(0,0,0,.2)', 
-      height: '75px', 
-      width: '75px'
-    },
-    mobileParagraph: {
-      fontSize: pxToRem(16),
-      textTransform: 'uppercase',
-      [mediaQueries.tablet]: {
-        fontSize: pxToRem(20)
-      }
-    },
-    popup: {
-      img: { 
-        margin: '0 auto', 
-        display: 'block', 
-        maxWidth: '100%' 
-      },
-      title: { 
-        fontSize: pxToRem(10),
-        lineHeight: pxToRem(10),
-        marginBottom: 0,
-        [mediaQueries.tabletLandscape]: {
-          width: '200px', 
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          marginBottom: 'auto'
-        }
-      }
-    }
-  }
-};
-
-const { main } = MapBoxInline;
-
 const MapBoxCSS = {
   '.mapboxgl-map': {
     border: '1px solid #000'
@@ -106,7 +59,9 @@ class MapBox extends Component {
 
     this.state = {
       activeCategory: 'dining',
-      activeLocation: undefined
+      activeLocation: undefined,
+      center: [-74.007377, 40.711464],
+      zoom: this.props.width < 500 ? [14] : [15]
     };
 
     this.mapCategories = {
@@ -118,25 +73,91 @@ class MapBox extends Component {
     };
   }
 
-  renderFeatures(featuresArray) {
-    return featuresArray.map((feature, index) => (
-      <Feature
-        key={index}
-        coordinates={feature.coordinates}
-        onClick={() => this.setState({ activeLocation: feature })}
-      />
-    ));
-  }
-
   render() {
     const { activeCategory, activeLocation } = this.state;
-    let currentFeatures = locations[activeCategory];
+
+    const MapBoxInline = {
+      main: {
+        categoryImg: {
+          maxHeight: pxToRem(150),
+          display: 'block',
+          margin: '0 auto',
+          cursor: 'pointer',
+          height: '100px',
+          [mediaQueries.tablet]: {
+            height: 'auto'
+          }
+        },
+        mapPrimaryLogo: {
+          boxShadow: '2px 2px 3px rgba(0,0,0,.2)', 
+          height: '75px', 
+          width: '75px'
+        },
+        transitMarkers: {
+          height: '30px', 
+          width: '30px',
+          transition: 'all 400ms ease',
+          opacity: activeCategory === 'transit' ? '1' : '0',
+          visibility: activeCategory === 'transit' ? 'visible' : 'hidden'
+        },
+        mobileParagraph: {
+          fontSize: pxToRem(16),
+          textTransform: 'uppercase',
+          [mediaQueries.tablet]: {
+            fontSize: pxToRem(20)
+          }
+        },
+        popup: {
+          img: { 
+            margin: '0 auto', 
+            display: 'block', 
+            maxWidth: '100%' 
+          },
+          title: { 
+            [mediaQueries.tabletLandscape]: {
+              width: '200px', 
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            }
+          }
+        }
+      }
+    };
+    
+    const { main } = MapBoxInline;
+
+    const mtatrainImg = new Image(30,30);
+    mtatrainImg.src = '/images/map/icons/mtatrain.png';
+    const mtatrainImgs = ['mtatrainImgRef', mtatrainImg];
+
+    // const pathtrainImg = new Image(30,30);
+    // pathtrainImg.src = '/images/map/icons/pathtrain.png';
+    // const pathtrainImgs = ['pathtrainImgRef', pathtrainImg];
+
+    // const ferryImg = new Image(30,30);
+    // ferryImg.src = '/images/map/icons/ferry.png';
+    // const ferryImgs = ['ferryImgRef', ferryImg];
+
+    // const heliportImg = new Image(30,30);
+    // heliportImg.src = '/images/map/icons/heliport.png';
+    // const heliportImgs = ['heliportImgRef', heliportImg];
+
     let circleIcon = {
       'circle-stroke-width': 1,
       'circle-radius': 10,
       'circle-blur': 0.15,
       'circle-stroke-color': 'black',
       'circle-color': '#ffd949'
+    };
+
+    const renderFeatures = (featuresArray) => {
+      return featuresArray.map((feature, index) => (
+        <Feature
+          key={index}
+          coordinates={feature.coordinates}
+          onClick={() => this.setState({ activeLocation: feature })}
+        />
+      ));
     };
 
     const categoryButton = (category) => {
@@ -192,8 +213,8 @@ class MapBox extends Component {
           <Map
             style='mapbox://styles/dboxstudio/cjlpcgr5l0umi2sqo6h7q5k5k'
             containerStyle={{ height: '100%', width: '100%' }}
-            zoom={this.props.width < 500 ? [14] : [15]}
-            center={[-74.007377, 40.711464]}
+            zoom={this.state.zoom}
+            center={this.state.center}
             onClick={() => this.setState({ activeLocation: undefined})}
           >
             <Style rules={MapBoxCSS} />
@@ -205,18 +226,81 @@ class MapBox extends Component {
                 src="/images/map/25parkrow_primary.png"
               />
             </Marker>
-            {this.props.mapState === null ? null : (
-              <Layer type="circle" paint={circleIcon}>
-                {this.renderFeatures(currentFeatures)}
-              </Layer>
-            )}
+            <Marker coordinates={[-74.011451, 40.711628]} anchor="center">
+              <img
+                alt='Pathtrain Marker'
+                style={main.transitMarkers}
+                src="/images/map/icons/pathtrain.png"
+                onClick={() => this.setState({ activeLocation: locations.transitPath[0] })}
+              />
+            </Marker>
+            <Marker coordinates={[-74.008714, 40.701094]} anchor="center">
+              <img
+                alt='Heliport Marker'
+                style={main.transitMarkers}
+                src="/images/map/icons/heliport.png"
+                onClick={() => this.setState({ activeLocation: locations.transitHeliport[0] })}
+              />
+            </Marker>
+            <Marker coordinates={[-74.013126, 40.700921]} anchor="center">
+              <img
+                alt='Ferry Marker'
+                style={main.transitMarkers}
+                src="/images/map/icons/ferry.png"
+                onClick={() => this.setState({ activeLocation: locations.transitFerry[0] })}
+
+              />
+            </Marker>
+            <Layer
+              type='symbol' 
+              id='marker'
+              layout={{ 'icon-image': 'mtatrainImgRef' }}
+              images={mtatrainImgs}
+            >
+              {activeCategory === 'transit' ? renderFeatures(locations['transitMTA']) : null}
+            </Layer>
+            {/* <Layer
+              type='symbol' 
+              id='marker'
+              layout={{ 'icon-image': 'pathtrainImgRef' }}
+              images={pathtrainImgs}
+            >
+              {activeCategory === 'transit' ? renderFeatures(locations['transitPath']) : null}
+            </Layer> */}
+            {/*  <Layer
+              type='symbol' 
+              id='marker'
+              layout={{ 'icon-image': 'pathtrainImgRef' }}
+              images={pathtrainImgs}
+            >
+              {this.state.activeCategory === 'transit' ? renderFeatures(locations['transitPath']) : null}
+            </Layer> */}
+            {/* <Layer
+              type='symbol' 
+              id='marker'
+              layout={{ 'icon-image': 'heliportImgRef' }}
+              images={heliportImgs}
+            >
+              {this.state.activeCategory === 'transit' ? renderFeatures(locations['transitHeliport']) : null}
+            </Layer> */}
+            {/* <Layer
+              type='symbol' 
+              id='marker'
+              layout={{ 'icon-image': 'ferryImgRef' }}
+              images={ferryImgs}
+            >
+              {this.state.activeCategory === 'transit' ? renderFeatures(locations['transitFerry']) : null}
+            </Layer> */}
+            <Layer type="circle" paint={circleIcon}>
+              {activeCategory !== 'transit' ? renderFeatures(locations[activeCategory]) : null}
+            </Layer>
             {activeLocation && (
               <Popup coordinates={activeLocation.coordinates}>
-                <img
+                {/* <img
                   alt={activeLocation.title}
                   style={main.popup.img}
                   src={activeLocation.thumbnailSrc}
-                />
+                /> */}
                 <h4 style={main.popup.title}>{activeLocation.title}</h4>
               </Popup>
             )}
