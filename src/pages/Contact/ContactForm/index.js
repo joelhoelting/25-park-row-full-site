@@ -31,15 +31,15 @@ class ContactForm extends Component {
     };
   }
 
-  validateForm() {
-    let invalidFieldsPresent, firstname, lastname, email, howhear;
+  isFormInvalid() {
+    let invalidFieldsPresent, firstnameInvalid, lastnameInvalid, emailInvalid, howhearInvalid;
     
-    this.state.firstname.length > 1 ? firstname = true : firstname = false;
-    this.state.lastname.length > 1 ? lastname = true : lastname = false;
-    validateEmail(this.state.email) ? email = true : email = false;
-    this.state.howhear.length > 1 ? howhear = true : howhear = false;
+    this.state.firstname.length > 1 ? firstnameInvalid = false : firstnameInvalid = true;
+    this.state.lastname.length > 1 ? lastnameInvalid = false : lastnameInvalid = true;
+    validateEmail(this.state.email) ? emailInvalid = false : emailInvalid = true;
+    this.state.howhear.length > 1 ? howhearInvalid = false : howhearInvalid = true;
     
-    if (firstname || lastname || email || howhear) {
+    if (firstnameInvalid || lastnameInvalid || emailInvalid || howhearInvalid) {
       invalidFieldsPresent = true;
     } else {
       invalidFieldsPresent = false;
@@ -47,10 +47,10 @@ class ContactForm extends Component {
     
     this.setState({
       invalidFields: {
-        firstname,
-        lastname,
-        email,
-        howhear
+        firstnameInvalid,
+        lastnameInvalid,
+        emailInvalid,
+        howhearInvalid
       },
       invalidFieldsPresent
     });
@@ -60,71 +60,71 @@ class ContactForm extends Component {
 
   onSubmitForm(e) {
     e.preventDefault();
-    if (!this.validateForm()) {
+    if (this.isFormInvalid()) {
       return;
     } else {
       /* send email with new user info */
-      let text;
-      if (this.state.broker === 'yes') {
-        text = `Hi,\n\nA new registrant signed up:\n\n
-            \n\nName: ${this.state.firstname} ${this.state.lastname}
-            \n\nEmail: ${this.state.email}
-            \n\nPhone: ${this.state.phone}
-            \n\nHow did you hear about us: ${this.state.howhear}
-            \n\nIs broker: ${this.state.broker}
-            \n\n\n\nBest,\n\n25 Park Row Web Team
-          `;
-      } else {
-        text = `Hi,\n\nA new registrant signed up:\n\n
-          \n\nName: ${this.state.firstname} ${this.state.lastname}
-          \n\nEmail: ${this.state.email}
-          \n\nPhone: ${this.state.phone}
-          \n\nZip: ${this.state.zipcode}
-          \n\nResidence Size: ${this.state.residencesize}
-          \n\nHow did you hear about us: ${this.state.howhear}
-          \n\nIs broker: ${this.state.broker}
-          \n\n\n\nBest,\n\n25 Park Row Web Team`;
-      }
+      // let text;
+      // if (this.state.broker === 'yes') {
+      //   text = `Hi,\n\nA new registrant signed up:\n\n
+      //       \n\nName: ${this.state.firstname} ${this.state.lastname}
+      //       \n\nEmail: ${this.state.email}
+      //       \n\nPhone: ${this.state.phone}
+      //       \n\nHow did you hear about us: ${this.state.howhear}
+      //       \n\nIs broker: ${this.state.broker}
+      //       \n\n\n\nBest,\n\n25 Park Row Web Team
+      //     `;
+      // } else {
+      //   text = `Hi,\n\nA new registrant signed up:\n\n
+      //     \n\nName: ${this.state.firstname} ${this.state.lastname}
+      //     \n\nEmail: ${this.state.email}
+      //     \n\nPhone: ${this.state.phone}
+      //     \n\nZip: ${this.state.zipcode}
+      //     \n\nResidence Size: ${this.state.residencesize}
+      //     \n\nHow did you hear about us: ${this.state.howhear}
+      //     \n\nIs broker: ${this.state.broker}
+      //     \n\n\n\nBest,\n\n25 Park Row Web Team`;
+      // }
 
-      var emailData = {
-        from: '"25 Park Row Web Team" <no_reply_25parkrow@dbxd.com>',
-        to: '"25PR Admin" <joel.hoelting@dbox.com>',
-        subject: 'New Registrant - 25 Park Row - '+this.state.firstname+' '+this.state.lastname,
-        text: text
-      };
+      // var emailData = {
+      //   from: '"25 Park Row Web Team" <no_reply_25parkrow@dbxd.com>',
+      //   to: '"25PR Admin" <joel.hoelting@dbox.com>',
+      //   subject: 'New Registrant - 25 Park Row - '+this.state.firstname+' '+this.state.lastname,
+      //   text: text
+      // };
 
-      fetch('https://form.api.dbxd.com/post-ses-email', {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(emailData),
-      })
-        .then(response => response.json())
-        .then((result) => {
-          /* eslint-disable no-console */
-          console.log('email sending successful ', result);
-          /* eslint-enable no-console */
+      // fetch('https://form.api.dbxd.com/post-ses-email', {
+      //   method: 'POST',
+      //   mode: 'cors',
+      //   headers: {
+      //     'Accept': 'application/json',
+      //     'Content-Type': 'application/json'
+      //   },
+      //   body: JSON.stringify(emailData),
+      // })
+      //   .then(response => response.json())
+      //   .then((result) => {
+      //     /* eslint-disable no-console */
+      //     console.log('email sending successful ', result);
+      //     /* eslint-enable no-console */
           
-          this.props.onSubmitForm();
-          this.setState({
-            firstname: '',
-            lastname: '',
-            zipcode: '',
-            email: '',
-            phonenumber: '',
-            residencesize: '',
-            howhear: '',
-            broker: ''
-          });
-        })
-        .catch((error) => {
-          /* eslint-disable no-console */
-          console.log('error sending email ', error);
-          /* eslint-enable no-console */
-        });
+      //     this.props.onSubmitForm();
+      //     this.setState({
+      //       firstname: '',
+      //       lastname: '',
+      //       zipcode: '',
+      //       email: '',
+      //       phonenumber: '',
+      //       residencesize: '',
+      //       howhear: '',
+      //       broker: ''
+      //     });
+      //   })
+      //   .catch((error) => {
+      //     /* eslint-disable no-console */
+      //     console.log('error sending email ', error);
+      //     /* eslint-enable no-console */
+      //   });
     }
   }
 
@@ -409,7 +409,7 @@ class ContactForm extends Component {
                 style={main.formItem.label}
                 htmlFor='firstname'
               >
-                <span style={this.state.invalidFields.firstname ? main.error : null}>
+                <span style={this.state.invalidFields.firstnameInvalid ? main.error : null}>
                   First Name *
                 </span>
               </label>
@@ -428,7 +428,7 @@ class ContactForm extends Component {
                 style={main.formItem.label}
                 htmlFor='lastname'
               >
-                <span style={this.state.invalidFields.lastname ? main.error : null}>Last Name *</span>
+                <span style={this.state.invalidFields.lastnameInvalid ? main.error : null}>Last Name *</span>
               </label>
             </div>
           </Col>
@@ -447,7 +447,7 @@ class ContactForm extends Component {
                 style={main.formItem.label}
                 htmlFor='email'
               >
-                <span style={this.state.invalidFields.email ? main.error : null}>Email *</span>
+                <span style={this.state.invalidFields.emailInvalid ? main.error : null}>Email *</span>
               </label>
             </div>
           </Col>
@@ -521,7 +521,7 @@ class ContactForm extends Component {
                 </select>
               </MediaQuery>
               <label htmlFor='howhear' style={main.formItem.label}>
-                <span style={this.state.invalidFields.howhear ? main.error : null}>
+                <span style={this.state.invalidFields.howhearInvalid ? main.error : null}>
                   How did you hear about us? *
                 </span>
               </label>
