@@ -64,9 +64,7 @@ const slick = {
         margin: `0 ${pxToRem(20)}`,
         outline: 'none',
         transition: 'background 800ms ease'
-      }
-    },
-    [globalMediaQueries.desktopSmall]: {
+      },
       '.slick-arrow': {
         display: 'block !important',
         borderRadius: '50%',
@@ -81,7 +79,14 @@ const slick = {
         left: '4px'
       },
       '.slick-arrow:hover': {
-        background: 'rgba(56, 56, 56, .6)'
+        background: 'rgba(56, 56, 56, .4)'
+      }
+    },
+    [globalMediaQueries.desktop]: {
+      '.slick-arrow': {
+        display: 'block !important',
+        borderRadius: '50%',
+        padding: '40px',
       }
     }
   }
