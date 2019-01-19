@@ -8,6 +8,25 @@ import { pxToRem } from '../../helpers/Math';
 const RadiumLink = Radium(Link);
 
 class Footer extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      interval: 0
+    };
+  }
+
+  componentDidMount() {
+    // Create interval for rotating words
+    setInterval(() => this.changeBrochureWord(), 2500);
+  }
+
+  changeBrochureWord() {
+    let interval;
+    this.state.interval === 0 ? interval = 1 : interval = 0;
+    this.setState({ interval });
+  }
+  
   render() {
     const { tablet, tabletLandscape, desktopSmall, desktopLarge } = mediaQueries;
 
@@ -202,7 +221,7 @@ class Footer extends Component {
     };
 
     const renderBrochureWord = () => {
-      if (this.props.interval) {
+      if (this.state.interval) {
         return <span key='english' style={FooterInline.nav.brochureWord}>Brochure</span>;
       } else {
         return <span key='chinese' style={FooterInline.nav.brochureWord}>宣传册</span>;

@@ -456,11 +456,14 @@ class Header extends Component {
     };
 
     const renderBrochureWord = () => {
-      if (this.props.interval) {
-        return <span key='english' style={bottomNavWrapper.bottomNav.subNav.link.subNavItem.brochureWord}>Brochure</span>;
-      } else {
-        return <span key='chinese' style={bottomNavWrapper.bottomNav.subNav.link.subNavItem.brochureWord}>宣传册</span>;
-      }
+      // if (this.props.width < 1200) {
+      //   if (this.state.interval) {
+      //     return <span key='english' style={bottomNavWrapper.bottomNav.subNav.link.subNavItem.brochureWord}>Brochure</span>;
+      //   } else {
+      //     return <span key='chinese' style={bottomNavWrapper.bottomNav.subNav.link.subNavItem.brochureWord}>宣传册</span>;
+      //   }
+      // }
+      return <span key='english' style={bottomNavWrapper.bottomNav.subNav.link.subNavItem.brochureWord}>Brochure</span>;
     };
 
     // Function to render nav based on screen width
