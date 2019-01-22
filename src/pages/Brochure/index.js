@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Radium, {Style} from 'radium';
-import { Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import { mediaQueries, globalMediaQueries } from 'styles/Global/MediaQueries';
 import { pxToRem } from 'helpers/Math';
@@ -112,29 +112,32 @@ class Brochure extends Component {
       <div className='large-container'>
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
         <Style rules={BrochureCSS} />
-        <Row>
-          <Col lg={12}>
-            <h3 className='text-center' style={{color: 'white'}}>Download Brochure</h3>
-          </Col>
-        </Row>
-        <div className={`brochure-container ${!this.state.mounted ? 'hidden' : ''}`}>
-          <div style={main}>
-            <div key={'lang_english'} className='box box-english' style={main.box}>
-              <a href='/downloads/brochure/25parkrow_rack_brochure_en.pdf' target='_blank'>
-                <div style={main.box.inner}>
-                  <h3>English</h3>
-                </div>
-              </a>
-            </div>
-            <div key={'lang_mandarin'} className='box box-mandarin' style={main.box}>
-              <a href='/downloads/brochure/25parkrow_rack_brochure_cn.pdf' target='_blank'>
-                <div style={main.box.inner}>
-                  <h3>{animateText()}</h3>
-                </div>
-              </a>
+        <Grid fluid>
+          <Row>
+            <Col lg={12}>
+              <h3 className='text-center' style={{color: 'white'}}>Download Brochure</h3>
+            </Col>
+          </Row>
+          <div className={`brochure-container ${!this.state.mounted ? 'hidden' : ''}`}>
+            <div style={main}>
+              <div key={'lang_english'} className='box box-english' style={main.box}>
+                <a href='/downloads/brochure/25parkrow_rack_brochure_en.pdf' target='_blank'>
+                  <div style={main.box.inner}>
+                    <h3>English</h3>
+                  </div>
+                </a>
+              </div>
+              <div key={'lang_mandarin'} className='box box-mandarin' style={main.box}>
+                <a href='/downloads/brochure/25parkrow_rack_brochure_cn.pdf' target='_blank'>
+                  <div style={main.box.inner}>
+                    <h3>{animateText()}</h3>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        </Grid>
+        
       </div>
     );
   }

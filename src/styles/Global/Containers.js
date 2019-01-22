@@ -57,7 +57,6 @@ const containers = {
   },
   // Brochure Container
   '.brochure-container': {
-    marginTop: `120px`,
     width: '90%',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -71,6 +70,7 @@ const containers = {
   mediaQueries: {
     [tablet]: {
       '.brochure-container': {
+        marginTop: `120px`,
         width: '100%',
         position: 'fixed',
         top: 0,
