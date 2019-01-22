@@ -50,6 +50,7 @@ class Contact extends Component {
       },
       img: {
         margin: `${pxToRem(40)} auto`,
+        maxWidth: '100%',
         [mediaQueries.tablet]: {
           margin: '0 auto 0 0',
         },
@@ -77,7 +78,14 @@ class Contact extends Component {
                 <p style={[{margin: 0}, address.p]}>
                   25 Park Row <br/>Sales Gallery
                 </p>
-                <p style={[{marginTop: 0}, address.p]}>217 Broadway, Suite 600 <br/>
+                <p style={[{ margin: 0, position: 'relative', right: '10px' }, address.p]}>
+                  <img 
+                    style={{ height: '15px', position: 'relative', right: '10px' }}
+                    src='/images/icons/contact_pin.png' 
+                  />
+                  217 Broadway, Suite 600
+                </p>
+                <p style={[{ margin: 0}, address.p]}>
                   New York, NY 10007
                 </p>
               </a>
