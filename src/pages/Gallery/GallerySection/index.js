@@ -18,7 +18,9 @@ const GallerySection = (props) => {
         <Col className='column-margin' key={`gallery_column_${i}`} lg={6}>
           <ExpandImage 
             toggleCarousel={props.toggleCarousel} 
-            imgData={props.imgAry[i]}
+            caption={props.imgAry[i].caption}
+            carouselIndex={props.imgAry[i].carouselIndex} 
+            src={props.imgAry[i].src} 
             width='50%'
             noMobile
           />

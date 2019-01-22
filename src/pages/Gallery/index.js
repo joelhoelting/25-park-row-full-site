@@ -69,21 +69,18 @@ class Gallery extends Component {
       let counter = 0;
       galleryArray.forEach(galleryObj => {
         return galleryObj.imgAry.forEach(image => {
-          let { src, caption, isLargeImg } = image;
-          
           let carouselObj = {
             index: counter,
             title: galleryObj.title,
-            src: src,
-            caption: caption,
-            isLargeImg: isLargeImg,
+            src: image.src,
+            caption: image.caption,
             key: counter
           };
           carousel.push(carouselObj);
           counter++;
         });
       });
-      
+
       return carousel;
     })();
 

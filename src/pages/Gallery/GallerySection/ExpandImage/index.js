@@ -28,25 +28,15 @@ const ExpandImage = (props) => {
     2800: (2800 * width).toString(),
     3200: (3200 * width).toString(),
   };
-  
-  const { caption, carouselIndex, src, isLargeImg, noMobile } = props.imgData;
+
+  const { src } = props; 
 
   const mobileSrcSet = () => {
     let srcSet;
-    if (isLargeImg || noMobile) {
+    if (props.noMobile) {
       srcSet = `${src}_400.jpg 400w, ${src}_600.jpg 600w, ${src}_800.jpg 800w, ${src}_1000.jpg 1000w`;
     } else {
       srcSet = `${src}_mobile_400.jpg 400w, ${src}_mobile_600.jpg 600w, ${src}_mobile_800.jpg 800w, ${src}_mobile_1000.jpg 1000w`;
-    }
-    return srcSet;
-  };
-
-  const desktopSrcSet = () => {
-    let srcSet;
-    if (props.isLarge) {
-      srcSet = src + '_' + desktop[1200] + '.jpg 1200w, ' + src + '_' + desktop[1600] + '.jpg 1600w, ' + src + '_' + desktop[2000] + '.jpg 2000w, ' + src + '_' + desktop[2400] + '.jpg 2400w, ' + src + '_' + desktop[2800] + '.jpg 2800w, ' + src + '_' + desktop[3200] + '.jpg 3200w';
-    } else {
-      srcSet = src + '_' + desktop[1200] + '.jpg 1200w, ' + src + '_' + desktop[1600] + '.jpg 1600w, ' + src + '_' + desktop[2000] + '.jpg 2000w, ' + src + '_' + desktop[2400] + '.jpg 2400w';
     }
     return srcSet;
   };
@@ -62,7 +52,7 @@ const ExpandImage = (props) => {
         <div 
           className='gallery-image' 
           style={styles.main} 
-          onClick={() => handleToggleCarousel(carouselIndex, context)}
+          onClick={() => handleToggleCarousel(props.carouselIndex, context)}
         >
           <picture>
             <source 
@@ -71,10 +61,10 @@ const ExpandImage = (props) => {
             />
             <source 
               media='(min-width: 992px)'
-              srcSet={desktopSrcSet()}
+              srcSet={src + '_' + desktop[1200] + '.jpg 1200w, ' + src + '_' + desktop[1600] + '.jpg 1600w, ' + src + '_' + desktop[2000] + '.jpg 2000w, ' + src + '_' + desktop[2400] + '.jpg 2400w, ' + src + '_' + desktop[2800] + '.jpg 2800w, ' + src + '_' + desktop[3200] + '.jpg 3200w'}
             />
             <img 
-              alt={caption}
+              alt={props.caption}
               style={styles.main.image}
             />
           </picture>
