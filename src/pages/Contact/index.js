@@ -73,7 +73,7 @@ class Contact extends Component {
         >
           <Col md={6}>
             <div style={address}>
-              <a href="https://goo.gl/maps/ZUHHi7AP83x" rel='noopener noreferrer' target="_blank">
+              <a href="https://goo.gl/maps/LW384reRaYR2" rel='noopener noreferrer' target="_blank">
                 <p style={[{margin: 0}, address.p]}>
                   25 Park Row <br/>Sales Gallery
                 </p>
@@ -88,7 +88,7 @@ class Contact extends Component {
           </Col>
           <Col md={6}>
             <a 
-              href='https://goo.gl/maps/kFdFjqxmGV52' 
+              href='https://goo.gl/maps/LW384reRaYR2' 
               target='_blank' 
               rel='noopener noreferrer'
             >

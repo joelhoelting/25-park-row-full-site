@@ -62,7 +62,7 @@ class MapBox extends Component {
       activeCategory: 'dining',
       activeLocation: undefined,
       center: [-74.007377, 40.711464],
-      zoom: this.props.width < 500 ? [14] : [15]
+      zoom: this.props.width < 500 ? [13.5] : [15]
     };
 
     this.mapCategories = {
@@ -79,14 +79,12 @@ class MapBox extends Component {
 
     const MapBoxInline = {
       main: {
-        mobile: {
-          categoryImg: {
-            height: pxToRem(100),
+        categoryImg: {
+          mobile: {
+            height: pxToRem(80),
             margin: '0 auto'
-          }
-        },
-        desktop: {
-          categoryImg: {
+          },
+          desktop: {
             maxHeight: pxToRem(150),
             display: 'block',
             margin: '0 auto',
@@ -157,6 +155,27 @@ class MapBox extends Component {
       ));
     };
 
+    const categoryButtonMobile = (category) => {
+      return (
+        <div key={`mobile-category-${category}`}>
+          <img
+            alt={`mobile slider for ${category}`}
+            style={[main.categoryImg.mobile, {opacity: this.state.activeCategory === category ? 1 : .4}]}
+            src={`/images/icons/illustration/${category}${this.state.activeCategory === category ? '' : '_bw'}.svg`}
+          />
+          <p 
+            className='text-center'
+            style={{
+              opacity: this.state.activeCategory === category ? 1 : .4,
+              textTransform: 'capitalize'
+            }}
+          >
+            {category}
+          </p>
+        </div>
+      );
+    };
+
     const categoryButtonDesktop = (category) => {
       return (
         <Col 
@@ -169,11 +188,16 @@ class MapBox extends Component {
         >
           <img
             alt={`Link to activate ${category} markers`}
-            style={main.desktop.categoryImg}
+            style={main.categoryImg.desktop}
             src={`/images/icons/illustration/${category}${this.state.activeCategory === category ? '' : '_bw'}.svg`}
           />
           <p
-            style={{ cursor: 'pointer', fontSize: pxToRem(12), letterSpacing: pxToRem(3), opacity: this.state.activeCategory === category ? 1 : .4 }} 
+            style={{ 
+              cursor: 'pointer', 
+              fontSize: pxToRem(12), 
+              letterSpacing: pxToRem(3), 
+              opacity: this.state.activeCategory === category ? 1 : .4
+            }} 
             className='text-center uppercase'
           >
             {this.mapCategories[category]}
@@ -182,53 +206,38 @@ class MapBox extends Component {
       );
     };
 
+    let originalThis = this;
+    let categoryArray = Object.keys(this.mapCategories);
+
     const sliderSettings = {
       infinite: true,
       slidesToShow: 3,
-      centerMode: true
+      centerMode: true,
+      afterChange: (index) => {
+        originalThis.setState({ 
+          activeCategory: categoryArray[index], 
+          activeLocation: false
+        });
+      }
     };
     
     return (
       <Fragment>
+        <Row>
+          <Col sm={12}>
+            <MediaQuery maxWidth={992}>
+              <h2 className='text-center'>The<br/>Neighborhood Map</h2> 
+            </MediaQuery>
+            <MediaQuery minWidth={992}>
+              <h2 className='text-center'>The Neighborhood Map</h2> 
+            </MediaQuery>
+          </Col>
+        </Row>
         <MediaQuery maxWidth={992}>
           <Row>
             <Col sm={12} style={{ margin: '20px 0'}}>
               <Slider {...sliderSettings} >
-                <div>
-                  <img
-                    style={main.mobile.categoryImg}
-                    src={'/images/icons/illustration/dining.svg'}
-                  />
-                  <p className='text-center'>Dining</p>
-                </div>
-                <div>
-                  <img
-                    style={main.mobile.categoryImg}
-                    src={'/images/icons/illustration/schools.svg'}
-                  />
-                  <p className='text-center'>Schools</p>
-                </div>
-                <div>
-                  <img
-                    style={main.mobile.categoryImg}
-                    src={'/images/icons/illustration/fitness.svg'}
-                  />
-                  <p className='text-center'>Fitness</p>
-                </div>
-                <div>
-                  <img
-                    style={main.mobile.categoryImg}
-                    src={'/images/icons/illustration/shopping.svg'}
-                  />
-                  <p className='text-center'>Shopping</p>
-                </div>
-                <div>
-                  <img
-                    style={main.mobile.categoryImg}
-                    src={'/images/icons/illustration/transit.svg'}
-                  />
-                  <p className='text-center'>Dining</p>
-                </div>
+                {Object.keys(this.mapCategories).map(category => categoryButtonMobile(category))}
               </Slider>
             </Col>
           </Row>

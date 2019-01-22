@@ -96,26 +96,41 @@ class Neighborhood extends Component {
                 <Waypoint
                   onEnter={() => this.triggerAnimation(1, true)}
                   onLeave={() => this.triggerAnimation(1, false)}
-                />
-                <SubTitle
-                  desktop={<span>New York<br/> at Your Fingertips</span>}
-                  mobile={<span> New York<br /> at Your Fingertips</span>}
-                />
-                <Panel
-                  background={colorVars.darkOlive}
-                  textAlign="center"
-                  text="Downtown is more than a mark on a map. It’s the incubator of one of the world’s greatest cities. Find culinary innovation at the Seaport, innovative educational institutions, half a million square feet of global retail within the Oculus, coastal parks, and more. "
-                />
+                >
+                  <SubTitle
+                    desktop={<span>New York<br/> at Your Fingertips</span>}
+                    mobile={<span> New York<br /> at Your Fingertips</span>}
+                  />
+                </Waypoint>
+              </Col>
+            </Row>
+            <Row>
+              <Col
+                lg={12}
+                className={
+                  !this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-0'
+                }
+              >
+                <Waypoint
+                  onEnter={() => this.triggerAnimation(2, true)}
+                  onLeave={() => this.triggerAnimation(2, false)}
+                >
+                  <Panel
+                    background={colorVars.darkOlive}
+                    textAlign="center"
+                    text="Downtown is more than a mark on a map. It’s the incubator of one of the world’s greatest cities. Find culinary innovation at the Seaport, innovative educational institutions, half a million square feet of global retail within the Oculus, coastal parks, and more. "
+                  />
+                </Waypoint>
               </Col>
             </Row>
             <Waypoint
-              onEnter={() => this.triggerAnimation(2, true)}
-              onLeave={() => this.triggerAnimation(2, false)}
+              onEnter={() => this.triggerAnimation(3, true)}
+              onLeave={() => this.triggerAnimation(3, false)}
             >
               <SlickSlider
                 lazyLoad
                 className={
-                  !this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-0'
+                  !this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-0'
                 }
                 paths={[
                   {
@@ -147,13 +162,13 @@ class Neighborhood extends Component {
               />
             </Waypoint>
             <Waypoint
-              onEnter={() => this.triggerAnimation(3, true)}
-              onLeave={() => this.triggerAnimation(3, false)}
+              onEnter={() => this.triggerAnimation(4, true)}
+              onLeave={() => this.triggerAnimation(4, false)}
             >
               <SlickSlider
                 lazyLoad
                 className={
-                  !this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-0'
+                  !this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'
                 }
                 paths={[
                   {
@@ -190,13 +205,13 @@ class Neighborhood extends Component {
               />
             </Waypoint>
             <Waypoint
-              onEnter={() => this.triggerAnimation(4, true)}
-              onLeave={() => this.triggerAnimation(4, false)}
+              onEnter={() => this.triggerAnimation(5, true)}
+              onLeave={() => this.triggerAnimation(5, false)}
             >
               <SlickSlider
                 lazyLoad
                 className={
-                  !this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'
+                  !this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-0'
                 }
                 paths={[
                   {
@@ -233,13 +248,13 @@ class Neighborhood extends Component {
               />
             </Waypoint>
             <Waypoint
-              onEnter={() => this.triggerAnimation(5, true)}
-              onLeave={() => this.triggerAnimation(5, false)}
+              onEnter={() => this.triggerAnimation(6, true)}
+              onLeave={() => this.triggerAnimation(6, false)}
             >
               <SlickSlider
                 lazyLoad
                 className={
-                  !this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-0'
+                  !this.state.sections[6] ? 'hidden' : 'animate-reveal-delay-0'
                 }
                 paths={[
                   {
