@@ -65,7 +65,8 @@ const containers = {
   },
   // Neighborhood Map Container
   '.neighborhood-map-container': {
-    width: '100%'
+    width: '100%',
+    overflowX: 'hidden'
   },
   mediaQueries: {
     [tablet]: {

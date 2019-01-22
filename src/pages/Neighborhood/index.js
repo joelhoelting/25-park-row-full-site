@@ -284,9 +284,7 @@ class Neighborhood extends Component {
         </div>
         <div style={{ background: 'white' }}>
           <div className="neighborhood-map-container">
-            <Grid fluid>
-              <MapBox width={this.props.width} />
-            </Grid>
+            <MapBox width={this.props.width} />
           </div>
         </div>
       </React.Fragment>
