@@ -82,7 +82,8 @@ class MapBox extends Component {
         categoryImg: {
           mobile: {
             height: pxToRem(80),
-            margin: '0 auto'
+            margin: '0 auto',
+            transition: 'opacity 100ms ease'
           },
           desktop: {
             maxHeight: pxToRem(150),
@@ -160,14 +161,15 @@ class MapBox extends Component {
         <div key={`mobile-category-${category}`}>
           <img
             alt={`mobile slider for ${category}`}
-            style={[main.categoryImg.mobile, {opacity: this.state.activeCategory === category ? 1 : .4}]}
-            src={`/images/icons/illustration/${category}${this.state.activeCategory === category ? '' : '_bw'}.svg`}
+            style={[main.categoryImg.mobile, {opacity: this.state.activeCategory === category ? 1 : .3}]}
+            src={`/images/icons/illustration/${category}.svg`}
           />
           <p 
             className='text-center'
             style={{
               opacity: this.state.activeCategory === category ? 1 : .4,
-              textTransform: 'capitalize'
+              textTransform: 'capitalize',
+              transition: 'opacity 100ms ease'
             }}
           >
             {category}
@@ -213,6 +215,7 @@ class MapBox extends Component {
       infinite: true,
       slidesToShow: 3,
       centerMode: true,
+      speed: 250,
       afterChange: (index) => {
         originalThis.setState({ 
           activeCategory: categoryArray[index], 
