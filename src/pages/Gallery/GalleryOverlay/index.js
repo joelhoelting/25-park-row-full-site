@@ -3,7 +3,8 @@ import Radium from 'radium';
 import Slider from 'react-slick';
 import Context from 'config/Context';
 
-import { LargeImage } from 'helpers/Image/ResponsiveImage/_module';
+// import { LargeImage } from 'helpers/Image/ResponsiveImage/_module';
+import GalleryOverlayImage from './GalleryOverlayImage';
 import { mediaQueries } from 'styles/Global/MediaQueries';
 import { pxToRem } from 'helpers/Math';
 
@@ -173,13 +174,10 @@ class GalleryOverlay extends React.Component {
             >
               {this.props.carouselArray.map(slide => {
                 return (
-                  <LargeImage
+                  <GalleryOverlayImage
                     noMobile
-                    caption={slide.caption}
-                    style={styles.carouselImg}
-                    src={slide.src}
+                    imgData={slide.imgData}
                     key={slide.key}
-                    width="100%"
                   />
                 );
               })}

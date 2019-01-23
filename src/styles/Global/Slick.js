@@ -13,6 +13,10 @@ const slick = {
     left: '50%',
     transform: 'translate(-50%, -50%)'
   },
+  '.gallery-slider .slick-track': {
+    display: 'flex',
+    alignItems: 'center',
+  },
   '.slick-next::before': {
     content: 'none'
   },
