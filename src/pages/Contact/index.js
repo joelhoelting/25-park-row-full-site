@@ -80,6 +80,7 @@ class Contact extends Component {
                 </p>
                 <p style={[{ margin: 0, position: 'relative', right: '10px' }, address.p]}>
                   <img 
+                    alt='legend for sales gallery pin'
                     style={{ height: '15px', position: 'relative', right: '10px' }}
                     src='/images/icons/contact_pin.png' 
                   />

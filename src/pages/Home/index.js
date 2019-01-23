@@ -68,7 +68,7 @@ class Home extends Component {
                 <Link key="architecture" to={'/architecture'}>
                   <HomePanel 
                     background={colorVars.olive} 
-                    description={<span>Introducing<br/>a New York City Icon</span>}
+                    description={<span>INTRODUCING<br/> A NEW YORK CITY ICON</span>}
                     iconSrc='flower1_bw'
                     title='Architecture'
                   />
@@ -80,7 +80,7 @@ class Home extends Component {
                 <Link key="interiors" to={'/interiors'}>
                   <HomePanel 
                     background={colorVars.paleBlue} 
-                    description={<span>Highly-crafted <br/>Residence and Timeless<br/>Interiors</span>}
+                    description={<span>INTERIORS WORTHY OF THE VIEW</span>}
                     iconSrc='butterfly_bw'
                     title='Interiors'
                   />
@@ -104,7 +104,7 @@ class Home extends Component {
                   <Waypoint onEnter={() => this.triggerAnimation('viewsPanel')} />
                   <HomePanel 
                     background={colorVars.grey} 
-                    description={<span>Nullam finibus<br/> auctor nibh gravida</span>}
+                    description={<span>PANORAMIC VIEWS <br/> OVER CITY HALL PARK</span>}
                     iconSrc='flower2_bw'
                     title='Views'
                   />
@@ -117,7 +117,7 @@ class Home extends Component {
                   <Waypoint onEnter={() => this.triggerAnimation('amenitiesPanel')} />
                   <HomePanel 
                     background={colorVars.forestGreen} 
-                    description={<span>The Park Row Club<br/>Garden and Dining Terrace</span>}
+                    description={<span>THE PARK ROW CLUB</span>}
                     iconSrc='bee_bw'
                     title='Amenities'
                   />
@@ -142,7 +142,7 @@ class Home extends Component {
                   <Waypoint onEnter={() => this.triggerAnimation('neighborhoodPanel')} />
                   <HomePanel 
                     background={colorVars.olive} 
-                    description={<span>DOWNTOWN<br/>PRESENT AND FUTURE</span>}
+                    description={<span>LIVE ON CITY HALL PARK</span>}
                     iconSrc='flower3_bw'
                     title='Neighborhood'
                   />

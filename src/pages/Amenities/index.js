@@ -55,7 +55,7 @@ class Amenities extends Component {
                 onLeave={() => this.triggerAnimation(0, false)} 
               >
                 <LargeImage
-                  caption='A gracious reading room welcomes residents to The Park Row Club.' 
+                  caption='The gracious reading room welcomes residents to The Park Row Club. A curated selection of original mid-century and custom pieces echoes the sleek elegance of Art Deco with a fresh, modern touch.' 
                   src='/images/pages/amenities/reading_room_lounge' 
                   width='100%'
                   onLoad={() => this.initialImageLoad()}  
@@ -71,19 +71,34 @@ class Amenities extends Component {
               <Waypoint 
                 onEnter={() => this.triggerAnimation(1, true)} 
                 onLeave={() => this.triggerAnimation(1, false)} 
-              />
-              <SubTitle
-                desktop={<span>The Park Row Club<br/> Garden and Dining Terrace</span>}
-                mobile={<span>The Park Row Club<br/> Garden and Dining Terrace</span>}
-              />
-              <Panel 
-                background={colorVars.olive}
-                textAlign='center'
-                text='The Park Row Club—curated amenities designed by Studio Mellone—features richly appointed leisure spaces overlooking City Hall Park: golf, billiards and a whimsical playroom; a gilded 65-foot pool, gym, and yoga and meditation studio for wellness, near a lush garden and dining terrace. '
-              />
+              >
+                <SubTitle
+                  desktop={<span>THE PARK ROW CLUB</span>}
+                  mobile={<span>THE PARK ROW CLUB</span>}
+                />
+              </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row>
+            <Col
+              lg={12}
+              className={!this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-0'}
+            >
+              <Waypoint 
+                onEnter={() => this.triggerAnimation(2, true)} 
+                onLeave={() => this.triggerAnimation(2, false)} 
+              >
+                <Panel 
+                  background={colorVars.olive}
+                  textAlign='center'
+                  text='Tastemaker Studio Mellone has designed The Park Row Club—a richly appointed amenity suite inspired by Gilded Age ocean liners. The Club includes a library and screening room, lounge, billiards, bar, dining room, playroom, golf simulator, and fitness center with a 65-foot pool and yoga studio.'
+                />
+              </Waypoint>
+            </Col>
+          </Row>
+         
+
+          {/* <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}
               className={!this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -99,7 +114,7 @@ class Amenities extends Component {
                 />
               </Waypoint>
             </Col>
-          </Row>
+          </Row> */}
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}
@@ -110,7 +125,7 @@ class Amenities extends Component {
                 onLeave={() => this.triggerAnimation(3, false)} 
               >
                 <LargeImage 
-                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  caption='Through glass French doors, the magnificent 65-foot gold and white mosaic pool shimmers with soft lighting and a kaleidoscope of antique mirrors.'
                   src='/images/pages/amenities/swimming_pool'
                   width='100%'  />
               </Waypoint>
@@ -126,7 +141,7 @@ class Amenities extends Component {
                 onLeave={() => this.triggerAnimation(4, false)} 
               >
                 <SmallImage 
-                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  caption='Richly detailed travertine basket-weave marble floors and sleek subway tile walls line the entryway to the pool.'
                   src='/images/pages/amenities/pool_entry' />
               </Waypoint>
               <h4>Pool Entry</h4>
@@ -142,7 +157,7 @@ class Amenities extends Component {
                 onLeave={() => this.triggerAnimation(5, false)} 
               >
                 <LargeImage 
-                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  caption='The 14-seat dining room offers a grand space for entertaining with lofty 18-foot ceilings, an adjacent catering kitchen, and views of City Hall Park beyond.'
                   src='/images/pages/amenities/dining_room' 
                   width='100%' 
                 />
@@ -162,7 +177,7 @@ class Amenities extends Component {
                 onLeave={() => this.triggerAnimation(6, false)} 
               >
                 <SmallImage 
-                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  caption='The Park Row Club’s intimate library is warmly finished with cerused oak paneling, a fireplace with a stone marble surround, and a custom bookcase featuring a curated collection of music memorabilia.'
                   src='/images/pages/amenities/library' 
                 />
               </Waypoint>
@@ -179,7 +194,7 @@ class Amenities extends Component {
                 onLeave={() => this.triggerAnimation(7, false)} 
               >
                 <SmallImage
-                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  caption='The playroom offers an elegantly whimsical space with treetop views of City Hall Park.'
                   src='/images/pages/amenities/kids_room' 
                 />
               </Waypoint>
@@ -196,7 +211,7 @@ class Amenities extends Component {
                 onLeave={() => this.triggerAnimation(8, false)} 
               >
                 <LargeImage
-                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  caption='The fitness center features park views, a soaring double-height space, and state-of-the-art equipment.'
                   src='/images/pages/amenities/fitness_center'
                   width='100%'  />
               </Waypoint>
@@ -215,8 +230,8 @@ class Amenities extends Component {
                   background={colorVars.olive} 
                   mobileBackground
                   textAlign='center'
-                  text={'“We believe residential and hospitality at their peak should be the same thing—peaceful but exciting, luxurious but relaxed, like the finest hotel.”'}
-                  quote='—Andre Mellone, Amenities Designer'
+                  text={<span>“The green view out all the windows<br/> elevates the whole experience, like the seduction of the<br/> sea view when relaxing on an ocean liner’s deck.”</span>}
+                  quote='—Andre Mellone'
                 />
               </Waypoint>
             </Col>
@@ -231,8 +246,8 @@ class Amenities extends Component {
                 onLeave={() => this.triggerAnimation(10, false)}
               >
                 <TwoColumnText 
-                  header={<span>The Garden</span>}
-                  paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
+                  header={<span>THE PARK ROW CLUB GARDEN<br/> AND DINING TERRACE</span>}
+                  paragraph='The Park Row Club Garden and Dining Terrace offers 7,000 square feet of outdoor space for entertainment, relaxation, and play—including a lawn, dining areas, and a living room with a fire pit.'
                   hideParagraphMobile
                 />
               </Waypoint>
@@ -248,7 +263,7 @@ class Amenities extends Component {
                 onLeave={() => this.triggerAnimation(11, false)} 
               >
                 <LargeImage 
-                  caption='The Park Row Club’s Garden and Dining Terrace offers a warmly appointed space for outdoor entertaining.'
+                  caption='The outdoor living room offers a warmly appointed space and firepit for outdoor entertaining.'
                   src='/images/pages/amenities/fire_pit' 
                   width='100%'  />
               </Waypoint>
@@ -264,7 +279,7 @@ class Amenities extends Component {
                 onLeave={() => this.triggerAnimation(12, false)} 
               >
                 <LargeImage 
-                  caption='The Park Row Club’s Garden and Dining Terrace offers a warmly appointed space for outdoor entertaining.'
+                  caption='The Park Row Club Garden and Dining Terrace features areas for both formal and informal dining and play.'
                   src='/images/pages/amenities/courtyard_lawn_dining'
                   width='100%'
                 />

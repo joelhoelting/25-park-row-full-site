@@ -15,7 +15,7 @@ const GallerySection = (props) => {
       // Push column into array
       
       columns.push(
-        <Col className='column-margin' key={`gallery_column_${i}`} lg={6}>
+        <Col className={`column-margin gallery-column-${i}`} key={`gallery_column_${i}`} lg={6}>
           <ExpandImage 
             toggleCarousel={props.toggleCarousel} 
             caption={props.imgAry[i].caption}

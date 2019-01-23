@@ -70,19 +70,15 @@ class Views extends Component {
               <Waypoint 
                 onEnter={() => this.triggerAnimation(1, true)} 
                 onLeave={() => this.triggerAnimation(1, false)} 
-              />
-              <SubTitle
-                desktop={<span>Nullam finibus<br/> auctor nibh gravida </span>}
-                mobile={<span>Nullam finibus<br/> auctor nibh gravida</span>}
-              />
-              <Panel 
-                background={colorVars.charcoal}
-                textAlign='center'
-                text='Gaze upon architectural classics, such as the Woolworth building, through the frame of stunning oversized windows. Juliet balconies, terraces, and loggias take in leafy City Hall Park and beyond, graceful river views to east and west. '
-              />
+              >
+                <SubTitle
+                  desktop={<span>Captivating Views<br/> from Every Angle</span>}
+                  mobile={<span>Captivating Views<br/> from Every Angle</span>}
+                />
+              </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row>
             <Col 
               lg={12}
               className={!this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -90,6 +86,23 @@ class Views extends Component {
               <Waypoint 
                 onEnter={() => this.triggerAnimation(2, true)} 
                 onLeave={() => this.triggerAnimation(2, false)} 
+              >
+                <Panel 
+                  background={colorVars.charcoal}
+                  textAlign='center'
+                  text="Views sweep over City Hall Park and to the city's architectural treasures, spanning from the East River to the Hudson"
+                />
+              </Waypoint>
+            </Col>
+          </Row>
+          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+            <Col 
+              lg={12}
+              className={!this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-0'}
+            >
+              <Waypoint 
+                onEnter={() => this.triggerAnimation(3, true)} 
+                onLeave={() => this.triggerAnimation(3, false)} 
               >
                 <LargeImage 
                   caption='25 Park Row is a 21st century architectural icon providing unmatched views from every residence over historic City Hall Park. This stunner on the Manhattan skyline offers a transcendent living experience in the new Downtown.'
@@ -102,11 +115,11 @@ class Views extends Component {
           <Row className='row-extra-margin row-extra-margin-desktop-3' center='lg'>
             <Col 
               lg={5}
-              className={!this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-0'}
+              className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
-                onEnter={() => this.triggerAnimation(3, true)} 
-                onLeave={() => this.triggerAnimation(3, false)} 
+                onEnter={() => this.triggerAnimation(4, true)} 
+                onLeave={() => this.triggerAnimation(4, false)} 
               >
                 <SmallImage  
                   src='/images/pages/views/jenga_building'
@@ -118,11 +131,11 @@ class Views extends Component {
           <Row className='row-extra-margin row-extra-margin-desktop-3' center='lg'>
             <Col 
               lg={5}
-              className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'}
+              className={!this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
-                onEnter={() => this.triggerAnimation(4, true)} 
-                onLeave={() => this.triggerAnimation(4, false)} 
+                onEnter={() => this.triggerAnimation(5, true)} 
+                onLeave={() => this.triggerAnimation(5, false)} 
               >
                 <SmallImage 
                   src='/images/pages/views/oculus'
@@ -134,11 +147,11 @@ class Views extends Component {
           <Row className='row-extra-margin row-extra-margin-desktop-3' center='lg'>
             <Col 
               lg={5}
-              className={!this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-0'}
+              className={!this.state.sections[6] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 
-                onEnter={() => this.triggerAnimation(5, true)} 
-                onLeave={() => this.triggerAnimation(5, false)} 
+                onEnter={() => this.triggerAnimation(6, true)} 
+                onLeave={() => this.triggerAnimation(6, false)} 
               >
                 <SmallImage
                   src='/images/pages/views/court_building'

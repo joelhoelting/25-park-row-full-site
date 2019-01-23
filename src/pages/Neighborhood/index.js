@@ -78,7 +78,7 @@ class Neighborhood extends Component {
                   onLeave={() => this.triggerAnimation(0, false)}
                 >
                   <LargeImage
-                    caption='At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                    caption="25 Park Row's location on City Hall Park offers the best of the New Downtown at every turn."
                     src="/images/pages/neighborhood/neighborhood_hero_south"
                     width="100%"
                     onLoad={() => this.initialImageLoad()}
@@ -99,7 +99,7 @@ class Neighborhood extends Component {
                 >
                   <SubTitle
                     desktop={<span>New York<br/> at Your Fingertips</span>}
-                    mobile={<span> New York<br /> at Your Fingertips</span>}
+                    mobile={<span> New York<br/> at Your Fingertips</span>}
                   />
                 </Waypoint>
               </Col>
@@ -118,7 +118,7 @@ class Neighborhood extends Component {
                   <Panel
                     background={colorVars.darkOlive}
                     textAlign="center"
-                    text="Downtown is more than a mark on a map. It’s the incubator of one of the world’s greatest cities. Find culinary innovation at the Seaport, innovative educational institutions, half a million square feet of global retail within the Oculus, coastal parks, and more. "
+                    text="The New Downtown perfectly combines New York's glamorous past and thrilling present. Fine dining and shopping cluster near Wall Street and One World Trade Center while verdant parks ring Manhattan's southernmost shores and host waterfront biking, picnics, and boating. Endless options for leisure, recreation, culinary exploration, and discovery abound."
                   />
                 </Waypoint>
               </Col>
@@ -136,27 +136,27 @@ class Neighborhood extends Component {
                   {
                     src: '/images/pages/neighborhood/neighborhood_park_1',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'Nearly every New York City subway line stops within blocks of City Hall Park.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_park_2',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'City Hall Park’s majestic 1870s fountain is the grand centerpiece of the historic greenspace.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_park_3',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'Rockefeller Park’s water views extend to the Statue of Liberty and up the Hudson while its rolling lawns offer space for relaxation and recreation.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_park_4',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'The Seaport Museum tells the story of New York as a port city. Offering boat rides on an 1880s schooner through the harbor.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_park_5',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'The South Street Seaport’s Imagination Playground offers whimsical structures for innovative fun.'
                   }
                 ]}
               />
@@ -174,32 +174,32 @@ class Neighborhood extends Component {
                   {
                     src: '/images/pages/neighborhood/neighborhood_dining_1',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'Eataly NYC Downtown’s Osteria della Pace offers the best of Southern Italian cuisine and the freshest local and imported ingredients.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_dining_2',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'Breakfast at Andrew Carmellini’s Little Park includes brioche French toast with roasted figs and sweet kale juice.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_dining_3',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'Little Park'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_dining_4',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'Michelin-starred local haunt Racines NY offers a oenophile’s dream list of 400+ bottles and a rotating cast of famous chefs.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_dining_5',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'Restaurateur Keith McNally’s elegant Augustine harkens back to fin-de-siècle France and serves elevated interpretations of favorite dishes.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_dining_6',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'The South Street Seaport is home to a dynamic collection of vendors who serve up their wares in warm weather months.'
                   }
                 ]}
               />
@@ -217,32 +217,32 @@ class Neighborhood extends Component {
                   {
                     src: '/images/pages/neighborhood/neighborhood_leisure_1',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'Fun full-body workouts at Bout Fight Club combine catharsis and cardio.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_leisure_2',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'The Beekman Hotel is home to one of the city’s best-kept interior secrets—a soaring, and painstakingly restored, 19th century atrium.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_leisure_3',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'The Beekman Hotel'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_leisure_4',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'Dynamic city art brings splashes of color to the downtown streetscape.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_leisure_5',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'The South Street Seaport’s Pier 15 offers 50,000 square feet of lawn and dual-level observation decks overlooking the East River.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_leisure_6',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'The Rooftop at Pier 17, with the East River as its backdrop, hosts concerts year-round.'
                   }
                 ]}
               />
@@ -260,27 +260,27 @@ class Neighborhood extends Component {
                   {
                     src: '/images/pages/neighborhood/neighborhood_shopping_1',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      '10 Corso Como'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_shopping_2',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'Milan-based 10 Corso Como brings the pleasures of “slow shopping” to the South Street Seaport.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_shopping_3',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'Brookfield Place'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_shopping_4',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'Brookfield Place offers luxury shopping on the north cove of the Hudson River.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_shopping_5',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'Farm-fresh fruit, vegetables, and baked goods are always on offer at both the City Hall Park Greenmarket and the Greenmarket at Oculus Plaza.'
                   },
                   {
                     src: '/images/pages/neighborhood/neighborhood_shopping_6',
@@ -290,7 +290,7 @@ class Neighborhood extends Component {
                   {
                     src: '/images/pages/neighborhood/neighborhood_shopping_7',
                     caption:
-                      'At 25 Park Row, cookfox architects subtly echoes the architecture of the iconic Woolworth Building’s Art Deco façade.'
+                      'Elevated boutiques abound in Brookfield Place’s destination for concerts, food, and fashion. '
                   }
                 ]}
               />

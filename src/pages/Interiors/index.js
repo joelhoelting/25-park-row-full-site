@@ -61,8 +61,8 @@ class Interiors extends Component {
                 onLeave={() => this.triggerAnimation(0, false)} 
               >
                 <LargeImage 
-                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' 
-                  src='/images/pages/interiors/living_room_and_dining' 
+                  caption='Expansive casement windows artfully frame views of the Woolworth Building and the Hudson River.' 
+                  src='/images/pages/interiors/penthouse_staircase' 
                   width='100%'
                   onLoad={() => this.initialImageLoad()}  
                 />
@@ -79,8 +79,8 @@ class Interiors extends Component {
                 onLeave={() => this.triggerAnimation(1, false)} 
               >
                 <SubTitle
-                  desktop={<span>Highly-Crafted<br/> Residences and Timeless Interiors</span>}
-                  mobile={<span>Highly-Crafted<br/> Residences and Timeless<br/> Interiors</span>}
+                  desktop={<span>INTERIORS WORTHY OF THE VIEW</span>}
+                  mobile={<span>INTERIORS WORTHY OF THE VIEW</span>}
                 />
               </Waypoint>
             </Col>
@@ -97,7 +97,7 @@ class Interiors extends Component {
                 <Panel 
                   background={colorVars.floorplanBlue}
                   textAlign='center'
-                  text='With City Hall Park on view from every apartment and sweeping vistas from river to river at top, the residences—with Juliet balconies, loggias, and stretches of windows—invite in the cityscape. Flooded with natural light, exquisite interiors are ready for individual taste.'
+                  text='With vistas stretching over City Hall Park and to the cityscape beyond, each residence creates a connection between fine interior finishes and breathtaking views.'
                 />
               </Waypoint>
             </Col>
@@ -112,14 +112,14 @@ class Interiors extends Component {
                 onLeave={() => this.triggerAnimation(3, false)}
               >
                 <LargeImage
-                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
-                  src='/images/pages/interiors/penthouse_staircase'
+                  caption='Fine interior finishes include wide-plank European white oak flooring, custom-crafted millwork, and Calacatta Gold marble.'
+                  src='/images/pages/interiors/living_room_and_dining'
                   width='100%' 
                 />
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          {/* <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}
               className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -134,7 +134,7 @@ class Interiors extends Component {
                 />
               </Waypoint>
             </Col>
-          </Row>
+          </Row> */}
           <Waypoint 
             onEnter={() => this.triggerAnimation(5, true)} 
             onLeave={() => this.triggerAnimation(5, false)}
@@ -148,7 +148,7 @@ class Interiors extends Component {
                 },
                 { 
                   src: '/images/pages/interiors/living_room_and_terrace',
-                  caption: 'Fine interior finishes include wide plank European white oak flooring, custom-crafted millwork, and Calacatta Gold marble.'
+                  caption: 'Residences feature expanses of windows framing incomparable sunset views.'
                 }
               ]}   
             />
@@ -163,7 +163,7 @@ class Interiors extends Component {
                 onLeave={() => this.triggerAnimation(6, false)}
               >
                 <LargeImage 
-                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  caption='Tranquil master bedrooms are wrapped in casement windows revealing the park and city beyond.'
                   src='/images/pages/interiors/master_bedroom_and_terrace' width='100%'  
                 />
               </Waypoint>
@@ -179,7 +179,7 @@ class Interiors extends Component {
                 onLeave={() => this.triggerAnimation(7, false)}
               >
                 <LargeImage
-                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  caption='Penthouse fireplaces, surrounded with honed Calacatta Gold marble, anchor views for a family room, library, or den.'
                   src='/images/pages/interiors/living_room_and_fireplace' width='100%'  
                 />
               </Waypoint>
@@ -195,7 +195,9 @@ class Interiors extends Component {
                 onLeave={() => this.triggerAnimation(8, false)}
               >
                 <LargeImage
-                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' src='/images/pages/interiors/vignette_terrace_dining' width='100%'  
+                  caption='25 Park Row celebrates the outdoors through Juliet balconies, loggias, and expansive terraces.' 
+                  src='/images/pages/interiors/vignette_terrace_dining' 
+                  width='100%'  
                 />
               </Waypoint>
             </Col>
@@ -210,8 +212,8 @@ class Interiors extends Component {
                 onLeave={() => this.triggerAnimation(9, false)}
               >
                 <TwoColumnText 
-                  header='The Kitchen'
-                  paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
+                  header='CRAFTED AND REFINED'
+                  paragraph='With a focus on fine materials and an element of craft, kitchens and bathrooms make the most of custom textured woods, veined marble, and mosaic tile paired with state-of-the-art appliances and fixtures.'
                 />
               </Waypoint>
             </Col>
@@ -246,12 +248,12 @@ class Interiors extends Component {
                 },
                 { 
                   src: '/images/pages/interiors/residential_kitchen_b',
-                  caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.' 
+                  caption: 'Walnut cabinetry is enhanced by a decorative surround and is complemented by a suite of Miele appliances.' 
                 }
               ]}   
             />
           </Waypoint>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          {/* <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}
               className={!this.state.sections[12] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -266,7 +268,7 @@ class Interiors extends Component {
                 />
               </Waypoint>
             </Col>
-          </Row>
+          </Row> */}
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
               lg={12}
@@ -277,7 +279,7 @@ class Interiors extends Component {
                 onLeave={() => this.triggerAnimation(13, false)}
               >
                 <LargeImage
-                  caption='Handcrafted tile, polished nickel, and a custom cerused oak vanity with a fine chrome inlay detail are the centerpieces of the master bathrooms.'
+                  caption='Calacatta Gold tile, polished nickel, and a custom cerused oak vanity with a fine chrome inlay detail are the centerpieces of the master bathrooms.'
                   src='/images/pages/interiors/residential_master_bathroom' width='100%'  
                 />
               </Waypoint>
@@ -294,7 +296,7 @@ class Interiors extends Component {
                   onLeave={() => this.triggerAnimation(14, false)}
                 >
                   <SmallImage 
-                    caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                    caption='Powder rooms feature an expressive Nero Marquina marble accent wall and a floating Calacatta Gold marble vanity.'
                     src='/images/pages/interiors/powder_room' width='100%' 
                   />
                 </Waypoint>
@@ -309,7 +311,7 @@ class Interiors extends Component {
                   onLeave={() => this.triggerAnimation(15, false)}
                 >
                   <SmallImage
-                    caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                    caption='Secondary baths feature Ash Gray marble walls and flooring, a European white oak vanity, and a custom medicine cabinet with integrated lighting.'
                     src='/images/pages/interiors/residential_secondary_bath' width='100%' 
                   />
                 </Waypoint>
@@ -343,7 +345,7 @@ class Interiors extends Component {
                   onLeave={() => this.triggerAnimation(17, false)}
                 >
                   <SmallImage 
-                    caption='Powder rooms feature an expressive Nero Marquina marble accent wall and a floating Calacatta Gold marble vanity.'
+                    caption='Secondary baths feature Ash Gray marble walls and flooring, a European white oak vanity, and a custom medicine cabinet with integrated lighting.'
                     src='/images/pages/interiors/residential_secondary_bath'
                     width='100%'
                   />
