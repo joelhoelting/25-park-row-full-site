@@ -22,15 +22,31 @@ class Gallery extends Component {
         imageCaption: '',
         imageTitle: ''
       },
-      mounted: false
+      mounted: false,
+      firstColumnHeight: undefined
     };
-
-    this.hidden = React.createRef();
   }
 
   componentDidMount() {
+    // Update global width on resize of screen
+    window.addEventListener('resize', () => this.calculateImageHeight());
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', () => this.calculateImageHeight());
+  }
+
+  calculateImageHeight() {
+    let firstColumnHeight = document.querySelector('.gallery-image-0').clientHeight;
+
+    this.setState({ firstColumnHeight });
+  }
+
+  initialCalculateImageHeight() {
+    let firstColumnHeight = document.querySelector('.gallery-image-0').clientHeight;
+
     setTimeout(() => {
-      this.setState({ mounted: true });
+      this.setState({ mounted: true, firstColumnHeight });
     }, 500);
   }
 
@@ -93,6 +109,8 @@ class Gallery extends Component {
           title={title}
           imgAry={imgAry}
           toggleCarousel={this.toggleCarousel.bind(this)}
+          columnHeight={this.state.firstColumnHeight}
+          width={this.props.width}
         />
       );
     });
@@ -131,6 +149,7 @@ class Gallery extends Component {
         }
       }
     };
+
     return (
       <div>
         <Style rules={{ body: { backgroundColor: this.props.color } }} />
@@ -144,7 +163,7 @@ class Gallery extends Component {
               <h2 className='text-center'>Gallery</h2>
             </Col>
           </Row>
-          <Grid fluid>
+          <Grid fluid onLoad={() => this.initialCalculateImageHeight()}>
             {mapGallery}
           </Grid>
         </div>
