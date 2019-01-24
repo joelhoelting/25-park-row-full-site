@@ -60,10 +60,11 @@ class GalleryOverlay extends React.Component {
   }
 
   handleClose(event, context) {
-    let imageClicked = event.target.classList.contains('gallery-overlay-image');
+    let pictureClicked = event.target.classList.contains('gallery-picture');
+    let divClicked = event.target.classList.contains('gallery-overlay');
     let closeBtnClicked = event.target.classList.contains('gallery-close-button');
 
-    if (!imageClicked || closeBtnClicked ) {
+    if (pictureClicked || divClicked || closeBtnClicked ) {
       this.props.toggleCarousel();
       context.toggleVerticalScroll();
     } else {

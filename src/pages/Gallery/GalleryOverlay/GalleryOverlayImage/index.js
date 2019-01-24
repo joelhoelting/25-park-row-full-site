@@ -40,7 +40,7 @@ const GalleryOverlayImage = (props) => {
   };
 
   return (
-    <picture>
+    <picture className='gallery-picture'>
       <source 
         media='(max-width: 992px)' 
         srcSet={mobileSrcSet()}
