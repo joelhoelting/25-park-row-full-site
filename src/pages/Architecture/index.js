@@ -90,7 +90,7 @@ class Architecture extends Component {
                 <Panel 
                   background={colorVars.olive}
                   textAlign='center'
-                  text='Showcasing COOKFOX Architects’ contemporary interpretation of Art Deco style, 25 Park Row offers a transcendent living experience at the center of the New Downtown. Each residence offers incomparable views over historic City Hall Park.'
+                  text={<span>Showcasing COOKFOX Architects’ contemporary interpretation<br/> of Art Deco style, 25 Park Row offers a transcendent living experience<br/> at the center of the New Downtown. Each residence offers<br/> incomparable views over historic City Hall Park.</span>}
                 />
               </Waypoint>
             </Col>

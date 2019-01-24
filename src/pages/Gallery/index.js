@@ -29,17 +29,11 @@ class Gallery extends Component {
 
   componentDidMount() {
     // Update global width on resize of screen
-    window.addEventListener('resize', () => this.calculateImageHeight());
+    window.addEventListener('resize', this.calculateImageHeight);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', () => this.calculateImageHeight());
-  }
-
-  calculateImageHeight() {
-    let firstColumnHeight = document.querySelector('.gallery-image-0').clientHeight;
-
-    this.setState({ firstColumnHeight });
+    window.removeEventListener('resize', this.calculateImageHeight);
   }
 
   initialCalculateImageHeight() {
@@ -48,6 +42,16 @@ class Gallery extends Component {
     setTimeout(() => {
       this.setState({ mounted: true, firstColumnHeight });
     }, 500);
+  }
+
+  calculateImageHeight = () => {
+    let firstColumnHeight = document.querySelector('.gallery-image-0').clientHeight;
+
+    if (firstColumnHeight) {
+      setTimeout(() => {
+        this.setState({ firstColumnHeight });
+      }, 500);
+    }
   }
 
   toggleCarousel(index) {

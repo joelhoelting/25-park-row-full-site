@@ -56,7 +56,7 @@ const slick = {
   mediaQueries: {
     [globalMediaQueries.tabletLandscape]: {
       '.slider-dots': {
-        margin: `${pxToRem(5)} 0`
+        margin: `${pxToRem(20)} 0 ${pxToRem(5)}`
       },
       '.slider-dots li button': {
         fontSize: 0,

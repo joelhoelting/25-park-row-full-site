@@ -19,9 +19,13 @@ const Panel = (props) => {
       },
       p: {
         width: '100%',
+        marginBottom: 0,
         [tabletLandscape]: {
-          width: '50%',
+          width: '90%',
           margin: '0 auto'
+        },
+        quote: {
+          margin: 0
         }
       }
     }
@@ -35,7 +39,7 @@ const Panel = (props) => {
       ref={props.innerRef ? props.innerRef : null}
     >
       <p style={main.p}>{props.text} </p>
-      {props.quote ? <p className='italic'>{props.quote}</p> : null}
+      {props.quote ? <p className='italic' style={main.p.quote}>{props.quote}</p> : null}
     </div>
   );
 };

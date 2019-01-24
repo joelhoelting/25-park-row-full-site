@@ -20,13 +20,13 @@ const captions = {
     height: '20%'
   },
   '.caption-main-large': {
-    height: '20%'
+    height: '25%'
   },
   '.caption-main-small.active': {
     maxHeight: '20%',
   },
   '.caption-main-large.active': {
-    maxHeight: '20%',
+    maxHeight: '25%',
   },
   '.caption': {
     opacity: 0,

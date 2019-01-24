@@ -97,7 +97,7 @@ class Interiors extends Component {
                 <Panel 
                   background={colorVars.floorplanBlue}
                   textAlign='center'
-                  text='With vistas stretching over City Hall Park and to the cityscape beyond, each residence creates a connection between fine interior finishes and breathtaking views.'
+                  text={<span>With vistas stretching over City Hall Park<br/> and to the cityscape beyond, each residence creates a connection<br/> between fine interior finishes and breathtaking views.</span>}
                 />
               </Waypoint>
             </Col>

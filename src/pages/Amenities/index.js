@@ -246,7 +246,7 @@ class Amenities extends Component {
                 onLeave={() => this.triggerAnimation(10, false)}
               >
                 <TwoColumnText 
-                  header={<span>THE PARK ROW CLUB GARDEN<br/> AND DINING TERRACE</span>}
+                  header={<span>GARDEN AND<br/> DINING TERRACE</span>}
                   paragraph='The Park Row Club Garden and Dining Terrace offers 7,000 square feet of outdoor space for entertainment, relaxation, and play—including a lawn, dining areas, and a living room with a fire pit.'
                   hideParagraphMobile
                 />

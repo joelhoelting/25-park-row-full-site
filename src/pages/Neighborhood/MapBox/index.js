@@ -229,7 +229,7 @@ class MapBox extends Component {
         <Row>
           <Col sm={12}>
             <MediaQuery maxWidth={992}>
-              <h2 className='text-center'>The<br/>Neighborhood Map</h2> 
+              <h2 className='text-center'>The<br/>Neighborhood<br/> Map</h2> 
             </MediaQuery>
             <MediaQuery minWidth={992}>
               <h2 className='text-center'>The Neighborhood Map</h2> 
