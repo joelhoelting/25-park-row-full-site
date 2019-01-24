@@ -206,7 +206,7 @@ class Floorplans extends Component {
         <Style rules={{'body': { backgroundColor: this.props.color }}}/>
         <Style rules={FloorplanCSS} />
         <div className={`full-width-container ${!this.state.mounted ? 'hidden' : ''}`}>
-          <Row className='mobile-header'>
+          <Row className='mobile-header border-bottom'>
             <Col lg={12}>
               <h2 className='text-center'>Floorplans</h2>
             </Col>

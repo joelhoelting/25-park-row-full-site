@@ -10,7 +10,7 @@ import { Header, Footer } from './includes/_module';
 
 import { Home, Architecture, Interiors, Amenities, Views, Floorplans, Neighborhood, Team, Gallery, Contact, Brochure, Press, Legal, NotFoundPage } from './pages/_module';
 
-import { Global, Colors, Containers, Typography, Grid, Captions, Slick, Animations } from './styles/Global/_module';
+import { Global, Borders, Colors, Containers, Typography, Grid, Captions, Slick, Animations } from './styles/Global/_module';
 
 class App extends Component {
   constructor(props) {
@@ -44,6 +44,7 @@ class App extends Component {
         <Style rules={Captions} />
         <Style rules={Slick} />
         <Style rules={Animations} />
+        <Style rules={Borders} />
         <ContextProvider>
           <Router>
             <ScrollToTop>

@@ -161,7 +161,10 @@ class Gallery extends Component {
           className={`gallery-container ${!this.state.mounted ? 'hidden' : ''}`}
           style={{ minHeight: !this.state.mounted ? '100vh' : '20vh'}}
         >
-          <Row className='mobile-header' style={{ borderBottom: '2px solid black'}}>
+          <Row 
+            className='mobile-header border-bottom' 
+            style={{ borderBottom: '2px solid black'}}
+          >
             <Col lg={12}>
               <h2 className='text-center'>Gallery</h2>
             </Col>

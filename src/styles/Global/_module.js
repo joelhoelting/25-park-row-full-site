@@ -1,4 +1,5 @@
 import Animations from './Animations';
+import Borders from './Borders';
 import Captions from './Captions';
 import Colors from './Colors';
 import Global from './Global';
@@ -10,6 +11,7 @@ import Typography from './Typography';
 
 export {
   Animations,
+  Borders,
   Captions,
   Colors,
   Global,
