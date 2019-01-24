@@ -35,7 +35,7 @@ class FloorplanOverlay extends Component {
   }
 
   render() {
-    const { phoneLarge, tablet, tabletLandscape, desktopSmall } = mediaQueries;
+    const { tablet, tabletLandscape, desktopSmall } = mediaQueries;
 
     const styles = {
       main: {
@@ -95,14 +95,12 @@ class FloorplanOverlay extends Component {
                 height: '30px', 
                 width: '30px',
                 margin: '0 auto',
-                [phoneLarge]: {
-                  position: 'absolute', 
-                  transform: 'none',
-                  left: 'initial',
-                  right: '80px', 
-                  top: '30px', 
-                  cursor: 'pointer',
-                },
+                position: 'absolute', 
+                transform: 'none',
+                left: 'initial',
+                right: '80px', 
+                top: '30px', 
+                cursor: 'pointer',
                 [tablet]: {
                   height: '40px', 
                   width: '40px',
@@ -319,7 +317,7 @@ class FloorplanOverlay extends Component {
                   </a>
                 </div>
                 <div>
-                  <h6 style={styles.main.inner.legal.fontStyle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis tristique mi. Donec blandit lobortis urna, et molestie quam rhoncus eget. Suspendisse at enim quam. Etiam a orci ipsum. Duis sit amet aliquam arcu. Sed ut lectus sapien. Praesent nec convallis orci. Cras sollicitudin luctus lorem, ut ultricies nisl mattis nec. Quisque vitae blandit nisi. Praesent luctus ex ex, id bibendum ex cursus eu. In vestibulum ex eu nibh posuere pharetra sit amet eu eros. Nunc finibus viverra mauris eget luctus. Maecenas in mauris eu quam vestibulum egestas. Nunc volutpat auctor tempus. In vitae nisl vestibulum augue faucibus eleifend. Sed in augue facilisis, bibendum urna posuere, mollis metus. Praesent nibh massa, auctor dapibus euismod eu, sollicitudin sed est. Mauris ut lobortis mi. Ut malesuada pharetra posuere. Proin at elementum urna. Aliquam finibus commodo ornare. Nunc placerat, diam eget finibus efficitur, nibh felis scelerisque metus, nec efficitur sem erat quis purus. Etiam a quam quis ex maximus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis tristique mi. Donec blandit lobortis urna, et molestie quam rhoncus eget. Suspendisse at enim quam. Etiam a orci ipsum. Duis sit amet aliquam arcu.</h6>
+                  <h6 style={styles.main.inner.legal.fontStyle}>All computer and/or artist renderings reflect the planned scale and spirit of the Building. Sponsor makes no representation that any future construction in the neighborhood surrounding the Condominium will not result in the obstruction of the views from any windows, gardens, and/or terraces. Where materials, equipment, finishes, fixtures, appliances, landscaping, and/or other construction or design details are indicated herein, Sponsor reserves the right to substitute in each instance one of comparable or better quality as recognized by industry standards for performance, efficiency, longevity, and/or classifications, as applicable, in accordance with the terms of the Offering Plan. All dimensions and square footages are approximate and subject to normal construction variances and tolerances. Sponsor reserves the right to make changes in accordance with the offering plan. Sponsor makes no representations or warranties except as may be set forth in the offering plan. The complete offering terms are in an offering plan available from Sponsor. File no. CD17-0208. Sponsor: Park Row 23 Owners LLC, 1865 Palmer Avenue, Suite 203, Larchmont, New York 10538. Equal housing opportunity.</h6>
                 </div>
               </MediaQuery>
             </div>

@@ -155,7 +155,7 @@ class Interiors extends Component {
           </Waypoint>
           <Row className='row-extra-margin row-extra-margin-desktop-3'>
             <Col 
-              lg={13}
+              lg={12}
               className={!this.state.sections[6] ? 'hidden' : 'animate-reveal-delay-0'}
             >
               <Waypoint 

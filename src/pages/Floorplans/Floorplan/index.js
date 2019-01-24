@@ -99,13 +99,13 @@ class Floorplan extends Component {
           justifyContent: 'space-between',
           width: '100%', 
           flexWrap: 'wrap',
-          [desktopSmall]: {
-            padding: `0 ${pxToRem(5)}`
+          [tablet]: {
+            padding: pxToRem(5),
           },
           subSection: {
             width: '50%',
             margin: `${pxToRem(10)} 0`,
-            [desktopSmall]: {
+            [tablet]: {
               margin: `${pxToRem(20)} 0`,
               width: 'auto'
             },

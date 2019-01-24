@@ -99,13 +99,14 @@ class Floorplans extends Component {
     let columns = [];
 
     if (Object.keys(this.state.sortedUnits).length > 0) {
+      
       // Loop through availability data
       for (let c = 5; c > 0; c--) {
         let categoryLength = this.state.sortedUnits[c].length;
 
         if (categoryLength > 0) {
           let unitCategory = (
-            <Row className={`floorplan-row-${c}`} key={`floorplan_row_${rowCounter}`}>
+            <Row className={`floorplan-category-${c} floorplan-category`} key={`floorplan_row_${rowCounter}`}>
               <Col xl={12}>
                 <h3 className='text-center'>{`${c} Bedrooms`}</h3>
               </Col>
@@ -162,11 +163,10 @@ class Floorplans extends Component {
 
   render() {
     const FloorplanCSS = {
-      '.floorplan-row-5': {
-        borderTop: '2px solid black'
+      '.floorplan-category': {
+        borderBottom: '2px solid black'
       },
       '.floorplan-row' : {
-        borderTop: '2px solid black',
         borderBottom: '2px solid black'
       },
       '.floorplan-column': {
