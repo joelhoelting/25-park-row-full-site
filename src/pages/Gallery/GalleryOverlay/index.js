@@ -53,19 +53,17 @@ const NextArrow = props => {
 class GalleryOverlay extends React.Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       currentSlide: 0,
-      mounted: false,
-      scrolled: false
     };
-    this.overlayRef = React.createRef();
   }
 
   handleClose(event, context) {
-    let divClicked = event.target.classList.contains('gallery-overlay');
+    let imageClicked = event.target.classList.contains('gallery-overlay-image');
     let closeBtnClicked = event.target.classList.contains('gallery-close-button');
 
-    if (divClicked || closeBtnClicked ) {
+    if (!imageClicked || closeBtnClicked ) {
       this.props.toggleCarousel();
       context.toggleVerticalScroll();
     } else {
@@ -111,13 +109,15 @@ class GalleryOverlay extends React.Component {
           position: 'absolute',
           top: pxToRem(20),
           right: pxToRem(20)
+        },
+        captionDiv: {
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          padding: `0 ${pxToRem(20)}`,
+          width: '100%',
+          textAlign: 'center'
         }
-      },
-      carouselImg: {
-        maxWidth: '100%',
-        maxHeight: '100%',
-        height: 'auto',
-        width: 'auto'
       },
       navArrows: {
         height: '5%',
@@ -140,15 +140,13 @@ class GalleryOverlay extends React.Component {
       onInit: () => {
         this.setState({
           currentSlide: this.props.currentIndex,
-          imageCaption: this.props.carouselArray[this.props.currentIndex]
-            .caption,
           imageTitle: this.props.carouselArray[this.props.currentIndex].title
         });
       },
       afterChange: index => {
         this.setState({
           currentSlide: index,
-          imageCaption: this.props.carouselArray[index].caption,
+          imageCaption: this.props.carouselArray[index].imgData.caption,
           imageTitle: this.props.carouselArray[index].title
         });
       }

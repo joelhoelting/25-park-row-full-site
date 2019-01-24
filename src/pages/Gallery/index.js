@@ -85,7 +85,6 @@ class Gallery extends Component {
       let counter = 0;
       galleryArray.forEach(galleryObj => {
         return galleryObj.imgAry.forEach(image => {
-          
           let carouselObj = {
             index: counter,
             title: galleryObj.title,

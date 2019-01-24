@@ -5,13 +5,13 @@ const galleryArray = [
       {
         carouselIndex: 0,
         src: '/images/pages/architecture/building_exterior_lantern_terrace',
-        caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.',
+        caption: 'Item 1',
         isLargeImg: true
       },
       {
         carouselIndex: 1,
         src: '/images/pages/architecture/exterior_lobby_entry',
-        caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.',
+        caption: 'Item 2',
         isLargeImg: true
       },
       {
@@ -169,17 +169,18 @@ const galleryArray = [
         isLargeImg: false
       },
       {
+        carouselIndex: 26,
+        src: '/images/pages/amenities/kids_room',
+        caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.',
+        isLargeImg: false
+      },
+      {
         carouselIndex: 27,
         src: '/images/pages/amenities/library',
         caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.',
         isLargeImg: false
       },
-      {
-        carouselIndex: 26,
-        src: '/images/pages/amenities/kids_room',
-        caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.',
-        isLargeImg: false
-      }
+      
     ]
   }
 ];

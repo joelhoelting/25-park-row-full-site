@@ -50,7 +50,7 @@ const GalleryOverlayImage = (props) => {
         srcSet={desktopSrcSet()}
       />
       <img 
-        className={`gallery-overlay-image-${carouselIndex}`}
+        className={`gallery-overlay-image-${carouselIndex} gallery-overlay-image`}
         alt={caption}
         style={styles.main.image}
       />
