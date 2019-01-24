@@ -48,7 +48,7 @@ class Floorplan extends Component {
           margin: `${pxToRem(20)} 0`,
           [desktopSmall]: {
             margin: 0,
-            padding: `0 ${pxToRem(20)}`
+            padding: `0 ${pxToRem(5)}`
           },
           hasTwoLevels: {
             fontSize: pxToRem(12)
@@ -121,7 +121,8 @@ class Floorplan extends Component {
     };
 
     const { main } = styles;
-    const { bathrooms, bedrooms, hasTwoLevels, interior, imgSrc, price, residence } = this.props.unit;
+    
+    const { bathrooms, bedrooms, hasTwoLevels, exterior, interior, isPenthouse, imgSrc, price, residence } = this.props.unit;
     
     return (
       <Context.Consumer>
@@ -137,7 +138,7 @@ class Floorplan extends Component {
             </div>
             <div key='floorplan_section_title_section' style={main.titleSection}>
               <div>
-                <p className='no-margin'>{`Residence ${residence}`}</p>
+                <p className='no-margin'>{`${isPenthouse ? 'Penthouse' : 'Residence'} ${residence}`}</p>
                 { hasTwoLevels ? <p style={main.titleSection.hasTwoLevels} className='no-margin'>Main Level & Upper Level</p> : <p style={[main.titleSection.hasTwoLevels, {opacity: 0}]} className='no-margin'>Single Level</p> }
               </div>
               <h4 className='no-margin' style={main.titleSection.view}>View</h4>
@@ -158,10 +159,12 @@ class Floorplan extends Component {
                 <p className='no-margin' style={main.detailSection.subSection.p}>Interior</p>
                 <p className='no-margin' style={main.detailSection.subSection.p}>{`${interior} SF/${feetToMeters(interior)} SM`}</p>
               </div>
-              <div className="exterior_sf" style={main.detailSection.subSection}>
-                <p className='no-margin' style={main.detailSection.subSection.p}>Exterior</p>
-                <p className='no-margin' style={main.detailSection.subSection.p}>2,276 SF/348 SM</p>
-              </div>
+              { exterior && 
+                <div className="exterior_sf" style={main.detailSection.subSection}>
+                  <p className='no-margin' style={main.detailSection.subSection.p}>Exterior</p>
+                  <p className='no-margin' style={main.detailSection.subSection.p}>{`${exterior} SF/${feetToMeters(exterior)} SM`}</p>
+                </div>
+              }
               <div className="price" style={main.detailSection.subSection}>
                 <p className='no-margin' style={main.detailSection.subSection.p}>Price</p>
                 <p className='no-margin' style={main.detailSection.subSection.p}>{`$${price}`}</p>

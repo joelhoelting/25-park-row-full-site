@@ -2,11 +2,14 @@ export const generateFloorplanSrc = (residence) => {
   let unitNumber = residence.match(/\d+/)[0];
   let unitLetter = residence.match(/\D+/)[0];
   
-  let imgFilename;
-  let pdfFilename;
+  let imgFilename, pdfFilename, isPenthouse, hasTwoLevels;
 
-  let twoLevelUnits = ['5A', '15B', '45PHA'];
-  let singleUnits = ['5B', '5E', '11C', '11D', '15A', '16A', '17A', '34A', '34B', '41PHA'];
+  let twoLevelUnits = ['5A', '15B', '45A'];
+  let singleUnits = ['5B', '5E', '11C', '11D', '15A', '16A', '17A', '34A', '34B', '41A', '42A', '43A', '44A'];
+  let penthouseUnits = [ '41A', '42A', '43A', '44A', '45A'];
+
+  isPenthouse = penthouseUnits.includes(residence) ? true : false;
+  hasTwoLevels = twoLevelUnits.includes(residence) ? true : false;
 
   if (twoLevelUnits.includes(residence)) {
     imgFilename = `${residence}_Lower`;
@@ -29,8 +32,8 @@ export const generateFloorplanSrc = (residence) => {
     imgFilename = pdfFilename = `15-22C`;
   } else if (unitNumber >= 18 && unitNumber <= 22 && unitLetter === 'A') {
     imgFilename = pdfFilename = `18-22A`;
-  } else if (unitNumber >= 25 && unitNumber <= 26 && unitLetter === 'C') {
-    imgFilename = pdfFilename = `25-26C`;
+  } else if (unitNumber >= 25 && unitNumber <= 27 && unitLetter === 'C') {
+    imgFilename = pdfFilename = `25-27C`;
   } else if (unitNumber >= 25 && unitNumber <= 28 && unitLetter === 'A') {
     imgFilename = pdfFilename = `25-28A`;
   } else if (unitNumber >= 25 && unitNumber <= 33 && unitLetter === 'B') {
@@ -43,9 +46,7 @@ export const generateFloorplanSrc = (residence) => {
     imgFilename = pdfFilename = `35-40A`;
   } else if (unitNumber >= 35 && unitNumber <= 40 && unitLetter === 'B') {
     imgFilename = pdfFilename = `35-40B`;
-  } else if (unitNumber >= 42 && unitNumber <= 44 && unitLetter === 'PHA') {
-    imgFilename = pdfFilename = `42-44PHA`;
   }
   
-  return {imgFilename, pdfFilename};
+  return {hasTwoLevels, isPenthouse, imgFilename, pdfFilename};
 };

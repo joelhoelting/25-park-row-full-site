@@ -199,7 +199,7 @@ class FloorplanOverlay extends Component {
       }
     };
 
-    const { bathrooms, bedrooms, hasTwoLevels, interior, imgSrc, pdfSrc, price, residence } = this.props.unit;
+    const { bathrooms, bedrooms, hasTwoLevels, exterior, interior, isPenthouse, imgSrc, pdfSrc, price, residence } = this.props.unit;
     
     return (
       <Context.Consumer>
@@ -212,7 +212,7 @@ class FloorplanOverlay extends Component {
                     <p 
                       style={styles.main.inner.detail.residence}
                       className='no-margin'>
-                      {`Residence ${residence}`}
+                      {`${isPenthouse ? 'Penthouse' : 'Residence'} ${residence}`}
                     </p>
                   </div>
                   <div style={styles.main.inner.detail.subDetail}>
@@ -223,10 +223,12 @@ class FloorplanOverlay extends Component {
                     <p className='no-margin'>Interior</p>
                     <p className='no-margin'>{`${interior} SF/${feetToMeters(interior)} SM`}</p>
                   </div>
-                  <div style={styles.main.inner.detail.subDetail}>
-                    <p className='no-margin'>Exterior</p>
-                    <p className='no-margin'>1,022 SF/94 SM</p>
-                  </div>
+                  { exterior &&
+                    <div style={styles.main.inner.detail.subDetail}>
+                      <p className='no-margin'>Exterior</p>
+                      <p className='no-margin'>{`${exterior} SF/${feetToMeters(exterior)} SM`}</p>
+                    </div>
+                  }
                   <div style={styles.main.inner.detail.subDetail}>
                     <p className='no-margin'>Price</p>
                     <p className='no-margin'>{`$${price}`}</p>

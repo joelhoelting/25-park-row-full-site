@@ -68,24 +68,23 @@ class Floorplans extends Component {
     
     this.unparsedListings.forEach((listing) => {
       let bedrooms = listing.BasicDetails[0].Bedrooms[0];
+      
       let listingObj = {
         residence: listing.Location[0].UnitNumber[0],
         bedrooms: listing.BasicDetails[0].Bedrooms[0],
         bathrooms: listing.BasicDetails[0].Bathrooms[0],
         interior: listing.BasicDetails[0].LivingArea[0],
-        exterior: '',
-        price: insertCommas(listing.ListingDetails[0].Price[0])
+        exterior: listing.BasicDetails[0].ExtLivingArea ? listing.BasicDetails[0].ExtLivingArea[0] : undefined,
+        taxAmount: insertCommas(listing.ListingDetails[0].MaintenanceCC[0]),
+        monthlyCC: insertCommas(listing.ListingDetails[0].MaintenanceCC[0]),
+        price: insertCommas(listing.ListingDetails[0].Price[0]),
       };
       
       let { residence } = listingObj;
-      // Determine if unit has two levels
-      if (this.twoLevelUnits.includes(residence)) {
-        listingObj.hasTwoLevels = true;
-      } else {
-        listingObj.hasTwoLevels = false;
-      }
 
       let srcObj = generateFloorplanSrc(residence);
+      listingObj.hasTwoLevels = srcObj.hasTwoLevels;
+      listingObj.isPenthouse = srcObj.isPenthouse;
       listingObj.imgSrc = srcObj.imgFilename;
       listingObj.pdfSrc = srcObj.pdfFilename;
       
@@ -196,11 +195,8 @@ class Floorplans extends Component {
           },
           '.floorplan-column-left': {
             borderBottom: 'none',
-            borderRight: '1px solid black'
-          },
-          '.floorplan-column-right': {
-            borderLeft: '1px solid black'
-          },
+            borderRight: '2px solid black'
+          }
         }
       }
     };
