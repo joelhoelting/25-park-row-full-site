@@ -7,7 +7,7 @@ import Waypoint from 'react-waypoint';
 import { colorVars } from 'styles/Global/Colors';
 
 // Responsive Images
-import { SmallImage, LargeImage } from 'helpers/Image/ResponsiveImage/_module';
+import { LargeImage } from 'helpers/Image/ResponsiveImage/_module';
 
 // Layout Helpers
 import { Panel, SubTitle } from 'helpers/Layout/_module';
@@ -54,9 +54,9 @@ class Views extends Component {
                 onLeave={() => this.triggerAnimation(0, false)} 
               >
                 <LargeImage 
-                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
-                  src='/images/pages/views/city_hall_park'
-                  width='100%'
+                  caption='25 Park Row is a 21st century architectural icon providing unmatched views from every residence over historic City Hall Park. This stunner on the Manhattan skyline offers a transcendent living experience in the new Downtown.'
+                  src='/images/pages/views/western_view' 
+                  width='100%' 
                   onLoad={() => this.initialImageLoad()} 
                 />
               </Waypoint>
@@ -96,71 +96,7 @@ class Views extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-2'>
-            <Col 
-              lg={12}
-              className={!this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-0'}
-            >
-              <Waypoint 
-                onEnter={() => this.triggerAnimation(3, true)} 
-                onLeave={() => this.triggerAnimation(3, false)} 
-              >
-                <LargeImage 
-                  caption='25 Park Row is a 21st century architectural icon providing unmatched views from every residence over historic City Hall Park. This stunner on the Manhattan skyline offers a transcendent living experience in the new Downtown.'
-                  src='/images/pages/views/northern_view' 
-                  width='100%' 
-                />
-              </Waypoint>
-            </Col>
-          </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-2' center='lg'>
-            <Col 
-              lg={5}
-              className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'}
-            >
-              <Waypoint 
-                onEnter={() => this.triggerAnimation(4, true)} 
-                onLeave={() => this.triggerAnimation(4, false)} 
-              >
-                <SmallImage  
-                  src='/images/pages/views/jenga_building'
-                />
-              </Waypoint>
-              <h4>56 Leonard Street</h4>
-            </Col>
-          </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-2' center='lg'>
-            <Col 
-              lg={5}
-              className={!this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-0'}
-            >
-              <Waypoint 
-                onEnter={() => this.triggerAnimation(5, true)} 
-                onLeave={() => this.triggerAnimation(5, false)} 
-              >
-                <SmallImage 
-                  src='/images/pages/views/oculus'
-                />
-              </Waypoint>
-              <h4>Oculus</h4>
-            </Col>
-          </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-2' center='lg'>
-            <Col 
-              lg={5}
-              className={!this.state.sections[6] ? 'hidden' : 'animate-reveal-delay-0'}
-            >
-              <Waypoint 
-                onEnter={() => this.triggerAnimation(6, true)} 
-                onLeave={() => this.triggerAnimation(6, false)} 
-              >
-                <SmallImage
-                  src='/images/pages/views/court_building'
-                />
-              </Waypoint>
-              <h4>Court Building</h4>
-            </Col>
-          </Row>
+          
         </Grid>
       </div>
     );
