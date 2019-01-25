@@ -226,7 +226,7 @@ class MapBox extends Component {
     
     return (
       <Fragment>
-        <Row>
+        <Row className='row-extra-margin-top-mobile'>
           <Col sm={12}>
             <MediaQuery maxWidth={992}>
               <h2 className='text-center'>The<br/>Neighborhood<br/> Map</h2> 

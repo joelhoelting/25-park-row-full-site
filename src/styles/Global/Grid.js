@@ -33,6 +33,9 @@ const grid = {
   '.row-margin': {
     margin: '8px -8px'
   },
+  '.row-extra-margin-top-mobile': {
+    marginTop: '32px'
+  },
   '.row-extra-margin-desktop': {
     margin: '0 -8px'
   },
@@ -88,6 +91,9 @@ const grid = {
         margin: '8px 0'
       },
       // Rows
+      '.row-extra-margin-top-mobile': {
+        marginTop: 'none'
+      },
       '.row-extra-margin-desktop': {
         margin: '16px -8px'
       },
