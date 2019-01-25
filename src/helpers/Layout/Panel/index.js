@@ -31,7 +31,7 @@ const Panel = (props) => {
       mobile: {
         p: {
           width: '90%',
-          margin: `0 auto ${pxToRem(20)}`,
+          margin: `0 auto ${pxToRem(5)}`,
           fontSize: pxToRem(16),
           [tablet]: {
             fontSize: pxToRem(20)
