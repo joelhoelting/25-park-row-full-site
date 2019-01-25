@@ -80,7 +80,7 @@ class Home extends Component {
                 <Link key="interiors" to={'/interiors'}>
                   <HomePanel 
                     background={colorVars.paleBlue} 
-                    description={<span>INTERIORS<br/>WORTHY OF THE VIEW</span>}
+                    description={<span>INTERIORS WORTHY<br/> OF THE VIEW</span>}
                     iconSrc='butterfly_bw'
                     title='Interiors'
                   />

@@ -79,8 +79,8 @@ class Interiors extends Component {
                 onLeave={() => this.triggerAnimation(1, false)} 
               >
                 <SubTitle
-                  desktop={<span>INTERIORS WORTHY OF THE VIEW</span>}
-                  mobile={<span>INTERIORS WORTHY OF THE VIEW</span>}
+                  desktop={<span>INTERIORS WORTHY<br/> OF THE VIEW</span>}
+                  mobile={<span>INTERIORS WORTHY<br/> OF THE VIEW</span>}
                 />
               </Waypoint>
             </Col>
@@ -97,6 +97,7 @@ class Interiors extends Component {
                 <Panel 
                   background={colorVars.floorplanBlue}
                   textAlign='center'
+                  mobileText='With vistas stretching over City Hall Park and to the cityscape beyond, each residence creates a connection between fine interior finishes and breathtaking views.'
                   text={<span>With vistas stretching over City Hall Park<br/> and to the cityscape beyond, each residence creates a connection<br/> between fine interior finishes and breathtaking views.</span>}
                 />
               </Waypoint>

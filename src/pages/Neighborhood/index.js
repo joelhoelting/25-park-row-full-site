@@ -118,7 +118,8 @@ class Neighborhood extends Component {
                   <Panel
                     background={colorVars.darkOlive}
                     textAlign="center"
-                    text="The New Downtown perfectly combines New York's glamorous past and thrilling present. Fine dining and shopping cluster near Wall Street and One World Trade Center while verdant parks ring Manhattan's southernmost shores and host waterfront biking, picnics, and boating. Endless options for leisure, recreation, culinary exploration, and discovery abound."
+                    mobileText="The New Downtown perfectly combines New York's glamorous past and thrilling present. Fine dining and shopping cluster near Wall Street and One World Trade Center while verdant parks ring Manhattan's southernmost shores and host waterfront biking, picnics, and boating. Endless options for leisure, recreation, culinary exploration, and discovery abound."
+                    text={<span>The New Downtown perfectly combines New York&#39;s<br/> glamorous past and thrilling present. Fine dining and shopping cluster near<br/> Wall Street and One World Trade Center while verdant parks ring Manhattan&#39;s<br/> southernmost shores and host waterfront biking, picnics, and boating. Endless options<br/> for leisure, recreation, culinary exploration, and discovery abound.</span>}
                   />
                 </Waypoint>
               </Col>

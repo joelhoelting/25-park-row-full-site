@@ -91,7 +91,8 @@ class Amenities extends Component {
                 <Panel 
                   background={colorVars.olive}
                   textAlign='center'
-                  text='Tastemaker Studio Mellone has designed The Park Row Club—a richly appointed amenity suite inspired by Gilded Age ocean liners. The Club includes a library and screening room, lounge, billiards, bar, dining room, playroom, golf simulator, and fitness center with a 65-foot pool and yoga studio.'
+                  mobileText='Tastemaker Studio Mellone has designed The Park Row Club—a richly appointed amenity suite inspired by Gilded Age ocean liners. The Club includes a library and screening room, lounge, billiards, bar, dining room, playroom, golf simulator, and fitness center with a 65-foot pool and yoga studio.'
+                  text={<span>Tastemaker Studio Mellone has designed<br/> The Park Row Club—a richly appointed amenity suite inspired by Gilded Age<br/> ocean liners. The Club includes a library and screening room, lounge, billiards, bar,<br/> dining room, playroom, golf simulator, and fitness center with a<br/> 65-foot pool and yoga studio.</span>}
                 />
               </Waypoint>
             </Col>
@@ -230,6 +231,7 @@ class Amenities extends Component {
                   background={colorVars.olive} 
                   mobileBackground
                   textAlign='center'
+                  mobileText='“The green view out all the windows elevates the whole experience, like the seduction of thesea view when relaxing on an ocean liner’s deck.”'
                   text={<span>“The green view out all the windows<br/> elevates the whole experience, like the seduction of the<br/> sea view when relaxing on an ocean liner’s deck.”</span>}
                   quote='—Andre Mellone'
                 />

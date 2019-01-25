@@ -89,7 +89,7 @@ const containers = {
         marginTop: '100px',
         maxWidth: '2000px',
         paddingBottom: '50px',
-        width: '65%',
+        width: '70%',
       },
       '.large-container': {
         marginLeft: 'auto',

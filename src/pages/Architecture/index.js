@@ -90,6 +90,7 @@ class Architecture extends Component {
                 <Panel 
                   background={colorVars.olive}
                   textAlign='center'
+                  mobileText='Showcasing COOKFOX Architects’ contemporary interpretation of Art Deco style, 25 Park Row offers a transcendent living experience at the center of the New Downtown. Each residence offers incomparable views over historic City Hall Park.'
                   text={<span>Showcasing COOKFOX Architects’ contemporary interpretation<br/> of Art Deco style, 25 Park Row offers a transcendent living experience<br/> at the center of the New Downtown. Each residence offers<br/> incomparable views over historic City Hall Park.</span>}
                 />
               </Waypoint>
@@ -142,6 +143,7 @@ class Architecture extends Component {
                   background={colorVars.olive} 
                   mobileBackground
                   textAlign='center'
+                  mobileText='“How do we acknowledge this gift to the city? First, plan every single residence to face the park.”'
                   text={<span>“How do we acknowledge this gift to the city? <br/> First, plan every single residence to face the park.”</span>}
                   quote='—Rick Cook, Cookfox Architect'
                 />

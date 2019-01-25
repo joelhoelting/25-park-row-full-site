@@ -90,7 +90,8 @@ class Views extends Component {
                 <Panel 
                   background={colorVars.charcoal}
                   textAlign='center'
-                  text="Views sweep over City Hall Park and to the city's architectural treasures, spanning from the East River to the Hudson"
+                  mobileText="Views sweep over City Hall Park and to the city's architectural treasures, spanning from theEast River to the Hudson"
+                  text={<span>Views sweep over City Hall Park and<br/> to the city&#39;s architectural treasures, spanning from the<br/>East River to the Hudson</span>}
                 />
               </Waypoint>
             </Col>

@@ -66,16 +66,16 @@ const captions = {
     },
     [globalMediaQueries.phoneLarge]: {
       '.caption-main-small': {
-        height: '15%'
+        height: '20%'
       },
       '.caption-main-large': {
-        height: '15%'
+        height: '25%'
       },
       '.caption-main-small.active': {
-        maxHeight: '15%',
+        maxHeight: '20%',
       },
       '.caption-main-large.active': {
-        maxHeight: '15%',
+        maxHeight: '25%',
       },
     },
     [globalMediaQueries.tablet]: {
