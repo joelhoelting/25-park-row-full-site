@@ -101,6 +101,7 @@ class Header extends Component {
     // Get Current Route
     let route = window.location.pathname.replace('/', '').toLowerCase() || 'home';
     // !Object.keys(this.props.colors).includes(route) ? route = 'notfoundpage' : null;
+    if ( !Object.keys(this.props.colors).includes(route) ) { route = 'notfoundpage'; }
     
     // Declare/assign color variables
     let { color, backgroundColor, sliderColors } = this.props.colors[route];

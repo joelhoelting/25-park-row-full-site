@@ -142,7 +142,7 @@ class Home extends Component {
                   <Waypoint onEnter={() => this.triggerAnimation('neighborhoodPanel')} />
                   <HomePanel 
                     background={colorVars.olive} 
-                    description={<span>LIVE ON CITY HALL PARK</span>}
+                    description={<span>LIVE ON<br/> CITY HALL PARK</span>}
                     iconSrc='flower3_bw'
                     title='Neighborhood'
                   />

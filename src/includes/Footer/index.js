@@ -28,10 +28,12 @@ class Footer extends Component {
   }
   
   render() {
-    const { tablet, tabletLandscape, desktopSmall, desktop, desktopLarge } = mediaQueries;
+    const { tablet, tabletLandscape, desktopSmall, desktopLarge } = mediaQueries;
 
     let route = window.location.pathname.replace('/', '').toLowerCase() || 'home';
     // !Object.keys(this.props.colors).includes(route) ? route = 'notfoundpage' : null;
+    if ( !Object.keys(this.props.colors).includes(route) ) { route = 'notfoundpage'; }
+
     let { color, footerBackground } = this.props.colors[route];
 
     let arrowAnimation = Radium.keyframes({

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.0">
+  <url>
+    <loc>https://25parkrow.com/</loc>
+    <lastmod>2018-08-24T22:22:02.256Z</lastmod>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://25parkrow.com/404.html</loc>
+    <lastmod>2018-03-06T22:22:02.256Z</lastmod>
+    <priority>0</priority>
+  </url>
+</urlset>
