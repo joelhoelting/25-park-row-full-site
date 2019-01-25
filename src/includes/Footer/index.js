@@ -124,8 +124,11 @@ class Footer extends Component {
         },
         [tablet]: {
           display: 'inline',
-          fontSize: pxToRem(12.5),
+          fontSize: pxToRem(16),
           lineHeight: pxToRem(16)
+        },
+        [desktopSmall]: {
+          fontSize: pxToRem(12.5),
         }
       },
       nav: {

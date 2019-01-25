@@ -168,7 +168,7 @@ class MapBox extends Component {
             className='text-center'
             style={{
               opacity: this.state.activeCategory === category ? 1 : .4,
-              textTransform: 'capitalize',
+              textTransform: 'uppercase',
               transition: 'opacity 100ms ease'
             }}
           >
