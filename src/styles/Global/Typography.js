@@ -108,7 +108,10 @@ const typography = {
       // Text Center
       '.text-center-desktop': {
         textAlign: 'center'
-      }
+      },
+      '.mobile-header': {
+        fontSize: pxToRem(24)
+      },
     },
     [desktopSmall]: {
       'html, body': {

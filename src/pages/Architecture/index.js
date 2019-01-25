@@ -96,7 +96,7 @@ class Architecture extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12} 
               className={!this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -113,7 +113,7 @@ class Architecture extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -150,7 +150,7 @@ class Architecture extends Component {
               </Waypoint>
             </Col>
           </Row>
-          {/* <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          {/* <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[6] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -167,7 +167,7 @@ class Architecture extends Component {
               </Waypoint>
             </Col>
           </Row> */}
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[7] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -184,7 +184,7 @@ class Architecture extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[8] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -201,7 +201,7 @@ class Architecture extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[9] ? 'hidden' : 'animate-reveal-delay-0'}

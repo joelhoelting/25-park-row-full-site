@@ -103,7 +103,7 @@ class Interiors extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12} 
               className={!this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -120,7 +120,7 @@ class Interiors extends Component {
               </Waypoint>
             </Col>
           </Row>
-          {/* <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          {/* <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -154,7 +154,7 @@ class Interiors extends Component {
               ]}   
             />
           </Waypoint>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[6] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -170,7 +170,7 @@ class Interiors extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[7] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -186,7 +186,7 @@ class Interiors extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3' center='lg'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2' center='lg'>
             <Col 
               lg={12}
               className={!this.state.sections[8] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -203,7 +203,7 @@ class Interiors extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[9] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -219,7 +219,7 @@ class Interiors extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[10] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -254,7 +254,7 @@ class Interiors extends Component {
               ]}   
             />
           </Waypoint>
-          {/* <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          {/* <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[12] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -270,7 +270,7 @@ class Interiors extends Component {
               </Waypoint>
             </Col>
           </Row> */}
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[13] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -287,7 +287,7 @@ class Interiors extends Component {
             </Col>
           </Row>
           <MediaQuery maxWidth={992}>
-            <Row className='row-extra-margin row-extra-margin-desktop-3'>
+            <Row className='row-extra-margin row-extra-margin-desktop-2'>
               <Col 
                 md={12}
                 className={!this.state.sections[14] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -321,7 +321,7 @@ class Interiors extends Component {
             </Row>
           </MediaQuery>
           <MediaQuery minWidth={992}>
-            <Row className='row-extra-margin row-extra-margin-desktop-3'>
+            <Row className='row-extra-margin row-extra-margin-desktop-2'>
               <Col 
                 style={{ margin: `0 ${pxToRem(8)}`, flex: '.783' }}
                 className={!this.state.sections[16] ? 'hidden' : 'animate-reveal-delay-0'}

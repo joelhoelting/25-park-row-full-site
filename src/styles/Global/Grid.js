@@ -75,7 +75,7 @@ const grid = {
         padding: '64px 0'
       }
     },
-    [globalMediaQueries.tabletLandscape]: {
+    [globalMediaQueries.desktopSmall]: {
       // Home Page Columns
       '.home-column-text': {
         margin: '8px 0'

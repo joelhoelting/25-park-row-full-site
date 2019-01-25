@@ -96,7 +96,7 @@ class Views extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -113,7 +113,7 @@ class Views extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3' center='lg'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2' center='lg'>
             <Col 
               lg={5}
               className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -129,7 +129,7 @@ class Views extends Component {
               <h4>56 Leonard Street</h4>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3' center='lg'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2' center='lg'>
             <Col 
               lg={5}
               className={!this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -145,7 +145,7 @@ class Views extends Component {
               <h4>Oculus</h4>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3' center='lg'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2' center='lg'>
             <Col 
               lg={5}
               className={!this.state.sections[6] ? 'hidden' : 'animate-reveal-delay-0'}

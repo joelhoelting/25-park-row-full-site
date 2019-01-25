@@ -99,7 +99,7 @@ class Amenities extends Component {
           </Row>
          
 
-          {/* <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          {/* <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[2] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -116,7 +116,7 @@ class Amenities extends Component {
               </Waypoint>
             </Col>
           </Row> */}
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[3] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -132,7 +132,7 @@ class Amenities extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3' center='lg'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2' center='lg'>
             <Col 
               lg={5}
               className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -148,7 +148,7 @@ class Amenities extends Component {
               <h4>Pool Entry</h4>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -168,7 +168,7 @@ class Amenities extends Component {
               </MediaQuery>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3' center='lg'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2' center='lg'>
             <Col 
               lg={5}
               className={!this.state.sections[6] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -185,7 +185,7 @@ class Amenities extends Component {
               <h4>Library</h4>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3' center='lg'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2' center='lg'>
             <Col 
               lg={5}
               className={!this.state.sections[7] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -202,7 +202,7 @@ class Amenities extends Component {
               <h4>Kids Room</h4>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[8] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -238,7 +238,7 @@ class Amenities extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[10] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -255,7 +255,7 @@ class Amenities extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[11] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -271,7 +271,7 @@ class Amenities extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-3'>
+          <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[12] ? 'hidden' : 'animate-reveal-delay-0'}
