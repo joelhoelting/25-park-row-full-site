@@ -409,7 +409,7 @@ class ContactForm extends Component {
                 style={main.formItem.label}
                 htmlFor='firstname'
               >
-                <span style={this.state.invalidFields.firstnameInvalid ? main.error : null}>
+                <span style={this.state.invalidFields.firstname ? main.error : null}>
                   First Name *
                 </span>
               </label>
@@ -428,7 +428,7 @@ class ContactForm extends Component {
                 style={main.formItem.label}
                 htmlFor='lastname'
               >
-                <span style={this.state.invalidFields.lastnameInvalid ? main.error : null}>Last Name *</span>
+                <span style={this.state.invalidFields.lastname ? main.error : null}>Last Name *</span>
               </label>
             </div>
           </Col>
@@ -447,7 +447,7 @@ class ContactForm extends Component {
                 style={main.formItem.label}
                 htmlFor='email'
               >
-                <span style={this.state.invalidFields.emailInvalid ? main.error : null}>Email *</span>
+                <span style={this.state.invalidFields.email ? main.error : null}>Email *</span>
               </label>
             </div>
           </Col>
@@ -521,7 +521,7 @@ class ContactForm extends Component {
                 </select>
               </MediaQuery>
               <label htmlFor='howhear' style={main.formItem.label}>
-                <span style={this.state.invalidFields.howhearInvalid ? main.error : null}>
+                <span style={this.state.invalidFields.howhear ? main.error : null}>
                   How did you hear about us? *
                 </span>
               </label>
