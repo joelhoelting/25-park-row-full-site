@@ -28,7 +28,7 @@ class Footer extends Component {
   }
   
   render() {
-    const { tablet, tabletLandscape, desktopSmall, desktopLarge } = mediaQueries;
+    const { tablet, tabletLandscape, desktopSmall, desktop, desktopLarge } = mediaQueries;
 
     let route = window.location.pathname.replace('/', '').toLowerCase() || 'home';
     // !Object.keys(this.props.colors).includes(route) ? route = 'notfoundpage' : null;
@@ -128,7 +128,10 @@ class Footer extends Component {
           lineHeight: pxToRem(16)
         },
         [desktopSmall]: {
-          fontSize: pxToRem(12.5),
+          fontSize: pxToRem(16)
+        },
+        [desktopLarge]: {
+          fontSize: pxToRem(18)
         }
       },
       nav: {
@@ -147,7 +150,7 @@ class Footer extends Component {
           fontFamily: 'Maison Neue Extended Book, sans-serif',
           fontSize: pxToRem(12),
           textTransform: 'uppercase',
-          letterSpacing: pxToRem(1),
+          letterSpacing: pxToRem(2),
           padding: `${pxToRem(10)} 0`,
           color: color,
           height: '100%',
