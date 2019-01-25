@@ -18,7 +18,8 @@ class SlickSlider extends Component {
       infinite: true,
       dots: true,
       arrows: false,
-      dotsClass: 'slider-dots'
+      dotsClass: 'slider-dots',
+      touchThreshold: 10
     };
   
     // Inline styles
@@ -38,7 +39,7 @@ class SlickSlider extends Component {
           width: '50%',
           height: '88%',
           display: 'none',
-          [mediaQueries.tabletLandscape]: {
+          [mediaQueries.desktopSmall]: {
             display: 'initial'
           },
           left: {
