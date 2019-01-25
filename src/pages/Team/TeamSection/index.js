@@ -25,6 +25,9 @@ const TeamSection = (props) => {
         [mediaQueries.tablet]: {
           height: '300px',
         },
+        company: {
+          maxWidth: '90%'
+        },
         role: {
           marginTop: '5px',
           textTransform: 'uppercase',
@@ -64,7 +67,12 @@ const TeamSection = (props) => {
   return (
     <div style={main}>
       <div style={main.primary}>
-        <h3 className='text-center no-margin display-linebreak'>{company}</h3>
+        <h3 
+          style={main.primary.company} 
+          className='text-center no-margin display-linebreak'
+        >
+          {company}
+        </h3>
         <p style={main.primary.role}>{role}</p>
         <img 
           alt={`Expand section for ${company}`}

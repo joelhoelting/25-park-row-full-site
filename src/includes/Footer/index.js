@@ -36,6 +36,14 @@ class Footer extends Component {
 
     let { color, footerBackground } = this.props.colors[route];
 
+    let illustrations = {
+      architecture: 'flower1',
+      interiors: 'butterfly',
+      amenities: 'bee',
+      views: 'flower2',
+      neighborhood: 'flower3'
+    };
+
     let arrowAnimation = Radium.keyframes({
       '0%': { transform: 'scale(1)' },
       '50%': { transform: 'scale(.8)' },
@@ -52,31 +60,53 @@ class Footer extends Component {
         textAlign: 'center',
         width: '100%',
         height: 'auto',
-        padding: route !== 'home' ? `${pxToRem(100)} ${pxToRem(15)} 0` : `0 ${pxToRem(15)}`,
+        padding: `0 ${pxToRem(15)}`,
         background: footerBackground ? footerBackground : 'none',
         [tabletLandscape]: {
           padding: `0 ${pxToRem(30)}`,
         }
       },
+      illustrationDiv: {
+        height: pxToRem(200),
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        [tablet]: {
+          height: pxToRem(300)
+        },
+        illustration: {
+          maxWidth: pxToRem(60),
+          maxHeight: pxToRem(150),
+          [tabletLandscape]: {
+            maxWidth: pxToRem(120)
+          },
+          [desktopSmall]: {
+            position: 'relative',
+            top: pxToRem(50)
+          },
+          [desktopLarge]: {
+            maxWidth: pxToRem(150)
+          }
+        },
+      },
       topNav: {
         display: 'flex',
         flexFlow: 'row nowrap',
+        justifyContent: 'space-between',
         width: '100%',
-        height: pxToRem(30),
+        marginBottom: pxToRem(20),
+        paddingTop: !illustrations[route] ? pxToRem(50) : 0,
         [tabletLandscape]: {
-          height: pxToRem(50),
-          margin: `${pxToRem(40)} 0`
+          marginBottom: pxToRem(50),
         },
         left: {
           display: 'flex',
           alignItems: 'flex-end',
-          width: '50%'
         },
         right: {
           display: 'flex',
           alignItems: 'flex-end',
           justifyContent: 'flex-end',
-          width: '50%'
         }
       },
       btn: {
@@ -192,6 +222,20 @@ class Footer extends Component {
     let next = pages[nextInd];
     let previous = pages[prevInd];
 
+    const renderIllustration = () => {
+      if (illustrations[route]) {
+        return (
+          <div style={FooterInline.illustrationDiv}>
+            <img 
+              alt={`illustration for end of ${illustrations[route]} page`}
+              src={`/images/icons/illustration/${illustrations[route]}.svg`} 
+              style={FooterInline.illustrationDiv.illustration}
+            />
+          </div>
+        );
+      }
+    };
+
     // add classes to animate arro
     const hideArrows = () => {
       if (route === 'brochure' || route === 'press' || route === 'legal' || route === 'team') {
@@ -222,7 +266,7 @@ class Footer extends Component {
                   <img key="nextimg" src={`/images/icons/right_${color}.svg`} alt='go to next page' style={{...FooterInline.arrow, marginLeft: 'auto'}}/>
                 </div>
               </RadiumLink>
-            </div>    
+            </div>  
           </div>
         );
       }
@@ -238,6 +282,7 @@ class Footer extends Component {
 
     return (
       <footer style={FooterInline.wrapper}>
+        {renderIllustration()}
         {renderArrows()}
         <div style={FooterInline.nav}>
           <RadiumLink 
