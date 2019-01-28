@@ -15,11 +15,11 @@ const teamData = {
     {
       company: 'Cookfox Architects',
       role: 'Architectural Design',
-      blurb: "Founded in 2003 by Rick Cook and Bob Fox, COOKFOX designs beautiful, environmentally responsible, high-performance buildings. The firm holds special expertise in working within landmark historic districts. Starting with intensive research, the firm seeks to understand each unique project in its environmental, cultural, and historical context, so that the work may engage with layers of time and promote a strong sense of place. COOKFOX is the first architectural firm to have designed three LEED Platinum projects in New York City, including One Bryant Park, the world's first LEED Platinum commercial skyscraper. Their award-winning talents delivered the design of the Chelsea Grande, 360 Madison, and the Caroline."
+      blurb: 'COOKFOX Architects is a New York City based architectural and interior design studio. COOKFOX has built a studio focused on high-performance, environmentally responsive design and is well-known for innovative design at the highest standards of environmental performance. COOKFOX focuses on biophilic design to create architecture that supports physical health and mental wellness. With a portfolio of diverse residential, workplace, and education projects, COOKFOX seeks to pursue architecture that restores, regenerates, and elevates our collective experience of the urban environment.'
     },
     {
       company: 'Studio Mellone',
-      role: 'Interior Design',
+      role: 'Amenity Design',
       blurb: 'Andre Mellone founded Studio Mellone in 2012 to expand his unique vision which was cultivated during a 20-year career in New York City’s design community, working with Robert A. M. Stern, Mark Hampton, Greg Jordan, Ferguson&Shamamian and Sawyer/Berson. Mellone primarily focuses on private homes and residences, along with boutique retail. He combines the finest architectural interior work with an expertise in crafting custom furniture and textiles to create dramatic visual cues within an elegant framework. Architectural Digest has called him a “world famous designer with a trademark eye” who creates “midcentury, masculine decors for the likes of [fashion designers] Thom Browne and Jason Wu.”'
     },
     {

@@ -156,6 +156,10 @@ class GalleryOverlay extends React.Component {
     // Scroll to clicked slide
     if (this.props.currentIndex !== this.state.currentSlide) {
       this.slider.slickGoTo(this.props.currentIndex, true);
+
+      this.setState({
+        currentSlide: this.props.currentIndex
+      });
     }
     
     return (
