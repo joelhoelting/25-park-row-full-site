@@ -280,7 +280,7 @@ class Interiors extends Component {
                 onLeave={() => this.triggerAnimation(13, false)}
               >
                 <LargeImage
-                  caption='Calacatta Gold tile, polished nickel, and a custom cerused oak vanity with a fine chrome inlay detail are the centerpieces of the master bathrooms.'
+                  caption='Calacatta Gold tile, polished nickel, and a custom cerused oak vanity with a polished nickel inlay detail are the centerpieces of the master bathrooms. '
                   src='/images/pages/interiors/residential_master_bathroom' width='100%'  
                 />
               </Waypoint>
