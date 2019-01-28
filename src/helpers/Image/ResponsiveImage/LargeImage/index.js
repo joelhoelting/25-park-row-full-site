@@ -48,7 +48,7 @@ const LargeImage = (props) => {
   };
 
   const renderCaption = () => {
-    if (props.caption) {
+    if (props.caption && !props.noCaption) {
       return (
         <Context.Consumer>
           {context => (

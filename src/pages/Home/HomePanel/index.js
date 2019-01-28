@@ -81,7 +81,10 @@ const Panel = (props) => {
         <div>
           <h2 style={main.sub.description} className='text-center'>{props.description}</h2>
         </div>
-        <img style={main.sub.icon} src={`/images/icons/illustration/${props.iconSrc}.svg`} alt={props.iconAlt} />
+        <img style={main.sub.icon} 
+          src={`/images/icons/illustration/${props.iconSrc}.svg`} 
+          alt={`Home page icon - ${props.iconSrc}`} 
+        />
         <p style={main.sub.title} className='text-center'>{props.title}</p>
       </div>
     </div>

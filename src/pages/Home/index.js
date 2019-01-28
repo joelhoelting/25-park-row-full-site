@@ -58,49 +58,58 @@ class Home extends Component {
       <div>
         <div className={'large-container'}>
           <Grid fluid>
-            <Row style={{ minHeight: '20vh'}}>
-              <Col className={this.animationString('architectureImg', 0, 0, 'home-column-img')} lg={6}>
-                <Link key="architecture" to={'/architecture'}>
-                  <LargeImage src='/images/pages/home/01_architecture' width='50%' />
-                </Link>
-              </Col>
-              <Col className={this.animationString('architecturePanel', 1, 1, 'home-column-text')} lg={6}>
-                <Link key="architecture" to={'/architecture'}>
+            <Link key="architecture" to={'/architecture'}>
+              <Row style={{ minHeight: '20vh'}}>
+                <Col className={this.animationString('architectureImg', 0, 0, 'home-column-img')} lg={6}>
+                  <LargeImage 
+                    src='/images/pages/home/01_architecture' 
+                    width='50%' 
+                    caption='Link to architecture page'
+                    noCaption
+                  />
+                </Col>
+                <Col className={this.animationString('architecturePanel', 1, 1, 'home-column-text')} lg={6}>
                   <HomePanel 
                     background={colorVars.olive} 
                     description={<span>INTRODUCING<br/> A NEW YORK CITY ICON</span>}
                     iconSrc='flower1_bw'
                     title='Architecture'
                   />
-                </Link>
-              </Col>
-            </Row>
-            <Row style={{ minHeight: '20vh'}}>
-              <Col className={this.animationString('interiorPanel', 3, 3, 'first-lg home-column-text')} lg={6}>
-                <Link key="interiors" to={'/interiors'}>
+                </Col>
+              </Row>
+            </Link>
+            <Link key="interiors" to={'/interiors'}>
+              <Row style={{ minHeight: '20vh'}}>
+                <Col className={this.animationString('interiorPanel', 3, 3, 'first-lg home-column-text')} lg={6}>
                   <HomePanel 
                     background={colorVars.paleBlue} 
                     description={<span>INTERIORS WORTHY<br/> OF THE VIEW</span>}
                     iconSrc='butterfly_bw'
                     title='Interiors'
                   />
-                </Link>
-              </Col>
-              <Col className={this.animationString('interiorImg', 2, 2, 'first-xs first-sm home-column-img')} lg={6}>
-                <Link key="interiors" to={'/interiors'}>
-                  <LargeImage src='/images/pages/home/02_interiors' width='50%' />
-                </Link>
-              </Col>
-            </Row>
-            <Row style={{ minHeight: '20vh'}}>
-              <Col className={this.animationString('viewsImg', 1, 2, 'first-xs first-sm home-column-img')} lg={6}>
-                <Waypoint onEnter={() => this.triggerAnimation('viewsImg')} />
-                <Link key="views" to={'/views'}>
-                  <LargeImage src='/images/pages/home/03_views' width='50%' />
-                </Link>
-              </Col>
-              <Col className={this.animationString('viewsPanel', 2, 2, 'first-lg home-column-text')} lg={6}>
-                <Link key="views" to={'/views'}>
+                </Col>
+                <Col className={this.animationString('interiorImg', 2, 2, 'first-xs first-sm home-column-img')} lg={6}>
+                  <LargeImage 
+                    src='/images/pages/home/02_interiors' 
+                    width='50%' 
+                    caption='Link to interiors page'
+                    noCaption
+                  />
+                </Col>
+              </Row>
+            </Link>
+            <Link key="views" to={'/views'}>
+              <Row style={{ minHeight: '20vh'}}>
+                <Col className={this.animationString('viewsImg', 1, 2, 'first-xs first-sm home-column-img')} lg={6}>
+                  <Waypoint onEnter={() => this.triggerAnimation('viewsImg')} />
+                  <LargeImage 
+                    src='/images/pages/home/03_views' 
+                    width='50%' 
+                    caption='Link to views page'
+                    noCaption
+                  />
+                </Col>
+                <Col className={this.animationString('viewsPanel', 2, 2, 'first-lg home-column-text')} lg={6}>
                   <Waypoint onEnter={() => this.triggerAnimation('viewsPanel')} />
                   <HomePanel 
                     background={colorVars.grey} 
@@ -108,12 +117,12 @@ class Home extends Component {
                     iconSrc='flower2_bw'
                     title='Views'
                   />
-                </Link>
-              </Col>
-            </Row>
-            <Row style={{ minHeight: '20vh'}}>
-              <Col className={this.animationString('amenitiesPanel', 2, 2, 'first-lg home-column-text')} lg={6}>
-                <Link key="amenities" to={'/amenities'}>
+                </Col>
+              </Row>
+            </Link>
+            <Link key="amenities" to={'/amenities'}>
+              <Row style={{ minHeight: '20vh'}}>
+                <Col className={this.animationString('amenitiesPanel', 2, 2, 'first-lg home-column-text')} lg={6}>
                   <Waypoint onEnter={() => this.triggerAnimation('amenitiesPanel')} />
                   <HomePanel 
                     background={colorVars.forestGreen} 
@@ -121,24 +130,30 @@ class Home extends Component {
                     iconSrc='bee_bw'
                     title='Amenities'
                   />
-                </Link>
-              </Col>
-              <Col className={this.animationString('amenitiesImg', 1, 2, 'first-xs first-sm home-column-img')} lg={6}>
-                <Waypoint onEnter={() => this.triggerAnimation('amenitiesImg')} />
-                <Link key="amenities" to={'/amenities'}>
-                  <LargeImage src='/images/pages/home/04_amenities' width='50%'/>
-                </Link>
-              </Col>
-            </Row>
-            <Row style={{ minHeight: '20vh'}}>
-              <Col className={this.animationString('neighborhoodImg', 1, 2, 'first-xs first-sm home-column-img')} lg={6}>
-                <Waypoint onEnter={() => this.triggerAnimation('neighborhoodImg')} />
-                <Link key="neighborhood" to={'/neighborhood'}>
-                  <LargeImage src='/images/pages/home/05_neighborhood' width='50%'/>
-                </Link>
-              </Col>
-              <Col className={this.animationString('neighborhoodPanel', 2, 2, 'first-lg home-column-text')} lg={6}>
-                <Link key="neighborhood" to={'/neighborhood'}>
+                </Col>
+                <Col className={this.animationString('amenitiesImg', 1, 2, 'first-xs first-sm home-column-img')} lg={6}>
+                  <Waypoint onEnter={() => this.triggerAnimation('amenitiesImg')} />
+                  <LargeImage 
+                    src='/images/pages/home/04_amenities' 
+                    width='50%'
+                    caption='Link to amenities page'
+                    noCaption
+                  />
+                </Col>
+              </Row>
+            </Link>
+            <Link key="neighborhood" to={'/neighborhood'}>
+              <Row style={{ minHeight: '20vh'}}>
+                <Col className={this.animationString('neighborhoodImg', 1, 2, 'first-xs first-sm home-column-img')} lg={6}>
+                  <Waypoint onEnter={() => this.triggerAnimation('neighborhoodImg')} />
+                  <LargeImage 
+                    src='/images/pages/home/05_neighborhood' 
+                    width='50%'
+                    caption='Link to neighborhood page'
+                    noCaption
+                  />
+                </Col>
+                <Col className={this.animationString('neighborhoodPanel', 2, 2, 'first-lg home-column-text')} lg={6}>
                   <Waypoint onEnter={() => this.triggerAnimation('neighborhoodPanel')} />
                   <HomePanel 
                     background={colorVars.olive} 
@@ -146,9 +161,9 @@ class Home extends Component {
                     iconSrc='flower3_bw'
                     title='Neighborhood'
                   />
-                </Link>
-              </Col>
-            </Row>
+                </Col>
+              </Row>
+            </Link>
           </Grid>
         </div>
         <hr style={{ height: '2px', background: '#000', border: 'none'}} />

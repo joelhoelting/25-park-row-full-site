@@ -12,7 +12,7 @@ class Contact extends Component {
     super(props);
     
     this.state = {
-      submitted: false
+      thankYouActive: false
     };
   }
   
@@ -22,15 +22,9 @@ class Contact extends Component {
     }, 500);
   }
 
-  onSubmitForm() {
+  toggleThankYou() {
     this.setState({
-      submitted: true
-    });
-  }
-
-  onBack() {
-    this.setState({
-      submitted: false
+      thankYouActive: !this.state.thankYouActive
     });
   }
 
@@ -62,7 +56,10 @@ class Contact extends Component {
     return (
       <div className={`contact-container ${!this.state.mounted ? 'hidden' : ''}`}>
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
-        {this.state.submitted ? <ThankYou onBack={() => {this.onBack();} }/> : null}
+        <ThankYou 
+          active={this.state.thankYouActive}          
+          closeThankYou={() => {this.closeThankYou();} }
+        />
         <Row className='mobile-header'>
           <Col lg={12}>
             <h2 className='text-center' style={{ color: '#fff'}}>Contact Us</h2>
@@ -110,9 +107,8 @@ class Contact extends Component {
           </Col>
         </Row>
         <div>
-          
           <ContactForm 
-            onSubmitForm={() => { this.onSubmitForm(); }} 
+            toggleThankYou={() => this.toggleThankYou() }
           />
         </div>
       </div>

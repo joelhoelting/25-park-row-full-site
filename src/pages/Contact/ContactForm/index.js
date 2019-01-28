@@ -64,67 +64,72 @@ class ContactForm extends Component {
       return;
     } else {
       /* send email with new user info */
-      // let text;
-      // if (this.state.broker === 'yes') {
-      //   text = `Hi,\n\nA new registrant signed up:\n\n
-      //       \n\nName: ${this.state.firstname} ${this.state.lastname}
-      //       \n\nEmail: ${this.state.email}
-      //       \n\nPhone: ${this.state.phone}
-      //       \n\nHow did you hear about us: ${this.state.howhear}
-      //       \n\nIs broker: ${this.state.broker}
-      //       \n\n\n\nBest,\n\n25 Park Row Web Team
-      //     `;
-      // } else {
-      //   text = `Hi,\n\nA new registrant signed up:\n\n
-      //     \n\nName: ${this.state.firstname} ${this.state.lastname}
-      //     \n\nEmail: ${this.state.email}
-      //     \n\nPhone: ${this.state.phone}
-      //     \n\nZip: ${this.state.zipcode}
-      //     \n\nResidence Size: ${this.state.residencesize}
-      //     \n\nHow did you hear about us: ${this.state.howhear}
-      //     \n\nIs broker: ${this.state.broker}
-      //     \n\n\n\nBest,\n\n25 Park Row Web Team`;
-      // }
+      let text;
+      if (this.state.broker === 'yes') {
+        text = `Hi,\n\nA new registrant signed up:\n\n
+            \n\nName: ${this.state.firstname} ${this.state.lastname}
+            \n\nEmail: ${this.state.email}
+            \n\nPhone: ${this.state.phone}
+            \n\nHow did you hear about us: ${this.state.howhear}
+            \n\nIs broker: ${this.state.broker}
+            \n\n\n\nBest,\n\n25 Park Row Web Team
+          `;
+      } else {
+        text = `Hi,\n\nA new registrant signed up:\n\n
+          \n\nName: ${this.state.firstname} ${this.state.lastname}
+          \n\nEmail: ${this.state.email}
+          \n\nPhone: ${this.state.phone}
+          \n\nZip: ${this.state.zipcode}
+          \n\nResidence Size: ${this.state.residencesize}
+          \n\nHow did you hear about us: ${this.state.howhear}
+          \n\nIs broker: ${this.state.broker}
+          \n\n\n\nBest,\n\n25 Park Row Web Team`;
+      }
 
-      // var emailData = {
-      //   from: '"25 Park Row Web Team" <no_reply_25parkrow@dbxd.com>',
-      //   to: '"25PR Admin" <joel.hoelting@dbox.com>',
-      //   subject: 'New Registrant - 25 Park Row - '+this.state.firstname+' '+this.state.lastname,
-      //   text: text
-      // };
+      var emailData = {
+        from: '"25 Park Row Web Team" <no_reply_25parkrow@dbxd.com>',
+        to: '"25PR Admin" <tatiana.brieva@dbox.com>',
+        subject: 'New Registrant - 25 Park Row - '+this.state.firstname+' '+this.state.lastname,
+        text: text
+      };
 
-      // fetch('https://form.api.dbxd.com/post-ses-email', {
-      //   method: 'POST',
-      //   mode: 'cors',
-      //   headers: {
-      //     'Accept': 'application/json',
-      //     'Content-Type': 'application/json'
-      //   },
-      //   body: JSON.stringify(emailData),
-      // })
-      //   .then(response => response.json())
-      //   .then((result) => {
-      //     /* eslint-disable no-console */
-      //     console.log('email sending successful ', result);
-      //     /* eslint-enable no-console */
+      fetch('https://form.api.dbxd.com/post-ses-email', {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(emailData),
+      })
+        .then(response => response.json())
+        .then((result) => {
+          /* eslint-disable no-console */
+          console.log('email sending successful ', result);
+          /* eslint-enable no-console */
           
-      //     this.props.onSubmitForm();
-      //     this.setState({
-      //       firstname: '',
-      //       lastname: '',
-      //       zipcode: '',
-      //       email: '',
-      //       phonenumber: '',
-      //       residencesize: '',
-      //       howhear: '',
-      //       broker: ''
-      //     });
-      //   })
-      //   .catch((error) => {
-      //     /* eslint-disable no-console */
-      //     console.log('error sending email ', error);
-      //     /* eslint-enable no-console */
-      //   });
+          this.props.toggleThankYou();
+          this.setState({
+            firstname: '',
+            lastname: '',
+            zipcode: '',
+            email: '',
+            phonenumber: '',
+            residencesize: '',
+            howhear: '',
+            broker: ''
+          });
+
+          let originalThis = this;
+          setTimeout(() => {
+            originalThis.props.toggleThankYou();
+          }, 5000);
+        })
+        .catch((error) => {
+          /* eslint-disable no-console */
+          console.log('error sending email ', error);
+          /* eslint-enable no-console */
+        });
     }
   }
 
@@ -162,7 +167,7 @@ class ContactForm extends Component {
       [property]: value,
       invalidFields: {
         ...this.state.invalidFields,
-        [property]: propertyInvalid 
+        [`${property}Invalid`]: propertyInvalid 
       },
       invalidFieldsPresent: invalidFieldsPresent()
     });
@@ -402,14 +407,14 @@ class ContactForm extends Component {
                 name='firstname' 
                 type='text' 
                 style={main.formItem.input}
-                value={this.state.firstName}
+                value={this.state.firstname}
                 onChange={(e) => this.handleChangeRequired(e)}
               />
               <label 
                 style={main.formItem.label}
                 htmlFor='firstname'
               >
-                <span style={this.state.invalidFields.firstname ? main.error : null}>
+                <span style={this.state.invalidFields.firstnameInvalid ? main.error : null}>
                   First Name *
                 </span>
               </label>
@@ -421,14 +426,14 @@ class ContactForm extends Component {
                 name='lastname' 
                 type='text' 
                 style={main.formItem.input}
-                value={this.state.lastName}
+                value={this.state.lastname}
                 onChange={(e) => this.handleChangeRequired(e)} 
               />
               <label 
                 style={main.formItem.label}
                 htmlFor='lastname'
               >
-                <span style={this.state.invalidFields.lastname ? main.error : null}>Last Name *</span>
+                <span style={this.state.invalidFields.lastnameInvalid ? main.error : null}>Last Name *</span>
               </label>
             </div>
           </Col>
@@ -447,7 +452,7 @@ class ContactForm extends Component {
                 style={main.formItem.label}
                 htmlFor='email'
               >
-                <span style={this.state.invalidFields.email ? main.error : null}>Email *</span>
+                <span style={this.state.invalidFields.emailInvalid ? main.error : null}>Email *</span>
               </label>
             </div>
           </Col>
@@ -521,7 +526,7 @@ class ContactForm extends Component {
                 </select>
               </MediaQuery>
               <label htmlFor='howhear' style={main.formItem.label}>
-                <span style={this.state.invalidFields.howhear ? main.error : null}>
+                <span style={this.state.invalidFields.howhearInvalid ? main.error : null}>
                   How did you hear about us? *
                 </span>
               </label>
