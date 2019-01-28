@@ -106,7 +106,7 @@ class Architecture extends Component {
                 onLeave={() => this.triggerAnimation(3, false)}
               >
                 <LargeImage 
-                  caption='25 Park Row gracefully echoes the surrounding Art Deco architecture.'
+                  caption='25 Park Row gracefully echoes the surrounding architecture.'
                   src='/images/pages/architecture/exterior_lobby_entry' 
                   width='100%' 
                 />
@@ -177,7 +177,7 @@ class Architecture extends Component {
                 onLeave={() => this.triggerAnimation(7, false)} 
               >
                 <LargeImage 
-                  caption='Penthouse views sweep from the East River to the Hudson, and feature a sweeping vista of the city’s architectural treasures and City Hall Park below.'
+                  caption='Penthouse views sweep from the east river to the hudson, and feature uninterrupted vistas of the city’s architectural treasures and city hall park below.'
                   src='/images/pages/architecture/building_exterior_lantern_terrace'
                   width='100%' 
                 />

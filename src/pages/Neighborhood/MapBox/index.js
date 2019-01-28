@@ -236,7 +236,7 @@ class MapBox extends Component {
             </MediaQuery>
           </Col>
         </Row>
-        <MediaQuery maxWidth={992}>
+        <MediaQuery maxWidth={768}>
           <Row>
             <Col sm={12} style={{ margin: '20px 0'}}>
               <Slider {...sliderSettings} >
@@ -246,7 +246,7 @@ class MapBox extends Component {
           </Row>
         </MediaQuery>
         <Grid fluid>
-          <MediaQuery minWidth={992}>
+          <MediaQuery minWidth={768}>
             <Row className="row-extra-margin" top='sm' between='sm'>
               {Object.keys(this.mapCategories).map(category => categoryButtonDesktop(category))}
             </Row>
