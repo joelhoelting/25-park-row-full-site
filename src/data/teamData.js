@@ -37,7 +37,7 @@ const teamData = {
     {
       company: 'Corcoran Sunshine Marketing Group',
       role: 'Exclusive Marketing',
-      blurb: 'Vivamus nisl orci, aliquam in quam quis, tincidunt egestas magna. Nulla tellus nunc, egestas eu bibendum eu, malesuada non ligula. Fusce sollicitudin, sapien eget pharetra sagittis, felis mi dignissim velit, pretium accumsan purus lacus vel sapien. Vivamus nisl orci, aliquam in quam quis, tincidunt egestas magna. Nulla tellus nunc, egestas eu bibendum eu, malesuada non ligula. Fusce sollicitudin, sapien eget pharetra sagittis, felis mi dignissim velit, pretium accumsan purus.'
+      blurb: 'With over 30 years of experience in marketing and collective sales in excess of $40 billion, Corcoran Sunshine Marketing Group is the recognized industry leader in the planning, design, marketing, and sale of luxury residential development. Representing properties throughout the United States and in select international locations, Corcoran Sunshine Marketing Group’s portfolio contains a curated collection of the world’s most desirable new addresses.'
     }
   ]
 };
