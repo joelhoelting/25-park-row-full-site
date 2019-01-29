@@ -102,7 +102,7 @@ class Floorplans extends Component {
     let rows = [];
     let rowCounter = 0;
     let columns = [];
-
+    
     if (Object.keys(this.state.sortedUnits).length > 0) {
       
       // Loop through availability data
