@@ -32,7 +32,7 @@ const teamData = {
     {
       company: 'DBOX',
       role: 'Marketing + Creative',
-      blurb: 'Vivamus nisl orci, aliquam in quam quis, tincidunt egestas magna. Nulla tellus nunc, egestas eu bibendum eu, malesuada non ligula. Fusce sollicitudin, sapien eget pharetra sagittis, felis mi dignissim velit, pretium accumsan purus lacus vel sapien. Vivamus nisl orci, aliquam in quam quis, tincidunt egestas magna. Nulla tellus nunc, egestas eu bibendum eu, malesuada non ligula. Fusce sollicitudin, sapien eget pharetra sagittis, felis mi dignissim velit, pretium accumsan purus.'
+      blurb: 'We build brands and develop immersive marketing campaigns for the fields of property development, architecture and the arts. Since being founded in 1996, we have received awards from the Academy of Television Arts & Sciences (Emmy® Awards), The Art Directors Club, World Luxury Award, American Design Awards, Communication Arts and The International Property Awards, and our work has been exhibited at some of the world’s most respected art institutions, such as The Museum of Modern Art (MoMA), The Museum of Contemporary Art in Tokyo, The Art Institute of Chicago, New Museum and The Museum of Contemporary Art in Los Angeles.'
     },
     {
       company: 'Corcoran Sunshine Marketing Group',
