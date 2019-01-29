@@ -214,8 +214,12 @@ class FloorplanOverlay extends Component {
                     </p>
                   </div>
                   <div style={styles.main.inner.detail.subDetail}>
-                    <p className='no-margin'>{`${bedrooms} Bedrooms`}</p>
-                    <p className='no-margin'>{`${bathrooms} Bathrooms`}</p>
+                    <p className='no-margin'>
+                      {`${bedrooms} ${bedrooms > 1 ? 'Bedrooms' : 'Bedroom'}`}
+                    </p>
+                    <p className='no-margin'>
+                      {`${bathrooms} ${bathrooms > 1 ? 'Bathrooms' : 'Bathroom'}`}
+                    </p>
                   </div>
                   <div style={styles.main.inner.detail.subDetail}>
                     <p className='no-margin'>Interior</p>
@@ -260,7 +264,7 @@ class FloorplanOverlay extends Component {
                     className='no-margin' 
                     style={styles.main.inner.detail.residence}
                   >
-                    {`Residence ${residence}`}
+                    {`${isPenthouse ? 'Penthouse' : 'Residence'} ${residence}`}
                   </p>
                   {generateTwoLevelButtons(hasTwoLevels)}
                 </div>
@@ -282,7 +286,7 @@ class FloorplanOverlay extends Component {
               <MediaQuery maxWidth={1200}>
                 <div style={styles.main.inner.detail}>
                   <img 
-                    onClick={() => this.props.toggleOverlay()}
+                    onClick={() => this.handleCloseOverlay(context)}
                     style={ styles.main.inner.detail.buttons.closeBtn} 
                     src={'/images/icons/close_black.svg'}
                     alt='Close floorplan overlay'

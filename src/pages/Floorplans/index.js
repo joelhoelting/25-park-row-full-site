@@ -19,21 +19,6 @@ class Floorplans extends Component {
   constructor(props) {
     super(props);
     
-    // Store unparsed data before component mounts
-    // fetch('https://p2wmwwcrlf.execute-api.us-east-1.amazonaws.com/test/listings')
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     console.log(data.body)
-    //   });
-    
-    parseString(localAvailabilityData, (err, result) => {
-      const localListings = result.Listings.Listing;
-      this.unparsedListings = localListings;
-    });
-
-    // Refs
-    this.hidden = React.createRef();
-    
     this.state = {
       sortedUnits: {},
       floorplanOverlay: {
@@ -41,19 +26,28 @@ class Floorplans extends Component {
         unit: ''
       }
     };
-
-    // Two floor units
-    this.twoLevelUnits = ['5A', '15B', '45PH'];
-    // Parse initial data
-    this.parseData();
   }
 
   componentDidMount() {
-    this.setState({ sortedUnits: this.parsedUnits });
-
-    setTimeout(() => {
-      this.setState({ mounted: true });
-    }, 500);
+    this.unparsedListings = [];
+    // Fetch listings from Corcoran Sunshine
+    // https://p2wmwwcrlf.execute-api.us-east-1.amazonaws.com/test/listings
+    let $this = this;
+    fetch('https://jsonplaceholder.typicode.com/404')
+      .then(response => response.json())
+      .then(data => {
+        this.unparsedListings = data.body.Listings.Listing;
+        $this.parseData();
+      })
+      .catch(error => {
+        /* eslint-disable no-console */
+        console.error('Error:', error);
+        /* eslint-enable no-console */
+        parseString(localAvailabilityData, (err, result) => {
+          $this.unparsedListings = result.Listings.Listing;
+          $this.parseData();
+        });
+      });
   }
 
   // Change state to show/hide floorplan overlay
@@ -75,8 +69,8 @@ class Floorplans extends Component {
     this.unparsedListings.forEach((listing) => {
       let listingObj = {
         residence: listing.Location[0].UnitNumber[0],
-        bedrooms: listing.BasicDetails[0].Bedrooms[0],
-        bathrooms: listing.BasicDetails[0].Bathrooms[0],
+        bedrooms: parseFloat(listing.BasicDetails[0].Bedrooms[0]),
+        bathrooms: parseFloat(listing.BasicDetails[0].Bathrooms[0]),
         interior: listing.BasicDetails[0].LivingArea[0],
         exterior: listing.BasicDetails[0].ExtLivingArea ? listing.BasicDetails[0].ExtLivingArea[0] : undefined,
         taxAmount: insertCommas(listing.ListingDetails[0].MaintenanceCC[0]),
@@ -97,6 +91,10 @@ class Floorplans extends Component {
         this.parsedUnits[listingObj.bedrooms].push(listingObj);
       }
     });
+
+    setTimeout(() => {
+      this.setState({ sortedUnits: this.parsedUnits, mounted: true });
+    }, 500);
   }
 
   renderUnits() {
@@ -115,7 +113,7 @@ class Floorplans extends Component {
           let unitCategory = (
             <Row className={`floorplan-category-${c} floorplan-category`} key={`floorplan_row_${rowCounter}`}>
               <Col xl={12}>
-                <h3 className='text-center'>{`${c} Bedrooms`}</h3>
+                <h3 className='text-center'>{`${c} ${c > 1 ? 'Bedrooms' : 'Bedroom'}`}</h3>
               </Col>
             </Row>
           ); 
@@ -163,9 +161,12 @@ class Floorplans extends Component {
           }
         }        
       }
+      return rows;
+    } else {
+      return (
+        <h1 className='text-center'>Nothing to see here</h1>
+      );
     }
-    
-    return rows;
   }
 
   render() {
