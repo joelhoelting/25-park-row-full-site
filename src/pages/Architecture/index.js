@@ -145,7 +145,7 @@ class Architecture extends Component {
                   textAlign='center'
                   mobileText='“How do we acknowledge this gift to the city? First, plan every single residence to face the park.”'
                   text={<span>“How do we acknowledge this gift to the city? <br/> First, plan every single residence to face the park.”</span>}
-                  quote='—Rick Cook, Cookfox Architects'
+                  quote='—Rick Cook, COOKFOX Architects'
                 />
               </Waypoint>
             </Col>

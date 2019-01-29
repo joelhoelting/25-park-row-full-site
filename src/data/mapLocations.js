@@ -49,10 +49,6 @@ const locations = {
       coordinates: [-73.998217, 40.714383]
     },
     {
-      title: 'Barleycorn',
-      coordinates: [-74.008857, 40.713194]
-    },
-    {
       title: 'Dead Rabbit',
       coordinates: [-74.011030, 40.703312]
     },
@@ -353,7 +349,7 @@ const locations = {
       coordinates: [-74.003221, 40.719191]
     },
     {
-      title: 'CrossFit Tribeca',
+      title: 'CrossFit 212',
       coordinates: [-74.006367, 40.714552]
     },
     {
@@ -511,15 +507,15 @@ const locations = {
       coordinates: [-74.015217, 40.713431]
     },
     {
-      title: '1Smythson',
+      title: 'Smythson',
       coordinates: [-74.011256, 40.711183]
     },
     {
-      title: '1South Street Seaport',
+      title: 'South Street Seaport',
       coordinates: [-74.002744, 40.705636]
     },
     {
-      title: '2Steven Alan',
+      title: 'Steven Alan',
       coordinates: [-74.005748, 40.718394]
     },
     {
