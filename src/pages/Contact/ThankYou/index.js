@@ -53,7 +53,7 @@ const ThankYou = (props) => {
       </div>
       <div style={[main.halves, main.lower]}>
         <p style={main.p}>
-          We look forward to introducing you to this spectacular new building this fall.
+          We look forward to introducing you to this spectacular new building in 2019.
         </p>
       </div>
     </div>
