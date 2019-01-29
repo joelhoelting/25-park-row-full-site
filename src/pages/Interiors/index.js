@@ -170,7 +170,7 @@ class Interiors extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-2'>
+          {/* <Row className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[7] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -185,7 +185,7 @@ class Interiors extends Component {
                 />
               </Waypoint>
             </Col>
-          </Row>
+          </Row> */}
           <Row className='row-extra-margin row-extra-margin-desktop-2' center='lg'>
             <Col 
               lg={12}

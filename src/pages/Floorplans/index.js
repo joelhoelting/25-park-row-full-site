@@ -18,8 +18,14 @@ import { generateFloorplanSrc } from 'helpers/Floorplans';
 class Floorplans extends Component {
   constructor(props) {
     super(props);
-
+    
     // Store unparsed data before component mounts
+    // fetch('https://p2wmwwcrlf.execute-api.us-east-1.amazonaws.com/test/listings')
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     console.log(data.body)
+    //   });
+    
     parseString(localAvailabilityData, (err, result) => {
       const localListings = result.Listings.Listing;
       this.unparsedListings = localListings;
@@ -67,8 +73,6 @@ class Floorplans extends Component {
     };
     
     this.unparsedListings.forEach((listing) => {
-      let bedrooms = listing.BasicDetails[0].Bedrooms[0];
-      
       let listingObj = {
         residence: listing.Location[0].UnitNumber[0],
         bedrooms: listing.BasicDetails[0].Bedrooms[0],
@@ -78,6 +82,7 @@ class Floorplans extends Component {
         taxAmount: insertCommas(listing.ListingDetails[0].MaintenanceCC[0]),
         monthlyCC: insertCommas(listing.ListingDetails[0].MaintenanceCC[0]),
         price: insertCommas(listing.ListingDetails[0].Price[0]),
+        active: listing.ListingDetails[0].Status[0] === "Active" ? true : false
       };
       
       let { residence } = listingObj;
@@ -88,7 +93,9 @@ class Floorplans extends Component {
       listingObj.imgSrc = srcObj.imgFilename;
       listingObj.pdfSrc = srcObj.pdfFilename;
       
-      this.parsedUnits[bedrooms].push(listingObj);
+      if (listingObj.active) {
+        this.parsedUnits[listingObj.bedrooms].push(listingObj);
+      }
     });
   }
 
