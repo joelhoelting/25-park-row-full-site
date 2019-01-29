@@ -31,9 +31,8 @@ class Floorplans extends Component {
   componentDidMount() {
     this.unparsedListings = [];
     // Fetch listings from Corcoran Sunshine
-    // https://p2wmwwcrlf.execute-api.us-east-1.amazonaws.com/test/listings
     let $this = this;
-    fetch('https://jsonplaceholder.typicode.com/404')
+    fetch('https://p2wmwwcrlf.execute-api.us-east-1.amazonaws.com/test/listings')
       .then(response => response.json())
       .then(data => {
         this.unparsedListings = data.body.Listings.Listing;
