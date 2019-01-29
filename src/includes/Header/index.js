@@ -469,7 +469,7 @@ class Header extends Component {
 
     // Function to render nav based on screen width
     const renderNavigation = () => {
-      if (this.props.width > 1200) {
+      if (this.props.width >= 1200) {
         return (
           <React.Fragment>
             <div style={bottomNavWrapper}>
