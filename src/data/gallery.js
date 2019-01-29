@@ -164,18 +164,12 @@ const galleryArray = [
       },
       {
         carouselIndex: 22,
-        src: '/images/pages/amenities/pool_entry',
-        caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.',
-        isLargeImg: false
-      },
-      {
-        carouselIndex: 23,
         src: '/images/pages/amenities/kids_room',
         caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.',
         isLargeImg: false
       },
       {
-        carouselIndex: 24,
+        carouselIndex: 23,
         src: '/images/pages/amenities/library',
         caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.',
         isLargeImg: false
