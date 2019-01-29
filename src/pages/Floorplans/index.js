@@ -13,7 +13,7 @@ import { insertCommas } from 'helpers/Math';
 import { generateFloorplanSrc } from 'helpers/Floorplans';
 
 // Data for Floorplans
-// https://www.corcoran.com/newdevxml/606NewDevs.xml
+// https://www.corcoran.com/newdevxml/758NewDevs.xml
 
 class Floorplans extends Component {
   constructor(props) {
