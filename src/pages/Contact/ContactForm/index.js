@@ -88,7 +88,7 @@ class ContactForm extends Component {
 
       var emailData = {
         from: '"25 Park Row Web Team" <no_reply_25parkrow@dbox.com>',
-        to: '"25PR Admin" <tatiana.brieva@dbox.com>',
+        to: '"25PR Admin" <info@25parkrow.com>',
         subject: 'New Registrant - 25 Park Row - '+this.state.firstname+' '+this.state.lastname,
         text: text
       };
