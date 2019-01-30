@@ -250,7 +250,6 @@ class Amenities extends Component {
                 <TwoColumnText 
                   header={<span>GARDEN AND<br/> DINING TERRACE</span>}
                   paragraph='The Park Row Club Garden and Dining Terrace offers 7,000 square feet of outdoor space for entertainment, relaxation, and play—including a lawn, dining areas, and a living room with a fire pit.'
-                  hideParagraphMobile
                 />
               </Waypoint>
             </Col>
@@ -271,7 +270,7 @@ class Amenities extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Row className='row-extra-margin row-extra-margin-desktop-2'>
+          <Row center='lg' className='row-extra-margin row-extra-margin-desktop-2'>
             <Col 
               lg={12}
               className={!this.state.sections[12] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -286,7 +285,7 @@ class Amenities extends Component {
                   width='100%'
                 />
               </Waypoint>
-              <h5 className='text-center-desktop'>Courtyard Lawn Dining</h5>
+              <h4>Courtyard Lawn Dining</h4>
             </Col>
           </Row>
         </Grid>

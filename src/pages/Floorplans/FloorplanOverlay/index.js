@@ -37,7 +37,7 @@ class FloorplanOverlay extends Component {
   render() {
     const { tablet, tabletLandscape, desktopSmall } = mediaQueries;
 
-    const styles = {
+    const FloorplanOverlayInline = {
       main: {
         overflowY: this.props.active ? 'auto' : 'inherit',
         position: 'fixed',
@@ -119,17 +119,19 @@ class FloorplanOverlay extends Component {
                 }
               }
             },
-            twoLevelButtons: {
-              margin: `${pxToRem(10)} 0`,
-              twoLevelButton: {
-                display: 'inline-block',
-                cursor: 'pointer',
-                marginRight: pxToRem(10),                
-                [mediaQueries.tablet]: {
-                  display: 'block',
-                  marginRight: 'none',     
-                }
-              },
+            twoLevelButtonsContainer: {
+              twoLevelButtons: {
+                margin: `${pxToRem(10)} 0`,
+                twoLevelButton: {
+                  display: 'inline-block',
+                  cursor: 'pointer',
+                  marginRight: pxToRem(10),                
+                  [mediaQueries.tablet]: {
+                    display: 'block',
+                    marginRight: 'none',     
+                  }
+                },
+              }
             }
           },
           floorplan: {
@@ -170,13 +172,15 @@ class FloorplanOverlay extends Component {
       }
     };
 
+    const { main } = FloorplanOverlayInline;
+
     const generateTwoLevelButtons = hasTwoLevels => {
       if (hasTwoLevels) {
         return (
-          <div style={styles.main.inner.detail.twoLevelButtons}>
+          <div style={main.inner.detail.twoLevelButtons}>
             <p 
               className='no-margin' 
-              style={styles.main.inner.detail.twoLevelButtons.twoLevelButton} 
+              style={main.inner.detail.twoLevelButtonsContainer.twoLevelButtons.twoLevelButton} 
               onClick={() => this.toggleTwoLevelImg('lower')}
               ref={this.lowerLevelBtn}
             >
@@ -184,7 +188,7 @@ class FloorplanOverlay extends Component {
             </p>
             <p 
               className='no-margin lighten' 
-              style={styles.main.inner.detail.twoLevelButtons.twoLevelButton}
+              style={main.inner.detail.twoLevelButtonsContainer.twoLevelButtons.twoLevelButton}
               onClick={() => this.toggleTwoLevelImg('upper')}
               ref={this.upperLevelBtn}
             >
@@ -202,18 +206,18 @@ class FloorplanOverlay extends Component {
     return (
       <Context.Consumer>
         {context => (
-          <div style={[styles.main, this.props.active ? styles.main.active : null]}>
-            <div style={styles.main.inner}>
+          <div style={[main, this.props.active ? main.active : null]}>
+            <div style={main.inner}>
               <MediaQuery minWidth={1200}>
-                <div style={styles.main.inner.detail}>
+                <div style={main.inner.detail}>
                   <div>
                     <p 
-                      style={styles.main.inner.detail.residence}
+                      style={main.inner.detail.residence}
                       className='no-margin'>
                       {`${isPenthouse ? 'Penthouse' : 'Residence'} ${residence}`}
                     </p>
                   </div>
-                  <div style={styles.main.inner.detail.subDetail}>
+                  <div style={main.inner.detail.subDetail}>
                     <p className='no-margin'>
                       {`${bedrooms} ${bedrooms > 1 ? 'Bedrooms' : 'Bedroom'}`}
                     </p>
@@ -221,21 +225,21 @@ class FloorplanOverlay extends Component {
                       {`${bathrooms} ${bathrooms > 1 ? 'Bathrooms' : 'Bathroom'}`}
                     </p>
                   </div>
-                  <div style={styles.main.inner.detail.subDetail}>
+                  <div style={main.inner.detail.subDetail}>
                     <p className='no-margin'>Interior</p>
                     <p className='no-margin'>{`${interior} SF/${feetToMeters(interior)} SM`}</p>
                   </div>
                   { exterior &&
-                    <div style={styles.main.inner.detail.subDetail}>
+                    <div style={main.inner.detail.subDetail}>
                       <p className='no-margin'>Exterior</p>
                       <p className='no-margin'>{`${exterior} SF/${feetToMeters(exterior)} SM`}</p>
                     </div>
                   }
-                  <div style={styles.main.inner.detail.subDetail}>
+                  <div style={main.inner.detail.subDetail}>
                     <p className='no-margin'>Price</p>
                     <p className='no-margin'>{`$${price}`}</p>
                   </div>
-                  <div style={styles.main.inner.detail.buttons}>
+                  <div style={main.inner.detail.buttons}>
                     <a 
                       href={`/downloads/floorplans/25ParkRow_Floorplan_Unit${pdfSrc}.pdf`} 
                       target='_blank'
@@ -243,67 +247,71 @@ class FloorplanOverlay extends Component {
                     >
                       <img 
                         className='no-margin' 
-                        style={styles.main.inner.detail.buttons.download} 
+                        style={main.inner.detail.buttons.download} 
                         src='/images/icons/download_button.png'
                         alt={`Download PDF of floorplan ${residence}`}
                       />
                     </a>
                     <img 
                       onClick={() => this.handleCloseOverlay(context)}
-                      style={ styles.main.inner.detail.buttons.closeBtn} 
+                      style={ main.inner.detail.buttons.closeBtn} 
                       src={'/images/icons/close_black.svg'}
                       alt='Close floorplan overlay'
                     />
                   </div>
                 </div>
-                {generateTwoLevelButtons(hasTwoLevels)}
+                <div style={main.inner.detail.twoLevelButtonsContainer}>
+                  {generateTwoLevelButtons(hasTwoLevels)}
+                </div>
               </MediaQuery>
               <MediaQuery maxWidth={1200}>
                 <div>
                   <p 
                     className='no-margin' 
-                    style={styles.main.inner.detail.residence}
+                    style={main.inner.detail.residence}
                   >
                     {`${isPenthouse ? 'Penthouse' : 'Residence'} ${residence}`}
                   </p>
-                  {generateTwoLevelButtons(hasTwoLevels)}
+                  <div style={main.inner.detail.twoLevelButtonsContainer}>
+                    {generateTwoLevelButtons(hasTwoLevels)}
+                  </div>
                 </div>
               </MediaQuery>
-              <div style={styles.main.inner.floorplan}>
+              <div style={main.inner.floorplan}>
                 <img 
-                  style={styles.main.inner.floorplan.img} 
+                  style={main.inner.floorplan.img} 
                   src={`/images/floorplans/overlay/${imgSrc}.svg`} 
                   alt={`Floorplan overlay of residence ${residence}`}
                   ref={this.overlayFloorplanImg}
                 />
               </div>
               <MediaQuery minWidth={1200}>
-                <div style={styles.main.inner.legal}>
-                  <h6 style={styles.main.inner.legal.fontStyle}>All computer and/or artist renderings reflect the planned scale and spirit of the Building. Sponsor makes no representation that any future construction in the neighborhood surrounding the Condominium will not result in the obstruction of the views from any windows, gardens, and/or terraces. Where materials, equipment, finishes, fixtures, appliances, landscaping, and/or other construction or design details are indicated herein, Sponsor reserves the right to substitute in each instance one of comparable or better quality as recognized by industry standards for performance, efficiency, longevity, and/or classifications, as applicable, in accordance with the terms of the Offering Plan. All dimensions and square footages are approximate and subject to normal construction variances and tolerances. Sponsor reserves the right to make changes in accordance with the offering plan. Sponsor makes no representations or warranties except as may be set forth in the offering plan. The complete offering terms are in an offering plan available from Sponsor. File no. CD17-0208. Sponsor: Park Row 23 Owners LLC, 1865 Palmer Avenue, Suite 203, Larchmont, New York 10538. Equal housing opportunity.</h6>
+                <div style={main.inner.legal}>
+                  <h6 style={main.inner.legal.fontStyle}>All computer and/or artist renderings reflect the planned scale and spirit of the Building. Sponsor makes no representation that any future construction in the neighborhood surrounding the Condominium will not result in the obstruction of the views from any windows, gardens, and/or terraces. Where materials, equipment, finishes, fixtures, appliances, landscaping, and/or other construction or design details are indicated herein, Sponsor reserves the right to substitute in each instance one of comparable or better quality as recognized by industry standards for performance, efficiency, longevity, and/or classifications, as applicable, in accordance with the terms of the Offering Plan. All dimensions and square footages are approximate and subject to normal construction variances and tolerances. Sponsor reserves the right to make changes in accordance with the offering plan. Sponsor makes no representations or warranties except as may be set forth in the offering plan. The complete offering terms are in an offering plan available from Sponsor. File no. CD17-0208. Sponsor: Park Row 23 Owners LLC, 1865 Palmer Avenue, Suite 203, Larchmont, New York 10538. Equal housing opportunity.</h6>
                 </div>
               </MediaQuery>
               
               <MediaQuery maxWidth={1200}>
-                <div style={styles.main.inner.detail}>
+                <div style={main.inner.detail}>
                   <img 
                     onClick={() => this.handleCloseOverlay(context)}
-                    style={ styles.main.inner.detail.buttons.closeBtn} 
+                    style={ main.inner.detail.buttons.closeBtn} 
                     src={'/images/icons/close_black.svg'}
                     alt='Close floorplan overlay'
                   />
-                  <div style={styles.main.inner.detail.subDetail}>
+                  <div style={main.inner.detail.subDetail}>
                     <p className='no-margin'>{`${bedrooms} Bedrooms`}</p>
                     <p className='no-margin'>{`${bathrooms} Bathrooms`}</p>
                   </div>
-                  <div style={styles.main.inner.detail.subDetail}>
+                  <div style={main.inner.detail.subDetail}>
                     <p className='no-margin'>Interior</p>
                     <p className='no-margin'>{`${interior} SF/${feetToMeters(interior)} SM`}</p>
                   </div>
-                  <div style={styles.main.inner.detail.subDetail}>
+                  <div style={main.inner.detail.subDetail}>
                     <p className='no-margin'>Exterior</p>
                     <p className='no-margin'>1,022 SF/94 SM</p>
                   </div>
-                  <div style={styles.main.inner.detail.subDetail}>
+                  <div style={main.inner.detail.subDetail}>
                     <p className='no-margin'>Price</p>
                     <p className='no-margin'>{`$${price}`}</p>
                   </div>
@@ -314,14 +322,14 @@ class FloorplanOverlay extends Component {
                     style={{ margin: '0 auto', padding: `${pxToRem(20)} 0`}}
                   >
                     <img 
-                      style={ styles.main.inner.detail.buttons.download} 
+                      style={ main.inner.detail.buttons.download} 
                       src={'/images/icons/download_button.png'}
                       alt={`Download PDF of floorplan ${residence}`}
                     />
                   </a>
                 </div>
                 <div>
-                  <h6 style={styles.main.inner.legal.fontStyle}>All computer and/or artist renderings reflect the planned scale and spirit of the Building. Sponsor makes no representation that any future construction in the neighborhood surrounding the Condominium will not result in the obstruction of the views from any windows, gardens, and/or terraces. Where materials, equipment, finishes, fixtures, appliances, landscaping, and/or other construction or design details are indicated herein, Sponsor reserves the right to substitute in each instance one of comparable or better quality as recognized by industry standards for performance, efficiency, longevity, and/or classifications, as applicable, in accordance with the terms of the Offering Plan. All dimensions and square footages are approximate and subject to normal construction variances and tolerances. Sponsor reserves the right to make changes in accordance with the offering plan. Sponsor makes no representations or warranties except as may be set forth in the offering plan. The complete offering terms are in an offering plan available from Sponsor. File no. CD17-0208. Sponsor: Park Row 23 Owners LLC, 1865 Palmer Avenue, Suite 203, Larchmont, New York 10538. Equal housing opportunity.</h6>
+                  <h6 style={main.inner.legal.fontStyle}>All computer and/or artist renderings reflect the planned scale and spirit of the Building. Sponsor makes no representation that any future construction in the neighborhood surrounding the Condominium will not result in the obstruction of the views from any windows, gardens, and/or terraces. Where materials, equipment, finishes, fixtures, appliances, landscaping, and/or other construction or design details are indicated herein, Sponsor reserves the right to substitute in each instance one of comparable or better quality as recognized by industry standards for performance, efficiency, longevity, and/or classifications, as applicable, in accordance with the terms of the Offering Plan. All dimensions and square footages are approximate and subject to normal construction variances and tolerances. Sponsor reserves the right to make changes in accordance with the offering plan. Sponsor makes no representations or warranties except as may be set forth in the offering plan. The complete offering terms are in an offering plan available from Sponsor. File no. CD17-0208. Sponsor: Park Row 23 Owners LLC, 1865 Palmer Avenue, Suite 203, Larchmont, New York 10538. Equal housing opportunity.</h6>
                 </div>
               </MediaQuery>
             </div>

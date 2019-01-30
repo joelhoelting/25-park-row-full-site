@@ -36,10 +36,10 @@ const Panel = (props) => {
             fontSize: pxToRem(24)
           },
           [tabletLandscape]: {
-            fontSize: pxToRem(28)
+            fontSize: pxToRem(22)
           },
           [desktopSmall]: {
-            fontSize: pxToRem(32)
+            fontSize: pxToRem(26)
           }
         },
         icon: {

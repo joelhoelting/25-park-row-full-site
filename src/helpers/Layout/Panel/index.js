@@ -23,13 +23,17 @@ const Panel = (props) => {
       p: {
         width: '90%',
         margin: '0 auto',
-        fontSize: pxToRem(22),
+        fontSize: pxToRem(20),
         lineHeight: pxToRem(32),
         [tabletLandscape]: {
-          lineHeight: pxToRem(28),
+          lineHeight: pxToRem(24),
         },
         quote: {
-          margin: 0
+          margin: 0,
+          fontSize: pxToRem(16),
+          [tabletLandscape]: {
+            fontSize: pxToRem(20),
+          },
         }
       },
       mobile: {
@@ -37,9 +41,11 @@ const Panel = (props) => {
           width: '90%',
           margin: `0 auto ${pxToRem(5)}`,
           fontSize: pxToRem(16),
+          lineHeight: pxToRem(20),
           [tablet]: {
-            fontSize: pxToRem(20)
-          }
+            fontSize: pxToRem(20),
+            lineHeight: pxToRem(24)
+          },
         }
       }
     }
@@ -52,10 +58,10 @@ const Panel = (props) => {
       style={main} 
       ref={props.innerRef ? props.innerRef : null}
     >
-      <MediaQuery minWidth={992}>
+      <MediaQuery minWidth={1440}>
         <p style={main.p}>{props.text}</p>
       </MediaQuery>
-      <MediaQuery maxWidth={992}>
+      <MediaQuery maxWidth={1439}>
         <p style={main.mobile.p}>{props.mobileText}</p>
       </MediaQuery>
       {props.quote ? <p className='italic' style={main.p.quote}>{props.quote}</p> : null}

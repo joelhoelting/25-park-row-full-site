@@ -1,21 +1,33 @@
 import React from 'react';
+import Radium from 'radium';
 import { Row, Col } from 'react-flexbox-grid';
 import MediaQuery from 'react-responsive';
 
+import { mediaQueries } from 'styles/Global/MediaQueries';
+import { pxToRem } from 'helpers/Math';
+
 const TwoColumnText = (props) => {
+  const TwoColumnTextInline = {
+    paragraph: {
+      [mediaQueries.tabletLandscape]: {
+        lineHeight: pxToRem(24),
+      },
+    }
+  };
+
   const renderParagraph = () => {
     if (props.hideParagraphMobile) {
       return (
         <MediaQuery minWidth={992}>
           <Col lg={6}>
-            <p>{props.paragraph}</p>
+            <p style={TwoColumnTextInline.paragraph}>{props.paragraph}</p>
           </Col>
         </MediaQuery>
       );
     } else {
       return (
         <Col lg={6}>
-          <p>{props.paragraph}</p>
+          <p style={TwoColumnTextInline.paragraph}>{props.paragraph}</p>
         </Col>
       );
     }
@@ -40,4 +52,4 @@ const TwoColumnText = (props) => {
   );
 };
 
-export default TwoColumnText;
+export default Radium(TwoColumnText);
