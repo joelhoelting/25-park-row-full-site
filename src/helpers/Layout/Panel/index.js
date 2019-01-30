@@ -24,6 +24,10 @@ const Panel = (props) => {
         width: '90%',
         margin: '0 auto',
         fontSize: pxToRem(22),
+        lineHeight: pxToRem(32),
+        [tabletLandscape]: {
+          lineHeight: pxToRem(28),
+        },
         quote: {
           margin: 0
         }
