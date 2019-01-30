@@ -72,20 +72,20 @@ class Footer extends Component {
         justifyContent: 'center',
         alignItems: 'center',
         [tablet]: {
-          height: pxToRem(300)
+          height: pxToRem(200)
         },
         illustration: {
-          maxWidth: pxToRem(60),
+          position: 'relative',
+          top: pxToRem(80),
+          height: '100%',
           maxHeight: pxToRem(150),
-          [tabletLandscape]: {
-            maxWidth: pxToRem(120)
-          },
           [desktopSmall]: {
             position: 'relative',
-            top: pxToRem(50)
+            top: pxToRem(50),
+            maxHeight: pxToRem(200)
           },
           [desktopLarge]: {
-            maxWidth: pxToRem(150)
+            maxHeight: pxToRem(200)
           }
         },
       },
