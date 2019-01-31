@@ -105,10 +105,6 @@ const typography = {
       'p.quote': {
         fontSize: pxToRem(16)
       },
-      // Text Center
-      '.text-center-desktop': {
-        textAlign: 'center'
-      },
       '.mobile-header': {
         fontSize: pxToRem(24)
       },

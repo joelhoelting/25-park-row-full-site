@@ -35,6 +35,7 @@ class FloorplanOverlay extends Component {
   }
 
   render() {
+    const { bathrooms, bedrooms, hasTwoLevels, exterior, interior, isPenthouse, imgSrc, pdfSrc, price, residence } = this.props.unit;
     const { tablet, tabletLandscape, desktopSmall } = mediaQueries;
 
     const FloorplanOverlayInline = {
@@ -119,26 +120,26 @@ class FloorplanOverlay extends Component {
                 }
               }
             },
-            twoLevelButtonsContainer: {
-              twoLevelButtons: {
-                margin: `${pxToRem(10)} 0`,
-                twoLevelButton: {
-                  display: 'inline-block',
-                  cursor: 'pointer',
-                  marginRight: pxToRem(10),                
-                  [mediaQueries.tablet]: {
-                    display: 'block',
-                    marginRight: 'none',     
-                  }
-                },
-              }
+            twoLevelButtons: {
+              margin: `${pxToRem(10)} 0`,
+              height: '5%',
+              twoLevelButton: {
+                display: 'inline-block',
+                cursor: 'pointer',
+                marginRight: pxToRem(10),                
+                [mediaQueries.tablet]: {
+                  display: 'block',
+                  marginRight: 'none',     
+                }
+              },
             }
           },
           floorplan: {
             padding: `${pxToRem(10)} 0`,
             height: '50%',
             [desktopSmall]: {
-              height: '85%',
+              padding: `${pxToRem(60)} 0`,
+              height: hasTwoLevels ? '80%' : '85%',
               maxWidth: '85%',
               margin: '0 auto'
             },
@@ -180,7 +181,7 @@ class FloorplanOverlay extends Component {
           <div style={main.inner.detail.twoLevelButtons}>
             <p 
               className='no-margin' 
-              style={main.inner.detail.twoLevelButtonsContainer.twoLevelButtons.twoLevelButton} 
+              style={main.inner.detail.twoLevelButtons.twoLevelButton} 
               onClick={() => this.toggleTwoLevelImg('lower')}
               ref={this.lowerLevelBtn}
             >
@@ -188,7 +189,7 @@ class FloorplanOverlay extends Component {
             </p>
             <p 
               className='no-margin lighten' 
-              style={main.inner.detail.twoLevelButtonsContainer.twoLevelButtons.twoLevelButton}
+              style={main.inner.detail.twoLevelButtons.twoLevelButton}
               onClick={() => this.toggleTwoLevelImg('upper')}
               ref={this.upperLevelBtn}
             >
@@ -200,8 +201,6 @@ class FloorplanOverlay extends Component {
         return null;
       }
     };
-
-    const { bathrooms, bedrooms, hasTwoLevels, exterior, interior, isPenthouse, imgSrc, pdfSrc, price, residence } = this.props.unit;
     
     return (
       <Context.Consumer>
@@ -260,9 +259,7 @@ class FloorplanOverlay extends Component {
                     />
                   </div>
                 </div>
-                <div style={main.inner.detail.twoLevelButtonsContainer}>
-                  {generateTwoLevelButtons(hasTwoLevels)}
-                </div>
+                {generateTwoLevelButtons(hasTwoLevels)}
               </MediaQuery>
               <MediaQuery maxWidth={1200}>
                 <div>
@@ -272,9 +269,7 @@ class FloorplanOverlay extends Component {
                   >
                     {`${isPenthouse ? 'Penthouse' : 'Residence'} ${residence}`}
                   </p>
-                  <div style={main.inner.detail.twoLevelButtonsContainer}>
-                    {generateTwoLevelButtons(hasTwoLevels)}
-                  </div>
+                  {generateTwoLevelButtons(hasTwoLevels)}
                 </div>
               </MediaQuery>
               <div style={main.inner.floorplan}>
