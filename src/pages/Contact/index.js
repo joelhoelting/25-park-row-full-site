@@ -39,6 +39,7 @@ class Contact extends Component {
           textAlign: 'initial'
         },
         p: {
+          marginBottom: 0,
           fontSize: pxToRem(20)
         }
       },
@@ -89,6 +90,9 @@ class Contact extends Component {
               </a>
               <a href="mailto:press@25parkrow.com">
                 <p style={address.p}>info@25parkrow.com</p>
+              </a>
+              <a href="tel:+1-646-933-5627">
+                <p>646.933.4625</p>
               </a>
             </div>
           </Col>
