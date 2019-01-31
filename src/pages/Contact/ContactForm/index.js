@@ -107,6 +107,17 @@ class ContactForm extends Component {
           /* eslint-disable no-console */
           console.log('email sending successful ', result);
           /* eslint-enable no-console */
+          window.dataLayer = window.dataLayer || [];
+          if (window.location.host === '25parkrow.com') {
+            /* eslint-disable no-console */
+            console.log('dataLayer virtual page view');
+            /* eslint-enable no-console */
+            window.dataLayer.push({
+              'event': 'VirtualPageview',
+              'virtualPageURL': '/thanks',
+              'virtualPageTitle': 'Thank You Page'
+            });
+          }
           
           this.props.toggleThankYou();
           this.setState({
