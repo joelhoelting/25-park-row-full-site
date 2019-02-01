@@ -1,3 +1,4 @@
 User-agent: *
+Disallow:
 
 Sitemap: https://25parkrow.com/sitemap.xml
