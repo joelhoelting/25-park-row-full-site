@@ -414,7 +414,8 @@ class ContactForm extends Component {
         <Row>
           <Col md={6}>
             <div style={main.formItem}>
-              <input 
+              <input
+                id='firstname'
                 name='firstname' 
                 type='text' 
                 style={main.formItem.input}
@@ -434,6 +435,7 @@ class ContactForm extends Component {
           <Col md={6}>
             <div style={main.formItem}>
               <input 
+                id='lastname'
                 name='lastname' 
                 type='text' 
                 style={main.formItem.input}
@@ -453,6 +455,7 @@ class ContactForm extends Component {
           <Col md={6}>
             <div style={main.formItem}>
               <input 
+                id='email'
                 name='email' 
                 type='text' 
                 style={main.formItem.input}
@@ -470,6 +473,7 @@ class ContactForm extends Component {
           <Col md={6}>
             <div style={main.formItem}>
               <input 
+                id='phone'
                 name='phone' 
                 type='text' 
                 style={main.formItem.input}
@@ -487,7 +491,8 @@ class ContactForm extends Component {
                 <label className='radio-item'>
                   Yes
                   <input 
-                    checked={this.state.broker === 'yes'} 
+                    checked={this.state.broker === 'yes'}
+                    id='broker'
                     name='broker'
                     type='radio' 
                     value='yes' 
@@ -499,6 +504,7 @@ class ContactForm extends Component {
                   No
                   <input 
                     checked={this.state.broker === 'no'} 
+                    id='broker'
                     name='broker'
                     type='radio' 
                     value='no' 
@@ -549,6 +555,7 @@ class ContactForm extends Component {
           <Col md={6}>
             <div style={[main.formItem, this.state.broker === 'yes' ? main.formItem.off : null]}>
               <input 
+                id='zipcode'
                 name='zipcode' 
                 type='text' 
                 style={main.formItem.input}
