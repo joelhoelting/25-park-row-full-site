@@ -35,7 +35,7 @@ class FloorplanOverlay extends Component {
   }
 
   render() {
-    const { bathrooms, bedrooms, hasTwoLevels, exterior, interior, isPenthouse, imgSrc, pdfSrc, price, residence } = this.props.unit;
+    const { totalBathrooms, bedrooms, hasTwoLevels, exterior, interior, isPenthouse, imgSrc, pdfSrc, price, residence } = this.props.unit;
     const { tablet, tabletLandscape, desktopSmall } = mediaQueries;
 
     const FloorplanOverlayInline = {
@@ -221,7 +221,7 @@ class FloorplanOverlay extends Component {
                       {`${bedrooms} ${bedrooms > 1 ? 'Bedrooms' : 'Bedroom'}`}
                     </p>
                     <p className='no-margin'>
-                      {`${bathrooms} ${bathrooms > 1 ? 'Bathrooms' : 'Bathroom'}`}
+                      {`${totalBathrooms} ${totalBathrooms > 1 ? 'Bathrooms' : 'Bathroom'}`}
                     </p>
                   </div>
                   <div style={main.inner.detail.subDetail}>
@@ -296,7 +296,7 @@ class FloorplanOverlay extends Component {
                   />
                   <div style={main.inner.detail.subDetail}>
                     <p className='no-margin'>{`${bedrooms} Bedrooms`}</p>
-                    <p className='no-margin'>{`${bathrooms} Bathrooms`}</p>
+                    <p className='no-margin'>{`${totalBathrooms} ${totalBathrooms > 1 ? 'Bathrooms' : 'Bathroom'}`}</p>
                   </div>
                   <div style={main.inner.detail.subDetail}>
                     <p className='no-margin'>Interior</p>

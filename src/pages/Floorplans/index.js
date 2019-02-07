@@ -66,10 +66,12 @@ class Floorplans extends Component {
     };
     
     this.unparsedListings.forEach((listing) => {
+      
       let listingObj = {
         residence: listing.Location[0].UnitNumber[0],
         bedrooms: parseFloat(listing.BasicDetails[0].Bedrooms[0]),
-        bathrooms: parseFloat(listing.BasicDetails[0].Bathrooms[0]),
+        fullBathrooms: parseFloat(listing.BasicDetails[0].FullBathrooms[0]),
+        halfBathrooms: (parseFloat(listing.BasicDetails[0].HalfBathrooms[0]) * .5),
         interior: listing.BasicDetails[0].LivingArea[0],
         exterior: listing.BasicDetails[0].ExtLivingArea ? listing.BasicDetails[0].ExtLivingArea[0] : undefined,
         taxAmount: insertCommas(listing.ListingDetails[0].MaintenanceCC[0]),
@@ -81,6 +83,7 @@ class Floorplans extends Component {
       let { residence } = listingObj;
 
       let srcObj = generateFloorplanSrc(residence);
+      listingObj.totalBathrooms = (listingObj.fullBathrooms + listingObj.halfBathrooms);
       listingObj.hasTwoLevels = srcObj.hasTwoLevels;
       listingObj.isPenthouse = srcObj.isPenthouse;
       listingObj.imgSrc = srcObj.imgFilename;

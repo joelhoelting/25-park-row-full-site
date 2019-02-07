@@ -122,7 +122,7 @@ class Floorplan extends Component {
 
     const { main } = styles;
     
-    const { bathrooms, bedrooms, hasTwoLevels, exterior, interior, isPenthouse, imgSrc, price, residence } = this.props.unit;
+    const { bedrooms, totalBathrooms, hasTwoLevels, exterior, interior, isPenthouse, imgSrc, price, residence } = this.props.unit;
 
     return (
       <Context.Consumer>
@@ -156,7 +156,7 @@ class Floorplan extends Component {
                   {`${bedrooms} ${bedrooms > 1 ? 'Bedrooms' : 'Bedroom'}`}
                 </p>
                 <p className='no-margin' style={main.detailSection.subSection.p}>
-                  {`${bathrooms} ${bathrooms > 1 ? 'Bathrooms' : 'Bathroom'}`}
+                  {`${totalBathrooms} ${totalBathrooms > 1 ? 'Bathrooms' : 'Bathroom'}`}
                 </p>
               </div>
               <div className="interior_sf" style={main.detailSection.subSection}>
