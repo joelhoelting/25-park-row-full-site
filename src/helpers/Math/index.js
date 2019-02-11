@@ -6,7 +6,7 @@ export const pxToRem = (px) => {
 
 // Convert feet to meters
 export const feetToMeters = (ft) => {
-  return Math.round(ft/3.2808);
+  return Math.round(ft/10.764);
 };
 
 // Add commas to long numbers
