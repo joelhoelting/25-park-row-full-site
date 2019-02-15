@@ -11,47 +11,76 @@ class Press extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = { mounted: false };
   }
   
   componentDidMount() {
-    // After 500ms remove class 'hidden'
-    setTimeout(() => {
-      this.setState({ mounted: true });
-    }, 500);
+    let $this = this;
+    fetch('https://25parkrowcms.dbox.com/pressarticles')
+      .then(response => response.json())
+      .then(data => {
+        this.pressArticles = data;
+        
+        this.setState({ fetchedData: true});
+      })
+      .then(() => {
+        setTimeout(() => {
+          $this.setState({ mounted: true});
+        }, 300);
+      })
+      .catch(error => {
+        /* eslint-disable no-console */
+        console.error('Error:', error);
+        /* eslint-enable no-console */
+        this.pressArticles = pressArticles;
+
+        this.setState({ fetchedData: false});
+      })
+      .then(() => {
+        setTimeout(() => {
+          $this.setState({ mounted: true});
+        }, 300);
+      });    
   }
 
   renderPressArticles() {
-    let rows = [];
-    let rowCounter = 0;
-    let columns = [];
+    if (this.pressArticles) {
+      let rows = [];
+      let rowCounter = 0;
+      let columns = [];
 
-    let length = pressArticles.length;
-    for (let i = 0; i < length; i++) {
-      
-      columns.push(
-        <Col
-          key={`press_column_${i}`} 
-          xl={6}
-        >
-          <PressPanel {...pressArticles[i]} panelNumber={i} mounted={this.state.mounted}/>
-        </Col>
-      );
-
-      // If index is odd or last item --> push columns into row
-      if ((i + 1) % 2 === 0 || i === (length - 1)) {
-        rows.push(
-          <Row className='press-row' key={`press_row_${rowCounter}`}>
-            {columns}
-          </Row>
+      let length = this.pressArticles.length;
+      for (let i = 0; i < length; i++) {
+        
+        columns.push(
+          <Col
+            key={`press_column_${i}`} 
+            xl={6}
+          >
+            <PressPanel 
+              {...this.pressArticles[i]} 
+              fetchedData={this.state.fetchedData} 
+              panelNumber={i} 
+              mounted={this.state.mounted} 
+            />
+          </Col>
         );
-        // Increment row counter
-        rowCounter ++;
-        // Empty column array
-        columns = [];
+
+        // If index is odd or last item --> push columns into row
+        if ((i + 1) % 2 === 0 || i === (length - 1)) {
+          rows.push(
+            <Row className='press-row' key={`press_row_${rowCounter}`}>
+              {columns}
+            </Row>
+          );
+          // Increment row counter
+          rowCounter ++;
+          // Empty column array
+          columns = [];
+        }
       }
+      return rows;
     }
-    return rows;
   }
 
   render() {

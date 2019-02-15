@@ -5,10 +5,25 @@ import { mediaQueries } from 'styles/Global/MediaQueries';
 import { pxToRem } from 'helpers/Math';
 
 const PressPanel = (props) => {
-  let { publication, title, date, filename, panelNumber, mounted } = props;
-  let day = date.getDate() + 1;
-  let month = date.getMonth() + 1;
-  let year = date.getFullYear();
+  let { publisher, title, date, pdf, panelNumber, mounted, filename } = props;
+  
+  let day, month, year, pdfUrl;
+
+  if (!props.fetchedData) {
+    day = date.getDate() + 1;
+    month = date.getMonth() + 1;
+    year = date.getFullYear();
+    
+    pdfUrl = `/downloads/press/${filename}.pdf`;
+  } else {
+    let dateAry = date.split('T')[0].split('-');
+    day = dateAry[2];
+    month = dateAry[1];
+    year = dateAry[0];
+
+    pdfUrl = `https://25parkrowcms.dbox.com${pdf.url}`;
+  } 
+  
   let fullYear = `${month}.${day}.${year}`;
 
   const PressPanelInline = {
@@ -35,9 +50,9 @@ const PressPanel = (props) => {
   const { main } = PressPanelInline;
 
   return (
-    <a href={`/downloads/press/${filename}.pdf`} target='_blank' rel='noopener noreferrer'>
+    <a href={pdfUrl} target='_blank' rel='noopener noreferrer'>
       <div style={main} className={mounted ? `press-reveal-delay-${panelNumber} press-panel` : 'hidden'}>
-        <h3>{publication}</h3>
+        <h3>{publisher}</h3>
         <p style={{ textTransform: 'uppercase' }}>{title}</p>
         <p>{fullYear}</p>
         <svg style={main.arrow} width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg">

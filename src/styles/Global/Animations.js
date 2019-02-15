@@ -1,7 +1,5 @@
-// Global Animations
+// Animations
 const animations = {
-  
-  // Global hidden class that gets removed from containers on render
   '.hidden': {
     opacity: 0,
     transition: 'all 300ms ease'
