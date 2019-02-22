@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import Radium, {Style} from 'radium';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
 
-import metaData from 'data/meta';
 import { globalMediaQueries, mediaQueries } from 'styles/Global/MediaQueries';
 import { pxToRem } from 'helpers/Math';
 
@@ -556,16 +554,9 @@ class Header extends Component {
     const { topNav, bottomNavWrapper, mobileHamburger, hr, item } = wrapper;
     const { arrowBox, logoDiv } = topNav;
 
-    // let metaDescription = metaData[route].description;
-    // console.log(metaDescription)
-
     return (
       <header style={wrapper} className='header'>
         <Style rules={HeaderCSS}/>
-        <Helmet>
-          <title>{metaData[route].title}</title>
-          <meta name="description" content={metaData[route].description} />
-        </Helmet>
         <div style={topNav}>
           <RadiumLink 
             className={ hideArrows() ? 'hidden' : 'animate-reveal'} key="prev" to={route === 'architecture' ? '/' : previous}
