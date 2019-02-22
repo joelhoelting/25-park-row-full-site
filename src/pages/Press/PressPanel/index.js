@@ -5,23 +5,19 @@ import { mediaQueries } from 'styles/Global/MediaQueries';
 import { pxToRem } from 'helpers/Math';
 
 const PressPanel = (props) => {
-  let { publisher, title, date, pdf, panelNumber, mounted, filename } = props;
+  let { publisher, title, date, url, panelNumber, mounted } = props;
   
-  let day, month, year, pdfUrl;
+  let day, month, year;
 
   if (!props.fetchedData) {
     day = date.getDate() + 1;
     month = date.getMonth() + 1;
     year = date.getFullYear();
-    
-    pdfUrl = `/downloads/press/${filename}.pdf`;
   } else {
     let dateAry = date.split('T')[0].split('-');
     day = dateAry[2];
     month = dateAry[1];
     year = dateAry[0];
-
-    pdfUrl = `https://25parkrowcms.dbox.com${pdf.url}`;
   } 
   
   let fullYear = `${month}.${day}.${year}`;
@@ -50,7 +46,7 @@ const PressPanel = (props) => {
   const { main } = PressPanelInline;
 
   return (
-    <a href={pdfUrl} target='_blank' rel='noopener noreferrer'>
+    <a href={url} target='_blank' rel='noopener noreferrer'>
       <div style={main} className={mounted ? `press-reveal-delay-${panelNumber} press-panel` : 'hidden'}>
         <h3>{publisher}</h3>
         <p style={{ textTransform: 'uppercase' }}>{title}</p>
