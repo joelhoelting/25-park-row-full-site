@@ -30,24 +30,32 @@ class Floorplans extends Component {
   }
 
   componentDidMount() {
-    this.unparsedListings = [];
     // Fetch listings from Corcoran Sunshine
     let $this = this;
-    fetch('https://p2wmwwcrlf.execute-api.us-east-1.amazonaws.com/test/listings')
-      .then(response => response.json())
-      .then(data => {
-        this.unparsedListings = data.body.Listings.Listing;
-        $this.parseData();
-      })
-      .catch(error => {
-        /* eslint-disable no-console */
-        console.error('Error:', error);
-        /* eslint-enable no-console */
-        parseString(localAvailabilityData, (err, result) => {
-          $this.unparsedListings = result.Listings.Listing;
+    if (!this.props.savedListings) {
+      this.unparsedListings = [];
+      
+      fetch('https://p2wmwwcrlf.execute-api.us-east-1.amazonaws.com/test/listings')
+        .then(response => response.json())
+        .then(data => {
+          this.unparsedListings = data.body.Listings.Listing;
+          this.props.saveListings(this.unparsedListings);
           $this.parseData();
+        })
+        .catch(error => {
+          /* eslint-disable no-console */
+          console.error('Error:', error);
+          /* eslint-enable no-console */
+          parseString(localAvailabilityData, (err, result) => {
+            $this.unparsedListings = result.Listings.Listing;
+            this.props.saveListings(this.unparsedListings);
+            $this.parseData();
+          });
         });
-      });
+    } else {
+      $this.unparsedListings = this.props.savedListings;
+      $this.parseData();
+    }
   }
 
   // Change state to show/hide floorplan overlay
@@ -97,7 +105,7 @@ class Floorplans extends Component {
 
     setTimeout(() => {
       this.setState({ sortedUnits: this.parsedUnits, mounted: true });
-    }, 500);
+    }, 400);
   }
 
   renderUnits() {
@@ -220,8 +228,8 @@ class Floorplans extends Component {
         </Helmet>
         <Style rules={{'body': { backgroundColor: this.props.color }}}/>
         <Style rules={FloorplanCSS} />
-        <div className={`full-width-container ${!this.state.mounted ? 'hidden' : ''}`}>
-          <Row className='mobile-header border-bottom'>
+        <div className={`full-width-container ${!this.state.mounted ? 'hidden' : ''}`} style={{ minHeight: !this.state.mounted ? '100vh' : 'none'}}>
+          <Row className='mobile-header border-bottom' >
             <Col lg={12}>
               <h2 className='text-center'>Floorplans</h2>
             </Col>

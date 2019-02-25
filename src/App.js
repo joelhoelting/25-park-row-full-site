@@ -19,7 +19,8 @@ class App extends Component {
     // Assign viewport width on initialization
     let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     this.state = {
-      width
+      width,
+      listings: undefined,
     };
   }
 
@@ -32,6 +33,10 @@ class App extends Component {
   updateWidth() {
     let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     this.setState({ width });
+  }
+
+  saveListings(listings) {
+    this.setState({ listings });
   }
   
   render() {
@@ -115,6 +120,8 @@ class App extends Component {
                         <Floorplans 
                           width={this.state.width} 
                           color={Colors.floorplans.backgroundColor}
+                          saveListings={(listings) => this.saveListings(listings)}
+                          savedListings={this.state.listings}
                         />
                       }
                     />
