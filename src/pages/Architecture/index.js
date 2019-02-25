@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Radium, { Style } from 'radium';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Waypoint from 'react-waypoint';
+import { Helmet } from 'react-helmet';
 
 // Component styling
 import { colorVars } from 'styles/Global/Colors';
@@ -11,6 +12,7 @@ import { SmallImage, LargeImage } from 'helpers/Image/ResponsiveImage/_module';
 
 // Layout Helpers
 import { Panel, SubTitle } from 'helpers/Layout/_module';
+
 
 class Architecture extends Component {
   constructor(props) {
@@ -39,6 +41,10 @@ class Architecture extends Component {
   render() {
     return (
       <div className={`main-container ${!this.state.mounted ? 'hidden' : ''}`}>
+        <Helmet>
+          <title>25 Park Row | Architecture</title>
+          <meta name="description" content="At 25 Park Row, the classic art deco condominium that overlooks City Hall Park is reinterpreted with cascading terraces, setbacks and loggias. Designed by COOKFOX Architects." />
+        </Helmet>
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
         <Grid fluid>
           <Row 

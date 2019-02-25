@@ -3,6 +3,7 @@ import Radium, {Style} from 'radium';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Waypoint from 'react-waypoint';
 import MediaQuery from 'react-responsive';
+import { Helmet } from 'react-helmet';
 
 // Component styling
 import { colorVars } from 'styles/Global/Colors';
@@ -40,6 +41,10 @@ class Amenities extends Component {
   render() {
     return (
       <div className={`main-container ${!this.state.mounted ? 'hidden' : ''}`}>
+        <Helmet>
+          <title>25 Park Row | Amenities</title>
+          <meta name="description" content="25 Park Row condominium owners can exclusive enjoy The Park Row Club - a richly appointed luxury amenity suite inspired by the Gilded Age. Over 7,000 square feet of entertainment." />
+        </Helmet>
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
         <Grid fluid>
           <Row

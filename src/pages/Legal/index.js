@@ -1,6 +1,7 @@
 import React from 'react';
 import Radium, {Style} from 'radium';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Helmet } from 'react-helmet';
 
 const Legal = (props) => {
   const LegalInline = {
@@ -12,6 +13,10 @@ const Legal = (props) => {
 
   return (
     <div className='large-container'>
+      <Helmet>
+        <title>25 Park Row | Legal</title>
+        <meta name="description" content="25 Park Row is a 21st century architectural icon providing unmatched downtown NYC views from every condominium over historic City Hall Park." />
+      </Helmet>
       <Style rules={{'body': {backgroundColor: props.color}}}/>
       <Grid fluid>
         <Row>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Radium, {Style} from 'radium';
 import { Row, Col } from 'react-flexbox-grid';
+import { Helmet } from 'react-helmet';
 
 import { mediaQueries } from 'styles/Global/MediaQueries';
 import { pxToRem } from 'helpers/Math';
@@ -56,6 +57,10 @@ class Contact extends Component {
     const { address, img } = ContactInline;
     return (
       <div className={`contact-container ${!this.state.mounted ? 'hidden' : ''}`}>
+        <Helmet>
+          <title>25 Park Row | Contact</title>
+          <meta name="description" content="25 Park Row is a 21st century architectural icon providing unmatched downtown NYC views from every condominium over historic City Hall Park." />
+        </Helmet>
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
         <ThankYou 
           active={this.state.thankYouActive}          

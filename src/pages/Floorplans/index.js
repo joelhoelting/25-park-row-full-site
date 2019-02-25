@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Radium, {Style} from 'radium';
 import { Row, Col } from 'react-flexbox-grid';
 import { parseString } from 'xml2js';
+import { Helmet } from 'react-helmet';
 
 import localAvailabilityData from 'data/localAvailabilityData';
 import Floorplan from './Floorplan';
@@ -213,6 +214,10 @@ class Floorplans extends Component {
 
     return (
       <div>
+        <Helmet>
+          <title>25 Park Row | Floor Plans</title>
+          <meta name="description" content="25 Park Row is a 21st century architectural icon providing unmatched downtown NYC views from every condominium over historic City Hall Park." />
+        </Helmet>
         <Style rules={{'body': { backgroundColor: this.props.color }}}/>
         <Style rules={FloorplanCSS} />
         <div className={`full-width-container ${!this.state.mounted ? 'hidden' : ''}`}>

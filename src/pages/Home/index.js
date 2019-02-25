@@ -3,12 +3,15 @@ import Radium from 'radium';
 import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Waypoint from 'react-waypoint';
+import { Helmet } from 'react-helmet';
 
 import { colorVars } from 'styles/Global/Colors';
 
 import { LargeImage } from 'helpers/Image/ResponsiveImage/_module';
 import HomePanel from './HomePanel';
 import SalesAddress from './SalesAddress';
+
+
 
 class Home extends Component {
   constructor(props) {
@@ -56,6 +59,10 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <title>25 Park Row | Home</title>
+          <meta name="description" content="25 Park Row is a new architectural icon providing unmatched Downtown NYC views from every luxury condominium home over historic City Hall Park." />
+        </Helmet>
         <div className={'large-container'}>
           <Grid fluid>
             <Link key="architecture" to={'/architecture'}>

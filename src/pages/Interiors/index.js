@@ -3,6 +3,7 @@ import Radium, { Style } from 'radium';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Waypoint from 'react-waypoint';
 import MediaQuery from 'react-responsive';
+import { Helmet } from 'react-helmet';
 
 // Component styling
 import { colorVars } from 'styles/Global/Colors';
@@ -46,6 +47,10 @@ class Interiors extends Component {
   render() {
     return (
       <div className={`main-container ${!this.state.mounted ? 'hidden' : ''}`}>
+        <Helmet>
+          <title>25 Park Row | Interiors</title>
+          <meta name="description" content="With vistas stretching over City Hall Park, each condo at 25 Park Row creates a connection between fine interior finishes and breathtaking views of Downtown NYC." />
+        </Helmet>
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
         <Grid fluid>
           <Row

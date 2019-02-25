@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Radium, {Style} from 'radium';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import pressArticles from 'data/pressArticles';
+import { Helmet } from 'react-helmet';
 
 import PressPanel from './PressPanel';
 
@@ -100,6 +101,10 @@ class Press extends Component {
 
     return (
       <div className={`large-container`}>
+        <Helmet>
+          <title>25 Park Row | Press</title>
+          <meta name="description" content="25 Park Row is a 21st century architectural icon providing unmatched downtown NYC views from every condominium over historic City Hall Park." />
+        </Helmet>
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
         <Style rules={PressCSS}/>
         <Grid fluid>

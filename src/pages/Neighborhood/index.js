@@ -3,6 +3,7 @@ import Radium, { Style } from 'radium';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Waypoint from 'react-waypoint';
+import { Helmet } from 'react-helmet';
 
 import MapBox from './MapBox';
 
@@ -59,6 +60,10 @@ class Neighborhood extends Component {
   render() {
     return (
       <React.Fragment>
+        <Helmet>
+          <title>25 Park Row | Neighborhood</title>
+          <meta name="description" content="25 Park Row is a 21st century architectural icon providing unmatched downtown NYC views from every condominium over historic City Hall Park." />
+        </Helmet>
         <div
           className={`main-container ${!this.state.mounted ? 'hidden' : ''}`}
         >

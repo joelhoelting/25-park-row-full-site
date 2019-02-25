@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Radium, { Style } from 'radium';
 import { Row, Col } from 'react-flexbox-grid';
+import { Helmet } from 'react-helmet';
 
 import teamData from 'data/teamData';
 import TeamSection from './TeamSection';
@@ -138,6 +139,10 @@ class Team extends Component {
 
     return (
       <div className={`full-width-container ${!this.state.mounted ? 'hidden' : ''}`}>
+        <Helmet>
+          <title>25 Park Row | Team</title>
+          <meta name="description" content="25 Park Row is a 21st century architectural icon providing unmatched downtown NYC views from every condominium over historic City Hall Park." />
+        </Helmet>
         <Style rules={{'body': { backgroundColor: this.props.color }}}/>
         <Style rules={TeamCSS} />
         <Row className='mobile-header'>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Radium, {Style} from 'radium';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Waypoint from 'react-waypoint';
+import { Helmet } from 'react-helmet';
 
 // Component styling
 import { colorVars } from 'styles/Global/Colors';
@@ -39,6 +40,10 @@ class Views extends Component {
   render() {
     return (
       <div className={`main-container ${!this.state.mounted ? 'hidden' : ''}`}>
+        <Helmet>
+          <title>25 Park Row | Views</title>
+          <meta name="description" content="25 Park Row is a 21st century architectural icon providing unmatched downtown NYC views from every condominium over historic City Hall Park." />
+        </Helmet>
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
         <Grid fluid>
           <Row
