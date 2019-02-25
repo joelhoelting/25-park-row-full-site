@@ -40,7 +40,6 @@ class Contact extends Component {
           textAlign: 'initial'
         },
         p: {
-          marginBottom: 0,
           fontSize: pxToRem(20)
         }
       },
@@ -78,10 +77,10 @@ class Contact extends Component {
           <Col md={6}>
             <div style={address}>
               <a href="https://goo.gl/maps/LW384reRaYR2" rel='noopener noreferrer' target="_blank">
-                <p style={[{margin: 0}, address.p]}>
+                <p style={{margin: 0, fontSize: pxToRem(20)}}>
                   25 Park Row <br/>Sales Gallery
                 </p>
-                <p style={[{ margin: 0, position: 'relative', right: '10px' }, address.p]}>
+                <p style={[{ margin: 0, position: 'relative', right: '10px'}, address.p]}>
                   <img 
                     alt='legend for sales gallery pin'
                     style={{ height: '15px', position: 'relative', right: '10px' }}
@@ -89,7 +88,7 @@ class Contact extends Component {
                   />
                   217 Broadway, Suite 600
                 </p>
-                <p style={[{ margin: 0}, address.p]}>
+                <p style={[{ margin: 0 }, address.p]}>
                   New York, NY 10007
                 </p>
               </a>
