@@ -1,6 +1,42 @@
 const locations = {
   dining: [
     {
+      title: 'Thái Sơn',
+      coordinates: [-73.99963, 40.71683]
+    },
+    {
+      title: 'Nha Trang One',
+      coordinates: [-73.99966, 40.71678]
+    },
+    {
+      title: 'Big Wong',
+      coordinates: [-73.99837, 40.71624]
+    },
+    {
+      title: '88 Lan Zhou Handmade Noodles',
+      coordinates: [-73.99694, 40.71558]
+    },
+    {
+      title: 'Great NY Noodletown',
+      coordinates: [-73.99703, 40.71503]
+    },
+    {
+      title: "Joe's Shanghai",
+      coordinates: [-73.99776, 40.71462]
+    },
+    {
+      title: 'Pulqueria',
+      coordinates: [-73.99825, 40.71446]
+    },
+    {
+      title: 'Nom Wah Tea Parlor',
+      coordinates: [-73.99825,40.71444]
+    },
+    {
+      title: 'Chinese Tuxedo',
+      coordinates: [-73.99803, 40.71433]
+    },
+    {
       title: 'Aroma Espresso Bar',
       coordinates: [-74.009765, 40.713020],
     },
