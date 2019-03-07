@@ -95,7 +95,7 @@ class Contact extends Component {
               <a href="mailto:press@25parkrow.com">
                 <p style={address.p}>info@25parkrow.com</p>
               </a>
-              <a href="tel:+1-646-933-5627">
+              <a href="tel:+1-646-933-4625">
                 <p style={address.p}>646.933.4625</p>
               </a>
             </div>
