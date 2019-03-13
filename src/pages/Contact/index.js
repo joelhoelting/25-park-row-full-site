@@ -92,7 +92,7 @@ class Contact extends Component {
                   New York, NY 10007
                 </p>
               </a>
-              <a href="mailto:press@25parkrow.com">
+              <a href="mailto:info@25parkrow.com">
                 <p style={address.p}>info@25parkrow.com</p>
               </a>
               <a href="tel:+1-646-933-4625">
