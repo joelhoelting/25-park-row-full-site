@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { mediaQueries } from '../../styles/Global/MediaQueries';
 import { pxToRem } from '../../helpers/Math';
 
+import InfoContainer from './InfoContainer';
+
 const RadiumLink = Radium(Link);
 
 class Footer extends Component {
@@ -12,7 +14,8 @@ class Footer extends Component {
     super(props);
     
     this.state = {
-      interval: 0
+      interval: 0,
+      infoContainerActive: false
     };
   }
 
@@ -25,6 +28,15 @@ class Footer extends Component {
     let interval;
     this.state.interval === 0 ? interval = 1 : interval = 0;
     this.setState({ interval });
+  }
+
+  openInfoContainer() {
+    let newStatus = !this.state.infoContainerActive;
+    this.setState({ infoContainerActive: newStatus });
+    
+    if (newStatus) {
+      window.scrollTo(0,document.body.scrollHeight);
+    }
   }
   
   render() {
@@ -189,7 +201,7 @@ class Footer extends Component {
           width: '33%',
           lineHeight: pxToRem(30),
           [tablet]: {
-            width: '20%',
+            width: '16.6666%',
             fontSize: pxToRem(16),
             padding: `${pxToRem(20)} 0`,
           },
@@ -281,44 +293,56 @@ class Footer extends Component {
     };
 
     return (
-      <footer style={FooterInline.wrapper}>
-        {renderIllustration()}
-        {renderArrows()}
-        <div style={FooterInline.nav}>
-          <RadiumLink 
-            style={[FooterInline.nav.link, {textDecoration: route === 'brochure' ? 'underline' : null}]} 
-            to={`/brochure`}
-          >
-            {renderBrochureWord()}
-          </RadiumLink>
-          <RadiumLink 
-            style={[FooterInline.nav.link, {textDecoration: route === 'press' ? 'underline' : null}]} 
-            to={`/press`}
-          >
-            Press
-          </RadiumLink>
-          <RadiumLink 
-            style={[FooterInline.nav.link, {textDecoration: route === 'team' ? 'underline' : null}]} 
-            to={`/team`}
-          >
-            Team
-          </RadiumLink>
-          <RadiumLink 
-            style={[FooterInline.nav.link, {textDecoration: route === 'legal' ? 'underline' : null}]} 
-            to={`/legal`}
-          >
-            Legal
-          </RadiumLink>
-          <a 
-            style={[FooterInline.nav.link, ]} 
-            href="https://www.instagram.com/25parkrownyc" 
-            rel='noreferrer noopener' 
-            target="_blank"
-          >
-            Instagram
-          </a>
-        </div>
-      </footer>
+      <React.Fragment>
+        <footer style={FooterInline.wrapper}>
+          {renderIllustration()}
+          {renderArrows()}
+          <div style={FooterInline.nav}>
+            <RadiumLink 
+              style={[FooterInline.nav.link, {textDecoration: route === 'brochure' ? 'underline' : null}]} 
+              to={`/brochure`}
+            >
+              {renderBrochureWord()}
+            </RadiumLink>
+            <RadiumLink 
+              style={[FooterInline.nav.link, {textDecoration: route === 'press' ? 'underline' : null}]} 
+              to={`/press`}
+            >
+              Press
+            </RadiumLink>
+            <RadiumLink 
+              style={[FooterInline.nav.link, {textDecoration: route === 'team' ? 'underline' : null}]} 
+              to={`/team`}
+            >
+              Team
+            </RadiumLink>
+            <h6 
+              onClick={this.openInfoContainer.bind(this)}
+              style={[FooterInline.nav.link, { cursor: 'pointer'}]}
+              rel='noreferrer noopener' 
+              target="_blank"
+            >
+              Overview
+            </h6>
+            <RadiumLink 
+              style={[FooterInline.nav.link, {textDecoration: route === 'legal' ? 'underline' : null}]} 
+              to={`/legal`}
+            >
+              Legal
+            </RadiumLink>
+            <a 
+              style={FooterInline.nav.link} 
+              href="https://www.instagram.com/25parkrownyc" 
+              rel='noreferrer noopener' 
+              target="_blank"
+              key='instagram-link'
+            >
+              Instagram
+            </a>
+          </div>
+        </footer>
+        <InfoContainer active={this.state.infoContainerActive} />
+      </React.Fragment>
     );
   }
 }
