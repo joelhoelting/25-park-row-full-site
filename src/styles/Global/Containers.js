@@ -60,8 +60,7 @@ const containers = {
     width: '90%',
     marginLeft: 'auto',
     marginRight: 'auto',
-    transition: 'opacity 400ms ease-in-out',
-    height: '100%'
+    transition: 'opacity 400ms ease-in-out'
   },
   // Neighborhood Map Container
   '.neighborhood-map-container': {
@@ -73,10 +72,8 @@ const containers = {
       '.brochure-container': {
         marginTop: `120px`,
         width: '100%',
-        position: 'fixed',
         top: 0,
         left: 0,
-        height: '80vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -119,7 +116,6 @@ const containers = {
       '.brochure-container': {
         left: 0,
         marginTop: '100px',
-        position: 'fixed',
         top: 0,
         width: '100%'
       },

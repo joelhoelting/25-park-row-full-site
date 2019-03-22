@@ -33,11 +33,11 @@ class Footer extends Component {
   openInfoContainer() {
     let newStatus = !this.state.infoContainerActive;
     this.setState({ infoContainerActive: newStatus });
+    
     if (newStatus) {
       setTimeout(function() {
         window.scrollTo(0,document.body.scrollHeight);
       }, 200);
-      
     }
   }
   

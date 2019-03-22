@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Radium, {Style} from 'radium';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid } from 'react-flexbox-grid';
 import { Helmet } from 'react-helmet';
 
 import { mediaQueries, globalMediaQueries } from 'styles/Global/MediaQueries';
@@ -29,7 +29,7 @@ class Brochure extends Component {
           justifyContent: 'space-between',
         },
         [mediaQueries.desktop]: {
-          width: '65%',
+          width: '75%',
           maxWidth: '1600px'
         },
         box: {
@@ -37,11 +37,11 @@ class Brochure extends Component {
           paddingBottom: '100%',
           cursor: 'pointer',
           position: 'relative',
-          margin: `0 auto ${pxToRem(20)}`,
+          margin: `0 ${pxToRem(20)} ${pxToRem(20)}`,
           [mediaQueries.tablet]: {
             display: 'inline-block',
-            width: '48%',
-            paddingBottom: '48%',
+            width: '50%',
+            paddingBottom: '50%',
           },
           inner: {
             position: 'absolute',
@@ -118,12 +118,8 @@ class Brochure extends Component {
         <Style rules={{'body': {backgroundColor: this.props.color}}}/>
         <Style rules={BrochureCSS} />
         <Grid fluid>
-          <Row>
-            <Col lg={12}>
-              <h3 className='text-center' style={{color: 'white'}}>Download Brochure</h3>
-            </Col>
-          </Row>
           <div className={`brochure-container ${!this.state.mounted ? 'hidden' : ''}`}>
+            <h3 className='text-center' style={{color: 'white'}}>Download Brochure</h3>
             <div style={main}>
               <div key={'lang_english'} className='box box-english' style={main.box}>
                 <a href='/downloads/brochure/25parkrow_rack_brochure_en.pdf' target='_blank'>
