@@ -16,7 +16,7 @@ class Footer extends Component {
     
     this.state = {
       interval: 0,
-      infoContainerActive: true
+      infoContainerActive: false
     };
   }
 
