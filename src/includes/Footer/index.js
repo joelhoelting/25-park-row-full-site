@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
 import { Link } from 'react-router-dom';
+import $ from 'jquery';
 
 import { mediaQueries } from '../../styles/Global/MediaQueries';
 import { pxToRem } from '../../helpers/Math';
@@ -15,7 +16,7 @@ class Footer extends Component {
     
     this.state = {
       interval: 0,
-      infoContainerActive: false
+      infoContainerActive: true
     };
   }
 
@@ -35,9 +36,12 @@ class Footer extends Component {
     this.setState({ infoContainerActive: newStatus });
     
     if (newStatus) {
-      setTimeout(function() {
-        window.scrollTo(0,document.body.scrollHeight);
-      }, 200);
+      var body = document.body;
+      var html = document.documentElement;
+      var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+      $('html, body').animate({
+        scrollTop: height + 'px'
+      }, 400);
     }
   }
   
@@ -344,6 +348,7 @@ class Footer extends Component {
           </div>
         </footer>
         <InfoContainer active={this.state.infoContainerActive} />
+        <span className='info-container-scroll-waypoint' />
       </React.Fragment>
     );
   }

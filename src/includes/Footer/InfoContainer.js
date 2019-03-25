@@ -1,33 +1,53 @@
 import React from 'react';
 import Radium from 'radium';
 import { pxToRem } from 'helpers/Math';
+import { mediaQueries } from '../../styles/Global/MediaQueries';
 
 const InfoContainer = props => {
   const InfoContainerInline = {
     wrapper: {
-      height: '100%',
       background: '#D8D8D8',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      maxHeight: props.active ? '100%' : 0,
       overflow: 'hidden',
       fontFamily: 'Maison Neue Extended Book, sans-serif',
+      maxHeight: props.active ? '550px' : 0,
+      height: '550px',
+      transition: !props.active && 'max-height 200ms ease',
+      [mediaQueries.phone]: {
+        maxHeight: props.active ? '500px' : 0,
+        height: '500px',
+      },
+      [mediaQueries.tabletLandscape]: {
+        maxHeight: props.active ? '250px' : 0,
+        height: '250px',
+      },
       p: {
         width: '88%',
         fontFamily: 'Maison Neue Extended Book, sans-serif',
         fontWeight: 300,
-        fontSize: pxToRem(12),
+        fontSize: pxToRem(10),
         textTransform: 'uppercase',
         letterSpacing: pxToRem(1.5), 
-        lineHeight: pxToRem(20)
+        lineHeight: pxToRem(14),
+        opacity: props.active ? 1 : 0,
+        visibility: props.active ? 'visible' : 'hidden',
+        transition: 'all 100ms ease',
+        [mediaQueries.phone]: {
+          fontSize: pxToRem(10),
+        },
+        [mediaQueries.tablet]: {
+          fontSize: pxToRem(12),
+          lineHeight: pxToRem(20)
+        }
       }
     }
   };
 
   return (
-    <div style={InfoContainerInline.wrapper}>
+    <div className='info-container' style={InfoContainerInline.wrapper}>
       <p style={[InfoContainerInline.wrapper.p, { paddingTop: pxToRem(20)}]}>Offering 110 residences, 25 Park Row is a 21st century architectural icon at the center of the New Downtown, providing unmatched views from every residence over historic City Hall Park. At 25 Park Row, COOKFOX Architects has created the quintessential downtown luxury condominium, reinterpreting the classic Art Deco skyscraper through an expressive series of cascading terraces, setbacks, and loggias.</p>
       <p style={[InfoContainerInline.wrapper.p, { paddingBottom: pxToRem(20)}]}>Residents can exclusively enjoy The Park Row Club—a richly appointed amenity suite designed by Studio Mellone, featuring vast leisure spaces, soaring ceilings, and grandly-scaled windows overlooking City Hall Park. The Club offers a library and screening room, a lounge, a billiards room, a bar, a dining room, a playroom, a golf simulator, and a fitness center with a yoga studio and a 65-foot swimming pool. The Park Row Club Garden and Dining Terrace offers over 7,000 square feet of outdoor space for entertainment, relaxation, and play—including lounge and living spaces, a grilling kitchen, a trellised dining area, and a naturalistic playscape and a lawn. On-site parking for purchase and a discrete Theatre Alley entrance offer privacy and convenience.</p>
     </div>
