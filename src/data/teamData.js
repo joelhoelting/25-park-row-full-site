@@ -17,7 +17,7 @@ const teamData = {
       mobileHeight: {
         total: 650,
         top: 250,
-        bottom: 300
+        bottom: 400
       }
     }
   ],
