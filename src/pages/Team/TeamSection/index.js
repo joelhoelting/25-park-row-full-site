@@ -5,23 +5,23 @@ import { mediaQueries } from 'styles/Global/MediaQueries';
 import { pxToRem } from 'helpers/Math';
 
 const TeamSection = (props) => {
-  const { company, role, blurb } = props.teamDetails;
+  const { company, role, blurb, mobileHeight } = props.teamDetails;
   
   const TeamSectionInline = {
     main: {
-      height: '600px',
-      maxHeight: props.categoryActive ? '600px' : '250px',
+      height: mobileHeight.total,
+      maxHeight: props.categoryActive ? `${mobileHeight.total}px` : '250px',
       transition: 'max-height 400ms ease',
       [mediaQueries.tablet]: {
-        height: '600px',
-        maxHeight: props.categoryActive ? '600px' : '300px'
+        height: '650px',
+        maxHeight: props.categoryActive ? '650px' : '300px'
       },
       primary: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '250px',
+        height: `${mobileHeight.top}px`,
         [mediaQueries.tablet]: {
           height: '300px',
         },
@@ -31,7 +31,6 @@ const TeamSection = (props) => {
         role: {
           marginTop: '5px',
           textTransform: 'uppercase',
-          fontSize: '90%',
         },
         plus: {
           transition: 'transform 200ms ease',
@@ -41,7 +40,7 @@ const TeamSection = (props) => {
       secondary: {
         position: 'relative',
         bottom: '50px',
-        height: props.categoryActive ? '350px' : 0,
+        height: props.categoryActive ? `${mobileHeight.bottom}px` : 0,
         display: 'flex',
         alignItems: 'center',
         transition: props.categoryActive ? 'opacity 400ms ease 200ms' : 'opacity 75ms ease',
@@ -50,11 +49,13 @@ const TeamSection = (props) => {
         width: '85%',
         margin: '0 auto',
         [mediaQueries.tablet]: {
+          height: props.categoryActive ? '350px' : 0,
           alignItems: 'flex-start',
           width: '65%'
         },
         blurb: {
           fontSize: pxToRem(12),
+          lineHeight: '1.2rem',
           [mediaQueries.tablet]: {
             fontSize: pxToRem(14)
           },
