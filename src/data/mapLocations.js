@@ -30,7 +30,7 @@ const locations = {
     },
     {
       title: 'Nom Wah Tea Parlor',
-      coordinates: [-73.99825,40.71444]
+      coordinates: [-73.99825, 40.71444]
     },
     {
       title: 'Chinese Tuxedo',
@@ -38,7 +38,7 @@ const locations = {
     },
     {
       title: 'Aroma Espresso Bar',
-      coordinates: [-74.009765, 40.713020],
+      coordinates: [-74.009765, 40.71302]
     },
     {
       title: 'Birch Coffee',
@@ -46,11 +46,11 @@ const locations = {
     },
     {
       title: 'Bluestone Coffee',
-      coordinates: [-74.011540, 40.706132]
+      coordinates: [-74.01154, 40.706132]
     },
     {
       title: 'Irving Farm Coffee Roasters',
-      coordinates: [-74.009010, 40.710851]
+      coordinates: [-74.00901, 40.710851]
     },
     {
       title: 'Joe Coffee',
@@ -58,7 +58,7 @@ const locations = {
     },
     {
       title: 'Juice Press',
-      coordinates: [-74.015230, 40.712056]
+      coordinates: [-74.01523, 40.712056]
     },
     {
       title: 'Kaffe 1668 South',
@@ -70,7 +70,7 @@ const locations = {
     },
     {
       title: 'Milk Bar',
-      coordinates: [-74.006529, 40.705760]
+      coordinates: [-74.006529, 40.70576]
     },
     {
       title: 'Takahachi Bakery',
@@ -86,15 +86,15 @@ const locations = {
     },
     {
       title: 'Dead Rabbit',
-      coordinates: [-74.011030, 40.703312]
+      coordinates: [-74.01103, 40.703312]
     },
     {
       title: 'Evening Bar',
-      coordinates: [-74.009130, 40.715235]
+      coordinates: [-74.00913, 40.715235]
     },
     {
       title: 'Five and Dime',
-      coordinates: [ -74.008208, 40.712634]
+      coordinates: [-74.008208, 40.712634]
     },
     {
       title: 'Stone Street Tavern',
@@ -110,7 +110,7 @@ const locations = {
     },
     {
       title: 'The Malt House',
-      coordinates: [-74.009343, 40.709680]
+      coordinates: [-74.009343, 40.70968]
     },
     {
       title: 'The Wooly Public',
@@ -122,7 +122,7 @@ const locations = {
     },
     {
       title: 'Vin Sur Vingt',
-      coordinates: [-74.010110, 40.714808]
+      coordinates: [-74.01011, 40.714808]
     },
     {
       title: 'Ward III',
@@ -130,7 +130,7 @@ const locations = {
     },
     {
       title: 'Weather Up',
-      coordinates: [-74.008750, 40.716970]
+      coordinates: [-74.00875, 40.71697]
     },
     {
       title: 'American Cut Tribeca',
@@ -166,7 +166,7 @@ const locations = {
     },
     {
       title: 'Hudson Eats',
-      coordinates: [-74.015680, 40.713026]
+      coordinates: [-74.01568, 40.713026]
     },
     {
       title: 'Le Coucou',
@@ -174,7 +174,7 @@ const locations = {
     },
     {
       title: 'Le District',
-      coordinates: [-74.015720, 40.712655]
+      coordinates: [-74.01572, 40.712655]
     },
     {
       title: 'Little Park',
@@ -224,7 +224,7 @@ const locations = {
   schools: [
     {
       title: 'Spruce Street School',
-      coordinates: [-74.005360, 40.711073]
+      coordinates: [-74.00536, 40.711073]
     },
     {
       title: 'The Blue School',
@@ -248,7 +248,7 @@ const locations = {
     },
     {
       title: 'Millennium High School',
-      coordinates: [-74.011230, 40.704703]
+      coordinates: [-74.01123, 40.704703]
     },
     {
       title: 'Léman Manhattan Preparatory School',
@@ -264,7 +264,7 @@ const locations = {
     },
     {
       title: 'Downtown Little School',
-      coordinates: [-74.007265, 40.709770]
+      coordinates: [-74.007265, 40.70977]
     },
     {
       title: 'Brooklyn Robot Foundry Tribeca',
@@ -284,7 +284,7 @@ const locations = {
     },
     {
       title: 'Imagination Playground',
-      coordinates: [-74.004320, 40.706405]
+      coordinates: [-74.00432, 40.706405]
     },
     {
       title: 'Kidville FiDi',
@@ -312,7 +312,7 @@ const locations = {
     },
     {
       title: 'Clinton Castle',
-      coordinates: [-74.016800, 40.703456]
+      coordinates: [-74.0168, 40.703456]
     },
     {
       title: 'North Cove Sailing',
@@ -320,15 +320,15 @@ const locations = {
     },
     {
       title: 'Pier 15, East River',
-      coordinates: [-74.003523, 40.704820]
+      coordinates: [-74.003523, 40.70482]
     },
     {
       title: 'Rockefeller Park',
-      coordinates: [-74.003523, 40.704820]
+      coordinates: [-74.003523, 40.70482]
     },
     {
       title: 'The Elevated Acre',
-      coordinates: [-74.008896, 40.703340]
+      coordinates: [-74.008896, 40.70334]
     },
     {
       title: '56 HENRY',
@@ -336,7 +336,7 @@ const locations = {
     },
     {
       title: '9/11 Memorial & Museum',
-      coordinates: [-74.013443, 40.711490]
+      coordinates: [-74.013443, 40.71149]
     },
     {
       title: 'Federal Hall',
@@ -344,7 +344,7 @@ const locations = {
     },
     {
       title: 'Jeffrey Stark',
-      coordinates: [-73.994139, 40.713850]
+      coordinates: [-73.994139, 40.71385]
     },
     {
       title: 'Mmuseumm',
@@ -352,7 +352,7 @@ const locations = {
     },
     {
       title: 'Museum of Jewish Heritage',
-      coordinates: [-74.018580, 40.705991]
+      coordinates: [-74.01858, 40.705991]
     },
     {
       title: 'National Museum of the American Indian',
@@ -406,7 +406,7 @@ const locations = {
     },
     {
       title: 'SoulCycle',
-      coordinates: [-74.012544, 40.716160]
+      coordinates: [-74.012544, 40.71616]
     },
     {
       title: 'The Class by Taryn Toomey',
@@ -446,7 +446,7 @@ const locations = {
     },
     {
       title: 'The Roxy Hotel',
-      coordinates: [-74.004901, 40.719420]
+      coordinates: [-74.004901, 40.71942]
     },
     {
       title: 'W New York-Downtown',
@@ -454,11 +454,11 @@ const locations = {
     },
     {
       title: 'Alley Cat Theater',
-      coordinates: [-74.006860, 40.711408]
+      coordinates: [-74.00686, 40.711408]
     },
     {
       title: 'iPic New York',
-      coordinates: [-74.003285, 40.706800]
+      coordinates: [-74.003285, 40.7068]
     },
     {
       title: 'One World Observatory',
@@ -496,7 +496,7 @@ const locations = {
     },
     {
       title: 'Century 21',
-      coordinates: [-74.010520, 40.710627]
+      coordinates: [-74.01052, 40.710627]
     },
     {
       title: 'Gucci',
@@ -508,7 +508,7 @@ const locations = {
     },
     {
       title: 'Hermès',
-      coordinates: [-74.010820, 40.706350]
+      coordinates: [-74.01082, 40.70635]
     },
     {
       title: 'J. Crew The Ludlow Shop',
@@ -516,7 +516,7 @@ const locations = {
     },
     {
       title: 'Jo Malone',
-      coordinates: [-74.015012, 40.712820]
+      coordinates: [-74.015012, 40.71282]
     },
     {
       title: 'Louis Vuitton',
@@ -528,7 +528,7 @@ const locations = {
     },
     {
       title: 'Montblanc',
-      coordinates: [-74.011430, 40.711270]
+      coordinates: [-74.01143, 40.71127]
     },
     {
       title: 'Oculus',
@@ -568,7 +568,7 @@ const locations = {
     },
     {
       title: 'Vince',
-      coordinates: [-74.015138, 40.713880]
+      coordinates: [-74.015138, 40.71388]
     },
     {
       title: 'Westfield',
@@ -580,7 +580,7 @@ const locations = {
     },
     {
       title: '255 Fulton Market',
-      coordinates: [-74.004720, 40.708730]
+      coordinates: [-74.00472, 40.70873]
     },
     {
       title: 'Beer Table',
@@ -628,7 +628,7 @@ const locations = {
     },
     {
       title: 'World Trade Center',
-      coordinates: [-74.013720, 40.711945]
+      coordinates: [-74.01372, 40.711945]
     },
     {
       title: 'Zeytuna',
@@ -670,7 +670,7 @@ const locations = {
     },
     {
       title: 'E Train \n',
-      coordinates: [-74.009911, 40.712640]
+      coordinates: [-74.009911, 40.71264]
     },
     {
       title: '2/3 Train \n ',
@@ -678,7 +678,7 @@ const locations = {
     },
     {
       title: 'A/C/F Train \n',
-      coordinates: [-74.008430, 40.714303]
+      coordinates: [-74.00843, 40.714303]
     },
     {
       title: '1/2/3 Train \n',
@@ -694,7 +694,7 @@ const locations = {
     },
     {
       title: 'N/Q/R/W Train \n',
-      coordinates: [-74.001789, 40.719520]
+      coordinates: [-74.001789, 40.71952]
     },
     {
       title: 'N/Q/R/W Train \n',
@@ -703,7 +703,7 @@ const locations = {
     {
       title: 'J/Z Train \n',
       coordinates: [-74.000229, 40.717825]
-    },
+    }
   ],
   transitPath: [
     {
@@ -715,11 +715,11 @@ const locations = {
     {
       title: 'Downtown Manhattan Heliport',
       coordinates: [-74.008714, 40.701094]
-    },
+    }
   ],
   transitFerry: [
     {
-      title: "Staten Island Island Ferry",
+      title: 'Staten Island Island Ferry',
       coordinates: [-74.013126, 40.700921]
     },
     {
@@ -732,7 +732,7 @@ const locations = {
     },
     {
       title: 'New Jersey Ferries',
-      coordinates: [-74.017663, 40.715060]
+      coordinates: [-74.017663, 40.71506]
     }
   ]
 };
