@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
 import { Link } from 'react-router-dom';
+import $ from 'jquery';
 
 import { mediaQueries } from '../../styles/Global/MediaQueries';
 import { pxToRem } from '../../helpers/Math';
+
+// import InfoContainer from './InfoContainer';
 
 const RadiumLink = Radium(Link);
 
 class Footer extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
-      interval: 0
+      interval: 0,
+      infoContainerActive: false
     };
   }
 
@@ -23,16 +27,41 @@ class Footer extends Component {
 
   changeBrochureWord() {
     let interval;
-    this.state.interval === 0 ? interval = 1 : interval = 0;
+    this.state.interval === 0 ? (interval = 1) : (interval = 0);
     this.setState({ interval });
   }
-  
+
+  openInfoContainer() {
+    let newStatus = !this.state.infoContainerActive;
+    this.setState({ infoContainerActive: newStatus });
+
+    if (newStatus) {
+      var body = document.body;
+      var html = document.documentElement;
+      var height = Math.max(
+        body.scrollHeight,
+        body.offsetHeight,
+        html.clientHeight,
+        html.scrollHeight,
+        html.offsetHeight
+      );
+      $('html, body').animate(
+        {
+          scrollTop: height + 'px'
+        },
+        400
+      );
+    }
+  }
+
   render() {
     const { tablet, tabletLandscape, desktopSmall, desktopLarge } = mediaQueries;
 
     let route = window.location.pathname.replace('/', '').toLowerCase() || 'home';
     // !Object.keys(this.props.colors).includes(route) ? route = 'notfoundpage' : null;
-    if ( !Object.keys(this.props.colors).includes(route) ) { route = 'notfoundpage'; }
+    if (!Object.keys(this.props.colors).includes(route)) {
+      route = 'notfoundpage';
+    }
 
     let { color, footerBackground } = this.props.colors[route];
 
@@ -47,15 +76,15 @@ class Footer extends Component {
     let arrowAnimation = Radium.keyframes({
       '0%': { transform: 'scale(1)' },
       '50%': { transform: 'scale(.8)' },
-      '100%': { transform: 'scale(1.3)' },
+      '100%': { transform: 'scale(1.3)' }
     });
 
     let wordAnimation = Radium.keyframes({
       '0%': { opacity: 0 },
-      '100%': { opacity: 1 },
+      '100%': { opacity: 1 }
     });
 
-    const FooterInline = { 
+    const FooterInline = {
       wrapper: {
         textAlign: 'center',
         width: '100%',
@@ -63,7 +92,7 @@ class Footer extends Component {
         padding: `0 ${pxToRem(15)}`,
         background: footerBackground ? footerBackground : 'none',
         [tabletLandscape]: {
-          padding: `0 ${pxToRem(30)}`,
+          padding: `0 ${pxToRem(30)}`
         }
       },
       illustrationDiv: {
@@ -87,7 +116,7 @@ class Footer extends Component {
           [desktopLarge]: {
             maxHeight: pxToRem(200)
           }
-        },
+        }
       },
       topNav: {
         display: 'flex',
@@ -97,16 +126,16 @@ class Footer extends Component {
         marginBottom: pxToRem(20),
         paddingTop: !illustrations[route] ? pxToRem(50) : 0,
         [tabletLandscape]: {
-          marginBottom: pxToRem(50),
+          marginBottom: pxToRem(50)
         },
         left: {
           display: 'flex',
-          alignItems: 'flex-end',
+          alignItems: 'flex-end'
         },
         right: {
           display: 'flex',
           alignItems: 'flex-end',
-          justifyContent: 'flex-end',
+          justifyContent: 'flex-end'
         }
       },
       btn: {
@@ -115,7 +144,7 @@ class Footer extends Component {
         justifyContent: 'flex-start',
         alignItems: 'center',
         [tabletLandscape]: {
-          flexFlow: 'row nowrap',
+          flexFlow: 'row nowrap'
         }
       },
       arrow: {
@@ -128,7 +157,7 @@ class Footer extends Component {
           height: pxToRem(30),
           ':hover': {
             animation: 'x 300ms ease 0s forwards',
-            animationName: arrowAnimation,
+            animationName: arrowAnimation
           }
         }
       },
@@ -138,7 +167,7 @@ class Footer extends Component {
         fontSize: pxToRem(12),
         color: `${color}`,
         textTransform: 'uppercase',
-        letterSpacing: pxToRem(1.5), 
+        letterSpacing: pxToRem(1.5),
         lineHeight: pxToRem(20),
         display: 'block',
         width: '100%',
@@ -176,7 +205,7 @@ class Footer extends Component {
         padding: 0,
         marginTop: pxToRem(15),
         [tablet]: {
-          justifyContent: 'space-around',
+          justifyContent: 'space-around'
         },
         link: {
           fontFamily: 'Maison Neue Extended Book, sans-serif',
@@ -189,13 +218,13 @@ class Footer extends Component {
           width: '33%',
           lineHeight: pxToRem(30),
           [tablet]: {
-            width: '20%',
+            width: '16.6666%',
             fontSize: pxToRem(16),
-            padding: `${pxToRem(20)} 0`,
+            padding: `${pxToRem(20)} 0`
           },
           [tabletLandscape]: {
             ':hover': {
-              textDecoration: 'underline',
+              textDecoration: 'underline'
             }
           },
           [desktopSmall]: {
@@ -217,8 +246,8 @@ class Footer extends Component {
     //getting prev and next pages
     let pages = Object.keys(this.props.pages);
     let curInd = pages.indexOf(route);
-    let nextInd = (curInd + 1) === pages.length ? 0 : curInd + 1;
-    let prevInd = (curInd - 1) < 0 ? pages.length - 1 : curInd - 1;
+    let nextInd = curInd + 1 === pages.length ? 0 : curInd + 1;
+    let prevInd = curInd - 1 < 0 ? pages.length - 1 : curInd - 1;
     let next = pages[nextInd];
     let previous = pages[prevInd];
 
@@ -226,9 +255,9 @@ class Footer extends Component {
       if (illustrations[route]) {
         return (
           <div style={FooterInline.illustrationDiv}>
-            <img 
+            <img
               alt={`illustration for end of ${illustrations[route]} page`}
-              src={`/images/icons/illustration/${illustrations[route]}.svg`} 
+              src={`/images/icons/illustration/${illustrations[route]}.svg`}
               style={FooterInline.illustrationDiv.illustration}
             />
           </div>
@@ -247,26 +276,40 @@ class Footer extends Component {
 
     // Function to render prev and next arrows
     const renderArrows = () => {
-      if (route !== 'home' && route !== 'brochure' && route !== 'press' && route !== 'legal' ) {
+      if (route !== 'home' && route !== 'brochure' && route !== 'press' && route !== 'legal') {
         return (
           <div style={FooterInline.topNav}>
             <div style={FooterInline.topNav.left}>
-              <RadiumLink className={ hideArrows() ? 'hidden' : 'animate-reveal'} key="prev" to={`/${previous}`}>
+              <RadiumLink className={hideArrows() ? 'hidden' : 'animate-reveal'} key="prev" to={`/${previous}`}>
                 <div style={FooterInline.btn}>
-                  <img key="previmg" src={`/images/icons/left_${color}.svg`} alt='go to previous page' style={{...FooterInline.arrow, marginRight: 'auto'}}/>
-                  <span key="prevspan" style={[FooterInline.btnText, FooterInline.btnText.prev]}>{this.props.pages[previous]}</span>
+                  <img
+                    key="previmg"
+                    src={`/images/icons/left_${color}.svg`}
+                    alt="go to previous page"
+                    style={{ ...FooterInline.arrow, marginRight: 'auto' }}
+                  />
+                  <span key="prevspan" style={[FooterInline.btnText, FooterInline.btnText.prev]}>
+                    {this.props.pages[previous]}
+                  </span>
                 </div>
               </RadiumLink>
             </div>
-            
+
             <div style={FooterInline.topNav.right}>
-              <RadiumLink className={ hideArrows() ? 'hidden' : 'animate-reveal'} key="next" to={`/${next}`}>
-                <div style={{...FooterInline.btn, flexFlow: 'column-reverse nowrap'}}>
-                  <span key="nextspan" style={[FooterInline.btnText, FooterInline.btnText.next]}>{this.props.pages[next]}</span>
-                  <img key="nextimg" src={`/images/icons/right_${color}.svg`} alt='go to next page' style={{...FooterInline.arrow, marginLeft: 'auto'}}/>
+              <RadiumLink className={hideArrows() ? 'hidden' : 'animate-reveal'} key="next" to={`/${next}`}>
+                <div style={{ ...FooterInline.btn, flexFlow: 'column-reverse nowrap' }}>
+                  <span key="nextspan" style={[FooterInline.btnText, FooterInline.btnText.next]}>
+                    {this.props.pages[next]}
+                  </span>
+                  <img
+                    key="nextimg"
+                    src={`/images/icons/right_${color}.svg`}
+                    alt="go to next page"
+                    style={{ ...FooterInline.arrow, marginLeft: 'auto' }}
+                  />
                 </div>
               </RadiumLink>
-            </div>  
+            </div>
           </div>
         );
       }
@@ -274,51 +317,72 @@ class Footer extends Component {
 
     const renderBrochureWord = () => {
       if (this.state.interval) {
-        return <span key='english' style={FooterInline.nav.brochureWord}>Brochure</span>;
+        return (
+          <span key="english" style={FooterInline.nav.brochureWord}>
+            Brochure
+          </span>
+        );
       } else {
-        return <span key='chinese' style={FooterInline.nav.brochureWord}>宣传册</span>;
+        return (
+          <span key="chinese" style={FooterInline.nav.brochureWord}>
+            宣传册
+          </span>
+        );
       }
     };
 
     return (
-      <footer style={FooterInline.wrapper}>
-        {renderIllustration()}
-        {renderArrows()}
-        <div style={FooterInline.nav}>
-          <RadiumLink 
-            style={[FooterInline.nav.link, {textDecoration: route === 'brochure' ? 'underline' : null}]} 
-            to={`/brochure`}
-          >
-            {renderBrochureWord()}
-          </RadiumLink>
-          <RadiumLink 
-            style={[FooterInline.nav.link, {textDecoration: route === 'press' ? 'underline' : null}]} 
-            to={`/press`}
-          >
-            Press
-          </RadiumLink>
-          <RadiumLink 
-            style={[FooterInline.nav.link, {textDecoration: route === 'team' ? 'underline' : null}]} 
-            to={`/team`}
-          >
-            Team
-          </RadiumLink>
-          <RadiumLink 
-            style={[FooterInline.nav.link, {textDecoration: route === 'legal' ? 'underline' : null}]} 
-            to={`/legal`}
-          >
-            Legal
-          </RadiumLink>
-          <a 
-            style={[FooterInline.nav.link, ]} 
-            href="https://www.instagram.com/25parkrownyc" 
-            rel='noreferrer noopener' 
-            target="_blank"
-          >
-            Instagram
-          </a>
-        </div>
-      </footer>
+      <React.Fragment>
+        <footer style={FooterInline.wrapper}>
+          {renderIllustration()}
+          {renderArrows()}
+          <div style={FooterInline.nav}>
+            <RadiumLink
+              style={[FooterInline.nav.link, { textDecoration: route === 'brochure' ? 'underline' : null }]}
+              to={`/brochure`}
+            >
+              {renderBrochureWord()}
+            </RadiumLink>
+            <RadiumLink
+              style={[FooterInline.nav.link, { textDecoration: route === 'press' ? 'underline' : null }]}
+              to={`/press`}
+            >
+              Press
+            </RadiumLink>
+            <RadiumLink
+              style={[FooterInline.nav.link, { textDecoration: route === 'team' ? 'underline' : null }]}
+              to={`/team`}
+            >
+              Team
+            </RadiumLink>
+            {/* <h6
+              onClick={this.openInfoContainer.bind(this)}
+              style={[FooterInline.nav.link, { cursor: 'pointer' }]}
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Overview
+            </h6> */}
+            <RadiumLink
+              style={[FooterInline.nav.link, { textDecoration: route === 'legal' ? 'underline' : null }]}
+              to={`/legal`}
+            >
+              Legal
+            </RadiumLink>
+            <a
+              style={FooterInline.nav.link}
+              href="https://www.instagram.com/25parkrownyc"
+              rel="noreferrer noopener"
+              target="_blank"
+              key="instagram-link"
+            >
+              Instagram
+            </a>
+          </div>
+        </footer>
+        {/* <InfoContainer active={this.state.infoContainerActive} /> */}
+        <span className="info-container-scroll-waypoint" />
+      </React.Fragment>
     );
   }
 }
