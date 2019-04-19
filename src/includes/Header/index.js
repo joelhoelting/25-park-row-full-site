@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Radium, {Style} from 'radium';
+import Radium, { Style } from 'radium';
 import { Link } from 'react-router-dom';
 
 import { globalMediaQueries, mediaQueries } from 'styles/Global/MediaQueries';
@@ -8,10 +8,9 @@ import { pxToRem } from 'helpers/Math';
 const RadiumLink = Radium(Link);
 
 class Header extends Component {
-  
   constructor(props) {
     super(props);
-    
+
     this.state = {
       mobileMenuActive: false,
       desktopNavPositions: {
@@ -40,7 +39,7 @@ class Header extends Component {
 
     // If mobile nav menu is open on resize, close it
     window.addEventListener('resize', () => this.closeMobileMenu());
-    
+
     // Remap positions of desktop nav links when screen is resized
     // window.addEventListener('resize', () => this.mapNavSliderPositions());
     window.addEventListener('resize', () => {
@@ -69,9 +68,9 @@ class Header extends Component {
 
   toggleMobileMenu() {
     if (!this.state.mobileMenuActive) {
-      this.setState({ mobileMenuActive: true});
+      this.setState({ mobileMenuActive: true });
     } else {
-      this.setState({ mobileMenuActive: false});
+      this.setState({ mobileMenuActive: false });
     }
   }
 
@@ -101,36 +100,38 @@ class Header extends Component {
     // Get Current Route
     let route = window.location.pathname.replace('/', '').toLowerCase() || 'home';
     // !Object.keys(this.props.colors).includes(route) ? route = 'notfoundpage' : null;
-    if ( !Object.keys(this.props.colors).includes(route) ) { route = 'notfoundpage'; }
-    
+    if (!Object.keys(this.props.colors).includes(route)) {
+      route = 'notfoundpage';
+    }
+
     // Declare/assign color variables
     let { color, backgroundColor, sliderColors } = this.props.colors[route];
     let sliderBackground = sliderColors ? sliderColors.background : 'none';
     let sliderActiveColor = sliderColors ? sliderColors.activeColor : null;
 
-    // Keyframes animation 
+    // Keyframes animation
     var arrowAnimation = Radium.keyframes({
       '0%': { transform: 'scale(1)' },
       '50%': { transform: 'scale(.8)' },
-      '100%': { transform: 'scale(1.3)' },
+      '100%': { transform: 'scale(1.3)' }
     });
 
     let wordAnimation = Radium.keyframes({
       '0%': { opacity: 0 },
-      '100%': { opacity: 1 },
+      '100%': { opacity: 1 }
     });
 
     // Desktop Height
     // Upper Nav: 60px, Lower Nav: 30px
     // Mobile Height
     // Upper Nav: 60px(active)/40px(inactive), Lower Nav: 100%
-    const HeaderInline = { 
+    const HeaderInline = {
       wrapper: {
         textAlign: 'center',
         width: '100%',
         height: 'auto',
         position: 'fixed',
-        top: 0, 
+        top: 0,
         left: 0,
         zIndex: 100,
         topNav: {
@@ -144,7 +145,7 @@ class Header extends Component {
           [mediaQueries.desktopSmall]: {
             height: '50px',
             maxHeight: 'none',
-            alignItems: 'center',
+            alignItems: 'center'
           },
           [mediaQueries.desktopLarge]: {
             height: '60px'
@@ -161,14 +162,14 @@ class Header extends Component {
               justifyContent: 'flex-start',
               paddingLeft: pxToRem(15),
               [mediaQueries.desktopSmall]: {
-                paddingLeft: pxToRem(30),
+                paddingLeft: pxToRem(30)
               }
             },
             right: {
               justifyContent: 'flex-end',
               paddingRight: pxToRem(15),
               [mediaQueries.desktopSmall]: {
-                paddingRight: pxToRem(30),
+                paddingRight: pxToRem(30)
               }
             },
             arrow: {
@@ -182,19 +183,19 @@ class Header extends Component {
               [mediaQueries.desktopSmall]: {
                 width: pxToRem(30),
                 height: pxToRem(30),
-                ':hover': { 
+                ':hover': {
                   cursor: 'pointer',
                   // Use a placeholder animation name in `animation`
                   animation: 'x 300ms ease 0s forwards',
                   // Assign the result of `keyframes` to `animationName`
-                  animationName: arrowAnimation,
+                  animationName: arrowAnimation
                 }
               },
               img: {
                 height: '100%',
                 width: '100%'
               }
-            },
+            }
           },
           logoDiv: {
             width: '65%',
@@ -206,10 +207,10 @@ class Header extends Component {
             transform: 'translateY(2px)',
             [mediaQueries.phone]: {
               width: '70%',
-              fontSize: pxToRem(12),
+              fontSize: pxToRem(12)
             },
             [mediaQueries.tablet]: {
-              width: '80%',
+              width: '80%'
             },
             mainLogo: {
               color
@@ -229,17 +230,19 @@ class Header extends Component {
           zIndex: 100,
           transition: 'top 100ms linear',
           lines: {
-            background: color, 
+            background: color,
             position: 'absolute',
-            height: '2px', 
-            left: 0, 
+            height: '2px',
+            left: 0,
             display: 'block',
             width: '100%',
-            transition: this.state.mobileMenuActive ? 'background 150ms ease, top 150ms ease, transform 150ms ease 150ms' : 'background 300ms ease 150ms, top 150ms ease 150ms, transform 150ms ease',
+            transition: this.state.mobileMenuActive
+              ? 'background 150ms ease, top 150ms ease, transform 150ms ease 150ms'
+              : 'background 300ms ease 150ms, top 150ms ease 150ms, transform 150ms ease',
             upper: {
               top: this.state.mobileMenuActive ? '50%' : '35%',
               transform: this.state.mobileMenuActive ? 'rotate(45deg)' : 'rotate(0)',
-              width: '100%',
+              width: '100%'
             },
             lower: {
               top: this.state.mobileMenuActive ? '50%' : '65%',
@@ -256,7 +259,7 @@ class Header extends Component {
           border: 0,
           transition: 'opacity 500ms ease',
           hrDesktop: {
-            opacity: 1,
+            opacity: 1
           }
         },
         bottomNavWrapper: {
@@ -309,7 +312,7 @@ class Header extends Component {
               opacity: this.state.mobileMenuActive ? 1 : 0,
               transition: this.state.mobileMenuActive ? 'opacity 800ms ease 600ms' : 'opacity 200ms ease',
               [mediaQueries.tablet]: {
-                justifyContent: 'space-around',
+                justifyContent: 'space-around'
               },
               link: {
                 width: '33.3333333%',
@@ -317,7 +320,7 @@ class Header extends Component {
                 [mediaQueries.tablet]: {
                   width: '20%',
                   fontSize: pxToRem(16),
-                  padding: `${pxToRem(20)} 0`,
+                  padding: `${pxToRem(20)} 0`
                 },
                 subNavItem: {
                   fontFamily: 'Maison Neue Extended Book, sans-serif',
@@ -328,7 +331,7 @@ class Header extends Component {
                   lineHeight: pxToRem(30),
                   brochureWord: {
                     animation: 'x 500ms ease',
-                    animationName: wordAnimation,
+                    animationName: wordAnimation
                   },
                   [mediaQueries.phone]: {
                     fontSize: pxToRem(12)
@@ -346,11 +349,11 @@ class Header extends Component {
           margin: `${pxToRem(10)} 0`,
           transition: 'color 500ms ease',
           [mediaQueries.phone]: {
-            fontSize: pxToRem(16),
+            fontSize: pxToRem(16)
           },
           [mediaQueries.tablet]: {
             fontSize: pxToRem(22),
-            margin: `${pxToRem(15)} 0`,
+            margin: `${pxToRem(15)} 0`
           },
           [mediaQueries.desktopSmall]: {
             fontSize: pxToRem(12),
@@ -359,7 +362,7 @@ class Header extends Component {
           [mediaQueries.desktop]: {
             fontSize: pxToRem(12),
             paddingTop: pxToRem(2),
-            margin: `0 ${pxToRem(15)}`,
+            margin: `0 ${pxToRem(15)}`
           },
           [mediaQueries.desktopLarge]: {
             fontSize: pxToRem(14),
@@ -381,6 +384,29 @@ class Header extends Component {
 
     // CSS styles for mobile nav (style tag)
     const HeaderCSS = {
+      '#skip-links a': {
+        left: '-999px',
+        position: 'absolute',
+        top: 'auto',
+        width: '1px',
+        height: '1px',
+        overflow: 'hidden',
+        zIndex: '-999'
+      },
+      '#skip-links a:focus, #skip-links a:active': {
+        color: '#fff',
+        backgroundColor: '#000',
+        left: 0,
+        top: 0,
+        width: '30%',
+        height: 'auto',
+        overflow: 'auto',
+        padding: '5px',
+        border: '4px solid #C5C9AF',
+        textAlign: 'center',
+        fontSize: '1.2em',
+        zIndex: '999'
+      },
       // Fix for fixed element 'jumping' on Chrome
       '.mobile-nav .mobile-nav-link': {
         opacity: 0,
@@ -428,9 +454,9 @@ class Header extends Component {
       },
       mediaQueries: {
         [globalMediaQueries.desktopSmall]: {
-          'header': {
+          header: {
             '-webkit-transform': 'translateZ(0)'
-          },
+          }
         }
       }
     };
@@ -441,9 +467,7 @@ class Header extends Component {
       if (route === 'home' || route === 'brochure' || route === 'press' || route === 'legal') {
         return;
       } else {
-        return (
-          <div style={HeaderInline.slidingRectangle}></div>
-        );
+        return <div style={HeaderInline.slidingRectangle} />;
       }
     };
 
@@ -464,7 +488,11 @@ class Header extends Component {
       //     return <span key='chinese' style={bottomNavWrapper.bottomNav.subNav.link.subNavItem.brochureWord}>宣传册</span>;
       //   }
       // }
-      return <span key='english' style={bottomNavWrapper.bottomNav.subNav.link.subNavItem.brochureWord}>Brochure</span>;
+      return (
+        <span key="english" style={bottomNavWrapper.bottomNav.subNav.link.subNavItem.brochureWord}>
+          Brochure
+        </span>
+      );
     };
 
     // Function to render nav based on screen width
@@ -477,9 +505,7 @@ class Header extends Component {
                 {Object.keys(this.props.pages).map((page, key) => {
                   return (
                     <RadiumLink id={`link-${page}`} key={key} data-page={page} to={`/${page}`}>
-                      <div 
-                        style={page === route ? [{ color: sliderActiveColor}, item] : [{color}, item] }
-                      >
+                      <div style={page === route ? [{ color: sliderActiveColor }, item] : [{ color }, item]}>
                         {this.props.pages[page]}
                       </div>
                     </RadiumLink>
@@ -488,28 +514,26 @@ class Header extends Component {
                 {animateRectangle()}
               </div>
             </div>
-            <hr style={[hr, hr.hrDesktop]}/>
+            <hr style={[hr, hr.hrDesktop]} />
           </React.Fragment>
         );
       } else {
         return (
           <React.Fragment>
-            <div 
-              onClick={ () => this.toggleMobileMenu()} 
-              style={mobileHamburger}
-            >
-              <span style={[mobileHamburger.lines, mobileHamburger.lines.upper]}></span>
-              <span style={[mobileHamburger.lines, mobileHamburger.lines.lower]}></span>
+            <div onClick={() => this.toggleMobileMenu()} style={mobileHamburger}>
+              <span style={[mobileHamburger.lines, mobileHamburger.lines.upper]} />
+              <span style={[mobileHamburger.lines, mobileHamburger.lines.lower]} />
             </div>
-            <nav 
-              className={this.state.mobileMenuActive ? 'mobile-nav active' : 'mobile-nav'} 
+            <nav
+              className={this.state.mobileMenuActive ? 'mobile-nav active' : 'mobile-nav'}
               style={bottomNavWrapper.bottomNav}
             >
               {Object.keys(this.props.pages).map((page, key) => {
                 return (
-                  <RadiumLink className='mobile-nav-link' 
-                    key={key}  
-                    to={`/${page}`} 
+                  <RadiumLink
+                    className="mobile-nav-link"
+                    key={key}
+                    to={`/${page}`}
                     onClick={() => this.closeMobileMenu()}
                   >
                     <div style={[{ textDecoration: route === page ? 'underline' : 'none', color: '#fff' }, item]}>
@@ -527,8 +551,12 @@ class Header extends Component {
                       onClick={() => this.closeMobileMenu()}
                       style={bottomNavWrapper.bottomNav.subNav.link}
                     >
-                      <li 
-                        style={[bottomNavWrapper.bottomNav.subNav.link.subNavItem, {textDecoration: route === subPage ? 'underline' : null}]}>
+                      <li
+                        style={[
+                          bottomNavWrapper.bottomNav.subNav.link.subNavItem,
+                          { textDecoration: route === subPage ? 'underline' : null }
+                        ]}
+                      >
                         {subPage === 'brochure' ? renderBrochureWord() : this.props.subPages[subPage]}
                       </li>
                     </RadiumLink>
@@ -544,8 +572,8 @@ class Header extends Component {
     // Get previous and next pages
     let pages = Object.keys(this.props.pages);
     let curInd = pages.indexOf(route);
-    let nextInd = (curInd + 1) === pages.length ? 0 : curInd + 1;
-    let prevInd = (curInd - 1) < 0 ? pages.length - 1 : curInd - 1;
+    let nextInd = curInd + 1 === pages.length ? 0 : curInd + 1;
+    let prevInd = curInd - 1 < 0 ? pages.length - 1 : curInd - 1;
     let next = pages[nextInd];
     let previous = pages[prevInd];
 
@@ -555,49 +583,51 @@ class Header extends Component {
     const { arrowBox, logoDiv } = topNav;
 
     return (
-      <header style={wrapper} className='header'>
-        <Style rules={HeaderCSS}/>
+      <header style={wrapper} className="header">
+        <Style rules={HeaderCSS} />
+        <div id="skip-links">
+          <a href="/accessibility-statement" tabIndex="1">
+            We are currently undergoing accessibility maintenance. If you are having trouble accessing this site please
+            call (212) 366-7277. Link to accessibility statement.
+          </a>
+        </div>
         <div style={topNav}>
-          <RadiumLink 
-            className={ hideArrows() ? 'hidden' : 'animate-reveal'} key="prev" to={route === 'architecture' ? '/' : previous}
-            style={[arrowBox, arrowBox.left]} 
+          <RadiumLink
+            className={hideArrows() ? 'hidden' : 'animate-reveal'}
+            key="prev"
+            to={route === 'architecture' ? '/' : previous}
+            style={[arrowBox, arrowBox.left]}
           >
-            <button 
-              key='left' 
-              style={arrowBox.arrow} 
-              onClick={() => this.closeMobileMenu()} 
-            >
-              <img 
-                src={`/images/icons/left_${color}.svg`} alt={route === 'architecture' ? 'go to home page' : 'go to previous page'} 
+            <button key="left" style={arrowBox.arrow} onClick={() => this.closeMobileMenu()}>
+              <img
+                src={`/images/icons/left_${color}.svg`}
+                alt={route === 'architecture' ? 'go to home page' : 'go to previous page'}
                 style={arrowBox.arrow.img}
               />
             </button>
           </RadiumLink>
-            
+
           <div style={logoDiv}>
             <RadiumLink style={{ width: '100%' }} key="-1" to="/" onClick={() => this.closeMobileMenu()}>
-              <h1 className='no-margin' style={logoDiv.mainLogo}>25 Park Row</h1>
+              <h1 className="no-margin" style={logoDiv.mainLogo}>
+                25 Park Row
+              </h1>
             </RadiumLink>
           </div>
-          
-          <RadiumLink 
-            className={ hideArrows() ? 'hidden' : 'animate-reveal'} key="next" to={route === 'contact' ? '/' : next}
-            style={[arrowBox, arrowBox.right]} 
+
+          <RadiumLink
+            className={hideArrows() ? 'hidden' : 'animate-reveal'}
+            key="next"
+            to={route === 'contact' ? '/' : next}
+            style={[arrowBox, arrowBox.right]}
           >
-            <button 
-              key='right' 
-              style={arrowBox.arrow}
-              onClick={() => this.closeMobileMenu()} 
-            >
-              <img 
-                src={`/images/icons/right_${color}.svg`} alt='go to next page' 
-                style={arrowBox.arrow.img}
-              />
+            <button key="right" style={arrowBox.arrow} onClick={() => this.closeMobileMenu()}>
+              <img src={`/images/icons/right_${color}.svg`} alt="go to next page" style={arrowBox.arrow.img} />
             </button>
           </RadiumLink>
         </div>
-        
-        <hr style={hr}/>
+
+        <hr style={hr} />
         {renderNavigation()}
       </header>
     );
