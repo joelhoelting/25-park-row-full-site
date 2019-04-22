@@ -384,29 +384,6 @@ class Header extends Component {
 
     // CSS styles for mobile nav (style tag)
     const HeaderCSS = {
-      '#skip-links a': {
-        left: '-999px',
-        position: 'absolute',
-        top: 'auto',
-        width: '1px',
-        height: '1px',
-        overflow: 'hidden',
-        zIndex: '-999'
-      },
-      '#skip-links a:focus, #skip-links a:active': {
-        color: '#fff',
-        backgroundColor: '#000',
-        left: 0,
-        top: 0,
-        width: '30%',
-        height: 'auto',
-        overflow: 'auto',
-        padding: '5px',
-        border: '4px solid #C5C9AF',
-        textAlign: 'center',
-        fontSize: '1.2em',
-        zIndex: '999'
-      },
       // Fix for fixed element 'jumping' on Chrome
       '.mobile-nav .mobile-nav-link': {
         opacity: 0,
@@ -585,12 +562,6 @@ class Header extends Component {
     return (
       <header style={wrapper} className="header">
         <Style rules={HeaderCSS} />
-        <div id="skip-links">
-          <a href="/accessibility-statement" tabIndex="1">
-            We are currently undergoing accessibility maintenance. If you are having trouble accessing this site please
-            call (212) 366-7277. Link to accessibility statement.
-          </a>
-        </div>
         <div style={topNav}>
           <RadiumLink
             className={hideArrows() ? 'hidden' : 'animate-reveal'}

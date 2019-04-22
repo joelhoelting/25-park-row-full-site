@@ -6,7 +6,7 @@ import ContextProvider from './provider/ContextProvider';
 
 import ScrollToTop from './helpers/ScrollToTop';
 import pages, { subPages } from './data/pages';
-import { Header, Footer } from './includes/_module';
+import { Header, Footer, SkipLinks } from './includes/_module';
 
 import {
   Home,
@@ -79,7 +79,8 @@ class App extends Component {
         <ContextProvider>
           <Router>
             <ScrollToTop>
-              <div className="main">
+              <SkipLinks />
+              <div id="main">
                 <Header
                   colors={Colors}
                   pages={pages}
@@ -87,7 +88,7 @@ class App extends Component {
                   interval={this.state.interval}
                   width={this.state.width}
                 />
-                <div className="main-content">
+                <div id="main-content" role="main">
                   <Switch>
                     <Route
                       exact

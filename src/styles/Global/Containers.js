@@ -7,12 +7,12 @@ const { tablet, desktopSmall, desktopLarge } = globalMediaQueries;
 
 const containers = {
   // Sticky Footer
-  '.main': {
+  '#main': {
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh'
   },
-  '.main-content': {
+  '#main-content': {
     flex: '1 0 auto'
   },
   // Main Container
@@ -20,14 +20,14 @@ const containers = {
     height: 'auto',
     marginTop: `50px`,
     transition: 'opacity 400ms ease-in-out',
-    width: '100%',
+    width: '100%'
   },
   // Large Container
   '.large-container': {
     height: 'auto',
     marginTop: '60px',
     transition: 'opacity 400ms ease-in-out',
-    width: '100%',
+    width: '100%'
   },
   // Gallery Container
   '.gallery-container': {
@@ -44,7 +44,7 @@ const containers = {
     paddingLeft: '8px',
     paddingRight: '8px',
     transition: 'opacity 400ms ease-in-out',
-    width: '100%',
+    width: '100%'
   },
   // Contact Container
   '.contact-container': {
@@ -76,7 +76,7 @@ const containers = {
         left: 0,
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'center'
       }
     },
     [desktopSmall]: {
@@ -86,7 +86,7 @@ const containers = {
         marginTop: '100px',
         maxWidth: '2000px',
         paddingBottom: '50px',
-        width: '70%',
+        width: '70%'
       },
       '.large-container': {
         marginLeft: 'auto',
@@ -111,7 +111,7 @@ const containers = {
         marginTop: '92px',
         maxWidth: '1000px',
         transition: 'opacity 400ms ease-in-out',
-        width: '60%',
+        width: '60%'
       },
       '.brochure-container': {
         left: 0,
@@ -124,7 +124,7 @@ const containers = {
         width: '80%',
         marginLeft: 'auto',
         marginRight: 'auto'
-      },
+      }
     },
     [desktopLarge]: {
       '.large-container': {
@@ -133,7 +133,7 @@ const containers = {
       },
       '.main-container': {
         marginTop: '120px',
-        width: '65%',
+        width: '65%'
       },
       '.gallery-container': {
         marginTop: '120px',
@@ -142,7 +142,7 @@ const containers = {
       '.full-width-container': {
         marginTop: '105px',
         width: '100%'
-      },
+      }
     }
   }
 };
