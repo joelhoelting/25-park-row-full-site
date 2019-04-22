@@ -11,6 +11,7 @@ import Contact from '../Contact';
 import Brochure from '../Brochure';
 import Press from '../Press';
 import Legal from '../Legal';
+import Accessibility from '../Accessibility';
 import NotFoundPage from '../NotFoundPage';
 
 export {
@@ -27,5 +28,6 @@ export {
   Brochure,
   Press,
   Legal,
+  Accessibility,
   NotFoundPage
 };
