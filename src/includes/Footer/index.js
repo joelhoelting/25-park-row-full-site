@@ -56,7 +56,6 @@ class Footer extends Component {
 
   render() {
     const { tablet, tabletLandscape, desktopSmall, desktopLarge } = mediaQueries;
-
     let route = window.location.pathname.replace('/', '').toLowerCase() || 'home';
     // !Object.keys(this.props.colors).includes(route) ? route = 'notfoundpage' : null;
     if (!Object.keys(this.props.colors).includes(route)) {
@@ -370,6 +369,15 @@ class Footer extends Component {
             >
               Instagram
             </a>
+            <RadiumLink
+              style={[
+                FooterInline.nav.link,
+                { textDecoration: route === 'accessibility-statement' ? 'underline' : null }
+              ]}
+              to={`/accessibility-statement`}
+            >
+              Accessibility
+            </RadiumLink>
           </div>
         </footer>
         <span className="info-container-scroll-waypoint" />
