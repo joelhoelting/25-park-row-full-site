@@ -165,7 +165,7 @@ class ContactForm extends Component {
         return true;
       } else {
         let invalidFieldsCopy = Object.assign({}, this.state.invalidFields);
-        delete invalidFieldsCopy[property];
+        delete invalidFieldsCopy[property + 'Invalid'];
         if (Object.values(invalidFieldsCopy).includes(true)) {
           return true;
         } else {
