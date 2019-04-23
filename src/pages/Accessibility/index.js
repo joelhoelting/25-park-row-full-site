@@ -46,8 +46,14 @@ const Accessibility = () => {
       <p style={wrapper.p}>
         Park Row 23 Owners LLC, is committed to providing a website that is accessible to the widest possible audience,
         regardless of technology or ability. We aim to comply with all applicable standards. If you experience any
-        difficulty in accessing any part of this website, please contact us by emailing info@25parkrow.com or calling us
-        at 646-933-4625.
+        difficulty in accessing any part of this website, please contact us by emailing{' '}
+        <a style={{ textDecoration: 'underline' }} href="mailto:info@25parkrow.com">
+          info@25parkrow.com
+        </a>{' '}
+        or calling us at{' '}
+        <a style={{ textDecoration: 'underline' }} href="tel:6469334625">
+          646-933-4625.
+        </a>
       </p>
     </div>
   );
