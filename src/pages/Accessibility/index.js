@@ -11,9 +11,11 @@ const AccessibilityInline = {
     textAlign: 'center',
     margin: '0 auto',
     width: '90%',
-    height: 'calc(100vh - 30%)',
+    height: '60vh',
+    [mediaQueries.tablet]: {
+      height: 'calc(100vh - 300px)'
+    },
     h1: {
-      fontFamily: 'Arial,Helvetica Neue,Helvetica,sans-serif',
       fontSize: '1.2rem',
       [mediaQueries.tablet]: {
         fontSize: '1.6rem'
@@ -23,15 +25,14 @@ const AccessibilityInline = {
       }
     },
     p: {
-      fontFamily: 'Arial,Helvetica Neue,Helvetica,sans-serif',
       maxWidth: '1200px',
       textAlign: 'left',
       fontSize: '.8rem',
       [mediaQueries.tablet]: {
-        fontSize: '1.6rem'
+        fontSize: '1.2rem'
       },
       [mediaQueries.desktop]: {
-        fontSize: '1.6rem'
+        fontSize: '1.4rem'
       }
     }
   }

@@ -266,7 +266,8 @@ class Footer extends Component {
 
     // add classes to animate arro
     const hideArrows = () => {
-      if (route === 'brochure' || route === 'press' || route === 'legal' || route === 'team') {
+      const hiddenRoutes = ['brochure', 'press', 'legal', 'team', 'accessibility-statement'];
+      if (hiddenRoutes.includes(route)) {
         return true;
       } else {
         return false;
