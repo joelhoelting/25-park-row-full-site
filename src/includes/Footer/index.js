@@ -333,10 +333,10 @@ class Footer extends Component {
 
     return (
       <React.Fragment>
-        <footer style={FooterInline.wrapper}>
+        <footer style={FooterInline.wrapper} role="contentinfo">
           {renderIllustration()}
           {renderArrows()}
-          <div style={FooterInline.nav}>
+          <div id="footer-navigation" style={FooterInline.nav} role="navigation">
             <RadiumLink
               style={[FooterInline.nav.link, { textDecoration: route === 'brochure' ? 'underline' : null }]}
               to={`/brochure`}
@@ -355,14 +355,6 @@ class Footer extends Component {
             >
               Team
             </RadiumLink>
-            {/* <h6
-              onClick={this.openInfoContainer.bind(this)}
-              style={[FooterInline.nav.link, { cursor: 'pointer' }]}
-              rel="noreferrer noopener"
-              target="_blank"
-            >
-              Overview
-            </h6> */}
             <RadiumLink
               style={[FooterInline.nav.link, { textDecoration: route === 'legal' ? 'underline' : null }]}
               to={`/legal`}
@@ -380,7 +372,6 @@ class Footer extends Component {
             </a>
           </div>
         </footer>
-        {/* <InfoContainer active={this.state.infoContainerActive} /> */}
         <span className="info-container-scroll-waypoint" />
       </React.Fragment>
     );

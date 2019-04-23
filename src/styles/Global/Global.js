@@ -1,8 +1,7 @@
 const global = {
   '*': {
     boxSizing: 'border-box',
-    fontSmoothing: 'antialiased',
-    outline: 0,
+    fontSmoothing: 'antialiased'
     // Prevent elements from being highlighted on mobile
     // '-webkit-touch-callout': 'none',
     // '-webkit-user-select': 'none',
