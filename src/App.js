@@ -22,7 +22,6 @@ import {
   Brochure,
   Press,
   Legal,
-  Accessibility,
   NotFoundPage
 } from './pages/_module';
 
@@ -170,11 +169,6 @@ class App extends Component {
                       exact
                       path="/legal"
                       render={() => <Legal width={this.state.width} color={Colors.legal.backgroundColor} />}
-                    />
-                    <Route
-                      exact
-                      path="/accessibility-statement"
-                      render={() => <Accessibility width={this.state.width} color={Colors.legal.backgroundColor} />}
                     />
                     <Route render={() => <NotFoundPage width={this.state.width} />} />
                   </Switch>
