@@ -33,16 +33,23 @@ const PressPanel = props => {
       cursor: 'pointer',
       height: 'auto',
       [mediaQueries.desktopSmall]: {
-        height: '350px'
+        height: '275px'
+      },
+      [mediaQueries.desktop]: {
+        height: '300px'
       },
       [mediaQueries.desktopLarge]: {
-        height: '450px'
+        height: '350px'
+      },
+      publisher: {
+        margin: '.5em 0'
       },
       title: {
         fontSize: pxToRem(12),
         margin: `${pxToRem(4)} 0`,
         letterSpacing: pxToRem(2),
         textTransform: 'uppercase',
+
         [mediaQueries.phoneLarge]: {
           fontSize: pxToRem(14)
         },
@@ -54,17 +61,27 @@ const PressPanel = props => {
           fontSize: pxToRem(18)
         },
         [mediaQueries.desktopSmall]: {
-          fontSize: pxToRem(20)
+          maxWidth: '400px'
+        },
+        [mediaQueries.desktop]: {
+          fontSize: pxToRem(20),
+          maxWidth: '500px'
+        },
+        [mediaQueries.desktopLarge]: {
+          maxWidth: '600px'
         }
       },
       body: {
         [mediaQueries.desktopSmall]: {
           position: 'absolute',
-          bottom: '25%',
+          top: '40%',
           width: '90%'
         },
-        [mediaQueries.desktopLarge]: {
-          bottom: '35%'
+        [mediaQueries.desktop]: {
+          top: '45%'
+        },
+        [mediaQueries.desktopXLarge]: {
+          top: '48%'
         },
         p: {
           fontSize: pxToRem(16)
@@ -84,8 +101,8 @@ const PressPanel = props => {
   return (
     <a href={url} target="_blank" rel="noopener noreferrer">
       <div style={main} className={mounted ? `press-reveal-delay-${panelNumber} press-panel` : 'hidden'}>
-        <h3>{publisher}</h3>
-        <p style={main.title}>{title}</p>
+        <h3 style={main.publisher}>{publisher}</h3>
+        <p style={main.title}>{truncateText(title, 70)}</p>
         <div style={main.body}>
           <p style={main.body.p}>{truncateText(body, 200)}</p>
         </div>

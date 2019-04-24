@@ -50,7 +50,7 @@ const pressArticles = [
       'https://www.architecturaldigest.com/story/andre-mellone-discusses-art-deco-modern-amenities-and-designer-hacks'
   },
   {
-    title: 'Skyline Views From The Top Of COOKFOX- Designed 25 Park Row, In Lower Manhatan',
+    title: 'Skyline Views From The Top Of COOKFOX-Designed 25 Park Row, In Lower Manhatan',
     body:
       'Sint elit cillum ut ipsum eiusmod nulla sint duis. Esse dolor Lorem tempor consequat irure cillum irure sit excepteur. Velit excepteur aliquip laboris est magna non incididunt labore reprehenderit laborum dolor esse. Id ut aliquip mollit eiusmod in. Mollit amet commodo exercitation duis enim labore voluptate. Velit esse cillum ut dolore ea fugiat adipisicing tempor culpa ullamco ad.',
     publisher: 'Yimby',
