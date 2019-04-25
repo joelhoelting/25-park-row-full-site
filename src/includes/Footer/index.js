@@ -56,7 +56,6 @@ class Footer extends Component {
 
   render() {
     const { tablet, tabletLandscape, desktopSmall, desktopLarge } = mediaQueries;
-
     let route = window.location.pathname.replace('/', '').toLowerCase() || 'home';
     // !Object.keys(this.props.colors).includes(route) ? route = 'notfoundpage' : null;
     if (!Object.keys(this.props.colors).includes(route)) {
@@ -217,6 +216,10 @@ class Footer extends Component {
           height: '100%',
           width: '33%',
           lineHeight: pxToRem(30),
+          accessibility: {
+            width: '100%',
+            lineHeight: pxToRem(20),
+          },
           [tablet]: {
             width: '16.6666%',
             fontSize: pxToRem(16),
@@ -267,7 +270,8 @@ class Footer extends Component {
 
     // add classes to animate arro
     const hideArrows = () => {
-      if (route === 'brochure' || route === 'press' || route === 'legal' || route === 'team') {
+      const hiddenRoutes = ['brochure', 'press', 'legal', 'team', 'accessibility-statement'];
+      if (hiddenRoutes.includes(route)) {
         return true;
       } else {
         return false;
@@ -333,10 +337,10 @@ class Footer extends Component {
 
     return (
       <React.Fragment>
-        <footer style={FooterInline.wrapper}>
+        <footer style={FooterInline.wrapper} role="contentinfo">
           {renderIllustration()}
           {renderArrows()}
-          <div style={FooterInline.nav}>
+          <div id="footer-navigation" style={FooterInline.nav} role="navigation">
             <RadiumLink
               style={[FooterInline.nav.link, { textDecoration: route === 'brochure' ? 'underline' : null }]}
               to={`/brochure`}
@@ -355,14 +359,6 @@ class Footer extends Component {
             >
               Team
             </RadiumLink>
-            {/* <h6
-              onClick={this.openInfoContainer.bind(this)}
-              style={[FooterInline.nav.link, { cursor: 'pointer' }]}
-              rel="noreferrer noopener"
-              target="_blank"
-            >
-              Overview
-            </h6> */}
             <RadiumLink
               style={[FooterInline.nav.link, { textDecoration: route === 'legal' ? 'underline' : null }]}
               to={`/legal`}
@@ -378,9 +374,18 @@ class Footer extends Component {
             >
               Instagram
             </a>
+            <RadiumLink
+              style={[
+                FooterInline.nav.link,
+                FooterInline.nav.link.accessibility,
+                { textDecoration: route === 'accessibility-statement' ? 'underline' : null }
+              ]}
+              to={`/accessibility-statement`}
+            > 
+              Accessibility Statement
+            </RadiumLink>
           </div>
         </footer>
-        {/* <InfoContainer active={this.state.infoContainerActive} /> */}
         <span className="info-container-scroll-waypoint" />
       </React.Fragment>
     );

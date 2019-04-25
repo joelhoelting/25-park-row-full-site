@@ -6,7 +6,7 @@ import ContextProvider from './provider/ContextProvider';
 
 import ScrollToTop from './helpers/ScrollToTop';
 import pages, { subPages } from './data/pages';
-import { Header, Footer } from './includes/_module';
+import { Header, Footer, SkipLinks } from './includes/_module';
 
 import {
   Home,
@@ -22,6 +22,7 @@ import {
   Brochure,
   Press,
   Legal,
+  Accessibility,
   NotFoundPage
 } from './pages/_module';
 
@@ -78,7 +79,8 @@ class App extends Component {
         <ContextProvider>
           <Router>
             <ScrollToTop>
-              <div className="main">
+              <SkipLinks />
+              <div id="main">
                 <Header
                   colors={Colors}
                   pages={pages}
@@ -86,7 +88,7 @@ class App extends Component {
                   interval={this.state.interval}
                   width={this.state.width}
                 />
-                <div className="main-content">
+                <div id="main-content" role="main">
                   <Switch>
                     <Route
                       exact
@@ -169,6 +171,11 @@ class App extends Component {
                       exact
                       path="/legal"
                       render={() => <Legal width={this.state.width} color={Colors.legal.backgroundColor} />}
+                    />
+                    <Route
+                      exact
+                      path="/accessibility-statement"
+                      render={() => <Accessibility width={this.state.width} color={Colors.accessibility.backgroundColor} />}
                     />
                     <Route render={() => <NotFoundPage width={this.state.width} />} />
                   </Switch>
