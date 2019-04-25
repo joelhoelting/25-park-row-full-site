@@ -13,8 +13,7 @@ export const subPages = {
   press: 'Press',
   team: 'Team',
   legal: 'Legal',
-  instagram: 'Instagram',
-  accessibility: 'Accessibility'
+  instagram: 'Instagram'
 };
 
 export default pages;

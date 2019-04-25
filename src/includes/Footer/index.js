@@ -216,6 +216,10 @@ class Footer extends Component {
           height: '100%',
           width: '33%',
           lineHeight: pxToRem(30),
+          accessibility: {
+            width: '100%',
+            lineHeight: pxToRem(20),
+          },
           [tablet]: {
             width: '16.6666%',
             fontSize: pxToRem(16),
@@ -373,11 +377,12 @@ class Footer extends Component {
             <RadiumLink
               style={[
                 FooterInline.nav.link,
+                FooterInline.nav.link.accessibility,
                 { textDecoration: route === 'accessibility-statement' ? 'underline' : null }
               ]}
               to={`/accessibility-statement`}
-            >
-              Accessibility
+            > 
+              Accessibility Statement
             </RadiumLink>
           </div>
         </footer>
