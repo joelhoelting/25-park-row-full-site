@@ -115,7 +115,7 @@ const containers = {
       },
       '.brochure-container': {
         left: 0,
-        marginTop: '100px',
+        marginTop: '160px',
         top: 0,
         width: '100%'
       },

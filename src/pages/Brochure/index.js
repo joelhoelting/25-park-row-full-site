@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Radium, {Style} from 'radium';
+import Radium, { Style } from 'radium';
 import { Grid } from 'react-flexbox-grid';
 import { Helmet } from 'react-helmet';
 
@@ -17,7 +17,7 @@ class Brochure extends Component {
   render() {
     let wordAnimation = Radium.keyframes({
       '0%': { opacity: 0 },
-      '100%': { opacity: 1 },
+      '100%': { opacity: 1 }
     });
 
     const BrochureInline = {
@@ -26,7 +26,7 @@ class Brochure extends Component {
           width: '80%',
           margin: '0 auto',
           display: 'flex',
-          justifyContent: 'space-between',
+          justifyContent: 'space-between'
         },
         [mediaQueries.desktop]: {
           width: '75%',
@@ -37,11 +37,12 @@ class Brochure extends Component {
           paddingBottom: '100%',
           cursor: 'pointer',
           position: 'relative',
-          margin: `0 ${pxToRem(20)} ${pxToRem(20)}`,
+          margin: `${pxToRem(20)} 0`,
           [mediaQueries.tablet]: {
             display: 'inline-block',
             width: '50%',
-            paddingBottom: '50%',
+            margin: '0 20px',
+            paddingBottom: `calc(50% - 20px)`
           },
           inner: {
             position: 'absolute',
@@ -100,36 +101,49 @@ class Brochure extends Component {
     };
 
     const { main } = BrochureInline;
-    
+
     const animateText = () => {
       if (this.props.interval) {
-        return <span style={main.box.inner.brochureWord} key='english'>Mandarin</span>;
+        return (
+          <span style={main.box.inner.brochureWord} key="english">
+            Mandarin
+          </span>
+        );
       } else {
-        return <span style={main.box.inner.brochureWord} key='chinese'>中文</span>;
+        return (
+          <span style={main.box.inner.brochureWord} key="chinese">
+            中文
+          </span>
+        );
       }
     };
-    
+
     return (
-      <div className='large-container'>
+      <div className="large-container">
         <Helmet>
           <title>25 Park Row | Brochure</title>
-          <meta name="description" content="25 Park Row is a 21st century architectural icon providing unmatched downtown NYC views from every condominium over historic City Hall Park." />
+          <meta
+            name="description"
+            content="25 Park Row is a 21st century architectural icon providing unmatched downtown NYC views from every condominium over historic City Hall Park."
+          />
         </Helmet>
-        <Style rules={{'body': {backgroundColor: this.props.color}}}/>
+        <Style rules={{ body: { backgroundColor: this.props.color } }} />
         <Style rules={BrochureCSS} />
         <Grid fluid>
           <div className={`brochure-container ${!this.state.mounted ? 'hidden' : ''}`}>
-            <h3 className='text-center' style={{color: 'white'}}>Download Brochure</h3>
+            <h3 className="text-center" style={{ color: 'white' }}>
+              Download Brochure
+            </h3>
             <div style={main}>
-              <div key={'lang_english'} className='box box-english' style={main.box}>
-                <a href='/downloads/brochure/25parkrow_rack_brochure_en.pdf' target='_blank'>
+              <div key={'lang_english'} className="box box-english" style={main.box}>
+                <a href="/downloads/brochure/25parkrow_rack_brochure_en.pdf" target="_blank">
                   <div style={main.box.inner}>
                     <h3>English</h3>
                   </div>
                 </a>
               </div>
-              <div key={'lang_mandarin'} className='box box-mandarin' style={main.box}>
-                <a href='/downloads/brochure/25parkrow_rack_brochure_cn.pdf' target='_blank'>
+              <div key={'lang_mandarin'} className="box box-mandarin" style={main.box}>
+                <a href="/downloads/brochure/25parkrow_rack_brochure_cn.pdf" target="_blank">
                   <div style={main.box.inner}>
                     <h3>{animateText()}</h3>
                   </div>
@@ -138,7 +152,6 @@ class Brochure extends Component {
             </div>
           </div>
         </Grid>
-        
       </div>
     );
   }

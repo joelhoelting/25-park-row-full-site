@@ -175,7 +175,12 @@ class App extends Component {
                     <Route
                       exact
                       path="/accessibility-statement"
-                      render={() => <Accessibility width={this.state.width} color={Colors.accessibility.backgroundColor} />}
+                      render={() => (
+                        <Accessibility
+                          width={this.state.width}
+                          color={Colors['accessibility-statement'].backgroundColor}
+                        />
+                      )}
                     />
                     <Route render={() => <NotFoundPage width={this.state.width} />} />
                   </Switch>

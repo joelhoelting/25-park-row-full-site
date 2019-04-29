@@ -88,7 +88,7 @@ const colors = {
     color: 'black',
     mobileHeader: { background: '#D8D8D8' }
   },
-  'accessibility': {
+  'accessibility-statement': {
     backgroundColor: '#fff',
     color: 'black',
     mobileHeader: { background: '#B6C1C1' }

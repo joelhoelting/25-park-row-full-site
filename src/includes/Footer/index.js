@@ -218,11 +218,11 @@ class Footer extends Component {
           lineHeight: pxToRem(30),
           accessibility: {
             width: '100%',
-            lineHeight: pxToRem(20),
+            lineHeight: pxToRem(20)
           },
           [tablet]: {
             width: '16.6666%',
-            fontSize: pxToRem(16),
+            fontSize: pxToRem(14),
             padding: `${pxToRem(20)} 0`
           },
           [tabletLandscape]: {
@@ -334,7 +334,6 @@ class Footer extends Component {
         );
       }
     };
-
     return (
       <React.Fragment>
         <footer style={FooterInline.wrapper} role="contentinfo">
@@ -381,7 +380,7 @@ class Footer extends Component {
                 { textDecoration: route === 'accessibility-statement' ? 'underline' : null }
               ]}
               to={`/accessibility-statement`}
-            > 
+            >
               Accessibility Statement
             </RadiumLink>
           </div>
