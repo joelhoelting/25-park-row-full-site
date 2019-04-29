@@ -20,6 +20,8 @@ const containers = {
     height: 'auto',
     marginTop: `50px`,
     transition: 'opacity 400ms ease-in-out',
+    marginLeft: 'auto',
+    marginRight: 'auto',
     width: '100%'
   },
   // Large Container

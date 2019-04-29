@@ -4,19 +4,11 @@ import { mediaQueries } from 'styles/Global/MediaQueries';
 
 const AccessibilityInline = {
   wrapper: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
     textAlign: 'center',
-    margin: '0 auto',
     width: '90%',
-    height: '60vh',
-    [mediaQueries.tablet]: {
-      height: 'calc(100vh - 300px)'
-    },
     h1: {
       fontSize: '1.2rem',
+      marginTop: '5em',
       [mediaQueries.tablet]: {
         fontSize: '1.6rem'
       },
@@ -27,6 +19,7 @@ const AccessibilityInline = {
     p: {
       maxWidth: '1200px',
       textAlign: 'left',
+      margin: '0 auto',
       fontSize: '.8rem',
       [mediaQueries.tablet]: {
         fontSize: '1.2rem'
@@ -41,7 +34,7 @@ const AccessibilityInline = {
 const Accessibility = () => {
   const { wrapper } = AccessibilityInline;
   return (
-    <div style={wrapper}>
+    <div style={wrapper} className="main-container">
       <h1 style={wrapper.h1}>25 PARK ROW ACCESSIBILITY STATEMENT</h1>
       <p style={wrapper.p}>
         Park Row 23 Owners LLC, is committed to providing a website that is accessible to the widest possible audience,
