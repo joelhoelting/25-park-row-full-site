@@ -20,21 +20,19 @@ class Press extends Component {
     fetch('https://25parkrowcms.dbox.com/pressarticles')
       .then(response => response.json())
       .then(data => {
-        if (data.statusCode === 404) {
+        if (data.statusCode === 404 || data.statusCode === 500 || data.statusCode === 501) {
           /* eslint-disable no-console */
-          console.log('API call unsuccessful');
+          console.log('Fetch Press: FAILURE');
           /* eslint-enable no-console */
           this.pressArticles = pressArticles;
           this.setState({ fetchedData: false });
         } else {
+          /* eslint-disable no-console */
+          console.log('Fetch Press: SUCCESS');
+          /* eslint-enable no-console */
           this.pressArticles = data;
           this.setState({ fetchedData: true });
         }
-      })
-      .then(() => {
-        setTimeout(() => {
-          $this.setState({ mounted: true });
-        }, 300);
       })
       .catch(error => {
         /* eslint-disable no-console */

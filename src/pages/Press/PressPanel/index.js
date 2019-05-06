@@ -10,17 +10,10 @@ const PressPanel = props => {
   let { publisher, title, body, date, url, panelNumber, mounted } = props;
 
   let day, month, year;
-
-  if (!props.fetchedData) {
-    day = date.getDate() + 1;
-    month = date.getMonth() + 1;
-    year = date.getFullYear();
-  } else {
-    let dateAry = date.split('T')[0].split('-');
-    day = dateAry[2];
-    month = dateAry[1];
-    year = dateAry[0];
-  }
+  let dateAry = date.split('T')[0].split('-');
+  day = dateAry[2];
+  month = dateAry[1];
+  year = dateAry[0];
 
   let fullDate = `${month}.${day}.${year}`;
 
