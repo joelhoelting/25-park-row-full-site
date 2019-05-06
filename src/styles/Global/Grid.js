@@ -5,14 +5,14 @@ import { globalMediaQueries } from './MediaQueries';
 export const columnMargin = {
   marginBottom: '8px',
   [mediaQueries.tabletLandscape]: {
-    marginBottom: '16px',
+    marginBottom: '16px'
   }
 };
 
 export const rowMargin = {
   margin: '16px -8px',
   [mediaQueries.tabletLandscape]: {
-    margin: '32px -8px',
+    margin: '32px -8px'
   }
 };
 
@@ -76,6 +76,9 @@ const grid = {
     [globalMediaQueries.tablet]: {
       '.row-extra-padding-desktop-3': {
         padding: '64px 0'
+      },
+      '.home-column-text': {
+        margin: '8px 0'
       }
     },
     [globalMediaQueries.desktopSmall]: {
