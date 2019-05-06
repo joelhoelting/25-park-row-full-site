@@ -4,7 +4,7 @@ import Radium from 'radium';
 import { mediaQueries } from 'styles/Global/MediaQueries';
 import { pxToRem } from 'helpers/Math';
 
-const Panel = (props) => {
+const Panel = props => {
   const { phoneLarge, tablet, tabletLandscape, desktopSmall } = mediaQueries;
 
   const HomePanelInline = {
@@ -47,6 +47,7 @@ const Panel = (props) => {
           margin: `${pxToRem(10)} auto`,
           maxHeight: '30%',
           maxWidth: '20%',
+          width: '100%',
           [tabletLandscape]: {
             maxWidth: '10%'
           }
@@ -66,26 +67,31 @@ const Panel = (props) => {
             fontSize: pxToRem(18)
           },
           [desktopSmall]: {
-            fontSize: pxToRem(20),
+            fontSize: pxToRem(20)
           }
         }
       }
     }
   };
-  
+
   const { main } = HomePanelInline;
 
   return (
     <div style={main}>
       <div style={main.sub}>
         <div>
-          <h2 style={main.sub.description} className='text-center'>{props.description}</h2>
+          <h2 style={main.sub.description} className="text-center">
+            {props.description}
+          </h2>
         </div>
-        <img style={main.sub.icon} 
-          src={`/images/icons/illustration/${props.iconSrc}.svg`} 
-          alt={`Home page icon - ${props.iconSrc}`} 
+        <img
+          style={main.sub.icon}
+          src={`/images/icons/illustration/${props.iconSrc}.svg`}
+          alt={`Home page icon - ${props.iconSrc}`}
         />
-        <p style={main.sub.title} className='text-center'>{props.title}</p>
+        <p style={main.sub.title} className="text-center">
+          {props.title}
+        </p>
       </div>
     </div>
   );
