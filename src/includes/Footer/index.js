@@ -211,7 +211,7 @@ class Footer extends Component {
           fontSize: pxToRem(12),
           textTransform: 'uppercase',
           letterSpacing: pxToRem(2),
-          padding: `${pxToRem(10)} 0`,
+          padding: `${pxToRem(5)} 0`,
           color: color,
           height: '100%',
           width: '33%',
@@ -365,15 +365,6 @@ class Footer extends Component {
             >
               Legal
             </RadiumLink>
-            <a
-              style={FooterInline.nav.link}
-              href="https://www.instagram.com/25parkrownyc"
-              rel="noreferrer noopener"
-              target="_blank"
-              key="instagram-link"
-            >
-              Instagram
-            </a>
             <RadiumLink
               style={[
                 FooterInline.nav.link,
@@ -384,6 +375,15 @@ class Footer extends Component {
             > 
               Accessibility Statement
             </RadiumLink>
+            <a
+              style={FooterInline.nav.link}
+              href="https://www.instagram.com/25parkrownyc"
+              rel="noreferrer noopener"
+              target="_blank"
+              key="instagram-link"
+            >
+              Instagram
+            </a>
           </div>
         </footer>
         <span className="info-container-scroll-waypoint" />
