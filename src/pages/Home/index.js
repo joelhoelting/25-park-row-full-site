@@ -178,7 +178,6 @@ class Home extends Component {
         <div className="container">
           <SalesAddress />
         </div>
-        <hr style={{ height: '2px', background: '#000', border: 'none'}} />
         <OverviewSection />
       </div>
     );

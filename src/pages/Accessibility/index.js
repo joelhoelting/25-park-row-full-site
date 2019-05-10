@@ -21,6 +21,7 @@ const AccessibilityInline = {
       textAlign: 'left',
       margin: '0 auto',
       fontSize: '.8rem',
+      lineHeight: '2rem',
       [mediaQueries.tablet]: {
         fontSize: '1.2rem'
       },

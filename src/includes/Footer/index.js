@@ -202,7 +202,6 @@ class Footer extends Component {
         width: '100%',
         borderTop: `2px solid ${color}`,
         padding: 0,
-        marginTop: pxToRem(15),
         [tablet]: {
           justifyContent: 'space-around'
         },
