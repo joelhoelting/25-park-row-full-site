@@ -50,7 +50,7 @@ class SlickSlider extends Component {
           right: {
             top: 0,
             right: 0,
-            cursor: "url('/images/icons//gallery_slider_right.svg') 25 25, auto",
+            cursor: "url('/images/icons/gallery_slider_right.svg') 25 25, auto",
           }
         }
       }
