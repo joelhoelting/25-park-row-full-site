@@ -9,6 +9,7 @@ import { colorVars } from 'styles/Global/Colors';
 
 import { LargeImage } from 'helpers/Image/ResponsiveImage/_module';
 import HomePanel from './HomePanel';
+import OverviewSection from './OverviewSection';
 import SalesAddress from './SalesAddress';
 
 
@@ -173,10 +174,11 @@ class Home extends Component {
             </Link>
           </Grid>
         </div>
-        <hr style={{ height: '2px', background: '#000', border: 'none'}} />
+        <hr style={{ height: '2px', background: '#000', border: 'none' }} />
         <div className="container">
           <SalesAddress />
         </div>
+        <OverviewSection />
       </div>
     );
   }

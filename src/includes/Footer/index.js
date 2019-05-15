@@ -56,7 +56,6 @@ class Footer extends Component {
 
   render() {
     const { tablet, tabletLandscape, desktopSmall, desktopLarge } = mediaQueries;
-
     let route = window.location.pathname.replace('/', '').toLowerCase() || 'home';
     // !Object.keys(this.props.colors).includes(route) ? route = 'notfoundpage' : null;
     if (!Object.keys(this.props.colors).includes(route)) {
@@ -203,7 +202,6 @@ class Footer extends Component {
         width: '100%',
         borderTop: `2px solid ${color}`,
         padding: 0,
-        marginTop: pxToRem(15),
         [tablet]: {
           justifyContent: 'space-around'
         },
@@ -212,14 +210,18 @@ class Footer extends Component {
           fontSize: pxToRem(12),
           textTransform: 'uppercase',
           letterSpacing: pxToRem(2),
-          padding: `${pxToRem(10)} 0`,
+          padding: `${pxToRem(5)} 0`,
           color: color,
           height: '100%',
           width: '33%',
           lineHeight: pxToRem(30),
+          accessibility: {
+            width: '100%',
+            lineHeight: pxToRem(20)
+          },
           [tablet]: {
             width: '16.6666%',
-            fontSize: pxToRem(16),
+            fontSize: pxToRem(14),
             padding: `${pxToRem(20)} 0`
           },
           [tabletLandscape]: {
@@ -267,7 +269,8 @@ class Footer extends Component {
 
     // add classes to animate arro
     const hideArrows = () => {
-      if (route === 'brochure' || route === 'press' || route === 'legal' || route === 'team') {
+      const hiddenRoutes = ['brochure', 'press', 'legal', 'team', 'accessibility-statement'];
+      if (hiddenRoutes.includes(route)) {
         return true;
       } else {
         return false;
@@ -330,7 +333,6 @@ class Footer extends Component {
         );
       }
     };
-
     return (
       <React.Fragment>
         <footer style={FooterInline.wrapper} role="contentinfo">
@@ -360,6 +362,16 @@ class Footer extends Component {
               to={`/legal`}
             >
               Legal
+            </RadiumLink>
+            <RadiumLink
+              style={[
+                FooterInline.nav.link,
+                FooterInline.nav.link.accessibility,
+                { textDecoration: route === 'accessibility-statement' ? 'underline' : null }
+              ]}
+              to={`/accessibility-statement`}
+            >
+              Accessibility Statement
             </RadiumLink>
             <a
               style={FooterInline.nav.link}

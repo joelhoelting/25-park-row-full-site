@@ -12,86 +12,91 @@ export const colorVars = {
 };
 
 const colors = {
-  home: { 
+  home: {
     backgroundColor: '#FFF',
     color: 'black',
     mobileHeader: { background: '#D8D8D8' },
     sliderColors: { background: '#C5C9AE', activeColor: 'black' }
   },
-  architecture: { 
+  architecture: {
     backgroundColor: '#E7E8DD',
     color: 'black',
-    mobileHeader: { background: '#91937F'  },
+    mobileHeader: { background: '#91937F' },
     sliderColors: { background: '#C5C9AE', activeColor: 'black' }
   },
-  interiors: { 
+  interiors: {
     backgroundColor: '#E1E5E5',
     color: 'black',
     mobileHeader: { background: '#B6C1C1' },
-    sliderColors: { background: '#B6C1C1', activeColor: 'black'}
+    sliderColors: { background: '#B6C1C1', activeColor: 'black' }
   },
-  amenities: { 
+  amenities: {
     backgroundColor: '#E7E8DD',
     color: 'black',
     mobileHeader: { background: '#C5C9AE' },
-    sliderColors: { background: '#C5C9AE', activeColor: 'black'}
+    sliderColors: { background: '#C5C9AE', activeColor: 'black' }
   },
-  views: { 
+  views: {
     backgroundColor: '#D8D8D8',
     color: 'black',
     mobileHeader: { background: '#D8D8D8' },
-    sliderColors: { background: '#989898', activeColor: 'black'}
+    sliderColors: { background: '#989898', activeColor: 'black' }
   },
-  floorplans: { 
+  floorplans: {
     backgroundColor: '#FFF',
     color: 'black',
     mobileHeader: { background: '#D8D8D8' },
-    sliderColors: { background: '#b4c0be', activeColor: 'black'}
+    sliderColors: { background: '#b4c0be', activeColor: 'black' }
   },
-  neighborhood: { 
+  neighborhood: {
     backgroundColor: '#C6C7BB',
     color: 'black',
     mobileHeader: { background: '#C6C7BB' },
-    sliderColors: { background: '#91937F', activeColor: 'black'},
+    sliderColors: { background: '#91937F', activeColor: 'black' },
     footerBackground: 'white'
   },
-  team: { 
+  team: {
     backgroundColor: '#D8D8D8',
     color: 'black',
     mobileHeader: { background: '#D8D8D8' },
     sliderColors: { background: '#000', activeColor: 'white' }
   },
-  gallery: { 
+  gallery: {
     backgroundColor: '#FFF',
     color: 'black',
     mobileHeader: { background: '#D8D8D8' },
-    sliderColors: { background: '#C5C9AE', activeColor: 'black'}
+    sliderColors: { background: '#C5C9AE', activeColor: 'black' }
   },
-  contact: { 
+  contact: {
     backgroundColor: '#636551',
     color: 'white',
     mobileHeader: { background: '#FFFFFF' },
-    sliderColors: { background: '#FFF', activeColor: 'black'}
+    sliderColors: { background: '#FFF', activeColor: 'black' }
   },
-  brochure: { 
+  brochure: {
     backgroundColor: '#000',
     color: 'white',
     mobileHeader: { background: '#000' }
   },
-  press: { 
+  press: {
     backgroundColor: '#B6C1C1',
     color: 'black',
     mobileHeader: { background: '#D8D8D8' }
   },
-  legal: { 
+  legal: {
     backgroundColor: '#B6C1C1',
     color: 'black',
     mobileHeader: { background: '#D8D8D8' }
+  },
+  'accessibility-statement': {
+    backgroundColor: '#fff',
+    color: 'black',
+    mobileHeader: { background: '#B6C1C1' }
   },
   notfoundpage: {
     backgroundColor: '#FFF',
     color: 'black',
-    mobileHeader: { background: '#FFF'}
+    mobileHeader: { background: '#FFF' }
   }
 };
 
