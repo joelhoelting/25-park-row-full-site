@@ -118,22 +118,22 @@ class Interiors extends Component {
               </Waypoint>
             </Col>
           </Row>
-          {/* <Row className='row-extra-margin row-extra-margin-desktop-2'>
+          <Row className='row-extra-margin row-extra-margin-desktop-3' center='lg'>
             <Col 
-              lg={12}
+              lg={5}
               className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'}
             >
+              <h3 className="bolder text-center">The Juliet Balcony</h3>
               <Waypoint 
                 onEnter={() => this.triggerAnimation(4, true)} 
                 onLeave={() => this.triggerAnimation(4, false)}
               >
-                <TwoColumnText
-                  header='The Living Spaces'
-                  paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
+                <SmallImage
+                  src='/images/pages/interiors/juliet_balcony'  
                 />
               </Waypoint>
             </Col>
-          </Row> */}
+          </Row>
           <Waypoint onEnter={() => this.triggerAnimation(5, true)} onLeave={() => this.triggerAnimation(5, false)}>
             <SlickSlider
               className={!this.state.sections[5] ? 'hidden' : 'animate-reveal-delay-0'}
@@ -187,6 +187,49 @@ class Interiors extends Component {
             <Col lg={12} className={!this.state.sections[9] ? 'hidden' : 'animate-reveal-delay-0'}>
               <Waypoint onEnter={() => this.triggerAnimation(9, true)} onLeave={() => this.triggerAnimation(9, false)}>
                 <TwoColumnText
+                  header='The Penthouse'
+                  paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
+                  hideParagraphMobile
+                />
+              </Waypoint>
+            </Col>
+          </Row>
+          <Row className="row-extra-margin row-extra-margin-desktop-2">
+            <Col 
+              lg={12}
+              className={!this.state.sections[10] ? 'hidden' : 'animate-reveal-delay-0'}
+            >
+              <Waypoint 
+                onEnter={() => this.triggerAnimation(10, true)} 
+                onLeave={() => this.triggerAnimation(10, false)}
+              >
+                <LargeImage 
+                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  src='/images/pages/interiors/penthouse_interior' width='100%'
+                />
+              </Waypoint>
+            </Col>
+          </Row>
+          <Row className="row-extra-margin row-extra-margin-desktop-2">
+            <Col 
+              lg={12}
+              className={!this.state.sections[11] ? 'hidden' : 'animate-reveal-delay-0'}
+            >
+              <Waypoint 
+                onEnter={() => this.triggerAnimation(11, true)} 
+                onLeave={() => this.triggerAnimation(11, false)}
+              >
+                <LargeImage 
+                  caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales varius porttitor. Aenean fringilla euismod turpis, eget rutrum nisl consectetur.'
+                  src='/images/pages/interiors/penthouse_exterior' width='100%'
+                />
+              </Waypoint>
+            </Col>
+          </Row>
+          <Row className="row-extra-margin row-extra-margin-desktop-2">
+            <Col lg={12} className={!this.state.sections[12] ? 'hidden' : 'animate-reveal-delay-0'}>
+              <Waypoint onEnter={() => this.triggerAnimation(12, true)} onLeave={() => this.triggerAnimation(12, false)}>
+                <TwoColumnText
                   header="CRAFTED AND REFINED"
                   paragraph="With a focus on fine materials and an element of craft, kitchens and bathrooms make the most of custom textured woods, veined marble, and mosaic tile paired with state-of-the-art appliances and fixtures."
                 />
@@ -194,10 +237,10 @@ class Interiors extends Component {
             </Col>
           </Row>
           <Row className="row-extra-margin row-extra-margin-desktop-2">
-            <Col lg={12} className={!this.state.sections[10] ? 'hidden' : 'animate-reveal-delay-0'}>
+            <Col lg={12} className={!this.state.sections[13] ? 'hidden' : 'animate-reveal-delay-0'}>
               <Waypoint
-                onEnter={() => this.triggerAnimation(10, true)}
-                onLeave={() => this.triggerAnimation(10, false)}
+                onEnter={() => this.triggerAnimation(13, true)}
+                onLeave={() => this.triggerAnimation(13, false)}
               >
                 <LargeImage
                   caption="Windowed gourmet kitchens feature custom-designed cabinetry and fine Calacatta Gold marble countertops and backsplash."
@@ -207,9 +250,9 @@ class Interiors extends Component {
               </Waypoint>
             </Col>
           </Row>
-          <Waypoint onEnter={() => this.triggerAnimation(11, true)} onLeave={() => this.triggerAnimation(11, false)}>
+          <Waypoint onEnter={() => this.triggerAnimation(14, true)} onLeave={() => this.triggerAnimation(14, false)}>
             <SlickSlider
-              className={!this.state.sections[11] ? 'hidden' : 'animate-reveal-delay-0'}
+              className={!this.state.sections[14] ? 'hidden' : 'animate-reveal-delay-0'}
               paths={[
                 {
                   src: '/images/pages/interiors/residential_kitchen_a',
@@ -224,27 +267,11 @@ class Interiors extends Component {
               ]}
             />
           </Waypoint>
-          {/* <Row className='row-extra-margin row-extra-margin-desktop-2'>
-            <Col 
-              lg={12}
-              className={!this.state.sections[12] ? 'hidden' : 'animate-reveal-delay-0'}
-            >
-              <Waypoint 
-                onEnter={() => this.triggerAnimation(12, true)} 
-                onLeave={() => this.triggerAnimation(12, false)}
-              >
-                <TwoColumnText 
-                  header='The Bath'
-                  paragraph='Vestibulum mollis porta placerat. Morbi porttitor est in congue dictum. Mauris lobortis bibendum ante, vel condimentum lacus cursus vitae. Etiam non dui id odio fringilla volutpat. Pellentesque elementum'
-                />
-              </Waypoint>
-            </Col>
-          </Row> */}
           <Row className="row-extra-margin row-extra-margin-desktop-2">
-            <Col lg={12} className={!this.state.sections[13] ? 'hidden' : 'animate-reveal-delay-0'}>
+            <Col lg={12} className={!this.state.sections[15] ? 'hidden' : 'animate-reveal-delay-0'}>
               <Waypoint
-                onEnter={() => this.triggerAnimation(13, true)}
-                onLeave={() => this.triggerAnimation(13, false)}
+                onEnter={() => this.triggerAnimation(15, true)}
+                onLeave={() => this.triggerAnimation(15, false)}
               >
                 <LargeImage
                   caption="Calacatta Gold tile, polished nickel, and a custom cerused oak vanity with a polished nickel inlay detail are the centerpieces of the master bathrooms. "
@@ -256,10 +283,10 @@ class Interiors extends Component {
           </Row>
           <MediaQuery maxWidth={992}>
             <Row className="row-extra-margin row-extra-margin-desktop-2">
-              <Col md={12} className={!this.state.sections[14] ? 'hidden' : 'animate-reveal-delay-0'}>
+              <Col md={12} className={!this.state.sections[16] ? 'hidden' : 'animate-reveal-delay-0'}>
                 <Waypoint
-                  onEnter={() => this.triggerAnimation(14, true)}
-                  onLeave={() => this.triggerAnimation(14, false)}
+                  onEnter={() => this.triggerAnimation(16, true)}
+                  onLeave={() => this.triggerAnimation(16, false)}
                 >
                   <SmallImage
                     caption="Powder rooms feature an expressive Nero Marquina marble accent wall and a floating Calacatta Gold marble vanity."
@@ -269,10 +296,10 @@ class Interiors extends Component {
                 </Waypoint>
                 <h5>Powder Room</h5>
               </Col>
-              <Col md={12} className={!this.state.sections[15] ? 'hidden' : 'animate-reveal-delay-0'}>
+              <Col md={12} className={!this.state.sections[17] ? 'hidden' : 'animate-reveal-delay-0'}>
                 <Waypoint
-                  onEnter={() => this.triggerAnimation(15, true)}
-                  onLeave={() => this.triggerAnimation(15, false)}
+                  onEnter={() => this.triggerAnimation(17, true)}
+                  onLeave={() => this.triggerAnimation(17, false)}
                 >
                   <SmallImage
                     caption="Secondary baths feature Ash Gray marble walls and flooring, a European white oak vanity, and a custom medicine cabinet with integrated lighting."
@@ -288,11 +315,11 @@ class Interiors extends Component {
             <Row className="row-extra-margin row-extra-margin-desktop-2">
               <Col
                 style={{ margin: `0 ${pxToRem(8)}`, flex: '.783' }}
-                className={!this.state.sections[16] ? 'hidden' : 'animate-reveal-delay-0'}
+                className={!this.state.sections[18] ? 'hidden' : 'animate-reveal-delay-0'}
               >
                 <Waypoint
-                  onEnter={() => this.triggerAnimation(16, true)}
-                  onLeave={() => this.triggerAnimation(16, false)}
+                  onEnter={() => this.triggerAnimation(18, true)}
+                  onLeave={() => this.triggerAnimation(18, false)}
                 >
                   <SmallImage
                     caption="Powder rooms feature an expressive Nero Marquina marble accent wall and a floating Calacatta Gold marble vanity."
@@ -304,11 +331,11 @@ class Interiors extends Component {
               </Col>
               <Col
                 style={{ margin: `0 ${pxToRem(8)}`, flex: '1' }}
-                className={!this.state.sections[17] ? 'hidden' : 'animate-reveal-delay-0'}
+                className={!this.state.sections[19] ? 'hidden' : 'animate-reveal-delay-0'}
               >
                 <Waypoint
-                  onEnter={() => this.triggerAnimation(17, true)}
-                  onLeave={() => this.triggerAnimation(17, false)}
+                  onEnter={() => this.triggerAnimation(19, true)}
+                  onLeave={() => this.triggerAnimation(19, false)}
                 >
                   <SmallImage
                     caption="Secondary baths feature Ash Gray marble walls and flooring, a European white oak vanity, and a custom medicine cabinet with integrated lighting."
