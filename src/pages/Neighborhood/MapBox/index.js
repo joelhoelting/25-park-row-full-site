@@ -59,7 +59,7 @@ class MapBox extends Component {
     super(props);
 
     this.state = {
-      activeCategory: 'dining',
+      activeCategory: 'transit',
       activeLocation: undefined,
       center: [-74.007377, 40.711464],
       zoom: this.props.width < 500 ? [13.5] : [15]
@@ -134,9 +134,9 @@ class MapBox extends Component {
     
     const { main } = MapBoxInline;
 
-    const mtatrainImg = new Image(30,30);
-    mtatrainImg.src = '/images/map/icons/mtatrain.png';
-    const mtatrainImgs = ['mtatrainImgRef', mtatrainImg];
+    // const mtatrainImg = new Image(30,30);
+    // mtatrainImg.src = '/images/map/icons/mtatrain.png';
+    // const mtatrainImgs = ['mtatrainImgRef', mtatrainImg];
 
     let circleIcon = {
       'circle-stroke-width': 1,
@@ -153,6 +153,19 @@ class MapBox extends Component {
           coordinates={feature.coordinates}
           onClick={() => this.setState({ activeLocation: feature })}
         />
+      ));
+    };
+
+    const renderTransitMarkers = (transitArray) => {
+      return transitArray.map((location, idx) => (
+        <Marker key={`location_${idx}`} coordinates={location.coordinates} anchor="center">
+          <img
+            alt={location.title}
+            style={main.transitMarkers}
+            src={`/images/map/transit/${location.icon}`}
+            onClick={() => this.setState({ activeLocation: location })}
+          />
+        </Marker>
       ));
     };
 
@@ -236,7 +249,7 @@ class MapBox extends Component {
             </MediaQuery>
           </Col>
         </Row>
-        <MediaQuery maxWidth={768}>
+        <MediaQuery maxWidth={767}>
           <Row>
             <Col sm={12} style={{ margin: '20px 0'}}>
               <Slider {...sliderSettings} >
@@ -268,76 +281,12 @@ class MapBox extends Component {
                   src="/images/map/25parkrow_primary.png"
                 />
               </Marker>
-              <Marker coordinates={[-74.011451, 40.711628]} anchor="center">
-                <img
-                  alt='Pathtrain Marker'
-                  style={main.transitMarkers}
-                  src="/images/map/icons/pathtrain.png"
-                  onClick={() => this.setState({ activeLocation: locations.transitPath[0] })}
-                />
-              </Marker>
-              <Marker coordinates={[-74.008714, 40.701094]} anchor="center">
-                <img
-                  alt='Heliport Marker'
-                  style={main.transitMarkers}
-                  src="/images/map/icons/heliport.png"
-                  onClick={() => this.setState({ activeLocation: locations.transitHeliport[0] })}
-                />
-              </Marker>
-              <Marker coordinates={[-74.013126, 40.700921]} anchor="center">
-                <img
-                  alt='Staten Island Ferry Marker'
-                  style={main.transitMarkers}
-                  src="/images/map/icons/ferry.png"
-                  onClick={() => this.setState({ activeLocation: locations.transitFerry[0] })}
-
-                />
-              </Marker>
-              <Marker coordinates={[-74.011486, 40.700986]} anchor="center">
-                <img
-                  alt='Governer Island Ferry Marker'
-                  style={main.transitMarkers}
-                  src="/images/map/icons/ferry.png"
-                  onClick={() => this.setState({ activeLocation: locations.transitFerry[1] })}
-
-                />
-              </Marker>
-              <Marker coordinates={[-74.006352, 40.703473]} anchor="center">
-                <img
-                  alt='East River Ferry'
-                  style={main.transitMarkers}
-                  src="/images/map/icons/ferry.png"
-                  onClick={() => this.setState({ activeLocation: locations.transitFerry[2] })}
-
-                />
-              </Marker>
-              <Marker coordinates={[-74.017663, 40.715060]} anchor="center">
-                <img
-                  alt='New Jersey Ferries'
-                  style={main.transitMarkers}
-                  src="/images/map/icons/ferry.png"
-                  onClick={() => this.setState({ activeLocation: locations.transitFerry[3] })}
-
-                />
-              </Marker>
-              <Layer
-                type='symbol' 
-                id='marker'
-                layout={{ 'icon-image': 'mtatrainImgRef' }}
-                images={mtatrainImgs}
-              >
-                {activeCategory === 'transit' ? renderFeatures(locations['transitMTA']) : null}
-              </Layer>
+              {activeCategory === 'transit' && renderTransitMarkers(locations['transitMTA'])}
               <Layer type="circle" paint={circleIcon}>
                 {activeCategory !== 'transit' ? renderFeatures(locations[activeCategory]) : null}
               </Layer>
               {activeLocation && (
                 <Popup coordinates={activeLocation.coordinates}>
-                  {/* <img
-                    alt={activeLocation.title}
-                    style={main.popup.img}
-                    src={activeLocation.thumbnailSrc}
-                  /> */}
                   <h4 className='text-center display-linebreak' style={main.popup.title}>{activeLocation.title}</h4>
                 </Popup>
               )}
