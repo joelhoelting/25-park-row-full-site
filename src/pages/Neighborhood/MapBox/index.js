@@ -102,8 +102,8 @@ class MapBox extends Component {
           width: '75px'
         },
         transitMarkers: {
-          height: '30px', 
-          width: '30px',
+          height: '25px', 
+          width: '25px',
           transition: 'all 400ms ease',
           opacity: activeCategory === 'transit' ? '1' : '0',
           visibility: activeCategory === 'transit' ? 'visible' : 'hidden'

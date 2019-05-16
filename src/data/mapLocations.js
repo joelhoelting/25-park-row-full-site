@@ -637,12 +637,12 @@ const locations = {
   ],
   transitMTA: [
     {
-      icon: 'r.svg',
+      icon: 'w.svg',
       title: 'R/W Line \n',
       coordinates: [-74.006699, 40.713561]
     },
     {
-      icon: 'w.svg',
+      icon: 'r.svg',
       title: 'R/W Line \n',
       coordinates: [-74.007000, 40.713200]
     },
@@ -752,7 +752,7 @@ const locations = {
       coordinates: [-74.008256, 40.714600]
     },
     {
-      icon: 'pathLine.png',
+      icon: 'pathtrain.png',
       title: 'Path Line \n World Trade Center Station',
       coordinates: [-74.011451, 40.711628]
     },
