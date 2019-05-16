@@ -123,7 +123,6 @@ class Interiors extends Component {
               lg={5}
               className={!this.state.sections[4] ? 'hidden' : 'animate-reveal-delay-0'}
             >
-              <h3 className="bolder text-center">The Juliet Balcony</h3>
               <Waypoint 
                 onEnter={() => this.triggerAnimation(4, true)} 
                 onLeave={() => this.triggerAnimation(4, false)}
@@ -132,6 +131,7 @@ class Interiors extends Component {
                   src='/images/pages/interiors/juliet_balcony'  
                 />
               </Waypoint>
+              <h4 className="bolder text-center">The Juliet Balcony</h4>
             </Col>
           </Row>
           <Waypoint onEnter={() => this.triggerAnimation(5, true)} onLeave={() => this.triggerAnimation(5, false)}>
