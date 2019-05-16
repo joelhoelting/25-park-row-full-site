@@ -59,7 +59,7 @@ class MapBox extends Component {
     super(props);
 
     this.state = {
-      activeCategory: 'transit',
+      activeCategory: 'dining',
       activeLocation: undefined,
       center: [-74.007377, 40.711464],
       zoom: this.props.width < 500 ? [13.5] : [15]
