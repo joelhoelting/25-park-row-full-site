@@ -48,7 +48,7 @@ const MapBoxCSS = {
   mediaQueries: {
     [globalMediaQueries.tablet]: {
       '.mapboxgl-popup': {
-        width: '250px'
+        width: '300px'
       },
     }
   }
@@ -104,6 +104,7 @@ class MapBox extends Component {
         transitMarkers: {
           height: '25px', 
           width: '25px',
+          cursor: 'pointer',
           transition: 'all 400ms ease',
           opacity: activeCategory === 'transit' ? '1' : '0',
           visibility: activeCategory === 'transit' ? 'visible' : 'hidden'
@@ -123,7 +124,7 @@ class MapBox extends Component {
           },
           title: { 
             [mediaQueries.tabletLandscape]: {
-              width: '200px', 
+              width: '300px', 
               marginLeft: 'auto',
               marginRight: 'auto',
             }
@@ -133,11 +134,7 @@ class MapBox extends Component {
     };
     
     const { main } = MapBoxInline;
-
-    // const mtatrainImg = new Image(30,30);
-    // mtatrainImg.src = '/images/map/icons/mtatrain.png';
-    // const mtatrainImgs = ['mtatrainImgRef', mtatrainImg];
-
+    
     let circleIcon = {
       'circle-stroke-width': 1,
       'circle-radius': 10,

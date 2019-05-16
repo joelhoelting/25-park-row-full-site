@@ -638,148 +638,148 @@ const locations = {
   transitMTA: [
     {
       icon: 'w.svg',
-      title: 'R/W Line \n',
+      title: 'NYC SUBWAY R/W Line \n',
       coordinates: [-74.006699, 40.713561]
     },
     {
       icon: 'r.svg',
-      title: 'R/W Line \n',
+      title: 'NYC SUBWAY R/W Line \n',
       coordinates: [-74.007000, 40.713200]
     },
     {
       icon: '4.svg',
-      title: '4/5/6 Line \n',
+      title: 'NYC SUBWAY 4/5/6 Line \n',
       coordinates: [-74.004576, 40.712501]
     },
     {
       icon: '5.svg',
-      title: '4/5/6 Line \n',
+      title: 'NYC SUBWAY 4/5/6 Line \n',
       coordinates: [-74.004276, 40.712901]
     },
     {
       icon: '6.svg',
-      title: '4/5/6 Line \n',
+      title: 'NYC SUBWAY 4/5/6 Line \n',
       coordinates: [-74.003976, 40.713301]
     },
     {
       icon: 'j.svg',
-      title: 'J/Z Line \n',
+      title: 'NYC SUBWAY J/Z Line \n',
       coordinates: [-74.003561, 40.713105]
     },
     {
       icon: 'z.svg',
-      title: 'J/Z Line \n',
+      title: 'NYC SUBWAY J/Z Line \n',
       coordinates: [-74.003261, 40.713505]
     },
     {
       icon: '3.svg',
-      title: '2/3 Line \n',
+      title: 'NYC SUBWAY 2/3 Line \n',
       coordinates: [-74.006702, 40.709268]
     },
     {
       icon: '2.svg',
-      title: '2/3 Line \n',
+      title: 'NYC SUBWAY 2/3 Line \n',
       coordinates: [-74.006402, 40.709568]
     },
     {
       icon: 'C.svg',
-      title: 'A/C Line \n',
+      title: 'NYC SUBWAY A/C Line \n',
       coordinates: [-74.007002, 40.709568]
     },
     {
       icon: 'A.svg',
-      title: 'A/C Line \n',
+      title: 'NYC SUBWAY A/C Line \n',
       coordinates: [-74.007302, 40.709268]
     },
     {
       icon: 'j.svg',
-      title: 'J/Z Line \n',
+      title: 'NYC SUBWAY J/Z Line \n',
       coordinates: [-74.008319, 40.709371]
     },
     {
       icon: 'z.svg',
-      title: 'J/Z Line \n',
+      title: 'NYC SUBWAY J/Z Line \n',
       coordinates: [-74.008019, 40.709671]
     },
     {
       icon: '4.svg',
-      title: '4/5 Line \n',
+      title: 'NYC SUBWAY 4/5 Line \n',
       coordinates: [-74.00930, 40.710600]
     },
     {
       icon: '5.svg',
-      title: '4/5 Line \n',
+      title: 'NYC SUBWAY 4/5 Line \n',
       coordinates: [-74.00900, 40.711000]
     },
     {
       icon: 'r.svg',
-      title: 'R/W Line \n',
+      title: 'NYC SUBWAY R/W Line \n',
       coordinates: [-74.011165, 40.710370]
     },
     {
       icon: 'w.svg',
-      title: 'R/W Line \n',
+      title: 'NYC SUBWAY R/W Line \n',
       coordinates: [-74.011000, 40.710750]
     },
     {
       icon: 'e.svg',
-      title: 'E Line \n',
+      title: 'NYC SUBWAY E Line \n',
       coordinates: [-74.009979, 40.712601]
     },
     {
       icon: '2.svg',
-      title: '2 Line \n',
+      title: 'NYC SUBWAY 2/3 Line \n',
       coordinates: [-74.009301, 40.713227]
     },
     {
       icon: '3.svg',
-      title: '2/3 Line \n',
+      title: 'NYC SUBWAY 2/3 Line \n',
       coordinates: [-74.009001, 40.713627]
     },
     {
       icon: '1.svg',
-      title: '1 Line \n',
+      title: 'NYC SUBWAY 1 Line \n',
       coordinates: [-74.011791, 40.710949]
     },
     {
       icon: 'a.svg',
-      title: 'A/C Line \n',
+      title: 'NYC SUBWAY A/C Line \n',
       coordinates: [-74.008556, 40.714271]
     },
     {
       icon: 'c.svg',
-      title: 'A/C Line \n',
+      title: 'NYC SUBWAY A/C Line \n',
       coordinates: [-74.008256, 40.714600]
     },
     {
       icon: 'pathtrain.png',
       title: 'Path Line \n World Trade Center Station',
-      coordinates: [-74.011451, 40.711628]
+      coordinates: [-74.011451, 40.711628],
     },
     {
       icon: 'heliport.png',
       title: 'Downtown Manhattan Heliport',
-      coordinates: [-74.008714, 40.701094]
+      coordinates: [-74.008714, 40.701094],
     },
     {
       icon: 'ferry.png',
       title: 'Staten Island Island Ferry',
-      coordinates: [-74.013126, 40.700921]
+      coordinates: [-74.013126, 40.700921],
     },
     {
       icon: 'ferry.png',
       title: "Governer's Island Ferry",
-      coordinates: [-74.011486, 40.700986]
+      coordinates: [-74.011486, 40.700986],
     },
     {
       icon: 'ferry.png',
       title: 'East River Ferry',
-      coordinates: [-74.006352, 40.703473]
+      coordinates: [-74.006352, 40.703473],
     },
     {
       icon: 'ferry.png',
       title: 'New Jersey Ferries',
-      coordinates: [-74.017663, 40.71506]
+      coordinates: [-74.017663, 40.71506],
     }
   ]
 };
