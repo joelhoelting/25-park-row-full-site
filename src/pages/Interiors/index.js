@@ -181,7 +181,6 @@ class Interiors extends Component {
                 <TwoColumnText
                   header="The Penthouse"
                   paragraph="Penthouse views sweep from the East River to the Hudson, and feature an uninterrupted vista of the city’s architectural treasures and City Hall Park below."
-                  hideParagraphMobile
                 />
               </Waypoint>
             </Col>
