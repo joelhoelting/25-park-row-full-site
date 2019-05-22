@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Radium, {Style} from 'radium';
+import Radium, { Style } from 'radium';
 import { Row, Col } from 'react-flexbox-grid';
 import { parseString } from 'xml2js';
 import { Helmet } from 'react-helmet';
@@ -19,7 +19,7 @@ import { generateFloorplanSrc } from 'helpers/Floorplans';
 class Floorplans extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       sortedUnits: {},
       floorplanOverlay: {
@@ -34,7 +34,7 @@ class Floorplans extends Component {
     let $this = this;
     if (!this.props.savedListings) {
       this.unparsedListings = [];
-      
+
       fetch('https://p2wmwwcrlf.execute-api.us-east-1.amazonaws.com/test/listings')
         .then(response => response.json())
         .then(data => {
@@ -59,12 +59,12 @@ class Floorplans extends Component {
   }
 
   // Change state to show/hide floorplan overlay
-  toggleOverlay(unit=false) {
+  toggleOverlay(unit = false) {
     // Toggle active state of overlay
-    this.setState({ floorplanOverlay: { active: !this.state.floorplanOverlay.active, unit }});
+    this.setState({ floorplanOverlay: { active: !this.state.floorplanOverlay.active, unit } });
   }
 
-  // Parse, filter, sorting functionality for floorplans 
+  // Parse, filter, sorting functionality for floorplans
   parseData() {
     this.parsedUnits = {
       5: [],
@@ -73,31 +73,36 @@ class Floorplans extends Component {
       2: [],
       1: []
     };
-    
-    this.unparsedListings.forEach((listing) => {
-      
+
+    this.unparsedListings.forEach(listing => {
       let listingObj = {
         residence: listing.Location[0].UnitNumber[0],
         bedrooms: parseFloat(listing.BasicDetails[0].Bedrooms[0]),
         fullBathrooms: parseFloat(listing.BasicDetails[0].FullBathrooms[0]),
-        halfBathrooms: (parseFloat(listing.BasicDetails[0].HalfBathrooms[0]) * .5),
+        halfBathrooms: parseFloat(listing.BasicDetails[0].HalfBathrooms[0]) * 0.5,
         interior: listing.BasicDetails[0].LivingArea[0],
         exterior: listing.BasicDetails[0].ExtLivingArea ? listing.BasicDetails[0].ExtLivingArea[0] : undefined,
         taxAmount: insertCommas(listing.ListingDetails[0].MaintenanceCC[0]),
         monthlyCC: insertCommas(listing.ListingDetails[0].MaintenanceCC[0]),
         price: insertCommas(listing.ListingDetails[0].Price[0]),
-        active: listing.ListingDetails[0].Status[0] === "Active" ? true : false
+        active: listing.ListingDetails[0].Status[0] === 'Active' ? true : false
       };
-      
+
       let { residence } = listingObj;
+      // Check if residence starts with 'PH' and strip that away ()
+      let startsWithPH = new RegExp('^PH', 'i');
+      if (startsWithPH.test(residence)) {
+        residence = residence.replace('PH', '');
+      }
 
       let srcObj = generateFloorplanSrc(residence);
-      listingObj.totalBathrooms = (listingObj.fullBathrooms + listingObj.halfBathrooms);
+      listingObj.residence = residence;
+      listingObj.totalBathrooms = listingObj.fullBathrooms + listingObj.halfBathrooms;
       listingObj.hasTwoLevels = srcObj.hasTwoLevels;
       listingObj.isPenthouse = srcObj.isPenthouse;
       listingObj.imgSrc = srcObj.imgFilename;
       listingObj.pdfSrc = srcObj.pdfFilename;
-      
+
       if (listingObj.active) {
         this.parsedUnits[listingObj.bedrooms].push(listingObj);
       }
@@ -113,9 +118,8 @@ class Floorplans extends Component {
     let rows = [];
     let rowCounter = 0;
     let columns = [];
-    
+
     if (Object.keys(this.state.sortedUnits).length > 0) {
-      
       // Loop through availability data
       for (let c = 5; c > 0; c--) {
         let categoryLength = this.state.sortedUnits[c].length;
@@ -124,16 +128,16 @@ class Floorplans extends Component {
           let unitCategory = (
             <Row className={`floorplan-category-${c} floorplan-category`} key={`floorplan_row_${rowCounter}`}>
               <Col xl={12}>
-                <h3 className='text-center'>{`${c} ${c > 1 ? 'Bedrooms' : 'Bedroom'}`}</h3>
+                <h3 className="text-center">{`${c} ${c > 1 ? 'Bedrooms' : 'Bedroom'}`}</h3>
               </Col>
             </Row>
-          ); 
+          );
           rows.push(unitCategory);
           rowCounter++;
 
           for (let u = 0; u < categoryLength; u++) {
             let colClass = () => {
-              if (u % 2 === 0 && u === (categoryLength - 1)) {
+              if (u % 2 === 0 && u === categoryLength - 1) {
                 return 'floorplan-column floorplan-single-column-left';
               } else if (u % 2 !== 0) {
                 return 'floorplan-column floorplan-column-right';
@@ -141,42 +145,36 @@ class Floorplans extends Component {
                 return 'floorplan-column floorplan-column-left';
               }
             };
-            
+
             columns.push(
-              <Col 
-                className={colClass()}
-                key={`bedroom_${c}_column_${u}`} 
-                xl={6}
-              >
-                <Floorplan 
-                  key={`bedroom_${c}_floorplan_${u}`} 
-                  unit={this.state.sortedUnits[c][u]} 
-                  toggleOverlay={(unit) => this.toggleOverlay(unit)}
+              <Col className={colClass()} key={`bedroom_${c}_column_${u}`} xl={6}>
+                <Floorplan
+                  key={`bedroom_${c}_floorplan_${u}`}
+                  unit={this.state.sortedUnits[c][u]}
+                  toggleOverlay={unit => this.toggleOverlay(unit)}
                   width={this.props.width}
                 />
               </Col>
             );
 
             // If index is odd or last item --> push columns into row
-            if ((u + 1) % 2 === 0 || u === (categoryLength - 1)) {
+            if ((u + 1) % 2 === 0 || u === categoryLength - 1) {
               rows.push(
-                <Row className='floorplan-row' key={`floorplan_row_${rowCounter}`}>
+                <Row className="floorplan-row" key={`floorplan_row_${rowCounter}`}>
                   {columns}
                 </Row>
               );
               // Increment row counter
-              rowCounter ++;
+              rowCounter++;
               // Empty column array
               columns = [];
             }
           }
-        }        
+        }
       }
       return rows;
     } else {
-      return (
-        <h1 className='text-center'>Nothing to see here</h1>
-      );
+      return <h1 className="text-center">Nothing to see here</h1>;
     }
   }
 
@@ -185,14 +183,14 @@ class Floorplans extends Component {
       '.floorplan-category': {
         borderBottom: '2px solid black'
       },
-      '.floorplan-row' : {
+      '.floorplan-row': {
         borderBottom: '2px solid black'
       },
       '.floorplan-column': {
         padding: 0
       },
       '.floorplan-single-column-left': {
-        borderRight: 'none',
+        borderRight: 'none'
       },
       '.floorplan-column-left': {
         borderBottom: '2px solid black',
@@ -224,21 +222,27 @@ class Floorplans extends Component {
       <div>
         <Helmet>
           <title>25 Park Row | Floor Plans</title>
-          <meta name="description" content="25 Park Row is a 21st century architectural icon providing unmatched downtown NYC views from every condominium over historic City Hall Park." />
+          <meta
+            name="description"
+            content="25 Park Row is a 21st century architectural icon providing unmatched downtown NYC views from every condominium over historic City Hall Park."
+          />
         </Helmet>
-        <Style rules={{'body': { backgroundColor: this.props.color }}}/>
+        <Style rules={{ body: { backgroundColor: this.props.color } }} />
         <Style rules={FloorplanCSS} />
-        <div className={`full-width-container ${!this.state.mounted ? 'hidden' : ''}`} style={{ minHeight: !this.state.mounted ? '100vh' : 'none'}}>
-          <Row className='mobile-header border-bottom' >
+        <div
+          className={`full-width-container ${!this.state.mounted ? 'hidden' : ''}`}
+          style={{ minHeight: !this.state.mounted ? '100vh' : 'none' }}
+        >
+          <Row className="mobile-header border-bottom">
             <Col lg={12}>
-              <h2 className='text-center'>Floorplans</h2>
+              <h2 className="text-center">Floorplans</h2>
             </Col>
           </Row>
           {this.renderUnits()}
-          <FloorplanOverlay 
+          <FloorplanOverlay
             active={this.state.floorplanOverlay.active}
             unit={this.state.floorplanOverlay.unit}
-            toggleOverlay={() => this.toggleOverlay()} 
+            toggleOverlay={() => this.toggleOverlay()}
           />
         </div>
       </div>
