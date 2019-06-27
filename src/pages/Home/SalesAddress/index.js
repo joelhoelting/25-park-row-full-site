@@ -44,7 +44,7 @@ const SalesAddress = () => {
         <a href="mailto:info@25parkrow.com">INFO@25PARKROW.COM</a>
       </h3>
       <h3 style={main.h3}>
-        <a href="tel:1-562-867-5309">646.655.3206</a>
+        <a href="tel:1-646-933-4625">646.933.4625</a>
       </h3>
     </div>
   );
