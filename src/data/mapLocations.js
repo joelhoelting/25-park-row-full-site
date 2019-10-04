@@ -145,11 +145,11 @@ const locations = {
       coordinates: [-74.015359, 40.714871]
     },
     {
-      title: '2CUT by Wolfgang Puck',
+      title: 'CUT by Wolfgang Puck',
       coordinates: [-74.009406, 40.713078]
     },
     {
-      title: '2Eataly Downtown',
+      title: 'Eataly Downtown',
       coordinates: [-74.012269, 40.710443]
     },
     {
