@@ -637,102 +637,149 @@ const locations = {
   ],
   transitMTA: [
     {
-      title: 'R/W Train \n',
+      icon: 'w.svg',
+      title: 'NYC SUBWAY R/W Line \n',
       coordinates: [-74.006699, 40.713561]
     },
     {
-      title: '4/5/6 Train \n',
+      icon: 'r.svg',
+      title: 'NYC SUBWAY R/W Line \n',
+      coordinates: [-74.007000, 40.713200]
+    },
+    {
+      icon: '4.svg',
+      title: 'NYC SUBWAY 4/5/6 Line \n',
+      coordinates: [-74.004576, 40.712501]
+    },
+    {
+      icon: '5.svg',
+      title: 'NYC SUBWAY 4/5/6 Line \n',
       coordinates: [-74.004276, 40.712901]
     },
     {
-      title: 'J/Z Train \n',
-      coordinates: [-74.004061, 40.713105]
+      icon: '6.svg',
+      title: 'NYC SUBWAY 4/5/6 Line \n',
+      coordinates: [-74.003976, 40.713301]
     },
     {
-      title: '2/3 Train \n',
+      icon: 'j.svg',
+      title: 'NYC SUBWAY J/Z Line \n',
+      coordinates: [-74.003561, 40.713105]
+    },
+    {
+      icon: 'z.svg',
+      title: 'NYC SUBWAY J/Z Line \n',
+      coordinates: [-74.003261, 40.713505]
+    },
+    {
+      icon: '3.svg',
+      title: 'NYC SUBWAY 2/3 Line \n',
+      coordinates: [-74.006702, 40.709268]
+    },
+    {
+      icon: '2.svg',
+      title: 'NYC SUBWAY 2/3 Line \n',
       coordinates: [-74.006402, 40.709568]
     },
     {
-      title: '4/5 Train \n',
-      coordinates: [-74.009294, 40.710645]
+      icon: 'C.svg',
+      title: 'NYC SUBWAY A/C Line \n',
+      coordinates: [-74.007002, 40.709568]
     },
     {
-      title: 'J/Z Train \n',
+      icon: 'A.svg',
+      title: 'NYC SUBWAY A/C Line \n',
+      coordinates: [-74.007302, 40.709268]
+    },
+    {
+      icon: 'j.svg',
+      title: 'NYC SUBWAY J/Z Line \n',
       coordinates: [-74.008319, 40.709371]
     },
     {
-      title: '1 Train \n',
-      coordinates: [40.710964, -74.011671]
+      icon: 'z.svg',
+      title: 'NYC SUBWAY J/Z Line \n',
+      coordinates: [-74.008019, 40.709671]
     },
     {
-      title: 'R/W Train \n',
-      coordinates: [-74.010748, 40.711009]
+      icon: '4.svg',
+      title: 'NYC SUBWAY 4/5 Line \n',
+      coordinates: [-74.00930, 40.710600]
     },
     {
-      title: 'E Train \n',
-      coordinates: [-74.009911, 40.71264]
+      icon: '5.svg',
+      title: 'NYC SUBWAY 4/5 Line \n',
+      coordinates: [-74.00900, 40.711000]
     },
     {
-      title: '2/3 Train \n ',
-      coordinates: [-74.009251, 40.713242]
+      icon: 'r.svg',
+      title: 'NYC SUBWAY R/W Line \n',
+      coordinates: [-74.011165, 40.710370]
     },
     {
-      title: 'A/C/F Train \n',
-      coordinates: [-74.00843, 40.714303]
+      icon: 'w.svg',
+      title: 'NYC SUBWAY R/W Line \n',
+      coordinates: [-74.011000, 40.710750]
     },
     {
-      title: '1/2/3 Train \n',
-      coordinates: [-74.009229, 40.715507]
+      icon: 'e.svg',
+      title: 'NYC SUBWAY E Line \n',
+      coordinates: [-74.009979, 40.712601]
     },
     {
-      title: '1 Train \n',
-      coordinates: [-74.006692, 40.718987]
+      icon: '2.svg',
+      title: 'NYC SUBWAY 2/3 Line \n',
+      coordinates: [-74.009301, 40.713227]
     },
     {
-      title: 'A/C/E/F Train \n',
-      coordinates: [-74.004997, 40.720711]
+      icon: '3.svg',
+      title: 'NYC SUBWAY 2/3 Line \n',
+      coordinates: [-74.009001, 40.713627]
     },
     {
-      title: 'N/Q/R/W Train \n',
-      coordinates: [-74.001789, 40.71952]
+      icon: '1.svg',
+      title: 'NYC SUBWAY 1 Line \n',
+      coordinates: [-74.011791, 40.710949]
     },
     {
-      title: 'N/Q/R/W Train \n',
-      coordinates: [-74.000512, 40.718414]
+      icon: 'a.svg',
+      title: 'NYC SUBWAY A/C Line \n',
+      coordinates: [-74.008556, 40.714271]
     },
     {
-      title: 'J/Z Train \n',
-      coordinates: [-74.000229, 40.717825]
-    }
-  ],
-  transitPath: [
+      icon: 'c.svg',
+      title: 'NYC SUBWAY A/C Line \n',
+      coordinates: [-74.008256, 40.714600]
+    },
     {
-      title: 'Path Train \n World Trade Center Station',
-      coordinates: [-74.011451, 40.711628]
-    }
-  ],
-  transitHeliport: [
+      icon: 'pathtrain.png',
+      title: 'Path Line \n World Trade Center Station',
+      coordinates: [-74.011451, 40.711628],
+    },
     {
+      icon: 'heliport.png',
       title: 'Downtown Manhattan Heliport',
-      coordinates: [-74.008714, 40.701094]
-    }
-  ],
-  transitFerry: [
+      coordinates: [-74.008714, 40.701094],
+    },
     {
+      icon: 'ferry.png',
       title: 'Staten Island Island Ferry',
-      coordinates: [-74.013126, 40.700921]
+      coordinates: [-74.013126, 40.700921],
     },
     {
+      icon: 'ferry.png',
       title: "Governer's Island Ferry",
-      coordinates: [-74.011486, 40.700986]
+      coordinates: [-74.011486, 40.700986],
     },
     {
+      icon: 'ferry.png',
       title: 'East River Ferry',
-      coordinates: [-74.006352, 40.703473]
+      coordinates: [-74.006352, 40.703473],
     },
     {
+      icon: 'ferry.png',
       title: 'New Jersey Ferries',
-      coordinates: [-74.017663, 40.71506]
+      coordinates: [-74.017663, 40.71506],
     }
   ]
 };
