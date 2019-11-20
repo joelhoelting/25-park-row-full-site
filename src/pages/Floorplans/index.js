@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Radium, { Style } from 'radium';
 import { Row, Col } from 'react-flexbox-grid';
-import { parseString } from 'xml2js';
 import { Helmet } from 'react-helmet';
 
 import localAvailabilityData from 'data/localAvailabilityData';
@@ -35,10 +34,16 @@ class Floorplans extends Component {
     if (!this.props.savedListings) {
       this.unparsedListings = [];
 
-      fetch('https://p2wmwwcrlf.execute-api.us-east-1.amazonaws.com/test/listings')
+      fetch('https://form.api.dbxd.com/xml-to-json', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ url: 'https://legacy.corcoran.com/newdevxml/758NewDevs.xml' })
+      })
         .then(response => response.json())
         .then(data => {
-          this.unparsedListings = data.body.Listings.Listing;
+          this.unparsedListings = data.Listings.Listing;
           this.props.saveListings(this.unparsedListings);
           $this.parseData();
         })
@@ -46,11 +51,9 @@ class Floorplans extends Component {
           /* eslint-disable no-console */
           console.error('Error:', error);
           /* eslint-enable no-console */
-          parseString(localAvailabilityData, (err, result) => {
-            $this.unparsedListings = result.Listings.Listing;
-            this.props.saveListings(this.unparsedListings);
-            $this.parseData();
-          });
+          this.unparsedListings = localAvailabilityData.Listings.Listing;
+          this.props.saveListings(this.unparsedListings);
+          $this.parseData();
         });
     } else {
       $this.unparsedListings = this.props.savedListings;
