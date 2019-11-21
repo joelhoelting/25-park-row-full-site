@@ -31,9 +31,9 @@ class Floorplans extends Component {
   componentDidMount() {
     // Fetch listings from Corcoran Sunshine
     let $this = this;
-    if (!this.props.savedListings) {
-      this.unparsedListings = [];
+    let unparsedListings;
 
+    if (!this.props.savedListings) {
       fetch('https://form.api.dbxd.com/xml-to-json', {
         method: 'post',
         headers: {
@@ -43,21 +43,21 @@ class Floorplans extends Component {
       })
         .then(response => response.json())
         .then(data => {
-          this.unparsedListings = data.Listings.Listing;
-          this.props.saveListings(this.unparsedListings);
-          $this.parseData();
+          unparsedListings = data.Listings.Listing;
+          this.props.saveListings(unparsedListings);
+          $this.parseData(unparsedListings);
         })
         .catch(error => {
           /* eslint-disable no-console */
           console.error('Error:', error);
           /* eslint-enable no-console */
-          this.unparsedListings = localAvailabilityData.Listings.Listing;
-          this.props.saveListings(this.unparsedListings);
-          $this.parseData();
+          unparsedListings = localAvailabilityData.Listings.Listing;
+          this.props.saveListings(unparsedListings);
+          $this.parseData(unparsedListings);
         });
     } else {
-      $this.unparsedListings = this.props.savedListings;
-      $this.parseData();
+      unparsedListings = this.props.savedListings;
+      $this.parseData(unparsedListings);
     }
   }
 
@@ -68,7 +68,7 @@ class Floorplans extends Component {
   }
 
   // Parse, filter, sorting functionality for floorplans
-  parseData() {
+  parseData(listings = []) {
     this.parsedUnits = {
       5: [],
       4: [],
@@ -77,7 +77,7 @@ class Floorplans extends Component {
       1: []
     };
 
-    this.unparsedListings.forEach(listing => {
+    listings.forEach(listing => {
       let listingObj = {
         residence: listing.Location[0].UnitNumber[0],
         bedrooms: parseFloat(listing.BasicDetails[0].Bedrooms[0]),
