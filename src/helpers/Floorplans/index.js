@@ -1,7 +1,6 @@
 export const generateFloorplanSrc = residence => {
   let unitNumber = residence.match(/\d+/)[0];
   let unitLetter = residence.match(/\D+/)[0];
-
   let imgFilename, pdfFilename, isPenthouse, hasTwoLevels;
 
   let twoLevelUnits = ['5A', '15B', '45A'];
@@ -26,6 +25,8 @@ export const generateFloorplanSrc = residence => {
     imgFilename = pdfFilename = `6-14B`;
   } else if (unitNumber >= 7 && unitNumber <= 14 && unitLetter === 'A') {
     imgFilename = pdfFilename = `7-14A`;
+  } else if (unitNumber >= 12 && unitNumber <= 14 && unitLetter === 'C') {
+    imgFilename = pdfFilename = `12-14C`;
   } else if (unitNumber >= 12 && unitNumber <= 14 && unitLetter === 'D') {
     imgFilename = pdfFilename = `12-14D`;
   } else if (unitNumber >= 15 && unitNumber <= 22 && unitLetter === 'C') {
