@@ -302,10 +302,12 @@ class FloorplanOverlay extends Component {
                     <p className='no-margin'>Interior</p>
                     <p className='no-margin'>{`${interior} SF/${feetToMeters(interior)} SM`}</p>
                   </div>
-                  <div style={main.inner.detail.subDetail}>
-                    <p className='no-margin'>Exterior</p>
-                    <p className='no-margin'>1,022 SF/94 SM</p>
-                  </div>
+                  { exterior && 
+                    <div style={main.inner.detail.subDetail}>
+                      <p className='no-margin' >Exterior</p>
+                      <p className='no-margin' >{`${exterior} SF/${feetToMeters(exterior)} SM`}</p>
+                    </div>
+                  }
                   <div style={main.inner.detail.subDetail}>
                     <p className='no-margin'>Price</p>
                     <p className='no-margin'>{`$${price}`}</p>
