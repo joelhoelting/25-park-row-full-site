@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Radium, {Style} from 'radium';
 import { Row, Col } from 'react-flexbox-grid';
 import { Helmet } from 'react-helmet';
+import gaTracker from 'utils/gaTracker';
 
 import { mediaQueries } from 'styles/Global/MediaQueries';
 import { pxToRem } from 'helpers/Math';
@@ -124,4 +125,4 @@ class Contact extends Component {
   }
 }
 
-export default Radium(Contact);
+export default gaTracker(Radium(Contact));

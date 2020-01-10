@@ -3,6 +3,7 @@ import Radium, { Style } from 'radium';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Waypoint from 'react-waypoint';
 import { Helmet } from 'react-helmet';
+import gaTracker from 'utils/gaTracker';
 
 // Component styling
 import { colorVars } from 'styles/Global/Colors';
@@ -228,4 +229,4 @@ class Architecture extends Component {
   }
 }
 
-export default Radium(Architecture);
+export default gaTracker(Radium(Architecture));

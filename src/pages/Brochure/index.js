@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Radium, { Style } from 'radium';
 import { Grid } from 'react-flexbox-grid';
 import { Helmet } from 'react-helmet';
+import gaTracker from 'utils/gaTracker';
 
 import { mediaQueries, globalMediaQueries } from 'styles/Global/MediaQueries';
 import { pxToRem } from 'helpers/Math';
@@ -157,4 +158,4 @@ class Brochure extends Component {
   }
 }
 
-export default Radium(Brochure);
+export default gaTracker(Radium(Brochure));

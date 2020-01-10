@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Radium, { Style } from 'radium';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Helmet } from 'react-helmet';
+import gaTracker from 'utils/gaTracker';
 
 import GallerySection from './GallerySection';
 import GalleryOverlay from './GalleryOverlay';
@@ -192,4 +193,4 @@ class Gallery extends Component {
   }
 }
 
-export default Radium(Gallery);
+export default gaTracker(Radium(Gallery));

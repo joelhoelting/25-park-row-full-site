@@ -3,6 +3,7 @@ import Radium, { Style } from 'radium';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import pressArticles from 'data/pressArticles';
 import { Helmet } from 'react-helmet';
+import gaTracker from 'utils/gaTracker';
 
 import PressPanel from './PressPanel';
 
@@ -124,4 +125,4 @@ class Press extends Component {
   }
 }
 
-export default Radium(Press);
+export default gaTracker(Radium(Press));

@@ -4,6 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Waypoint from 'react-waypoint';
 import { Helmet } from 'react-helmet';
+import gaTracker from 'utils/gaTracker';
 
 import MapBox from './MapBox';
 
@@ -313,4 +314,4 @@ class Neighborhood extends Component {
   }
 }
 
-export default Radium(Neighborhood);
+export default gaTracker(Radium(Neighborhood));

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Radium, { Style } from 'radium';
 import { Row, Col } from 'react-flexbox-grid';
 import { Helmet } from 'react-helmet';
+import gaTracker from 'utils/gaTracker';
 
 import teamData from 'data/teamData';
 import TeamSection from './TeamSection';
@@ -156,4 +157,4 @@ class Team extends Component {
   }
 }
 
-export default Radium(Team);
+export default gaTracker(Radium(Team));
