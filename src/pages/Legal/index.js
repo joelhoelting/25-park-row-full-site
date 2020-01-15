@@ -2,6 +2,7 @@ import React from 'react';
 import Radium, {Style} from 'radium';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Helmet } from 'react-helmet';
+import gaTracker from 'utils/gaTracker';
 
 const Legal = (props) => {
   const LegalInline = {
@@ -37,4 +38,4 @@ const Legal = (props) => {
   );
 };
 
-export default Radium(Legal);
+export default gaTracker(Radium(Legal));

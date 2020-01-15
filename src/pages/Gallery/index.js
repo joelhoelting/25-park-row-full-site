@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Radium, { Style } from 'radium';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Helmet } from 'react-helmet';
+import gaTracker from 'utils/gaTracker';
 
 import GallerySection from './GallerySection';
 import GalleryOverlay from './GalleryOverlay';
@@ -53,7 +54,7 @@ class Gallery extends Component {
         this.setState({ firstColumnHeight });
       }, 500);
     }
-  }
+  };
 
   toggleCarousel(index) {
     const { carousel } = this.state;
@@ -106,7 +107,7 @@ class Gallery extends Component {
 
     const mapGallery = galleryArray.map((section, index) => {
       const { title, imgAry } = section;
-      
+
       return (
         <GallerySection
           key={index}
@@ -158,20 +159,20 @@ class Gallery extends Component {
       <div>
         <Helmet>
           <title>25 Park Row | Gallery</title>
-          <meta name="description" content="25 Park Row is a 21st century architectural icon providing unmatched downtown NYC views from every condominium over historic City Hall Park." />
+          <meta
+            name="description"
+            content="25 Park Row is a 21st century architectural icon providing unmatched downtown NYC views from every condominium over historic City Hall Park."
+          />
         </Helmet>
         <Style rules={{ body: { backgroundColor: this.props.color } }} />
         <Style rules={stylesCSS} />
-        <div 
+        <div
           className={`gallery-container ${!this.state.mounted ? 'hidden' : ''}`}
-          style={{ minHeight: !this.state.mounted ? '100vh' : '20vh'}}
+          style={{ minHeight: !this.state.mounted ? '100vh' : '20vh' }}
         >
-          <Row 
-            className='mobile-header border-bottom' 
-            style={{ borderBottom: '2px solid black'}}
-          >
+          <Row className="mobile-header border-bottom" style={{ borderBottom: '2px solid black' }}>
             <Col lg={12}>
-              <h2 className='text-center'>Gallery</h2>
+              <h2 className="text-center">Gallery</h2>
             </Col>
           </Row>
           <Grid fluid onLoad={() => this.initialCalculateImageHeight()}>
@@ -192,4 +193,4 @@ class Gallery extends Component {
   }
 }
 
-export default Radium(Gallery);
+export default gaTracker(Radium(Gallery));

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Radium, { Style } from 'radium';
 import { Row, Col } from 'react-flexbox-grid';
 import { Helmet } from 'react-helmet';
+import gaTracker from 'utils/gaTracker';
 
 import localAvailabilityData from 'data/localAvailabilityData';
 import Floorplan from './Floorplan';
@@ -253,4 +254,4 @@ class Floorplans extends Component {
   }
 }
 
-export default Radium(Floorplans);
+export default gaTracker(Radium(Floorplans));

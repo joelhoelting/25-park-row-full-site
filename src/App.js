@@ -46,7 +46,8 @@ class App extends Component {
     let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     this.state = {
       width,
-      listings: undefined
+      listings: undefined,
+      siteVisited: false
     };
   }
 
@@ -65,7 +66,13 @@ class App extends Component {
     this.setState({ listings });
   }
 
+  toggleSiteVisited = boolean => {
+    this.setState({ siteVisited: boolean });
+  };
+
   render() {
+    const { siteVisited } = this.state;
+
     return (
       <StyleRoot>
         <Style rules={Global} />
@@ -93,92 +100,185 @@ class App extends Component {
                     <Route
                       exact
                       path="/"
-                      render={() => <Home width={this.state.width} color={Colors.home.backgroundColor} />}
+                      render={({ location }) => (
+                        <Home
+                          width={this.state.width}
+                          color={Colors.home.backgroundColor}
+                          location={location}
+                          siteVisited={siteVisited}
+                          toggleSiteVisited={this.toggleSiteVisited}
+                        />
+                      )}
                     />
                     <Route
                       exact
                       path="/architecture"
-                      render={() => (
-                        <Architecture width={this.state.width} color={Colors.architecture.backgroundColor} />
+                      render={({ location }) => (
+                        <Architecture
+                          width={this.state.width}
+                          color={Colors.architecture.backgroundColor}
+                          location={location}
+                          siteVisited={siteVisited}
+                          toggleSiteVisited={this.toggleSiteVisited}
+                        />
                       )}
                     />
                     <Route
                       exact
                       path="/interiors"
-                      render={() => <Interiors width={this.state.width} color={Colors.interiors.backgroundColor} />}
+                      render={({ location }) => (
+                        <Interiors
+                          width={this.state.width}
+                          color={Colors.interiors.backgroundColor}
+                          location={location}
+                          siteVisited={siteVisited}
+                          toggleSiteVisited={this.toggleSiteVisited}
+                        />
+                      )}
                     />
                     <Route
                       exact
                       path="/amenities"
-                      render={() => <Amenities width={this.state.width} color={Colors.amenities.backgroundColor} />}
+                      render={({ location }) => (
+                        <Amenities
+                          width={this.state.width}
+                          color={Colors.amenities.backgroundColor}
+                          location={location}
+                          siteVisited={siteVisited}
+                          toggleSiteVisited={this.toggleSiteVisited}
+                        />
+                      )}
                     />
                     <Route
                       exact
                       path="/views"
-                      render={() => <Views width={this.state.width} color={Colors.views.backgroundColor} />}
+                      render={({ location }) => (
+                        <Views
+                          width={this.state.width}
+                          color={Colors.views.backgroundColor}
+                          location={location}
+                          siteVisited={siteVisited}
+                          toggleSiteVisited={this.toggleSiteVisited}
+                        />
+                      )}
                     />
                     <Route
                       exact
                       path="/floorplans"
-                      render={() => (
+                      render={({ location }) => (
                         <Floorplans
                           width={this.state.width}
                           color={Colors.floorplans.backgroundColor}
                           saveListings={listings => this.saveListings(listings)}
                           savedListings={this.state.listings}
+                          location={location}
+                          siteVisited={siteVisited}
+                          toggleSiteVisited={this.toggleSiteVisited}
                         />
                       )}
                     />
                     <Route
                       exact
                       path="/neighborhood"
-                      render={() => (
-                        <Neighborhood width={this.state.width} color={Colors.neighborhood.backgroundColor} />
+                      render={({ location }) => (
+                        <Neighborhood
+                          width={this.state.width}
+                          color={Colors.neighborhood.backgroundColor}
+                          location={location}
+                          siteVisited={siteVisited}
+                          toggleSiteVisited={this.toggleSiteVisited}
+                        />
                       )}
                     />
                     <Route
                       exact
                       path="/team"
-                      render={() => <Team width={this.state.width} color={Colors.team.backgroundColor} />}
+                      render={({ location }) => (
+                        <Team
+                          width={this.state.width}
+                          color={Colors.team.backgroundColor}
+                          location={location}
+                          siteVisited={siteVisited}
+                          toggleSiteVisited={this.toggleSiteVisited}
+                        />
+                      )}
                     />
                     <Route
                       exact
                       path="/gallery"
-                      render={() => <Gallery width={this.state.width} color={Colors.gallery.backgroundColor} />}
+                      render={({ location }) => (
+                        <Gallery
+                          width={this.state.width}
+                          color={Colors.gallery.backgroundColor}
+                          location={location}
+                          siteVisited={siteVisited}
+                          toggleSiteVisited={this.toggleSiteVisited}
+                        />
+                      )}
                     />
                     <Route
                       exact
                       path="/contact"
-                      render={() => <Contact width={this.state.width} color={Colors.contact.backgroundColor} />}
+                      render={({ location }) => (
+                        <Contact
+                          width={this.state.width}
+                          color={Colors.contact.backgroundColor}
+                          location={location}
+                          siteVisited={siteVisited}
+                          toggleSiteVisited={this.toggleSiteVisited}
+                        />
+                      )}
                     />
                     <Route
                       exact
                       path="/brochure"
-                      render={() => (
+                      render={({ location }) => (
                         <Brochure
                           width={this.state.width}
                           color={Colors.brochure.backgroundColor}
                           interval={this.state.interval}
+                          location={location}
+                          siteVisited={siteVisited}
+                          toggleSiteVisited={this.toggleSiteVisited}
                         />
                       )}
                     />
                     <Route
                       exact
                       path="/press"
-                      render={() => <Press width={this.state.width} color={Colors.press.backgroundColor} />}
+                      render={({ location }) => (
+                        <Press
+                          width={this.state.width}
+                          color={Colors.press.backgroundColor}
+                          location={location}
+                          siteVisited={siteVisited}
+                          toggleSiteVisited={this.toggleSiteVisited}
+                        />
+                      )}
                     />
                     <Route
                       exact
                       path="/legal"
-                      render={() => <Legal width={this.state.width} color={Colors.legal.backgroundColor} />}
+                      render={({ location }) => (
+                        <Legal
+                          width={this.state.width}
+                          color={Colors.legal.backgroundColor}
+                          location={location}
+                          siteVisited={siteVisited}
+                          toggleSiteVisited={this.toggleSiteVisited}
+                        />
+                      )}
                     />
                     <Route
                       exact
                       path="/accessibility-statement"
-                      render={() => (
+                      render={({ location }) => (
                         <Accessibility
                           width={this.state.width}
                           color={Colors['accessibility-statement'].backgroundColor}
+                          location={location}
+                          siteVisited={siteVisited}
+                          toggleSiteVisited={this.toggleSiteVisited}
                         />
                       )}
                     />

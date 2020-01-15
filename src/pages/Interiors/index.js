@@ -4,6 +4,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import Waypoint from 'react-waypoint';
 import MediaQuery from 'react-responsive';
 import { Helmet } from 'react-helmet';
+import gaTracker from 'utils/gaTracker';
 
 // Component styling
 import { colorVars } from 'styles/Global/Colors';
@@ -340,4 +341,4 @@ articulated crown and glittering vistas from river to river."
   }
 }
 
-export default Radium(Interiors);
+export default gaTracker(Radium(Interiors));

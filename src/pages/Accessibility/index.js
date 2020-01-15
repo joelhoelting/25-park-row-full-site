@@ -1,6 +1,7 @@
 import React from 'react';
 import Radium from 'radium';
 import { mediaQueries } from 'styles/Global/MediaQueries';
+import gaTracker from 'utils/gaTracker';
 
 const AccessibilityInline = {
   wrapper: {
@@ -10,7 +11,7 @@ const AccessibilityInline = {
       marginTop: '5em',
       [mediaQueries.tablet]: {
         marginTop: '10em'
-      },
+      }
     },
     p: {
       maxWidth: '1200px',
@@ -18,7 +19,7 @@ const AccessibilityInline = {
       margin: '0 auto',
       fontSize: '.8rem',
       [mediaQueries.tablet]: {
-        fontSize: '1.2rem',
+        fontSize: '1.2rem'
       }
     }
   }
@@ -45,4 +46,4 @@ const Accessibility = () => {
   );
 };
 
-export default Radium(Accessibility);
+export default gaTracker(Radium(Accessibility));
