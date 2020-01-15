@@ -3,8 +3,9 @@ import GoogleAnalytics from 'react-ga';
 
 import { parsePageTitle } from './seo';
 
-// GoogleAnalytics.initialize('UA-124522377-1');
-GoogleAnalytics.initialize('UA-124522377-2');
+GoogleAnalytics.initialize('UA-124522377-1');
+// Test Environment
+// GoogleAnalytics.initialize('UA-124522377-2');
 
 const withTracker = (WrappedComponent, options = {}) => {
   const trackPage = path => {
