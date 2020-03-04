@@ -11,7 +11,7 @@ import { validateEmail } from 'helpers/Validations';
 class ContactForm extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       firstname: '',
       lastname: '',
@@ -33,18 +33,18 @@ class ContactForm extends Component {
 
   isFormInvalid() {
     let invalidFieldsPresent, firstnameInvalid, lastnameInvalid, emailInvalid, howhearInvalid;
-    
-    this.state.firstname.length > 1 ? firstnameInvalid = false : firstnameInvalid = true;
-    this.state.lastname.length > 1 ? lastnameInvalid = false : lastnameInvalid = true;
-    validateEmail(this.state.email) ? emailInvalid = false : emailInvalid = true;
-    this.state.howhear.length > 1 ? howhearInvalid = false : howhearInvalid = true;
-    
+
+    this.state.firstname.length > 1 ? (firstnameInvalid = false) : (firstnameInvalid = true);
+    this.state.lastname.length > 1 ? (lastnameInvalid = false) : (lastnameInvalid = true);
+    validateEmail(this.state.email) ? (emailInvalid = false) : (emailInvalid = true);
+    this.state.howhear.length > 1 ? (howhearInvalid = false) : (howhearInvalid = true);
+
     if (firstnameInvalid || lastnameInvalid || emailInvalid || howhearInvalid) {
       invalidFieldsPresent = true;
     } else {
       invalidFieldsPresent = false;
     }
-    
+
     this.setState({
       invalidFields: {
         firstnameInvalid,
@@ -89,7 +89,7 @@ class ContactForm extends Component {
       var emailData = {
         from: '"25 Park Row Web Team" <no_reply_25parkrow@dbox.com>',
         to: '"25PR Admin" <info@25parkrow.com>',
-        subject: 'New Registrant - 25 Park Row - '+this.state.firstname+' '+this.state.lastname,
+        subject: 'New Registrant - 25 Park Row - ' + this.state.firstname + ' ' + this.state.lastname,
         text: text
       };
 
@@ -97,13 +97,13 @@ class ContactForm extends Component {
         method: 'POST',
         mode: 'cors',
         headers: {
-          'Accept': 'application/json',
+          Accept: 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(emailData),
+        body: JSON.stringify(emailData)
       })
         .then(response => response.json())
-        .then((result) => {
+        .then(result => {
           /* eslint-disable no-console */
           console.log('email sending successful ', result);
           /* eslint-enable no-console */
@@ -113,12 +113,12 @@ class ContactForm extends Component {
             console.log('dataLayer virtual page view');
             /* eslint-enable no-console */
             window.dataLayer.push({
-              'event': 'VirtualPageview',
-              'virtualPageURL': '/thanks',
-              'virtualPageTitle': 'Thank You Page'
+              event: 'VirtualPageview',
+              virtualPageURL: '/thanks',
+              virtualPageTitle: 'Thank You Page'
             });
           }
-          
+
           this.props.toggleThankYou();
           this.setState({
             firstname: '',
@@ -136,7 +136,7 @@ class ContactForm extends Component {
             originalThis.props.toggleThankYou();
           }, 5000);
         })
-        .catch((error) => {
+        .catch(error => {
           /* eslint-disable no-console */
           console.log('error sending email ', error);
           /* eslint-enable no-console */
@@ -144,22 +144,22 @@ class ContactForm extends Component {
     }
   }
 
-  handleChange(e, optionalProperty=null) {
+  handleChange(e, optionalProperty = null) {
     let property = optionalProperty || e.target.name;
     let value = e.value || e.target.value;
-    
+
     this.setState({
       [property]: value
     });
   }
 
-  handleChangeRequired(e, optionalProperty=null) {
+  handleChangeRequired(e, optionalProperty = null) {
     let property = optionalProperty || e.target.name;
     let value = e.value || e.target.value;
     let propertyInvalid;
 
-    property === 'email' ? propertyInvalid = !validateEmail(value) : propertyInvalid = !(value.length > 1);
-    
+    property === 'email' ? (propertyInvalid = !validateEmail(value)) : (propertyInvalid = !(value.length > 1));
+
     let invalidFieldsPresent = () => {
       if (propertyInvalid) {
         return true;
@@ -178,7 +178,7 @@ class ContactForm extends Component {
       [property]: value,
       invalidFields: {
         ...this.state.invalidFields,
-        [`${property}Invalid`]: propertyInvalid 
+        [`${property}Invalid`]: propertyInvalid
       },
       invalidFieldsPresent: invalidFieldsPresent()
     });
@@ -191,7 +191,7 @@ class ContactForm extends Component {
         appearance: 'none',
         display: 'block',
         width: '100%',
-        height: '100%',
+        height: '100%'
       },
       '.Dropdown-root': {
         display: 'flex'
@@ -211,7 +211,7 @@ class ContactForm extends Component {
       },
       '.Dropdown-menu': {
         position: 'absolute',
-        top: '2rem', 
+        top: '2rem',
         left: 0,
         background: '#636551',
         border: '1px solid #fff',
@@ -225,7 +225,7 @@ class ContactForm extends Component {
         cursor: 'pointer'
       },
       '.Dropdown-menu .Dropdown-option:hover': {
-        background: '#7d7f66',
+        background: '#7d7f66'
       },
       '.Dropdown-arrow': {
         position: 'absolute',
@@ -233,7 +233,7 @@ class ContactForm extends Component {
         top: '54%',
         zIndex: -1,
         height: pxToRem(15),
-        width: pxToRem(15),
+        width: pxToRem(15)
       },
       // Radios
       '.radio-item': {
@@ -287,7 +287,7 @@ class ContactForm extends Component {
       },
       'select:-moz-focusring': {
         color: 'transparent',
-        textShadow: '0 0 0 #000',
+        textShadow: '0 0 0 #000'
       },
       // Label Animations
       label: {
@@ -301,16 +301,16 @@ class ContactForm extends Component {
       mediaQueries: {
         [globalMediaQueries.tabletLandscape]: {
           '.radio-item': {
-            fontSize: pxToRem(20),
+            fontSize: pxToRem(20)
           },
           '.checkmark': {
             height: pxToRem(20),
-            width: pxToRem(20),
+            width: pxToRem(20)
           }
         }
       }
     };
-  
+
     const ContactFormInline = {
       main: {
         fontFamily: 'Maison Neue Extended, sans-serif',
@@ -330,7 +330,7 @@ class ContactForm extends Component {
           flexDirection: 'column-reverse',
           height: pxToRem(70),
           noBorder: {
-            borderBottom: 0,
+            borderBottom: 0
           },
           off: {
             opacity: '.1',
@@ -372,7 +372,7 @@ class ContactForm extends Component {
           [mediaQueries.tabletLandscape]: {
             margin: `${pxToRem(50)} auto 0`,
             ':hover': {
-              background: '#6f715b' 
+              background: '#6f715b'
             }
           }
         },
@@ -398,54 +398,43 @@ class ContactForm extends Component {
     ];
 
     const residenceOptions = [
-      '1 BRs from approx. $1.655M', 
-      '2 BRs from approx. $2.125M', 
-      '3 BRs from approx. $3.550M',
-      '4 BRs from approx. $6.250M',
+      '1 BRs from approx. $1.980M',
+      '2 BRs from approx. $2.765M',
+      '3 BRs from approx. $3.575M',
+      '4 BRs from approx. $6.995M',
       'Penthouse upon request'
     ];
 
     return (
-      <form 
-        style={main} 
-        onSubmit={(e) => this.onSubmitForm(e)}
-      >
-        <Style rules={ContactFormCSS}/>
+      <form style={main} onSubmit={e => this.onSubmitForm(e)}>
+        <Style rules={ContactFormCSS} />
         <Row>
           <Col md={6}>
             <div style={main.formItem}>
               <input
-                id='firstname'
-                name='firstname' 
-                type='text' 
+                id="firstname"
+                name="firstname"
+                type="text"
                 style={main.formItem.input}
                 value={this.state.firstname}
-                onChange={(e) => this.handleChangeRequired(e)}
+                onChange={e => this.handleChangeRequired(e)}
               />
-              <label 
-                style={main.formItem.label}
-                htmlFor='firstname'
-              >
-                <span style={this.state.invalidFields.firstnameInvalid ? main.error : null}>
-                  First Name *
-                </span>
+              <label style={main.formItem.label} htmlFor="firstname">
+                <span style={this.state.invalidFields.firstnameInvalid ? main.error : null}>First Name *</span>
               </label>
             </div>
           </Col>
           <Col md={6}>
             <div style={main.formItem}>
-              <input 
-                id='lastname'
-                name='lastname' 
-                type='text' 
+              <input
+                id="lastname"
+                name="lastname"
+                type="text"
                 style={main.formItem.input}
                 value={this.state.lastname}
-                onChange={(e) => this.handleChangeRequired(e)} 
+                onChange={e => this.handleChangeRequired(e)}
               />
-              <label 
-                style={main.formItem.label}
-                htmlFor='lastname'
-              >
+              <label style={main.formItem.label} htmlFor="lastname">
                 <span style={this.state.invalidFields.lastnameInvalid ? main.error : null}>Last Name *</span>
               </label>
             </div>
@@ -454,33 +443,32 @@ class ContactForm extends Component {
         <Row>
           <Col md={6}>
             <div style={main.formItem}>
-              <input 
-                id='email'
-                name='email' 
-                type='text' 
+              <input
+                id="email"
+                name="email"
+                type="text"
                 style={main.formItem.input}
                 value={this.state.email}
-                onChange={(e) => this.handleChangeRequired(e)}
+                onChange={e => this.handleChangeRequired(e)}
               />
-              <label 
-                style={main.formItem.label}
-                htmlFor='email'
-              >
+              <label style={main.formItem.label} htmlFor="email">
                 <span style={this.state.invalidFields.emailInvalid ? main.error : null}>Email *</span>
               </label>
             </div>
           </Col>
           <Col md={6}>
             <div style={main.formItem}>
-              <input 
-                id='phone'
-                name='phone' 
-                type='text' 
+              <input
+                id="phone"
+                name="phone"
+                type="text"
                 style={main.formItem.input}
                 value={this.state.phone}
-                onChange={(e) => this.handleChange(e)} 
+                onChange={e => this.handleChange(e)}
               />
-              <label htmlFor='phone' style={main.formItem.label}>Phone Number</label>
+              <label htmlFor="phone" style={main.formItem.label}>
+                Phone Number
+              </label>
             </div>
           </Col>
         </Row>
@@ -488,27 +476,27 @@ class ContactForm extends Component {
           <Col md={6}>
             <div style={[main.formItem, main.formItem.noBorder]}>
               <div style={main.formItem.radioContainer}>
-                <label className='radio-item'>
+                <label className="radio-item">
                   Yes
-                  <input 
+                  <input
                     checked={this.state.broker === 'yes'}
-                    id='broker'
-                    name='broker'
-                    type='radio' 
-                    value='yes' 
-                    onChange={(e) => this.handleChange(e)} 
+                    id="broker"
+                    name="broker"
+                    type="radio"
+                    value="yes"
+                    onChange={e => this.handleChange(e)}
                   />
                   <span className="checkmark"></span>
                 </label>
-                <label className='radio-item'>
+                <label className="radio-item">
                   No
-                  <input 
-                    checked={this.state.broker === 'no'} 
-                    id='broker'
-                    name='broker'
-                    type='radio' 
-                    value='no' 
-                    onChange={(e) => this.handleChange(e)} 
+                  <input
+                    checked={this.state.broker === 'no'}
+                    id="broker"
+                    name="broker"
+                    type="radio"
+                    value="no"
+                    onChange={e => this.handleChange(e)}
                   />
                   <span className="checkmark"></span>
                 </label>
@@ -519,20 +507,16 @@ class ContactForm extends Component {
           <Col md={6}>
             <div style={main.formItem}>
               <MediaQuery minWidth={768}>
-                <Dropdown 
-                  placeholder="" 
-                  options={hearFromUsOptions} 
+                <Dropdown
+                  placeholder=""
+                  options={hearFromUsOptions}
                   value={this.state.howhear}
-                  name="howhear" 
-                  onChange={(e) => this.handleChangeRequired(e, 'howhear')}
+                  name="howhear"
+                  onChange={e => this.handleChangeRequired(e, 'howhear')}
                 />
               </MediaQuery>
               <MediaQuery maxWidth={767}>
-                <select 
-                  value={this.state.howhear} 
-                  name="howhear" 
-                  onChange={(e) => this.handleChangeRequired(e)} 
-                >
+                <select value={this.state.howhear} name="howhear" onChange={e => this.handleChangeRequired(e)}>
                   <option value=""></option>
                   <option value="Online Search/Digital Ad">Online Search/Digital Ad</option>
                   <option value="Word of Mouth">Word of Mouth</option>
@@ -542,62 +526,66 @@ class ContactForm extends Component {
                   <option value="Print Advertising (other)">Print Advertising (other)</option>
                 </select>
               </MediaQuery>
-              <label htmlFor='howhear' style={main.formItem.label}>
+              <label htmlFor="howhear" style={main.formItem.label}>
                 <span style={this.state.invalidFields.howhearInvalid ? main.error : null}>
                   How did you hear about us? *
                 </span>
               </label>
-              <img className="Dropdown-arrow" src="/images/icons/down-arrow.png" alt="Down Arrow"/>
+              <img className="Dropdown-arrow" src="/images/icons/down-arrow.png" alt="Down Arrow" />
             </div>
           </Col>
         </Row>
         <Row>
           <Col md={6}>
             <div style={[main.formItem, this.state.broker === 'yes' ? main.formItem.off : null]}>
-              <input 
-                id='zipcode'
-                name='zipcode' 
-                type='text' 
+              <input
+                id="zipcode"
+                name="zipcode"
+                type="text"
                 style={main.formItem.input}
                 value={this.state.zipcode}
-                onChange={(e) => this.handleChange(e)}
+                onChange={e => this.handleChange(e)}
                 disabled={this.state.broker === 'yes' ? true : false}
               />
-              <label style={main.formItem.label} htmlFor='zipcode'>Zip Code</label>
+              <label style={main.formItem.label} htmlFor="zipcode">
+                Zip Code
+              </label>
             </div>
           </Col>
           <Col md={6}>
             <div style={[main.formItem, this.state.broker === 'yes' ? main.formItem.off : null]}>
               <MediaQuery minWidth={768}>
-                <Dropdown 
-                  placeholder="" 
-                  options={residenceOptions} 
+                <Dropdown
+                  placeholder=""
+                  options={residenceOptions}
                   value={this.state.residencesize}
-                  name="residencesize" 
-                  onChange={(e) => this.handleChange(e, 'residencesize')}
+                  name="residencesize"
+                  onChange={e => this.handleChange(e, 'residencesize')}
                   disabled={this.state.broker === 'yes' ? true : false}
                 />
               </MediaQuery>
               <MediaQuery maxWidth={767}>
-                <select 
-                  value={this.state.residencesize} 
-                  name="residencesize" 
-                  onChange={(e) => this.handleChange(e)} 
-                >
+                <select value={this.state.residencesize} name="residencesize" onChange={e => this.handleChange(e)}>
                   <option value=""></option>
-                  <option value="1 BRs from approx. $1.655M">1 BRs from approx. $1.655M</option>
-                  <option value="2 BRs from approx. $2.125M">2 BRs from approx. $2.125M</option>
-                  <option value="3 BRs from approx. $3.550M">3 BRs from approx. $3.550M</option>
-                  <option value="4 BRs from approx. $6.250M">4 BRs from approx. $6.250M</option>
+                  <option value="1 BRs from approx. $1.980M">1 BRs from approx. $1.980M</option>
+                  <option value="2 BRs from approx. $2.765M">2 BRs from approx. $2.765M</option>
+                  <option value="3 BRs from approx. $3.575M">3 BRs from approx. $3.575M</option>
+                  <option value="4 BRs from approx. $6.995M">4 BRs from approx. $6.995M</option>
                   <option value="Penthouse (upon request)">Penthouse (upon request)</option>
                 </select>
               </MediaQuery>
-              <label style={main.formItem.label} htmlFor='residencesize'>RESIDENCE SIZE</label>
-              <img className="Dropdown-arrow" src="/images/icons/down-arrow.png" alt="Down Arrow"/>
+              <label style={main.formItem.label} htmlFor="residencesize">
+                RESIDENCE SIZE
+              </label>
+              <img className="Dropdown-arrow" src="/images/icons/down-arrow.png" alt="Down Arrow" />
             </div>
           </Col>
         </Row>
-        <input style={[main.submit, this.state.invalidFieldsPresent ? main.buttonError : null]} type="submit" value="SUBMIT"/>
+        <input
+          style={[main.submit, this.state.invalidFieldsPresent ? main.buttonError : null]}
+          type="submit"
+          value="SUBMIT"
+        />
       </form>
     );
   }
