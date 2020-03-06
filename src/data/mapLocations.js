@@ -637,12 +637,12 @@ const locations = {
   ],
   transitMTA: [
     {
-      icon: 'w.svg',
+      icon: 'r.svg',
       title: 'NYC SUBWAY R/W Line \n',
       coordinates: [-74.006699, 40.713561]
     },
     {
-      icon: 'r.svg',
+      icon: 'w.svg',
       title: 'NYC SUBWAY R/W Line \n',
       coordinates: [-74.007, 40.7132]
     },
@@ -672,59 +672,59 @@ const locations = {
       coordinates: [-74.003261, 40.713505]
     },
     {
-      icon: '3.svg',
-      title: 'NYC SUBWAY 2/3 Line \n',
-      coordinates: [-74.006702, 40.709268]
-    },
-    {
       icon: '2.svg',
       title: 'NYC SUBWAY 2/3 Line \n',
-      coordinates: [-74.006402, 40.709568]
+      coordinates: [-74.0066, 40.70985]
     },
     {
-      icon: 'c.svg',
-      title: 'NYC SUBWAY A/C Line \n',
-      coordinates: [-74.007002, 40.709568]
+      icon: '3.svg',
+      title: 'NYC SUBWAY 2/3 Line \n',
+      coordinates: [-74.00699, 40.7094]
     },
     {
       icon: 'a.svg',
       title: 'NYC SUBWAY A/C Line \n',
-      coordinates: [-74.007302, 40.709268]
+      coordinates: [-74.0072, 40.71015]
+    },
+    {
+      icon: 'c.svg',
+      title: 'NYC SUBWAY A/C Line \n',
+      coordinates: [-74.0076, 40.7097]
     },
     {
       icon: 'j.svg',
       title: 'NYC SUBWAY J/Z Line \n',
-      coordinates: [-74.008319, 40.709371]
+      coordinates: [-74.008, 40.71056]
     },
     {
       icon: 'z.svg',
       title: 'NYC SUBWAY J/Z Line \n',
-      coordinates: [-74.008019, 40.709671]
+      coordinates: [-74.00835, 40.7101]
     },
     {
       icon: '4.svg',
       title: 'NYC SUBWAY 4/5 Line \n',
-      coordinates: [-74.0093, 40.7106]
+      coordinates: [-74.0086, 40.71086]
     },
     {
       icon: '5.svg',
       title: 'NYC SUBWAY 4/5 Line \n',
-      coordinates: [-74.009, 40.711]
-    },
-    {
-      icon: 'r.svg',
-      title: 'NYC SUBWAY R/W Line \n',
-      coordinates: [-74.011165, 40.71037]
+      coordinates: [-74.00898, 40.7104]
     },
     {
       icon: 'w.svg',
       title: 'NYC SUBWAY R/W Line \n',
-      coordinates: [-74.011, 40.71075]
+      coordinates: [-74.011165, 40.71037]
+    },
+    {
+      icon: 'r.svg',
+      title: 'NYC SUBWAY R/W Line \n',
+      coordinates: [-74.0108, 40.71075]
     },
     {
       icon: 'e.svg',
       title: 'NYC SUBWAY E Line \n',
-      coordinates: [-74.009979, 40.712601]
+      coordinates: [-74.00965, 40.71274]
     },
     {
       icon: '2.svg',
@@ -739,22 +739,22 @@ const locations = {
     {
       icon: '1.svg',
       title: 'NYC SUBWAY 1 Line \n',
-      coordinates: [-74.011791, 40.710949]
+      coordinates: [-74.0118, 40.7125]
     },
     {
       icon: 'a.svg',
       title: 'NYC SUBWAY A/C Line \n',
-      coordinates: [-74.008556, 40.714271]
+      coordinates: [-74.0082, 40.7146]
     },
     {
       icon: 'c.svg',
       title: 'NYC SUBWAY A/C Line \n',
-      coordinates: [-74.008256, 40.7146]
+      coordinates: [-74.00849, 40.714271]
     },
     {
       icon: 'pathtrain.png',
       title: 'Path Line \n World Trade Center Station',
-      coordinates: [-74.011451, 40.711628]
+      coordinates: [-74.0135, 40.711628]
     },
     {
       icon: 'heliport.png',
